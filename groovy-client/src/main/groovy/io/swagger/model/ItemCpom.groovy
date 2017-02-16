@@ -1,0 +1,23 @@
+package io.swagger.model;
+
+import groovy.transform.Canonical
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+@Canonical
+class ItemCpom {
+
+  /* Company ID */
+  String companyId = null
+
+  /* IBGE city code */
+  String cityCode = null
+
+  /* ERP Code */
+  String itemCode = null
+
+  /* Code in City */
+  String code = null
+  
+
+}
+

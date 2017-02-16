@@ -1,0 +1,37 @@
+
+<h2>CalculatedTaxSummaryForGoods</h2>
+<ul class="parameter">
+  <li class="param-required-false">numberOfLines : Integer
+    <br/>Count of lines
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">taxedDiscount : Double
+    <br/>sum of all line taxed discounts
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">untaxedDiscount : Double
+    <br/>sum of all line untaxed discounts
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">subtotal : Double
+    <br/>sum of all line lineAmount attribute
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">totalTax : Double
+    <br/>sum of all line tax attribute
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">grandTotal : Double
+    <br/>sum of all line lineAmount attribute + sum of all line tax attribute not VAT - sum of all line lineTaxedDiscount attribute
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">taxByType : CalculatedTaxSummaryForGoods_taxByType
+    <br/>
+  </li>
+</ul>

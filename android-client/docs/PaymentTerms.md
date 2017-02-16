@@ -1,0 +1,8 @@
+
+# PaymentTerms
+
+## Enum
+
+
+
+

@@ -1,0 +1,65 @@
+
+<h2>CustomTaxTypeRate</h2>
+<ul class="parameter">
+  <li class="param-required-true">taxType : TaxType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">taxModel : String
+    <br/>Tax can be calculated by rate or by quantity
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>rate</dd>
+            <dd>srf</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">rate : Double
+    <br/>Specific tax rate ex 3.5 (3.5%)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">srvAmount : Double
+    <br/>Specific tax rate ex 3.5 (3.5%)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">quantityUnidBase : String
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">specializationType : String
+    <br/>
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>basic</dd>
+            <dd>monophase</dd>
+            <dd>taxSubstitution</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">exemptionReasonCode : String
+    <br/>UUID Reference to an item in the LegalReason store. 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">customExemptionReasonDescription : String
+    <br/>Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other). 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">withholding : TaxTypeRate_withholding
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">companyId : UUID
+    <br/>Company ID
+  </li>
+</ul>

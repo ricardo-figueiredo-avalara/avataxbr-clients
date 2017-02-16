@@ -1,0 +1,119 @@
+
+<h2>CustomIcmsConfByState</h2>
+<ul class="parameter">
+  <li class="param-required-true">code : String
+    <br/>Identify the IcmsConfState in namespace
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">state : StateEnum
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">name : String
+    <br/>name for this configuration
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">startDate : Date
+    <br/>date when this configuration values starts
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">expirationDate : Date
+    <br/>date when this configuration values expire
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">inactive : Boolean
+    <br/>set this configuration to Inactive
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">subjectToST : Boolean
+    <br/>inform that the item linked to this configuration is subject to ICMS ST on this state
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsCST : String
+    <br/>On sales process inform the CST hat the item linked to this configuration is subject to for the own ICMS - &#39;00&#39; # TAXABLE - &#39;20&#39; # TAXABLE WITH BASE DISCOUNT - &#39;40&#39; # EXEMPT - &#39;41&#39; # NOT TAXABLE - &#39;50&#39; # SUSPENDED 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>00</dd>
+            <dd>20</dd>
+            <dd>40</dd>
+            <dd>41</dd>
+            <dd>50</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">calcMode : String
+    <br/>how this ICMS will be calculed for itens linked to this configuration
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>BYMVARATE</dd>
+            <dd>SRP</dd>
+            <dd>MMSRP</dd>
+            <dd>OPERATIONAMOUNT</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">discountRateForMonoPhase : Double
+    <br/>discount if the item is subject to monophase PIS/COFINS for transactions inside state
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">rate : Double
+    <br/>ICMS rate
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsBaseDiscount : Double
+    <br/>ICMS rate
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">msrp : Double
+    <br/>SRP or MMSRP amount base for this icms configuration
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">mvaRate : Double
+    <br/>ICMS mva rate to define calc base
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">msrpUnit : String
+    <br/>unit used to SRP amount value
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsLegalReason : String
+    <br/>Code for the ICM legal reason, this message will be placed on invoice.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">fcpRate : Double
+    <br/>Fundo de Combate à pobreza / Fund Against Poverty
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsSTConf : IcmsConfByState_icmsSTConf
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsInterStateConf : List
+    <br/>the map key is state code
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">companyId : UUID
+    <br/>Company ID
+  </li>
+</ul>

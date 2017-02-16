@@ -1,0 +1,16 @@
+# CalculatedTaxSummaryForGoods
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**NumberOfLines** | **int32** | Count of lines | [optional] [default to null]
+**TaxedDiscount** | **float64** | sum of all line taxed discounts | [optional] [default to null]
+**UntaxedDiscount** | **float64** | sum of all line untaxed discounts | [optional] [default to null]
+**Subtotal** | **float64** | sum of all line lineAmount attribute | [optional] [default to null]
+**TotalTax** | **float64** | sum of all line tax attribute | [optional] [default to null]
+**GrandTotal** | **float64** | sum of all line lineAmount attribute + sum of all line tax attribute not VAT - sum of all line lineTaxedDiscount attribute | [optional] [default to null]
+**TaxByType** | [**CalculatedTaxSummaryForGoodsTaxByType**](CalculatedTaxSummaryForGoods_taxByType.md) |  | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

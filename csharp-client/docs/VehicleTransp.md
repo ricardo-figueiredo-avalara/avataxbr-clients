@@ -1,0 +1,13 @@
+# IO.Swagger.Model.VehicleTransp
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Type** | **string** |  | [optional] 
+**Automobile** | [**VehicleID**](VehicleID.md) |  | [optional] 
+**Trailer** | [**List&lt;VehicleID&gt;**](VehicleID.md) | Trailer | [optional] 
+**Wagon** | **string** |  | [optional] 
+**Ferry** | **string** | Ferry | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

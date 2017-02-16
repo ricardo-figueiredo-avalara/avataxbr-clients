@@ -1,0 +1,161 @@
+
+<h2>Agast</h2>
+<ul class="parameter">
+  <li class="param-required-true">code : String
+    <br/>Agast Code. AGAST (Avalara Goods and Services Types) are preset products with default tax definitions available to be used as provided or copied to create an specific comapany item.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">description : String
+    <br/>Agast Description
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">hsCode : String
+    <br/>harmonized code, NCM or LC 116
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">ex : Integer
+    <br/>hsCode Exception for IPI tax
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cest : String
+    <br/>tax substitution code - Codigo especificador da Substuicao Tributaria
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cean : String
+    <br/>GTIN NUMBER
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">codeType : Agast_codeType
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cstIPI : String
+    <br/>Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>50</dd>
+            <dd>51</dd>
+            <dd>52</dd>
+            <dd>53</dd>
+            <dd>54</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">ipiLegalTaxClass : String
+    <br/>Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D; 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">pisCofinsTaxReporting : String
+    <br/>when the company is Real Profit inform if this item is cumulative or no cumulative by default
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>cumulative</dd>
+            <dd>noCumulative</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruablePISTaxation : String
+    <br/>Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>N</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruableCOFINSTaxation : String
+    <br/>Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>N</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruableCSLLTaxation : String
+    <br/>Inform if this item by nature is subject to CSLL taxation or exempt - &#39;T&#39; # TAXABLE - &#39;E&#39; # EXEMPT 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>E</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">issDueatDestination : Boolean
+    <br/>for service items with City Jurisdiction, inform where the ISS tax is due
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">pisCofinsCreditNotAllowed : Boolean
+    <br/>on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">issTaxation : String
+    <br/>- &#39;T&#39; # TAXABLE - TRIBUTÁVEL INCLUSIVE PARA EXPORTAÇÃO&#39; - &#39;E&#39; # TAXABLE WITH EXEMPTION FOR EXPORTS - ISENTO PARA SERVIÇOS PRESTADOS AO EXTERIOR (DEFAULT) - &#39;F&#39; # EXEMPT - &#39;A&#39; # SUSPENDED FOR ADMINISTRATIVE REASON - &#39;L&#39; # SUSPENDED FOR LEGAL DECISION - &#39;I&#39; # IMMUNE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>E</dd>
+            <dd>F</dd>
+            <dd>A</dd>
+            <dd>L</dd>
+            <dd>I</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">federalTaxRate : List
+    <br/>This is an array of tax object related to an agast.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">specialProductClass : String
+    <br/>
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>OTHERS</dd>
+            <dd>COMMUNICATION</dd>
+            <dd>ENERGY</dd>
+            <dd>TRANSPORT</dd>
+            <dd>FUEL AND LUBRIFICANT</dd>
+            <dd>VEHICLE</dd>
+            <dd>ALCOHOLIC BEVERAGES</dd>
+            <dd>WEAPONS</dd>
+            <dd>AMMO</dd>
+            <dd>PERFUME</dd>
+            <dd>TOBACCO</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsConf : List
+    <br/>One per State
+  </li>
+</ul>

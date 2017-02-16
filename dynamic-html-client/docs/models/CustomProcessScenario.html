@@ -1,0 +1,159 @@
+
+<h2>CustomProcessScenario</h2>
+<ul class="parameter">
+  <li class="param-required-true">code : String
+    <br/>Process code to Identify this configuration, its is unique by Accounty Id or when standard, its has priority when the code match with the standard code.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">stockImpact : Boolean
+    <br/>Inform that the process has inventory impact.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">financialImpact : Boolean
+    <br/>Inform that the process has financial impact.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cstIPI : String
+    <br/>Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>50</dd>
+            <dd>51</dd>
+            <dd>52</dd>
+            <dd>53</dd>
+            <dd>54</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">ipiLegalTaxClass : String
+    <br/>Legal tax classificação for IPI (enquadramento) When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D; 
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruablePISTaxation : String
+    <br/>Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>N</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">pisExemptLegalReasonCode : String
+    <br/>When exempt, taxable with zero, suspended, not taxable, this field holds the official code number
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">pisExemptLegalReason : String
+    <br/>When specifi reason, this field has the description
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruableCOFINSTaxation : String
+    <br/>Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>N</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cofinsExemptLegalReasonCode : String
+    <br/>When exempt, taxable with zero, suspended, not taxable, this field holds the official code number
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cofinsExemptLegalReason : String
+    <br/>When specifi reason, this field has the description
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">allowIPIcreditWhenInGoing : Boolean
+    <br/>Inform that the process allow IPI credit to Input process
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">icmsConf : List
+    <br/>the map key is state code
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">name : String
+    <br/>Process name to Identify this configuration
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">type : String
+    <br/>
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>SALES</dd>
+            <dd>PURCHASE</dd>
+            <dd>SALES_RETURN</dd>
+            <dd>PURCHASE_RETURN</dd>
+            <dd>TRANSFER_RETURN</dd>
+            <dd>SHIPPING</dd>
+            <dd>SHIPPING_RETURN</dd>
+            <dd>TRANSFER</dd>
+            <dd>RECEIPT_AJUSTE</dd>
+            <dd>TRANSFER_AJUSTE</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">wayType : String
+    <br/>inform if the transaction is an operation to internalizing (receive) item or value
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>in</dd>
+            <dd>out</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">goal : String
+    <br/>
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>Normal</dd>
+            <dd>Complementary</dd>
+            <dd>Voided</dd>
+            <dd>Replacement</dd>
+            <dd>Return</dd>
+            <dd>Adjustment</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">overWriteCFOP : Boolean
+    <br/>inform that the configuration process overwrites the cfop configuration.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cfops : List
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-true">companyId : UUID
+    <br/>Company ID
+  </li>
+</ul>

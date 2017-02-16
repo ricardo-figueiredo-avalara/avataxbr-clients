@@ -1,0 +1,9 @@
+# Br16Api.PaymentCalculatedTax
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**taxByType** | [**PaymentTaxByType**](PaymentTaxByType.md) |  | [optional] 
+**tax** | **Number** | Sum of tax type not VAT (Value Added Tax) | [optional] 
+
+

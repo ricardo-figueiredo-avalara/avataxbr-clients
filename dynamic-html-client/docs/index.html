@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-responsive.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="assets/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+  <script src="assets/js/main.js" type="text/javascript"></script>
+
+  <title>REST API Resources</title>
+</head>
+<body>
+  <div class="header">
+    <div class="top-bar">
+      <h1 id="logo"><a class="logo" href="/"><span>Swagger</span><span class="light">API Docs</span></a></h1>
+    </div>
+  </div>
+  <div class="model-container"></div>
+  <div class="content">
+    <div class="box clearfix">
+      <div class="sidebar">
+        <div class="section-box">
+          <div class="section-header">
+            Overview
+          </div>
+          <ul>
+            <li>Getting Started</li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/AGASTApi">AGASTApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/AGASTApi#agastsCodeGet">agastsCodeGet</a></li>
+            <li><a href="#!/AGASTApi#createAgast">createAgast</a></li>
+            <li><a href="#!/AGASTApi#deleteAgast">deleteAgast</a></li>
+            <li><a href="#!/AGASTApi#getAgastList">getAgastList</a></li>
+            <li><a href="#!/AGASTApi#updateAgast">updateAgast</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/AccountApi">AccountApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/AccountApi#accountsAccountIdCompaniesGet">accountsAccountIdCompaniesGet</a></li>
+            <li><a href="#!/AccountApi#createAccountCompany">createAccountCompany</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/AddressApi">AddressApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/AddressApi#getZipCode">getZipCode</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/AuthApi">AuthApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/AuthApi#authPost">authPost</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyApi">CompanyApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyApi#companiesGet">companiesGet</a></li>
+            <li><a href="#!/CompanyApi#createCompany">createCompany</a></li>
+            <li><a href="#!/CompanyApi#deleteAccountCompany">deleteAccountCompany</a></li>
+            <li><a href="#!/CompanyApi#deleteCompany">deleteCompany</a></li>
+            <li><a href="#!/CompanyApi#infoCompany">infoCompany</a></li>
+            <li><a href="#!/CompanyApi#updateCompany">updateCompany</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyAGASTApi">CompanyAGASTApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyAGASTApi#companiesCompanyIdAgastsCodeGet">companiesCompanyIdAgastsCodeGet</a></li>
+            <li><a href="#!/CompanyAGASTApi#companiesCompanyIdAgastsGet">companiesCompanyIdAgastsGet</a></li>
+            <li><a href="#!/CompanyAGASTApi#createCustomAgast">createCustomAgast</a></li>
+            <li><a href="#!/CompanyAGASTApi#deleteAgast">deleteAgast</a></li>
+            <li><a href="#!/CompanyAGASTApi#updateCustomAgast">updateCustomAgast</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyFilesApi">CompanyFilesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyFilesApi#companiesCompanyIdNfseCertificateDelete">companiesCompanyIdNfseCertificateDelete</a></li>
+            <li><a href="#!/CompanyFilesApi#companiesCompanyIdNfseCertificateGet">companiesCompanyIdNfseCertificateGet</a></li>
+            <li><a href="#!/CompanyFilesApi#companiesCompanyIdNfseCertificatePost">companiesCompanyIdNfseCertificatePost</a></li>
+            <li><a href="#!/CompanyFilesApi#companiesCompanyIdNfseCertificatePut">companiesCompanyIdNfseCertificatePut</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyICMSApi">CompanyICMSApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyICMSApi#companiesCompanyIdIcmsGet">companiesCompanyIdIcmsGet</a></li>
+            <li><a href="#!/CompanyICMSApi#companiesCompanyIdIcmsStateGet">companiesCompanyIdIcmsStateGet</a></li>
+            <li><a href="#!/CompanyICMSApi#createICMS">createICMS</a></li>
+            <li><a href="#!/CompanyICMSApi#deleteCustomIcmsConfByState">deleteCustomIcmsConfByState</a></li>
+            <li><a href="#!/CompanyICMSApi#updateCustomIcmsConfByState">updateCustomIcmsConfByState</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyItemCPOMServiceApi">CompanyItemCPOMServiceApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyItemCPOMServiceApi#companiesCompanyIdItemsCodeCpomCityCodeGet">companiesCompanyIdItemsCodeCpomCityCodeGet</a></li>
+            <li><a href="#!/CompanyItemCPOMServiceApi#companiesCompanyIdItemsCodeCpomGet">companiesCompanyIdItemsCodeCpomGet</a></li>
+            <li><a href="#!/CompanyItemCPOMServiceApi#createItemCPOM">createItemCPOM</a></li>
+            <li><a href="#!/CompanyItemCPOMServiceApi#deleteItemCPOM">deleteItemCPOM</a></li>
+            <li><a href="#!/CompanyItemCPOMServiceApi#updateItemCPOM">updateItemCPOM</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyItemGoodsApi">CompanyItemGoodsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyItemGoodsApi#companiesCompanyIdItemsCodeChangeCodePut">companiesCompanyIdItemsCodeChangeCodePut</a></li>
+            <li><a href="#!/CompanyItemGoodsApi#companiesCompanyIdItemsCodegoodsGet">companiesCompanyIdItemsCodegoodsGet</a></li>
+            <li><a href="#!/CompanyItemGoodsApi#companiesCompanyIdItemsgoodsGet">companiesCompanyIdItemsgoodsGet</a></li>
+            <li><a href="#!/CompanyItemGoodsApi#createItem">createItem</a></li>
+            <li><a href="#!/CompanyItemGoodsApi#deleteItem">deleteItem</a></li>
+            <li><a href="#!/CompanyItemGoodsApi#updateItem">updateItem</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyItemServiceApi">CompanyItemServiceApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyItemServiceApi#companiesCompanyIdItemsCodeChangeCodePut">companiesCompanyIdItemsCodeChangeCodePut</a></li>
+            <li><a href="#!/CompanyItemServiceApi#companiesCompanyIdItemsCodeserviceGet">companiesCompanyIdItemsCodeserviceGet</a></li>
+            <li><a href="#!/CompanyItemServiceApi#companiesCompanyIdItemsserviceGet">companiesCompanyIdItemsserviceGet</a></li>
+            <li><a href="#!/CompanyItemServiceApi#createItemService">createItemService</a></li>
+            <li><a href="#!/CompanyItemServiceApi#deleteItemService">deleteItemService</a></li>
+            <li><a href="#!/CompanyItemServiceApi#updateItemService">updateItemService</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyLocationApi">CompanyLocationApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyLocationApi#companiesCompanyIdLocationsCodeGet">companiesCompanyIdLocationsCodeGet</a></li>
+            <li><a href="#!/CompanyLocationApi#companiesCompanyIdLocationsGet">companiesCompanyIdLocationsGet</a></li>
+            <li><a href="#!/CompanyLocationApi#createLocation">createLocation</a></li>
+            <li><a href="#!/CompanyLocationApi#deleteLocation">deleteLocation</a></li>
+            <li><a href="#!/CompanyLocationApi#updateLocation">updateLocation</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyProcessApi">CompanyProcessApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyProcessApi#companiesCompanyIdProcessCodeGet">companiesCompanyIdProcessCodeGet</a></li>
+            <li><a href="#!/CompanyProcessApi#companiesCompanyIdProcessGet">companiesCompanyIdProcessGet</a></li>
+            <li><a href="#!/CompanyProcessApi#createCustomProcessScenario">createCustomProcessScenario</a></li>
+            <li><a href="#!/CompanyProcessApi#deleteCustomProcessScenario">deleteCustomProcessScenario</a></li>
+            <li><a href="#!/CompanyProcessApi#updateCustomProcessScenario">updateCustomProcessScenario</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/CompanyTaxRatesApi">CompanyTaxRatesApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/CompanyTaxRatesApi#companiesCompanyIdTaxratesGet">companiesCompanyIdTaxratesGet</a></li>
+            <li><a href="#!/CompanyTaxRatesApi#companiesCompanyIdTaxratesTaxTypeGet">companiesCompanyIdTaxratesTaxTypeGet</a></li>
+            <li><a href="#!/CompanyTaxRatesApi#createCustomTaxes">createCustomTaxes</a></li>
+            <li><a href="#!/CompanyTaxRatesApi#deleteCustomTaxes">deleteCustomTaxes</a></li>
+            <li><a href="#!/CompanyTaxRatesApi#updateCustomTaxes">updateCustomTaxes</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/GoodsCalculationsApi">GoodsCalculationsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/GoodsCalculationsApi#calculationsgoodsPurchasePost">calculationsgoodsPurchasePost</a></li>
+            <li><a href="#!/GoodsCalculationsApi#calculationsgoodsSalesPost">calculationsgoodsSalesPost</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/GoodsTransactionsApi">GoodsTransactionsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/GoodsTransactionsApi#transactionsgoodsPurchasePost">transactionsgoodsPurchasePost</a></li>
+            <li><a href="#!/GoodsTransactionsApi#transactionsgoodsSalesPost">transactionsgoodsSalesPost</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/InvoiceContingencyApi">InvoiceContingencyApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/InvoiceContingencyApi#invoiceDropContingency">invoiceDropContingency</a></li>
+            <li><a href="#!/InvoiceContingencyApi#invoiceSetContingency">invoiceSetContingency</a></li>
+            <li><a href="#!/InvoiceContingencyApi#invoiceVerifyContingency">invoiceVerifyContingency</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/InvoiceNFCeDANFEApi">InvoiceNFCeDANFEApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/InvoiceNFCeDANFEApi#invoicesNfceKeyGet">invoicesNfceKeyGet</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/InvoiceNFeDANFEApi">InvoiceNFeDANFEApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/InvoiceNFeDANFEApi#nfePrint">nfePrint</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/InvoiceSEFAZApi">InvoiceSEFAZApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazDelete">invoicesSefazDelete</a></li>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazKeyDelete">invoicesSefazKeyDelete</a></li>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazKeyGet">invoicesSefazKeyGet</a></li>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazKeyLookupGet">invoicesSefazKeyLookupGet</a></li>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazKeyPut">invoicesSefazKeyPut</a></li>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazPost">invoicesSefazPost</a></li>
+            <li><a href="#!/InvoiceSEFAZApi#invoicesSefazStatusGet">invoicesSefazStatusGet</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/InvoiceSettingsApi">InvoiceSettingsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/InvoiceSettingsApi#invoiceSettings">invoiceSettings</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/LegalReasonApi">LegalReasonApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/LegalReasonApi#createReason.">createReason.</a></li>
+            <li><a href="#!/LegalReasonApi#deleteReason.">deleteReason.</a></li>
+            <li><a href="#!/LegalReasonApi#getReason.">getReason.</a></li>
+            <li><a href="#!/LegalReasonApi#listReason">listReason</a></li>
+            <li><a href="#!/LegalReasonApi#updateReason.">updateReason.</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ServiceCalculationsApi">ServiceCalculationsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ServiceCalculationsApi#calculationsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeGet">calculationsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeGet</a></li>
+            <li><a href="#!/ServiceCalculationsApi#calculationsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeTransactionsPost">calculationsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeTransactionsPost</a></li>
+            <li><a href="#!/ServiceCalculationsApi#calculationsAccountAccountIdCompanyCompanyCodeTransactionTypeGet">calculationsAccountAccountIdCompanyCompanyCodeTransactionTypeGet</a></li>
+            <li><a href="#!/ServiceCalculationsApi#calculationsservicePaymentPost">calculationsservicePaymentPost</a></li>
+            <li><a href="#!/ServiceCalculationsApi#calculationsservicePurchasePost">calculationsservicePurchasePost</a></li>
+            <li><a href="#!/ServiceCalculationsApi#calculationsserviceReceiptPost">calculationsserviceReceiptPost</a></li>
+            <li><a href="#!/ServiceCalculationsApi#calculationsserviceSalesPost">calculationsserviceSalesPost</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/ServiceTransactionsApi">ServiceTransactionsApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/ServiceTransactionsApi#transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeGet">transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeGet</a></li>
+            <li><a href="#!/ServiceTransactionsApi#transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeStateTransitionsPost">transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeStateTransitionsPost</a></li>
+            <li><a href="#!/ServiceTransactionsApi#transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeGet">transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeGet</a></li>
+            <li><a href="#!/ServiceTransactionsApi#transactionsservicePaymentPost">transactionsservicePaymentPost</a></li>
+            <li><a href="#!/ServiceTransactionsApi#transactionsservicePurchasePost">transactionsservicePurchasePost</a></li>
+            <li><a href="#!/ServiceTransactionsApi#transactionsserviceReceiptPost">transactionsserviceReceiptPost</a></li>
+            <li><a href="#!/ServiceTransactionsApi#transactionsserviceSalesPost">transactionsserviceSalesPost</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/TaxConfCFOPApi">TaxConfCFOPApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/TaxConfCFOPApi#createCfop">createCfop</a></li>
+            <li><a href="#!/TaxConfCFOPApi#deleteCfop">deleteCfop</a></li>
+            <li><a href="#!/TaxConfCFOPApi#getCfop">getCfop</a></li>
+            <li><a href="#!/TaxConfCFOPApi#getCfopList">getCfopList</a></li>
+            <li><a href="#!/TaxConfCFOPApi#updateCfop">updateCfop</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/TaxConfIBPTApi">TaxConfIBPTApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/TaxConfIBPTApi#createIbptConf">createIbptConf</a></li>
+            <li><a href="#!/TaxConfIBPTApi#deleteIbptConf">deleteIbptConf</a></li>
+            <li><a href="#!/TaxConfIBPTApi#getIbptConf">getIbptConf</a></li>
+            <li><a href="#!/TaxConfIBPTApi#getIbptConfList">getIbptConfList</a></li>
+            <li><a href="#!/TaxConfIBPTApi#updateIbptConf">updateIbptConf</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/TaxConfICMSApi">TaxConfICMSApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/TaxConfICMSApi#createIcmsconfstate">createIcmsconfstate</a></li>
+            <li><a href="#!/TaxConfICMSApi#deleteIcmsConf">deleteIcmsConf</a></li>
+            <li><a href="#!/TaxConfICMSApi#getIcmsConfByState">getIcmsConfByState</a></li>
+            <li><a href="#!/TaxConfICMSApi#getIcmsList">getIcmsList</a></li>
+            <li><a href="#!/TaxConfICMSApi#getIcmsList_1">getIcmsList_1</a></li>
+            <li><a href="#!/TaxConfICMSApi#updateIcmsconfstate">updateIcmsconfstate</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/TaxConfISSApi">TaxConfISSApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/TaxConfISSApi#createIssConfByCity">createIssConfByCity</a></li>
+            <li><a href="#!/TaxConfISSApi#deleteIssConf">deleteIssConf</a></li>
+            <li><a href="#!/TaxConfISSApi#getIssConfByCity">getIssConfByCity</a></li>
+            <li><a href="#!/TaxConfISSApi#getIssList">getIssList</a></li>
+            <li><a href="#!/TaxConfISSApi#updateIssConfByCity">updateIssConfByCity</a></li>
+          </ul>
+        </div>
+        <div class="section-box">
+          <div class="section-header">
+            <a href="#!/TaxConfProcessApi">TaxConfProcessApi</a>
+          </div>
+          <ul>
+            <li><a href="#!/TaxConfProcessApi#createProcess">createProcess</a></li>
+            <li><a href="#!/TaxConfProcessApi#deleteProcess">deleteProcess</a></li>
+            <li><a href="#!/TaxConfProcessApi#getProcess">getProcess</a></li>
+            <li><a href="#!/TaxConfProcessApi#getProcessList">getProcessList</a></li>
+            <li><a href="#!/TaxConfProcessApi#updateProcess">updateProcess</a></li>
+          </ul>
+        </div>
+      </div>
+    <div class="non-sidebar">
+      <div class="main-content">
+        <h2>Getting Started</h2>
+        <p>To begin using your fancy HTTP API, follow the steps below.</p>
+        <p>You can add some helpful tips, here</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

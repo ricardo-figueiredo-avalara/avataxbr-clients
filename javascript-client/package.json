@@ -1,0 +1,18 @@
+{
+  "name": "br16___api",
+  "version": "1.0",
+  "description": "This_documentation_is_about_service_accessories_that_will_compose_the_product_BR16_this_services_are_essencial_to_maintenance_and_configuration_of_accounts",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "dependencies": {
+    "superagent": "1.7.1"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}

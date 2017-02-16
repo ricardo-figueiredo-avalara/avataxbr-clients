@@ -1,0 +1,124 @@
+
+<h2>DetailsCalculatedTaxItem</h2>
+<ul class="parameter">
+  <li class="param-required-false">locationType : String
+    <br/>This string captures the applicable location type. Location used for calc. Buyer or Seller
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">jurisdictionName : String
+    <br/>Jurisdiction used for calctax amount
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">jurisdictionType : String
+    <br/>Type of jurisdiction
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>city</dd>
+            <dd>state</dd>
+            <dd>country</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">taxType : String
+    <br/>Tax identificator
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>icms</dd>
+            <dd>icmsSt</dd>
+            <dd>icmsStSd</dd>
+            <dd>icmsPartOwn</dd>
+            <dd>icmsPartDest</dd>
+            <dd>icmsDifaFCP</dd>
+            <dd>icmsDifaDest</dd>
+            <dd>icmsDifaRemet</dd>
+            <dd>icmsRf</dd>
+            <dd>icmsDeson</dd>
+            <dd>icmsCredsn</dd>
+            <dd>pis</dd>
+            <dd>pisSt</dd>
+            <dd>cofins</dd>
+            <dd>cofinsSt</dd>
+            <dd>ipi</dd>
+            <dd>ipiReturned</dd>
+            <dd>ii</dd>
+            <dd>iof</dd>
+            <dd>aproxtribState</dd>
+            <dd>aproxtribFed</dd>
+            <dd>aproxtrib</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">rateType : String
+    <br/>Name of configuration rate
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">scenario : String
+    <br/>This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">subtotalTaxable : Double
+    <br/>This decimal captures how much of the lineAmount was taxable by this tax, calc base
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">rate : Double
+    <br/>This decimal captures the tax rate for this tax.3.00 (3%)
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">tax : Double
+    <br/>This decimal captures how much of the lineAmount was taxable by this tax
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">exemptionCode : String
+    <br/>This string is required if is exempt
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">significantLocations : List
+    <br/>This element captures the list of locations that contributed to the tax determination. for Service is Buyer and Seller Address
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">taxRuleType : String
+    <br/>This string with type of rule
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>SELLER</dd>
+            <dd>BUYER</dd>
+            <dd>TRANSACTION</dd>
+            <dd>ITEM</dd>
+            <dd>TAX</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">source : Integer
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cstB : String
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">modBC : String
+    <br/>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">cst : String
+    <br/>
+  </li>
+</ul>

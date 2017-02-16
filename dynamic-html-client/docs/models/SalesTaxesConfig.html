@@ -1,0 +1,78 @@
+
+<h2>SalesTaxesConfig</h2>
+<ul class="parameter">
+  <li class="param-required-false">accruableCOFINSTaxation : String
+    <br/>There are cases where both Seller, Buyer and items are taxable but a special situation still exists that forces the transaction to be exempt specially for PIS and COFINS.  This attribute will allow users to identify such scenarios and trigger the exemption in spite of all other settings. - &#39;T&#39; # TAXABLE - &#39;N&#39; # NOT TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;S&#39; # SPECIFIC RATE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>N</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>S</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruableCSLLTaxation : String
+    <br/>There are cases where both Seller, Buyer and items are taxable but a special situation still exists that forces the transaction to be CSLL exempt.  This attribute will allow users to identify such scenarios and trigger the exemption in spite of all other settings.  - T TAXABLE - E EXEMPT 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>E</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruablePISTaxation : String
+    <br/>There are cases where both Seller, Buyer and items are taxable but a special situation still exists that forces the transaction to be exempt specially for PIS and COFINS.  This attribute will allow users to identify such scenarios and trigger the exemption in spite of all other settings.  - &#39;T&#39; # TAXABLE - &#39;N&#39; # NOT TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;S&#39; # SPECIFIC RATE 
+      <dl class="param-enum">
+        <dt>Enum:
+            <dd>T</dd>
+            <dd>N</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>S</dd>
+        </dt>
+      </dl>
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruableCOFINSExempCodeTaxation : String
+    <br/>This is a code available by Receita Federal for reason of the exemption, When Code is 999 the User system need send the custom reason to Exemption
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">accruablePISExempCodeTaxation : String
+    <br/>This is a code available by Receita Federal for reason of the exemption, When Code is 999 the User system need send the custom reason to Exemption
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">withholdingCOFINS : Boolean
+    <br/>Support Buyer Tax Liability identifier for Federal Withholding Taxes. Each buyer may be subject/liable to withhold the following taxes independent to one another. The seller must be able to inform which Tax impacts the transaction based on a direct equivalency in the service item accrual. i.e. (The service item must be taxed by a given tax and the buyer must liable for the same tax withholding in order for the transaction to be taxable). To differentiate from the accrued taxes under the same acronyms the withholding taxes are followed by WH (this is a convention created for the sake of understanding and communicating the requirements. If false spite of all other settings.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">withholdingCSLL : Boolean
+    <br/>Support Buyer Tax Liability identifier for Federal Withholding Taxes. Each buyer may be subject/liable to withhold the following taxes independent to one another. The seller must be able to inform which Tax impacts the transaction based on a direct equivalency in the service item accrual. i.e. (The service item must be taxed by a given tax and the buyer must liable for the same tax withholding in order for the transaction to be taxable). To differentiate from the accrued taxes under the same acronyms the withholding taxes are followed by WH (this is a convention created for the sake of understanding and communicating the requirements. If false spite of all other settings.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">withholdingIRRF : Boolean
+    <br/>Support Buyer Tax Liability identifier for Federal Withholding Taxes. Each buyer may be subject/liable to withhold the following taxes independent to one another. The seller must be able to inform which Tax impacts the transaction based on a direct equivalency in the service item accrual. i.e. (The service item must be taxed by a given tax and the buyer must liable for the same tax withholding in order for the transaction to be taxable). To differentiate from the accrued taxes under the same acronyms the withholding taxes are followed by WH (this is a convention created for the sake of understanding and communicating the requirements. If false spite of all other settings.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">withholdingPIS : Boolean
+    <br/>Support Buyer Tax Liability identifier for Federal Withholding Taxes. Each buyer may be subject/liable to withhold the following taxes independent to one another. The seller must be able to inform which Tax impacts the transaction based on a direct equivalency in the service item accrual. i.e. (The service item must be taxed by a given tax and the buyer must liable for the same tax withholding in order for the transaction to be taxable). To differentiate from the accrued taxes under the same acronyms the withholding taxes are followed by WH (this is a convention created for the sake of understanding and communicating the requirements. If false spite of all other settings.
+  </li>
+</ul>
+<ul class="parameter">
+  <li class="param-required-false">withholdIRRFExemptReasonTaxation : String
+    <br/>When property withholdingIRRF is false is mandatory inform the reason
+  </li>
+</ul>
