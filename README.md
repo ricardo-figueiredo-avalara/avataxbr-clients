@@ -1,2 +1,2 @@
-# avataxbr-snippets
-Snippets for Avatax Brazil
+# avataxbr-sdk
+Clients for Avatax Brazil
