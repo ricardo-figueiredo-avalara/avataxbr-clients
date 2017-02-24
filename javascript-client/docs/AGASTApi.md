@@ -1,6 +1,6 @@
-# Br16Api.AGASTApi
+# AvaTaxBrazil.AGASTApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,9 +21,9 @@ This operation return agast configurations that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AGASTApi();
+var apiInstance = new AvaTaxBrazil.AGASTApi();
 
 var code = "code_example"; // String | Agast Code
 
@@ -67,11 +67,11 @@ This method operation create a AGAST
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AGASTApi();
+var apiInstance = new AvaTaxBrazil.AGASTApi();
 
-var body = new Br16Api.Agast(); // Agast | Transaction Message
+var body = new AvaTaxBrazil.Agast(); // Agast | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -111,9 +111,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AGASTApi();
+var apiInstance = new AvaTaxBrazil.AGASTApi();
 
 var code = "code_example"; // String | Agast Code
 
@@ -157,9 +157,9 @@ This operation return agast configurations that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AGASTApi();
+var apiInstance = new AvaTaxBrazil.AGASTApi();
 
 var opts = { 
   'text': "text_example" // String | Text query
@@ -204,13 +204,13 @@ This method operation create a agast
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AGASTApi();
+var apiInstance = new AvaTaxBrazil.AGASTApi();
 
 var code = "code_example"; // String | Agast Code
 
-var body = new Br16Api.Agast(); // Agast | Transaction Message
+var body = new AvaTaxBrazil.Agast(); // Agast | Transaction Message
 
 
 var callback = function(error, data, response) {

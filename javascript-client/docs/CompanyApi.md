@@ -1,6 +1,6 @@
-# Br16Api.CompanyApi
+# AvaTaxBrazil.CompanyApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,9 +22,9 @@ Retrieve list companies of one account
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyApi();
+var apiInstance = new AvaTaxBrazil.CompanyApi();
 
 var callback = function(error, data, response) {
   if (error) {
@@ -62,11 +62,11 @@ This method operation create a company for a account
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyApi();
+var apiInstance = new AvaTaxBrazil.CompanyApi();
 
-var body = new Br16Api.Company(); // Company | Transaction Message
+var body = new AvaTaxBrazil.Company(); // Company | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -106,9 +106,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyApi();
+var apiInstance = new AvaTaxBrazil.CompanyApi();
 
 var accountId = "accountId_example"; // String | Account ID
 
@@ -153,9 +153,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyApi();
+var apiInstance = new AvaTaxBrazil.CompanyApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -202,9 +202,9 @@ This method operation get a company for a account
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyApi();
+var apiInstance = new AvaTaxBrazil.CompanyApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -248,13 +248,13 @@ This method operation create a company for a account
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyApi();
+var apiInstance = new AvaTaxBrazil.CompanyApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
-var body = new Br16Api.Company(); // Company | Transaction Message
+var body = new AvaTaxBrazil.Company(); // Company | Transaction Message
 
 
 var callback = function(error, data, response) {

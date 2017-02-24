@@ -35,9 +35,48 @@ open class AGASTAPI: APIBase {
      - GET /agasts/{code}
      - This operation return agast configurations that match with parameters queries 
      - examples: [{contentType=application/json, example={
-  "ipiLegalTaxClass" : "aeiou",
-  "cean" : "aeiou",
-  "pisCofinsTaxReporting" : "aeiou",
+  "withholding" : {
+    "INSsForSimples" : true,
+    "INSSLegalReason" : "aeiou",
+    "INSSForSimplesLegalReason" : "aeiou",
+    "INSS" : true,
+    "COFINS" : {
+      "stateGovernment" : true,
+      "federalGovernmentLegalReason" : "aeiou",
+      "cityGovernment" : true,
+      "businessLegalReason" : "aeiou",
+      "business" : true,
+      "legalReason" : "aeiou",
+      "federalGovernment" : true,
+      "stateGovernmentLegalReason" : "aeiou",
+      "cityGovernmentLegalReason" : "aeiou"
+    },
+    "PIS" : {
+      "stateGovernment" : true,
+      "federalGovernmentLegalReason" : "aeiou",
+      "cityGovernment" : true,
+      "businessLegalReason" : "aeiou",
+      "business" : true,
+      "legalReason" : "aeiou",
+      "federalGovernment" : true,
+      "stateGovernmentLegalReason" : "aeiou",
+      "cityGovernmentLegalReason" : "aeiou"
+    },
+    "IRRFLegalReason" : "aeiou",
+    "INSSSubjectToDischarge" : true,
+    "IRRF" : true,
+    "CSLL" : {
+      "stateGovernment" : true,
+      "federalGovernmentLegalReason" : "aeiou",
+      "cityGovernment" : true,
+      "businessLegalReason" : "aeiou",
+      "business" : true,
+      "legalReason" : "aeiou",
+      "federalGovernment" : true,
+      "stateGovernmentLegalReason" : "aeiou",
+      "cityGovernmentLegalReason" : "aeiou"
+    }
+  },
   "code" : "aeiou",
   "codeType" : {
     "code" : 123,
@@ -45,40 +84,37 @@ open class AGASTAPI: APIBase {
   },
   "cstIPI" : "aeiou",
   "accruablePISTaxation" : "aeiou",
+  "cofinsExemptLegalReasonCode" : "aeiou",
   "issDueatDestination" : true,
   "description" : "aeiou",
+  "cofinsExemptLegalReason" : "aeiou",
+  "accruableCOFINSTaxation" : "aeiou",
+  "accruableCSLLTaxation" : "aeiou",
+  "icmsConf" : [ {
+    "code" : "aeiou",
+    "state" : { }
+  } ],
+  "ipiLegalTaxClass" : "aeiou",
+  "cean" : "aeiou",
+  "pisCofinsTaxReporting" : "aeiou",
+  "pisExemptLegalReasonCode" : "aeiou",
+  "csllExemptLegalReason" : "aeiou",
+  "csllExemptLegalReasonCode" : "aeiou",
   "issTaxation" : "aeiou",
   "specialProductClass" : "aeiou",
   "cest" : "aeiou",
   "federalTaxRate" : [ {
-    "withholding" : {
-      "all" : {
-        "exemptionReasonCode" : "aeiou",
-        "customExemptionReasonDescription" : "aeiou"
-      },
-      "stateGovernment" : "",
-      "cityGovernment" : "",
-      "business" : "",
-      "federalGovernment" : ""
-    },
     "specializationType" : "aeiou",
-    "exemptionReasonCode" : "aeiou",
     "taxModel" : "aeiou",
     "rate" : 1.3579000000000001069366817318950779736042022705078125,
-    "customExemptionReasonDescription" : "aeiou",
     "quantityUnidBase" : "aeiou",
     "srvAmount" : 1.3579000000000001069366817318950779736042022705078125,
     "taxType" : { }
   } ],
   "ex" : 123,
+  "pisExemptLegalReason" : "aeiou",
   "hsCode" : "aeiou",
-  "accruableCOFINSTaxation" : "aeiou",
-  "pisCofinsCreditNotAllowed" : true,
-  "accruableCSLLTaxation" : "aeiou",
-  "icmsConf" : [ {
-    "code" : "aeiou",
-    "state" : { }
-  } ]
+  "pisCofinsCreditNotAllowed" : true
 }}]
      
      - parameter code: (path) Agast Code 

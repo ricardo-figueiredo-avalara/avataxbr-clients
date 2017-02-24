@@ -1,6 +1,6 @@
-# Br16Api.TaxConfICMSApi
+# AvaTaxBrazil.TaxConfICMSApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,13 +20,13 @@ create a new ICMS Configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfICMSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfICMSApi();
 
 var state = "state_example"; // String | Brazilian State
 
-var icmsConfState = new Br16Api.IcmsConfByState(); // IcmsConfByState | The pet JSON you want to post
+var icmsConfState = new AvaTaxBrazil.IcmsConfByState(); // IcmsConfByState | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {
@@ -67,9 +67,9 @@ disable a ICMS by State.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfICMSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfICMSApi();
 
 var state = "state_example"; // String | Brazilian State
 
@@ -116,9 +116,9 @@ This operation return configurations of icms that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfICMSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfICMSApi();
 
 var state = "state_example"; // String | Brazilian State
 
@@ -165,9 +165,9 @@ This operation return ICMS configurations that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfICMSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfICMSApi();
 
 var state = "state_example"; // String | Brazilian State
 
@@ -219,9 +219,9 @@ This operation return ICMS configurations that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfICMSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfICMSApi();
 
 var text = "text_example"; // String | Search for codes
 
@@ -267,15 +267,15 @@ update a IcmsConf State,
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfICMSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfICMSApi();
 
 var state = "state_example"; // String | Brazilian State
 
 var code = "code_example"; // String | ICMS Code
 
-var icmsConfState = new Br16Api.IcmsConfByState(); // IcmsConfByState | The pet JSON you want to post
+var icmsConfState = new AvaTaxBrazil.IcmsConfByState(); // IcmsConfByState | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {

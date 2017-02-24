@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * HeaderForGoods
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class HeaderForGoods {
   /**
    * Gets or Sets messageType
@@ -550,7 +550,7 @@ public class HeaderForGoods {
    * This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) 
    * @return transactionModel
   **/
-  @ApiModelProperty(example = "null", required = true, value = "This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) ")
+  @ApiModelProperty(example = "null", value = "This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) ")
   public TransactionModelEnum getTransactionModel() {
     return transactionModel;
   }
@@ -622,7 +622,7 @@ public class HeaderForGoods {
    * This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.
    * @return entityCode
   **/
-  @ApiModelProperty(example = "null", required = true, value = "This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.")
+  @ApiModelProperty(example = "null", value = "This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.")
   public String getEntityCode() {
     return entityCode;
   }
@@ -640,7 +640,7 @@ public class HeaderForGoods {
    * currency code
    * @return currency
   **/
-  @ApiModelProperty(example = "null", required = true, value = "currency code")
+  @ApiModelProperty(example = "null", value = "currency code")
   public CurrencyEnum getCurrency() {
     return currency;
   }
@@ -676,7 +676,7 @@ public class HeaderForGoods {
    * This string is the transaction date in ISO 8601 format, create transaction date
    * @return transactionDate
   **/
-  @ApiModelProperty(example = "null", required = true, value = "This string is the transaction date in ISO 8601 format, create transaction date")
+  @ApiModelProperty(example = "null", value = "This string is the transaction date in ISO 8601 format, create transaction date")
   public String getTransactionDate() {
     return transactionDate;
   }
@@ -784,7 +784,7 @@ public class HeaderForGoods {
    * Invoice number, sequential unique by invoice serial (Número da nota fiscal)
    * @return invoiceNumber
   **/
-  @ApiModelProperty(example = "null", required = true, value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal)")
+  @ApiModelProperty(example = "null", value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal)")
   public Integer getInvoiceNumber() {
     return invoiceNumber;
   }
@@ -802,7 +802,7 @@ public class HeaderForGoods {
    * Invoice number, sequential unique by invoice serial (Número da nota fiscal) 
    * @return invoiceSerial
   **/
-  @ApiModelProperty(example = "null", required = true, value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal) ")
+  @ApiModelProperty(example = "null", value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal) ")
   public Integer getInvoiceSerial() {
     return invoiceSerial;
   }
@@ -879,7 +879,7 @@ public class HeaderForGoods {
    * Get payment
    * @return payment
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "")
   public Payment getPayment() {
     return payment;
   }

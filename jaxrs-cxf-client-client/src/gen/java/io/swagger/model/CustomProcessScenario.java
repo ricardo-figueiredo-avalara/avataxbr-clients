@@ -28,7 +28,7 @@ public class CustomProcessScenario  {
 @XmlEnum(String.class)
 public enum CstIPIEnum {
 
-    @XmlEnumValue("50") _50(String.valueOf("50")), @XmlEnumValue("51") _51(String.valueOf("51")), @XmlEnumValue("52") _52(String.valueOf("52")), @XmlEnumValue("53") _53(String.valueOf("53")), @XmlEnumValue("54") _54(String.valueOf("54"));
+    @XmlEnumValue("T") T(String.valueOf("T")), @XmlEnumValue("Z") Z(String.valueOf("Z")), @XmlEnumValue("E") E(String.valueOf("E")), @XmlEnumValue("H") H(String.valueOf("H")), @XmlEnumValue("N") N(String.valueOf("N")), @XmlEnumValue("I") I(String.valueOf("I")), @XmlEnumValue("O") O(String.valueOf("O")), @XmlEnumValue("OZ") OZ(String.valueOf("OZ"));
 
 
     private String value;
@@ -56,7 +56,7 @@ public enum CstIPIEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune ")
+  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES ")
   private CstIPIEnum cstIPI = null;
   @ApiModelProperty(example = "null", value = "Legal tax classificação for IPI (enquadramento) When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU= ")
   private String ipiLegalTaxClass = null;
@@ -65,7 +65,7 @@ public enum CstIPIEnum {
 @XmlEnum(String.class)
 public enum AccruablePISTaxationEnum {
 
-    @XmlEnumValue("T") T(String.valueOf("T")), @XmlEnumValue("Z") Z(String.valueOf("Z")), @XmlEnumValue("E") E(String.valueOf("E")), @XmlEnumValue("H") H(String.valueOf("H")), @XmlEnumValue("N") N(String.valueOf("N"));
+    @XmlEnumValue("T") T(String.valueOf("T")), @XmlEnumValue("Z") Z(String.valueOf("Z")), @XmlEnumValue("E") E(String.valueOf("E")), @XmlEnumValue("H") H(String.valueOf("H")), @XmlEnumValue("N") N(String.valueOf("N")), @XmlEnumValue("O") O(String.valueOf("O")), @XmlEnumValue("OZ") OZ(String.valueOf("OZ"));
 
 
     private String value;
@@ -93,7 +93,7 @@ public enum AccruablePISTaxationEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
+  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES ")
   private AccruablePISTaxationEnum accruablePISTaxation = null;
   @ApiModelProperty(example = "null", value = "When exempt, taxable with zero, suspended, not taxable, this field holds the official code number")
   private String pisExemptLegalReasonCode = null;
@@ -104,7 +104,7 @@ public enum AccruablePISTaxationEnum {
 @XmlEnum(String.class)
 public enum AccruableCOFINSTaxationEnum {
 
-    @XmlEnumValue("T") T(String.valueOf("T")), @XmlEnumValue("Z") Z(String.valueOf("Z")), @XmlEnumValue("E") E(String.valueOf("E")), @XmlEnumValue("H") H(String.valueOf("H")), @XmlEnumValue("N") N(String.valueOf("N"));
+    @XmlEnumValue("T") T(String.valueOf("T")), @XmlEnumValue("Z") Z(String.valueOf("Z")), @XmlEnumValue("E") E(String.valueOf("E")), @XmlEnumValue("H") H(String.valueOf("H")), @XmlEnumValue("N") N(String.valueOf("N")), @XmlEnumValue("O") O(String.valueOf("O")), @XmlEnumValue("OZ") OZ(String.valueOf("OZ"));
 
 
     private String value;
@@ -132,7 +132,7 @@ public enum AccruableCOFINSTaxationEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
+  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES ")
   private AccruableCOFINSTaxationEnum accruableCOFINSTaxation = null;
   @ApiModelProperty(example = "null", value = "When exempt, taxable with zero, suspended, not taxable, this field holds the official code number")
   private String cofinsExemptLegalReasonCode = null;
@@ -287,7 +287,7 @@ public enum GoalEnum {
     this.financialImpact = financialImpact;
   }
  /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    * @return cstIPI
   **/
   public CstIPIEnum getCstIPI() {
@@ -307,7 +307,7 @@ public enum GoalEnum {
     this.ipiLegalTaxClass = ipiLegalTaxClass;
   }
  /**
-   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
    * @return accruablePISTaxation
   **/
   public AccruablePISTaxationEnum getAccruablePISTaxation() {
@@ -337,7 +337,7 @@ public enum GoalEnum {
     this.pisExemptLegalReason = pisExemptLegalReason;
   }
  /**
-   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    * @return accruableCOFINSTaxation
   **/
   public AccruableCOFINSTaxationEnum getAccruableCOFINSTaxation() {

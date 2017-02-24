@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -152,9 +152,9 @@ class SalesTaxByTypeDetail implements ArrayAccess
         return self::$getters;
     }
 
-    const JURISDICTION_TYPE_CITY = 'city';
-    const JURISDICTION_TYPE_STATE = 'state';
-    const JURISDICTION_TYPE_COUNTRY = 'country';
+    const JURISDICTION_TYPE_CITY = 'City';
+    const JURISDICTION_TYPE_STATE = 'State';
+    const JURISDICTION_TYPE_COUNTRY = 'Country';
     const TAX_TYPE_APROXTRIB_CITY = 'aproxtribCity';
     const TAX_TYPE_APROXTRIB_FED = 'aproxtribFed';
     const TAX_TYPE_PIS = 'pis';
@@ -265,7 +265,7 @@ class SalesTaxByTypeDetail implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        $allowed_values = ["city", "state", "country"];
+        $allowed_values = ["City", "State", "Country"];
         if (!in_array($this->container['jurisdiction_type'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'jurisdiction_type', must be one of #{allowed_values}.";
         }
@@ -291,7 +291,7 @@ class SalesTaxByTypeDetail implements ArrayAccess
      */
     public function valid()
     {
-        $allowed_values = ["city", "state", "country"];
+        $allowed_values = ["City", "State", "Country"];
         if (!in_array($this->container['jurisdiction_type'], $allowed_values)) {
             return false;
         }
@@ -360,14 +360,14 @@ class SalesTaxByTypeDetail implements ArrayAccess
 
     /**
      * Sets jurisdiction_type
-     * @param string $jurisdiction_type Type of jurisdiction - 'city' - 'state' - 'country'
+     * @param string $jurisdiction_type Type of jurisdiction - 'City' - 'State' - 'Country'
      * @return $this
      */
     public function setJurisdictionType($jurisdiction_type)
     {
-        $allowed_values = array('city', 'state', 'country');
+        $allowed_values = array('City', 'State', 'Country');
         if (!is_null($jurisdiction_type) && (!in_array($jurisdiction_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'jurisdiction_type', must be one of 'city', 'state', 'country'");
+            throw new \InvalidArgumentException("Invalid value for 'jurisdiction_type', must be one of 'City', 'State', 'Country'");
         }
         $this->container['jurisdiction_type'] = $jurisdiction_type;
 

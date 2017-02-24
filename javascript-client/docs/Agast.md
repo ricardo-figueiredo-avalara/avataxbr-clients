@@ -1,4 +1,4 @@
-# Br16Api.Agast
+# AvaTaxBrazil.Agast
 
 ## Properties
 Name | Type | Description | Notes
@@ -10,12 +10,19 @@ Name | Type | Description | Notes
 **cest** | **String** | tax substitution code - Codigo especificador da Substuicao Tributaria | [optional] 
 **cean** | **String** | GTIN NUMBER | [optional] 
 **codeType** | [**AgastCodeType**](AgastCodeType.md) |  | [optional] 
-**cstIPI** | **String** | Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune  | [optional] 
+**cstIPI** | **String** | Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE  | [optional] 
 **ipiLegalTaxClass** | **String** | Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;  | [optional] 
 **pisCofinsTaxReporting** | **String** | when the company is Real Profit inform if this item is cumulative or no cumulative by default | [optional] 
 **accruablePISTaxation** | **String** | Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE  | [optional] 
+**pisExemptLegalReasonCode** | **String** | When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption | [optional] 
+**pisExemptLegalReason** | **String** | When specified a reason, this field holds the reason&#39;s description | [optional] 
 **accruableCOFINSTaxation** | **String** | Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE  | [optional] 
+**cofinsExemptLegalReasonCode** | **String** | When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption | [optional] 
+**cofinsExemptLegalReason** | **String** | When specified a reason, this field holds the reason&#39;s description | [optional] 
 **accruableCSLLTaxation** | **String** | Inform if this item by nature is subject to CSLL taxation or exempt - &#39;T&#39; # TAXABLE - &#39;E&#39; # EXEMPT  | [optional] 
+**csllExemptLegalReason** | **String** |  | [optional] 
+**csllExemptLegalReasonCode** | **String** |  | [optional] 
+**withholding** | [**AgastWithholding**](AgastWithholding.md) |  | [optional] 
 **issDueatDestination** | **Boolean** | for service items with City Jurisdiction, inform where the ISS tax is due | [optional] 
 **pisCofinsCreditNotAllowed** | **Boolean** | on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative | [optional] 
 **issTaxation** | **String** | - &#39;T&#39; # TAXABLE - TRIBUTÁVEL INCLUSIVE PARA EXPORTAÇÃO&#39; - &#39;E&#39; # TAXABLE WITH EXEMPTION FOR EXPORTS - ISENTO PARA SERVIÇOS PRESTADOS AO EXTERIOR (DEFAULT) - &#39;F&#39; # EXEMPT - &#39;A&#39; # SUSPENDED FOR ADMINISTRATIVE REASON - &#39;L&#39; # SUSPENDED FOR LEGAL DECISION - &#39;I&#39; # IMMUNE  | [optional] 
@@ -28,15 +35,15 @@ Name | Type | Description | Notes
 ## Enum: CstIPIEnum
 
 
-* `50` (value: `"50"`)
+* `T` (value: `"T"`)
 
-* `51` (value: `"51"`)
+* `Z` (value: `"Z"`)
 
-* `52` (value: `"52"`)
+* `E` (value: `"E"`)
 
-* `53` (value: `"53"`)
+* `N` (value: `"N"`)
 
-* `54` (value: `"54"`)
+* `I` (value: `"I"`)
 
 
 

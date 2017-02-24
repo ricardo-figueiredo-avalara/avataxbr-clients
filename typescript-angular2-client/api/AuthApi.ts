@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -27,7 +27,7 @@ import { Configuration }                                     from '../configurat
 
 @Injectable()
 export class AuthApi {
-    protected basePath = 'https://br16-dev-app03.br.avalara.com/v2';
+    protected basePath = 'http://avataxbr-sandbox.avalarabrasil.com.br/v2';
     public defaultHeaders: Headers = new Headers();
     public configuration: Configuration = new Configuration();
 
@@ -58,10 +58,26 @@ export class AuthApi {
     /**
      * authorization
      * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-     * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
      */
     public authPost(authorization: string, extraHttpRequestParams?: any): Observable<models.InlineResponse200> {
         return this.authPostWithHttpInfo(authorization, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json();
+                }
+            });
+    }
+
+    /**
+     * authorization
+     * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+     */
+    public v2AuthPost(authorization: string, extraHttpRequestParams?: any): Observable<models.InlineResponse200> {
+        return this.v2AuthPostWithHttpInfo(authorization, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
                     return undefined;
@@ -75,7 +91,7 @@ export class AuthApi {
     /**
      * authorization
      * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-     * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
      */
     public authPostWithHttpInfo(authorization: string, extraHttpRequestParams?: any): Observable<Response> {
         const path = this.basePath + `/auth`;
@@ -85,6 +101,51 @@ export class AuthApi {
         // verify required parameter 'authorization' is not null or undefined
         if (authorization === null || authorization === undefined) {
             throw new Error('Required parameter authorization was null or undefined when calling authPost.');
+        }
+
+        headers.set('Authorization', String(authorization));
+
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            'application/json'
+        ];
+        
+            
+
+
+
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Post,
+            headers: headers,
+            search: queryParameters
+        });
+        
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = this.extendObj(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * authorization
+     * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+     */
+    public v2AuthPostWithHttpInfo(authorization: string, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + `/v2/auth`;
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+        // verify required parameter 'authorization' is not null or undefined
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling v2AuthPost.');
         }
 
         headers.set('Authorization', String(authorization));

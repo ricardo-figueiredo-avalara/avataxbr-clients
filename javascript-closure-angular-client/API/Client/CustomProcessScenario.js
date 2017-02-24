@@ -27,7 +27,7 @@ API.Client.CustomProcessScenario.prototype.stockImpact;
 API.Client.CustomProcessScenario.prototype.financialImpact;
 
 /**
- * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+ * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
  * @type {!string}
  * @export
  */
@@ -41,7 +41,7 @@ API.Client.CustomProcessScenario.prototype.cstIPI;
 API.Client.CustomProcessScenario.prototype.ipiLegalTaxClass;
 
 /**
- * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+ * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
  * @type {!string}
  * @export
  */
@@ -62,7 +62,7 @@ API.Client.CustomProcessScenario.prototype.pisExemptLegalReasonCode;
 API.Client.CustomProcessScenario.prototype.pisExemptLegalReason;
 
 /**
- * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+ * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
  * @type {!string}
  * @export
  */
@@ -144,11 +144,14 @@ API.Client.CustomProcessScenario.prototype.companyId;
 
 /** @enum {string} */
 API.Client.CustomProcessScenario.CstIPIEnum = { 
-  50: '50',
-  51: '51',
-  52: '52',
-  53: '53',
-  54: '54',
+  T: 'T',
+  Z: 'Z',
+  E: 'E',
+  H: 'H',
+  N: 'N',
+  I: 'I',
+  O: 'O',
+  OZ: 'OZ',
 }
 /** @enum {string} */
 API.Client.CustomProcessScenario.AccruablePISTaxationEnum = { 
@@ -157,6 +160,8 @@ API.Client.CustomProcessScenario.AccruablePISTaxationEnum = {
   E: 'E',
   H: 'H',
   N: 'N',
+  O: 'O',
+  OZ: 'OZ',
 }
 /** @enum {string} */
 API.Client.CustomProcessScenario.AccruableCOFINSTaxationEnum = { 
@@ -165,6 +170,8 @@ API.Client.CustomProcessScenario.AccruableCOFINSTaxationEnum = {
   E: 'E',
   H: 'H',
   N: 'N',
+  O: 'O',
+  OZ: 'OZ',
 }
 /** @enum {string} */
 API.Client.CustomProcessScenario.TypeEnum = { 

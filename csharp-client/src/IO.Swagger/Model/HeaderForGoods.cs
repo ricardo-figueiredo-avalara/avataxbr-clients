@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -476,25 +476,25 @@ namespace IO.Swagger.Model
         /// <param name="NfAccessKey">This is the public NF id. With this number is possible get invoice information directly from government..</param>
         /// <param name="NfceQrCode">qr code printed on DANFE;.</param>
         /// <param name="TransactionType">This string indicates the type of transaction for which tax should be calculated. (required).</param>
-        /// <param name="TransactionModel">This string indicates the type of transaction for which tax should be calculated. - &#39;01&#39; # Nota Fiscal 1/1A - &#39;1B&#39; # Nota Fiscal Avulsa - &#39;02&#39; # Nota Fiscal de Venda a-Consumidor - &#39;2D&#39; # Cupom Fiscal - &#39;2E&#39; # Cupom Fiscal-Bilhete de Passagem - &#39;04&#39; # Nota Fiscal de Produtor - &#39;06&#39; # Nota Fiscal/Conta de Energia Elétrica - &#39;07&#39; # Nota Fiscal de Serviço de Transporte - &#39;08&#39; # Conhecimento de Transporte Rodoviário de-Cargas - &#39;8B&#39; # Conhecimento de Transporte de-Cargas Avulso - &#39;09&#39; # Conhecimento de Transporte Aquaviário de-Cargas - &#39;10&#39; # Conhecimento Aéreo - &#39;11&#39; # Conhecimento de Transporte Ferroviário de-Cargas - &#39;13&#39; # Bilhete de Passagem Rodoviário - &#39;14&#39; # Bilhete de Passagem Aquaviário - &#39;15&#39; # Bilhete de Passagem e-Nota de-Bagagem - &#39;16&#39; # Bilhete de Passagem Ferroviário - &#39;18&#39; # Resumo de Movimento Diário - &#39;21&#39; # Nota Fiscal de Serviço de-Comunicação - &#39;22&#39; # Nota Fiscal de Serviço de Telecomunicação - &#39;26&#39; # Conhecimento de Transporte Multimodal de-Cargas - &#39;27&#39; # Nota Fiscal De Transporte Ferroviário De-Carga - &#39;28&#39; # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - &#39;29&#39; # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - &#39;55&#39; # Nota Fiscal Eletrônica (NF-e) - &#39;57&#39; # Conhecimento de Transporte Eletrônico (CT-e) - &#39;59&#39; # Cupom Fiscal Eletrônico (CF-e-SAT) - &#39;60&#39; # Cupom Fiscal Eletrônico (CF-e-ECF) - &#39;65&#39; # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e)  (required).</param>
+        /// <param name="TransactionModel">This string indicates the type of transaction for which tax should be calculated. - &#39;01&#39; # Nota Fiscal 1/1A - &#39;1B&#39; # Nota Fiscal Avulsa - &#39;02&#39; # Nota Fiscal de Venda a-Consumidor - &#39;2D&#39; # Cupom Fiscal - &#39;2E&#39; # Cupom Fiscal-Bilhete de Passagem - &#39;04&#39; # Nota Fiscal de Produtor - &#39;06&#39; # Nota Fiscal/Conta de Energia Elétrica - &#39;07&#39; # Nota Fiscal de Serviço de Transporte - &#39;08&#39; # Conhecimento de Transporte Rodoviário de-Cargas - &#39;8B&#39; # Conhecimento de Transporte de-Cargas Avulso - &#39;09&#39; # Conhecimento de Transporte Aquaviário de-Cargas - &#39;10&#39; # Conhecimento Aéreo - &#39;11&#39; # Conhecimento de Transporte Ferroviário de-Cargas - &#39;13&#39; # Bilhete de Passagem Rodoviário - &#39;14&#39; # Bilhete de Passagem Aquaviário - &#39;15&#39; # Bilhete de Passagem e-Nota de-Bagagem - &#39;16&#39; # Bilhete de Passagem Ferroviário - &#39;18&#39; # Resumo de Movimento Diário - &#39;21&#39; # Nota Fiscal de Serviço de-Comunicação - &#39;22&#39; # Nota Fiscal de Serviço de Telecomunicação - &#39;26&#39; # Conhecimento de Transporte Multimodal de-Cargas - &#39;27&#39; # Nota Fiscal De Transporte Ferroviário De-Carga - &#39;28&#39; # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - &#39;29&#39; # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - &#39;55&#39; # Nota Fiscal Eletrônica (NF-e) - &#39;57&#39; # Conhecimento de Transporte Eletrônico (CT-e) - &#39;59&#39; # Cupom Fiscal Eletrônico (CF-e-SAT) - &#39;60&#39; # Cupom Fiscal Eletrônico (CF-e-ECF) - &#39;65&#39; # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) .</param>
         /// <param name="TransactionClass">Natureza da Opreração - &#39;Describe kind of this transaction, summary.</param>
         /// <param name="EDocCreatorType">EDocCreatorType (required).</param>
         /// <param name="EDocCreatorPerspective">This Flag is used only when eDocCreatorType is other and the return show Taxes using eDocCreator perspective or self perspective. (default to true).</param>
-        /// <param name="EntityCode">This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company. (required).</param>
-        /// <param name="Currency">currency code (required).</param>
+        /// <param name="EntityCode">This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company..</param>
+        /// <param name="Currency">currency code.</param>
         /// <param name="CompanyLocation">This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity (required).</param>
-        /// <param name="TransactionDate">This string is the transaction date in ISO 8601 format, create transaction date (required).</param>
+        /// <param name="TransactionDate">This string is the transaction date in ISO 8601 format, create transaction date.</param>
         /// <param name="ShippingDate">This string is the transaction date in ISO 8601 format, when products were shipped, can be empty or absent.</param>
         /// <param name="AdditionalInfo">AdditionalInfo.</param>
         /// <param name="TpImp">how the document will be printed - &#39;0&#39; # without DANFE; - &#39;1&#39; # DANFe Letter; - &#39;2&#39; # DANFe Landscape; - &#39;3&#39; # DANFe Simplified; - &#39;4&#39; # DANFe NFC-e; - &#39;5&#39; # DANFe NFC-e e-mail .</param>
         /// <param name="IdDest">This indicator inform transaction target place, when is AUTOMATIC the company address and entity address are analyzed to identify type of transaction target place 1- same state; 2 - interstate; 3-with exterior. Exist some cases where is necessary force this situation like when buyer from another state buy something in loco, the address are from different states, but transaction no.  Identificador de Local de destino da operação, na opção AUTOMATIC endereços da Companhia e da entidade destino são analisados para saber se é uma operação dentro do mesmo estado, interestadual ou com o exterior. Há situações onde é necessário forçar este indicador como por exemplo  Quando uma pessoa com endereço em outro estado, compra uma mercadoria de forma presencial, é uma operação interna apesar dos endereços dos envolvidos estarem em estados distintos. - 0 # AUTOMATIC - DEFAULT - 1 # Interna; - 2 # Interestadual; - 3 # Exterior) .</param>
         /// <param name="IndPres">Presence indicator - &#39;0&#39; # Not applicable - &#39;1&#39; # Presential; - &#39;2&#39; # Remote, internet; - &#39;3&#39; # Remote, phone; - &#39;4&#39; # NFC-e home delivery; - &#39;9&#39; # Remote, others .</param>
-        /// <param name="InvoiceNumber">Invoice number, sequential unique by invoice serial (Número da nota fiscal) (required).</param>
-        /// <param name="InvoiceSerial">Invoice number, sequential unique by invoice serial (Número da nota fiscal)  (required).</param>
+        /// <param name="InvoiceNumber">Invoice number, sequential unique by invoice serial (Número da nota fiscal).</param>
+        /// <param name="InvoiceSerial">Invoice number, sequential unique by invoice serial (Número da nota fiscal) .</param>
         /// <param name="DefaultLocations">DefaultLocations.</param>
         /// <param name="Transport">Shipment.</param>
         /// <param name="NfRef">Transactions or other invoices referenced.</param>
-        /// <param name="Payment">Payment (required).</param>
+        /// <param name="Payment">Payment.</param>
         /// <param name="PurchaseInfo">PurchaseInfo.</param>
         /// <param name="Export">Export.</param>
         public HeaderForGoods(MessageTypeEnum? MessageType = "goods", string AccountId = default(string), string CompanyCode = default(string), string DocumentCode = default(string), HeaderForGoodsParticipants Participants = default(HeaderForGoodsParticipants), string NfAccessKey = default(string), string NfceQrCode = default(string), TransactionTypeEnum? TransactionType = default(TransactionTypeEnum?), TransactionModelEnum? TransactionModel = default(TransactionModelEnum?), string TransactionClass = default(string), EDocCreatorTypeEnum? EDocCreatorType = default(EDocCreatorTypeEnum?), bool? EDocCreatorPerspective = true, string EntityCode = default(string), CurrencyEnum? Currency = default(CurrencyEnum?), string CompanyLocation = default(string), string TransactionDate = default(string), string ShippingDate = default(string), AdditionalInformation AdditionalInfo = default(AdditionalInformation), TpImpEnum? TpImp = default(TpImpEnum?), int? IdDest = default(int?), IndPresEnum? IndPres = default(IndPresEnum?), int? InvoiceNumber = default(int?), int? InvoiceSerial = default(int?), DefaultLocations DefaultLocations = default(DefaultLocations), Transport Transport = default(Transport), List<NRef> NfRef = default(List<NRef>), Payment Payment = default(Payment), PurchaseInfo PurchaseInfo = default(PurchaseInfo), ExportInfo Export = default(ExportInfo))
@@ -526,15 +526,6 @@ namespace IO.Swagger.Model
             {
                 this.TransactionType = TransactionType;
             }
-            // to ensure "TransactionModel" is required (not null)
-            if (TransactionModel == null)
-            {
-                throw new InvalidDataException("TransactionModel is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.TransactionModel = TransactionModel;
-            }
             // to ensure "EDocCreatorType" is required (not null)
             if (EDocCreatorType == null)
             {
@@ -544,24 +535,6 @@ namespace IO.Swagger.Model
             {
                 this.EDocCreatorType = EDocCreatorType;
             }
-            // to ensure "EntityCode" is required (not null)
-            if (EntityCode == null)
-            {
-                throw new InvalidDataException("EntityCode is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.EntityCode = EntityCode;
-            }
-            // to ensure "Currency" is required (not null)
-            if (Currency == null)
-            {
-                throw new InvalidDataException("Currency is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.Currency = Currency;
-            }
             // to ensure "CompanyLocation" is required (not null)
             if (CompanyLocation == null)
             {
@@ -570,42 +543,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.CompanyLocation = CompanyLocation;
-            }
-            // to ensure "TransactionDate" is required (not null)
-            if (TransactionDate == null)
-            {
-                throw new InvalidDataException("TransactionDate is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.TransactionDate = TransactionDate;
-            }
-            // to ensure "InvoiceNumber" is required (not null)
-            if (InvoiceNumber == null)
-            {
-                throw new InvalidDataException("InvoiceNumber is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.InvoiceNumber = InvoiceNumber;
-            }
-            // to ensure "InvoiceSerial" is required (not null)
-            if (InvoiceSerial == null)
-            {
-                throw new InvalidDataException("InvoiceSerial is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.InvoiceSerial = InvoiceSerial;
-            }
-            // to ensure "Payment" is required (not null)
-            if (Payment == null)
-            {
-                throw new InvalidDataException("Payment is a required property for HeaderForGoods and cannot be null");
-            }
-            else
-            {
-                this.Payment = Payment;
             }
             // use default value if no "MessageType" provided
             if (MessageType == null)
@@ -620,6 +557,7 @@ namespace IO.Swagger.Model
             this.Participants = Participants;
             this.NfAccessKey = NfAccessKey;
             this.NfceQrCode = NfceQrCode;
+            this.TransactionModel = TransactionModel;
             this.TransactionClass = TransactionClass;
             // use default value if no "EDocCreatorPerspective" provided
             if (EDocCreatorPerspective == null)
@@ -630,14 +568,20 @@ namespace IO.Swagger.Model
             {
                 this.EDocCreatorPerspective = EDocCreatorPerspective;
             }
+            this.EntityCode = EntityCode;
+            this.Currency = Currency;
+            this.TransactionDate = TransactionDate;
             this.ShippingDate = ShippingDate;
             this.AdditionalInfo = AdditionalInfo;
             this.TpImp = TpImp;
             this.IdDest = IdDest;
             this.IndPres = IndPres;
+            this.InvoiceNumber = InvoiceNumber;
+            this.InvoiceSerial = InvoiceSerial;
             this.DefaultLocations = DefaultLocations;
             this.Transport = Transport;
             this.NfRef = NfRef;
+            this.Payment = Payment;
             this.PurchaseInfo = PurchaseInfo;
             this.Export = Export;
         }

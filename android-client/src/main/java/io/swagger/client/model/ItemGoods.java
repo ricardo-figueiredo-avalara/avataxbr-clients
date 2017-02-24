@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -59,8 +59,6 @@ public class ItemGoods {
   private PiscofinsRevenueTypeEnum piscofinsRevenueType = null;
   @SerializedName("icmsBaseDiscountForMonoPhaseSocialContr")
   private Double icmsBaseDiscountForMonoPhaseSocialContr = null;
-  @SerializedName("cest")
-  private String cest = null;
   @SerializedName("cean")
   private String cean = null;
   @SerializedName("nve")
@@ -253,17 +251,6 @@ public class ItemGoods {
   }
 
   /**
-   * tax substitution code - Codigo especificador da Substuicao Tributaria
-   **/
-  @ApiModelProperty(value = "tax substitution code - Codigo especificador da Substuicao Tributaria")
-  public String getCest() {
-    return cest;
-  }
-  public void setCest(String cest) {
-    this.cest = cest;
-  }
-
-  /**
    * GTIN NUMBER
    **/
   @ApiModelProperty(value = "GTIN NUMBER")
@@ -429,7 +416,6 @@ public class ItemGoods {
         (this.isPisCofinsEstimatedCredit == null ? itemGoods.isPisCofinsEstimatedCredit == null : this.isPisCofinsEstimatedCredit.equals(itemGoods.isPisCofinsEstimatedCredit)) &&
         (this.piscofinsRevenueType == null ? itemGoods.piscofinsRevenueType == null : this.piscofinsRevenueType.equals(itemGoods.piscofinsRevenueType)) &&
         (this.icmsBaseDiscountForMonoPhaseSocialContr == null ? itemGoods.icmsBaseDiscountForMonoPhaseSocialContr == null : this.icmsBaseDiscountForMonoPhaseSocialContr.equals(itemGoods.icmsBaseDiscountForMonoPhaseSocialContr)) &&
-        (this.cest == null ? itemGoods.cest == null : this.cest.equals(itemGoods.cest)) &&
         (this.cean == null ? itemGoods.cean == null : this.cean.equals(itemGoods.cean)) &&
         (this.nve == null ? itemGoods.nve == null : this.nve.equals(itemGoods.nve)) &&
         (this.salesUnit == null ? itemGoods.salesUnit == null : this.salesUnit.equals(itemGoods.salesUnit)) &&
@@ -463,7 +449,6 @@ public class ItemGoods {
     result = 31 * result + (this.isPisCofinsEstimatedCredit == null ? 0: this.isPisCofinsEstimatedCredit.hashCode());
     result = 31 * result + (this.piscofinsRevenueType == null ? 0: this.piscofinsRevenueType.hashCode());
     result = 31 * result + (this.icmsBaseDiscountForMonoPhaseSocialContr == null ? 0: this.icmsBaseDiscountForMonoPhaseSocialContr.hashCode());
-    result = 31 * result + (this.cest == null ? 0: this.cest.hashCode());
     result = 31 * result + (this.cean == null ? 0: this.cean.hashCode());
     result = 31 * result + (this.nve == null ? 0: this.nve.hashCode());
     result = 31 * result + (this.salesUnit == null ? 0: this.salesUnit.hashCode());
@@ -500,7 +485,6 @@ public class ItemGoods {
     sb.append("  isPisCofinsEstimatedCredit: ").append(isPisCofinsEstimatedCredit).append("\n");
     sb.append("  piscofinsRevenueType: ").append(piscofinsRevenueType).append("\n");
     sb.append("  icmsBaseDiscountForMonoPhaseSocialContr: ").append(icmsBaseDiscountForMonoPhaseSocialContr).append("\n");
-    sb.append("  cest: ").append(cest).append("\n");
     sb.append("  cean: ").append(cean).append("\n");
     sb.append("  nve: ").append(nve).append("\n");
     sb.append("  salesUnit: ").append(salesUnit).append("\n");

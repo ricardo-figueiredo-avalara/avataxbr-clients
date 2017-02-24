@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -76,7 +76,7 @@ describe 'Agast' do
   describe 'test attribute "cst_ipi"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["50", "51", "52", "53", "54"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["T", "Z", "E", "N", "I"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.cst_ipi = value }.not_to raise_error
        #end
@@ -109,6 +109,18 @@ describe 'Agast' do
     end
   end
 
+  describe 'test attribute "pis_exempt_legal_reason_code"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "pis_exempt_legal_reason"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "accruable_cofins_taxation"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -119,6 +131,18 @@ describe 'Agast' do
     end
   end
 
+  describe 'test attribute "cofins_exempt_legal_reason_code"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "cofins_exempt_legal_reason"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "accruable_csll_taxation"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -126,6 +150,24 @@ describe 'Agast' do
        #validator.allowable_values.each do |value|
        #  expect { @instance.accruable_csll_taxation = value }.not_to raise_error
        #end
+    end
+  end
+
+  describe 'test attribute "csll_exempt_legal_reason"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "csll_exempt_legal_reason_code"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "withholding"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 

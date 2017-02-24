@@ -7,7 +7,7 @@
 import Foundation
 
 public class SwaggerClientAPI {
-    public static var basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    public static var basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     public static var credential: NSURLCredential?
     public static var customHeaders: [String:String] = [:]  
     static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()

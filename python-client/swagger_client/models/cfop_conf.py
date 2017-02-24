@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    BR16 - API
+    AvaTax Brazil
 
-    This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+    The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
     OpenAPI spec version: 1.0
     
@@ -195,7 +195,7 @@ class CfopConf(object):
     def cst_ipi(self):
         """
         Gets the cst_ipi of this CfopConf.
-        Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+        Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
 
         :return: The cst_ipi of this CfopConf.
         :rtype: str
@@ -206,12 +206,12 @@ class CfopConf(object):
     def cst_ipi(self, cst_ipi):
         """
         Sets the cst_ipi of this CfopConf.
-        Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+        Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
 
         :param cst_ipi: The cst_ipi of this CfopConf.
         :type: str
         """
-        allowed_values = ["50", "51", "52", "53", "54"]
+        allowed_values = ["T", "Z", "E", "H", "N", "I", "O", "OZ"]
         if cst_ipi not in allowed_values:
             raise ValueError(
                 "Invalid value for `cst_ipi` ({0}), must be one of {1}"
@@ -247,7 +247,7 @@ class CfopConf(object):
     def accruable_pis_taxation(self):
         """
         Gets the accruable_pis_taxation of this CfopConf.
-        Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
 
         :return: The accruable_pis_taxation of this CfopConf.
         :rtype: str
@@ -258,12 +258,12 @@ class CfopConf(object):
     def accruable_pis_taxation(self, accruable_pis_taxation):
         """
         Sets the accruable_pis_taxation of this CfopConf.
-        Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
 
         :param accruable_pis_taxation: The accruable_pis_taxation of this CfopConf.
         :type: str
         """
-        allowed_values = ["T", "Z", "E", "H", "N"]
+        allowed_values = ["T", "Z", "E", "H", "N", "O", "OZ"]
         if accruable_pis_taxation not in allowed_values:
             raise ValueError(
                 "Invalid value for `accruable_pis_taxation` ({0}), must be one of {1}"
@@ -326,7 +326,7 @@ class CfopConf(object):
     def accruable_cofins_taxation(self):
         """
         Gets the accruable_cofins_taxation of this CfopConf.
-        Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
 
         :return: The accruable_cofins_taxation of this CfopConf.
         :rtype: str
@@ -337,12 +337,12 @@ class CfopConf(object):
     def accruable_cofins_taxation(self, accruable_cofins_taxation):
         """
         Sets the accruable_cofins_taxation of this CfopConf.
-        Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
 
         :param accruable_cofins_taxation: The accruable_cofins_taxation of this CfopConf.
         :type: str
         """
-        allowed_values = ["T", "Z", "E", "H", "N"]
+        allowed_values = ["T", "Z", "E", "H", "N", "O", "OZ"]
         if accruable_cofins_taxation not in allowed_values:
             raise ValueError(
                 "Invalid value for `accruable_cofins_taxation` ({0}), must be one of {1}"

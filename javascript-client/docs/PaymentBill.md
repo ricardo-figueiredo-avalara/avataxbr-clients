@@ -1,4 +1,4 @@
-# Br16Api.PaymentBill
+# AvaTaxBrazil.PaymentBill
 
 ## Properties
 Name | Type | Description | Notes

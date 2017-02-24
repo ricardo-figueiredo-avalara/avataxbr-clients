@@ -1,6 +1,6 @@
-# Br16Api.CompanyFilesApi
+# AvaTaxBrazil.CompanyFilesApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,9 +20,9 @@ Deletes a company file store.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyFilesApi();
+var apiInstance = new AvaTaxBrazil.CompanyFilesApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -69,9 +69,9 @@ Gets an existing NFSe certificate file for this company.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyFilesApi();
+var apiInstance = new AvaTaxBrazil.CompanyFilesApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -122,13 +122,13 @@ If it still not exists, uploads a new NFSe Certificate file for this company. Se
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyFilesApi();
+var apiInstance = new AvaTaxBrazil.CompanyFilesApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
-var body = new Br16Api.Body3(); // Body3 | Content
+var body = new AvaTaxBrazil.Body3(); // Body3 | Content
 
 
 var callback = function(error, data, response) {
@@ -171,15 +171,15 @@ Updates an existing NFSe certificate file for this company. Send the file as a b
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyFilesApi();
+var apiInstance = new AvaTaxBrazil.CompanyFilesApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
 var companyId2 = "companyId_example"; // String | Company ID
 
-var body = new Br16Api.Body2(); // Body2 | Content
+var body = new AvaTaxBrazil.Body2(); // Body2 | Content
 
 
 var callback = function(error, data, response) {

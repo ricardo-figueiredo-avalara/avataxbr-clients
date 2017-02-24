@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.NRefRefECF();
+    instance = new AvaTaxBrazil.NRefRefECF();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('NRefRefECF', function() {
     it('should create an instance of NRefRefECF', function() {
       // uncomment below and update the code to test NRefRefECF
-      //var instane = new Br16Api.NRefRefECF();
-      //expect(instance).to.be.a(Br16Api.NRefRefECF);
+      //var instane = new AvaTaxBrazil.NRefRefECF();
+      //expect(instance).to.be.a(AvaTaxBrazil.NRefRefECF);
     });
 
     it('should have the property nECF (base name: "nECF")', function() {
       // uncomment below and update the code to test the property nECF
-      //var instane = new Br16Api.NRefRefECF();
+      //var instane = new AvaTaxBrazil.NRefRefECF();
       //expect(instance).to.be();
     });
 
     it('should have the property nCOO (base name: "nCOO")', function() {
       // uncomment below and update the code to test the property nCOO
-      //var instane = new Br16Api.NRefRefECF();
+      //var instane = new AvaTaxBrazil.NRefRefECF();
       //expect(instance).to.be();
     });
 
     it('should have the property modECF (base name: "modECF")', function() {
       // uncomment below and update the code to test the property modECF
-      //var instane = new Br16Api.NRefRefECF();
+      //var instane = new AvaTaxBrazil.NRefRefECF();
       //expect(instance).to.be();
     });
 

@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -20,7 +20,7 @@ module SwaggerClient
     # Jurisdiction used for calctax amount
     attr_accessor :jurisdiction_name
 
-    # Type of jurisdiction - 'city' - 'state' - 'country' 
+    # Type of jurisdiction - 'City' - 'State' - 'Country' 
     attr_accessor :jurisdiction_type
 
     # Tax identificator - 'pis' - 'pisRf' - 'cofins' - 'cofinsRf' - 'csll' - 'csllRf' - 'irrf' - 'inssAr' - 'inssRf' - 'issRf' 
@@ -187,7 +187,7 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      jurisdiction_type_validator = EnumAttributeValidator.new('String', ["city", "state", "country"])
+      jurisdiction_type_validator = EnumAttributeValidator.new('String', ["City", "State", "Country"])
       return false unless jurisdiction_type_validator.valid?(@jurisdiction_type)
       tax_type_validator = EnumAttributeValidator.new('String', ["pis", "pisRf", "cofins", "cofinsRf", "csll", "csllRf", "irrf", "inssAr", "inssRf", "issRf"])
       return false unless tax_type_validator.valid?(@tax_type)
@@ -199,7 +199,7 @@ module SwaggerClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] jurisdiction_type Object to be assigned
     def jurisdiction_type=(jurisdiction_type)
-      validator = EnumAttributeValidator.new('String', ["city", "state", "country"])
+      validator = EnumAttributeValidator.new('String', ["City", "State", "Country"])
       unless validator.valid?(jurisdiction_type)
         fail ArgumentError, "invalid value for 'jurisdiction_type', must be one of #{validator.allowable_values}."
       end

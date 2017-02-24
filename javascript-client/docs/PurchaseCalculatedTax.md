@@ -1,4 +1,4 @@
-# Br16Api.PurchaseCalculatedTax
+# AvaTaxBrazil.PurchaseCalculatedTax
 
 ## Properties
 Name | Type | Description | Notes

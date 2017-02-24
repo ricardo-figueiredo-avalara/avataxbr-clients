@@ -1,6 +1,6 @@
-# Br16Api.AccountApi
+# AvaTaxBrazil.AccountApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,9 +18,9 @@ Retrieve list companies of one account
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AccountApi();
+var apiInstance = new AvaTaxBrazil.AccountApi();
 
 var accountId = "accountId_example"; // String | Account ID
 
@@ -64,13 +64,13 @@ This method operation create a company for a account
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.AccountApi();
+var apiInstance = new AvaTaxBrazil.AccountApi();
 
 var accountId = "accountId_example"; // String | Account ID
 
-var body = new Br16Api.Body(); // Body | Company Code
+var body = new AvaTaxBrazil.Body(); // Body | Company Code
 
 
 var callback = function(error, data, response) {

@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,29 +30,29 @@ namespace IO.Swagger.Model
     public partial class SalesTaxByTypeDetail :  IEquatable<SalesTaxByTypeDetail>, IValidatableObject
     {
         /// <summary>
-        /// Type of jurisdiction - 'city' - 'state' - 'country' 
+        /// Type of jurisdiction - 'City' - 'State' - 'Country' 
         /// </summary>
-        /// <value>Type of jurisdiction - 'city' - 'state' - 'country' </value>
+        /// <value>Type of jurisdiction - 'City' - 'State' - 'Country' </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JurisdictionTypeEnum
         {
             
             /// <summary>
-            /// Enum City for "city"
+            /// Enum City for "City"
             /// </summary>
-            [EnumMember(Value = "city")]
+            [EnumMember(Value = "City")]
             City,
             
             /// <summary>
-            /// Enum State for "state"
+            /// Enum State for "State"
             /// </summary>
-            [EnumMember(Value = "state")]
+            [EnumMember(Value = "State")]
             State,
             
             /// <summary>
-            /// Enum Country for "country"
+            /// Enum Country for "Country"
             /// </summary>
-            [EnumMember(Value = "country")]
+            [EnumMember(Value = "Country")]
             Country
         }
 
@@ -189,9 +189,9 @@ namespace IO.Swagger.Model
         }
 
         /// <summary>
-        /// Type of jurisdiction - 'city' - 'state' - 'country' 
+        /// Type of jurisdiction - 'City' - 'State' - 'Country' 
         /// </summary>
-        /// <value>Type of jurisdiction - 'city' - 'state' - 'country' </value>
+        /// <value>Type of jurisdiction - 'City' - 'State' - 'Country' </value>
         [DataMember(Name="jurisdictionType", EmitDefaultValue=false)]
         public JurisdictionTypeEnum? JurisdictionType { get; set; }
         /// <summary>
@@ -211,7 +211,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="LocationType">This string captures the applicable location type. Location used for calc. Buyer or Seller.</param>
         /// <param name="JurisdictionName">Jurisdiction used for calctax amount.</param>
-        /// <param name="JurisdictionType">Type of jurisdiction - &#39;city&#39; - &#39;state&#39; - &#39;country&#39; .</param>
+        /// <param name="JurisdictionType">Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39; .</param>
         /// <param name="TaxType">Tax identificator - &#39;aproxtribCity&#39; - &#39;aproxtribFed&#39; - &#39;pis&#39; - &#39;pisRf&#39; - &#39;cofins&#39; - &#39;cofinsRf&#39; - &#39;csll&#39; - &#39;csllRf&#39; - &#39;irrf&#39; - &#39;inss&#39; - &#39;inssRf&#39; - &#39;iss&#39; - &#39;issRf&#39; - &#39;irpj&#39; .</param>
         /// <param name="RateType">Name of configuration rate.</param>
         /// <param name="Scenario">This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in..</param>

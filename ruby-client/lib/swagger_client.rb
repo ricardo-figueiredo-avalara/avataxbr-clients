@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -24,6 +24,10 @@ require 'swagger_client/models/agast'
 require 'swagger_client/models/agast_code_type'
 require 'swagger_client/models/agast_extend_for_sefaz'
 require 'swagger_client/models/agast_icms_conf'
+require 'swagger_client/models/agast_withholding'
+require 'swagger_client/models/agast_withholding_cofins'
+require 'swagger_client/models/agast_withholding_csll'
+require 'swagger_client/models/agast_withholding_pis'
 require 'swagger_client/models/body'
 require 'swagger_client/models/body_1'
 require 'swagger_client/models/body_2'
@@ -186,7 +190,6 @@ require 'swagger_client/models/tax_by_type_tax'
 require 'swagger_client/models/tax_conf'
 require 'swagger_client/models/tax_type'
 require 'swagger_client/models/tax_type_rate'
-require 'swagger_client/models/tax_type_rate_withholding'
 require 'swagger_client/models/transaction_for_goods_in'
 require 'swagger_client/models/transaction_for_goods_out'
 require 'swagger_client/models/transaction_for_sefaz_goods'
@@ -198,7 +201,6 @@ require 'swagger_client/models/vehicle'
 require 'swagger_client/models/vehicle_id'
 require 'swagger_client/models/vehicle_transp'
 require 'swagger_client/models/weapon'
-require 'swagger_client/models/withhold_def'
 require 'swagger_client/models/withholding_mode'
 
 # APIs

@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -24,9 +24,9 @@ using System.ComponentModel.DataAnnotations;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// Tax Rate
+    /// Tax Rate Obs: AR - \"a recolher\" (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço) 
     /// </summary>
-    /// <value>Tax Rate</value>
+    /// <value>Tax Rate Obs: AR - \"a recolher\" (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço) </value>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum TaxType
     {
@@ -42,6 +42,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [EnumMember(Value = "INSS_RF")]
         INSSRF,
+        
+        /// <summary>
+        /// Enum INSSAR for "INSS_AR"
+        /// </summary>
+        [EnumMember(Value = "INSS_AR")]
+        INSSAR,
         
         /// <summary>
         /// Enum IRRF for "IRRF"
@@ -62,6 +68,18 @@ namespace IO.Swagger.Model
         PISRF,
         
         /// <summary>
+        /// Enum PISRP for "PIS_RP"
+        /// </summary>
+        [EnumMember(Value = "PIS_RP")]
+        PISRP,
+        
+        /// <summary>
+        /// Enum PISPP for "PIS_PP"
+        /// </summary>
+        [EnumMember(Value = "PIS_PP")]
+        PISPP,
+        
+        /// <summary>
         /// Enum COFINS for "COFINS"
         /// </summary>
         [EnumMember(Value = "COFINS")]
@@ -74,6 +92,18 @@ namespace IO.Swagger.Model
         COFINSRF,
         
         /// <summary>
+        /// Enum COFINSRP for "COFINS_RP"
+        /// </summary>
+        [EnumMember(Value = "COFINS_RP")]
+        COFINSRP,
+        
+        /// <summary>
+        /// Enum COFINSPP for "COFINS_PP"
+        /// </summary>
+        [EnumMember(Value = "COFINS_PP")]
+        COFINSPP,
+        
+        /// <summary>
         /// Enum CSLL for "CSLL"
         /// </summary>
         [EnumMember(Value = "CSLL")]
@@ -84,6 +114,18 @@ namespace IO.Swagger.Model
         /// </summary>
         [EnumMember(Value = "CSLL_RF")]
         CSLLRF,
+        
+        /// <summary>
+        /// Enum CSLLPP for "CSLL_PP"
+        /// </summary>
+        [EnumMember(Value = "CSLL_PP")]
+        CSLLPP,
+        
+        /// <summary>
+        /// Enum CSLLRP for "CSLL_RP"
+        /// </summary>
+        [EnumMember(Value = "CSLL_RP")]
+        CSLLRP,
         
         /// <summary>
         /// Enum IRPJ for "IRPJ"

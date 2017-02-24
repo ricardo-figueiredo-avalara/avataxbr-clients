@@ -1,4 +1,4 @@
-# Br16Api.InformerForGoodsCsts
+# AvaTaxBrazil.InformerForGoodsCsts
 
 ## Properties
 Name | Type | Description | Notes

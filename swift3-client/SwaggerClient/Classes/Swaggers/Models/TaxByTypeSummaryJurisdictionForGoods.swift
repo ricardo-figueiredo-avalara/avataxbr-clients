@@ -16,7 +16,7 @@ open class TaxByTypeSummaryJurisdictionForGoods: JSONEncodable {
     }
     /** Jurisdiction used for calctax amount */
     public var jurisdictionName: String?
-    /** Type of jurisdiction */
+    /** Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  */
     public var jurisdictionType: JurisdictionType?
     /** sum of referenced tax value by jurisdiction */
     public var tax: Double?

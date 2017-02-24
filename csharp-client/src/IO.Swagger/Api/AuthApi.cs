@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -31,7 +31,7 @@ namespace IO.Swagger.Api
         /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>InlineResponse200</returns>
         InlineResponse200 AuthPost (string authorization);
 
@@ -42,9 +42,30 @@ namespace IO.Swagger.Api
         /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>ApiResponse of InlineResponse200</returns>
         ApiResponse<InlineResponse200> AuthPostWithHttpInfo (string authorization);
+        /// <summary>
+        /// authorization
+        /// </summary>
+        /// <remarks>
+        /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>InlineResponse200</returns>
+        InlineResponse200 V2AuthPost (string authorization);
+
+        /// <summary>
+        /// authorization
+        /// </summary>
+        /// <remarks>
+        /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        ApiResponse<InlineResponse200> V2AuthPostWithHttpInfo (string authorization);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -54,7 +75,7 @@ namespace IO.Swagger.Api
         /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>Task of InlineResponse200</returns>
         System.Threading.Tasks.Task<InlineResponse200> AuthPostAsync (string authorization);
 
@@ -65,9 +86,30 @@ namespace IO.Swagger.Api
         /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>Task of ApiResponse (InlineResponse200)</returns>
         System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> AuthPostAsyncWithHttpInfo (string authorization);
+        /// <summary>
+        /// authorization
+        /// </summary>
+        /// <remarks>
+        /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>Task of InlineResponse200</returns>
+        System.Threading.Tasks.Task<InlineResponse200> V2AuthPostAsync (string authorization);
+
+        /// <summary>
+        /// authorization
+        /// </summary>
+        /// <remarks>
+        /// Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> V2AuthPostAsyncWithHttpInfo (string authorization);
         #endregion Asynchronous Operations
     }
 
@@ -184,7 +226,7 @@ namespace IO.Swagger.Api
         /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>InlineResponse200</returns>
         public InlineResponse200 AuthPost (string authorization)
         {
@@ -196,7 +238,7 @@ namespace IO.Swagger.Api
         /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>ApiResponse of InlineResponse200</returns>
         public ApiResponse< InlineResponse200 > AuthPostWithHttpInfo (string authorization)
         {
@@ -255,7 +297,7 @@ namespace IO.Swagger.Api
         /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>Task of InlineResponse200</returns>
         public async System.Threading.Tasks.Task<InlineResponse200> AuthPostAsync (string authorization)
         {
@@ -268,7 +310,7 @@ namespace IO.Swagger.Api
         /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>Task of ApiResponse (InlineResponse200)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> AuthPostAsyncWithHttpInfo (string authorization)
         {
@@ -314,6 +356,149 @@ namespace IO.Swagger.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("AuthPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<InlineResponse200>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse200) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
+            
+        }
+
+        /// <summary>
+        /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>InlineResponse200</returns>
+        public InlineResponse200 V2AuthPost (string authorization)
+        {
+             ApiResponse<InlineResponse200> localVarResponse = V2AuthPostWithHttpInfo(authorization);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>ApiResponse of InlineResponse200</returns>
+        public ApiResponse< InlineResponse200 > V2AuthPostWithHttpInfo (string authorization)
+        {
+            // verify the required parameter 'authorization' is set
+            if (authorization == null)
+                throw new ApiException(400, "Missing required parameter 'authorization' when calling AuthApi->V2AuthPost");
+
+            var localVarPath = "/v2/auth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V2AuthPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<InlineResponse200>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse200) Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
+            
+        }
+
+        /// <summary>
+        /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>Task of InlineResponse200</returns>
+        public async System.Threading.Tasks.Task<InlineResponse200> V2AuthPostAsync (string authorization)
+        {
+             ApiResponse<InlineResponse200> localVarResponse = await V2AuthPostAsyncWithHttpInfo(authorization);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>Task of ApiResponse (InlineResponse200)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> V2AuthPostAsyncWithHttpInfo (string authorization)
+        {
+            // verify the required parameter 'authorization' is set
+            if (authorization == null)
+                throw new ApiException(400, "Missing required parameter 'authorization' when calling AuthApi->V2AuthPost");
+
+            var localVarPath = "/v2/auth";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (authorization != null) localVarHeaderParams.Add("Authorization", Configuration.ApiClient.ParameterToString(authorization)); // header parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("V2AuthPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 

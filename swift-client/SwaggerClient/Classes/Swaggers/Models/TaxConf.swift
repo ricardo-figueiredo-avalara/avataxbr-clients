@@ -10,11 +10,14 @@ import Foundation
 
 public class TaxConf: JSONEncodable {
     public enum CstIPI: String { 
-        case Number50 = "50"
-        case Number51 = "51"
-        case Number52 = "52"
-        case Number53 = "53"
-        case Number54 = "54"
+        case T = "T"
+        case Z = "Z"
+        case E = "E"
+        case H = "H"
+        case N = "N"
+        case I = "I"
+        case O = "O"
+        case Oz = "OZ"
     }
     public enum AccruablePISTaxation: String { 
         case T = "T"
@@ -22,6 +25,8 @@ public class TaxConf: JSONEncodable {
         case E = "E"
         case H = "H"
         case N = "N"
+        case O = "O"
+        case Oz = "OZ"
     }
     public enum AccruableCOFINSTaxation: String { 
         case T = "T"
@@ -29,6 +34,8 @@ public class TaxConf: JSONEncodable {
         case E = "E"
         case H = "H"
         case N = "N"
+        case O = "O"
+        case Oz = "OZ"
     }
     /** main unique identificator */
     public var code: String?
@@ -36,17 +43,17 @@ public class TaxConf: JSONEncodable {
     public var stockImpact: Bool?
     /** Inform that the process has financial impact. */
     public var financialImpact: Bool?
-    /** Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune  */
+    /** Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES  */
     public var cstIPI: CstIPI?
     /** Legal tax classificação for IPI (enquadramento) When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;  */
     public var ipiLegalTaxClass: String?
-    /** Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE  */
+    /** Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE - &#39;O&#39; # OTHER - &#39;OZ&#39;# OTHER AND ZERO VALUES  */
     public var accruablePISTaxation: AccruablePISTaxation?
     /** When exempt, taxable with zero, suspended, not taxable, this field holds the official code number */
     public var pisExemptLegalReasonCode: String?
     /** When specifi reason, this field has the description */
     public var pisExemptLegalReason: String?
-    /** Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE  */
+    /** Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES  */
     public var accruableCOFINSTaxation: AccruableCOFINSTaxation?
     /** When exempt, taxable with zero, suspended, not taxable, this field holds the official code number */
     public var cofinsExemptLegalReasonCode: String?

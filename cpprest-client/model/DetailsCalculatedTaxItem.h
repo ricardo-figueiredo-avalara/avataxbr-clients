@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -70,7 +70,7 @@ public:
     bool jurisdictionNameIsSet() const;
     void unsetJurisdictionName();
     /// <summary>
-    /// Type of jurisdiction
+    /// Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39; 
     /// </summary>
     utility::string_t getJurisdictionType() const;
     void setJurisdictionType(utility::string_t value);

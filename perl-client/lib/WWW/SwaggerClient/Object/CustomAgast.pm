@@ -1,8 +1,8 @@
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -42,9 +42,9 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -194,7 +194,7 @@ __PACKAGE__->method_documentation({
     'cst_ipi' => {
     	datatype => 'string',
     	base_name => 'cstIPI',
-    	description => 'Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune ',
+    	description => 'Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE ',
     	format => '',
     	read_only => '',
     		},
@@ -219,6 +219,20 @@ __PACKAGE__->method_documentation({
     	format => '',
     	read_only => '',
     		},
+    'pis_exempt_legal_reason_code' => {
+    	datatype => 'string',
+    	base_name => 'pisExemptLegalReasonCode',
+    	description => 'When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption',
+    	format => '',
+    	read_only => '',
+    		},
+    'pis_exempt_legal_reason' => {
+    	datatype => 'string',
+    	base_name => 'pisExemptLegalReason',
+    	description => 'When specified a reason, this field holds the reason&#39;s description',
+    	format => '',
+    	read_only => '',
+    		},
     'accruable_cofins_taxation' => {
     	datatype => 'string',
     	base_name => 'accruableCOFINSTaxation',
@@ -226,10 +240,45 @@ __PACKAGE__->method_documentation({
     	format => '',
     	read_only => '',
     		},
+    'cofins_exempt_legal_reason_code' => {
+    	datatype => 'string',
+    	base_name => 'cofinsExemptLegalReasonCode',
+    	description => 'When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption',
+    	format => '',
+    	read_only => '',
+    		},
+    'cofins_exempt_legal_reason' => {
+    	datatype => 'string',
+    	base_name => 'cofinsExemptLegalReason',
+    	description => 'When specified a reason, this field holds the reason&#39;s description',
+    	format => '',
+    	read_only => '',
+    		},
     'accruable_csll_taxation' => {
     	datatype => 'string',
     	base_name => 'accruableCSLLTaxation',
     	description => 'Inform if this item by nature is subject to CSLL taxation or exempt - &#39;T&#39; # TAXABLE - &#39;E&#39; # EXEMPT ',
+    	format => '',
+    	read_only => '',
+    		},
+    'csll_exempt_legal_reason' => {
+    	datatype => 'string',
+    	base_name => 'csllExemptLegalReason',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'csll_exempt_legal_reason_code' => {
+    	datatype => 'string',
+    	base_name => 'csllExemptLegalReasonCode',
+    	description => '',
+    	format => '',
+    	read_only => '',
+    		},
+    'withholding' => {
+    	datatype => 'AgastWithholding',
+    	base_name => 'withholding',
+    	description => '',
     	format => '',
     	read_only => '',
     		},
@@ -296,8 +345,15 @@ __PACKAGE__->swagger_types( {
     'ipi_legal_tax_class' => 'string',
     'pis_cofins_tax_reporting' => 'string',
     'accruable_pis_taxation' => 'string',
+    'pis_exempt_legal_reason_code' => 'string',
+    'pis_exempt_legal_reason' => 'string',
     'accruable_cofins_taxation' => 'string',
+    'cofins_exempt_legal_reason_code' => 'string',
+    'cofins_exempt_legal_reason' => 'string',
     'accruable_csll_taxation' => 'string',
+    'csll_exempt_legal_reason' => 'string',
+    'csll_exempt_legal_reason_code' => 'string',
+    'withholding' => 'AgastWithholding',
     'iss_dueat_destination' => 'boolean',
     'pis_cofins_credit_not_allowed' => 'boolean',
     'iss_taxation' => 'string',
@@ -319,8 +375,15 @@ __PACKAGE__->attribute_map( {
     'ipi_legal_tax_class' => 'ipiLegalTaxClass',
     'pis_cofins_tax_reporting' => 'pisCofinsTaxReporting',
     'accruable_pis_taxation' => 'accruablePISTaxation',
+    'pis_exempt_legal_reason_code' => 'pisExemptLegalReasonCode',
+    'pis_exempt_legal_reason' => 'pisExemptLegalReason',
     'accruable_cofins_taxation' => 'accruableCOFINSTaxation',
+    'cofins_exempt_legal_reason_code' => 'cofinsExemptLegalReasonCode',
+    'cofins_exempt_legal_reason' => 'cofinsExemptLegalReason',
     'accruable_csll_taxation' => 'accruableCSLLTaxation',
+    'csll_exempt_legal_reason' => 'csllExemptLegalReason',
+    'csll_exempt_legal_reason_code' => 'csllExemptLegalReasonCode',
+    'withholding' => 'withholding',
     'iss_dueat_destination' => 'issDueatDestination',
     'pis_cofins_credit_not_allowed' => 'pisCofinsCreditNotAllowed',
     'iss_taxation' => 'issTaxation',

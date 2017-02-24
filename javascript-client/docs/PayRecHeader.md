@@ -1,4 +1,4 @@
-# Br16Api.PayRecHeader
+# AvaTaxBrazil.PayRecHeader
 
 ## Properties
 Name | Type | Description | Notes

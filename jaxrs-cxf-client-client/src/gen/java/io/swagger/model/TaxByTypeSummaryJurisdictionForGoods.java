@@ -47,7 +47,7 @@ public enum JurisdictionTypeEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", value = "Type of jurisdiction")
+  @ApiModelProperty(example = "null", value = "Type of jurisdiction - 'City' - 'State' - 'Country' ")
   private JurisdictionTypeEnum jurisdictionType = null;
   @ApiModelProperty(example = "null", value = "sum of referenced tax value by jurisdiction")
   private Double tax = null;
@@ -63,7 +63,7 @@ public enum JurisdictionTypeEnum {
     this.jurisdictionName = jurisdictionName;
   }
  /**
-   * Type of jurisdiction
+   * Type of jurisdiction - 'City' - 'State' - 'Country' 
    * @return jurisdictionType
   **/
   public JurisdictionTypeEnum getJurisdictionType() {

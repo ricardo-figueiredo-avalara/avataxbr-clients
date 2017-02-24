@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -32,7 +32,7 @@ type Agast struct {
 
 	CodeType AgastCodeType `json:"codeType,omitempty"`
 
-	// Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+	// Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
 	CstIPI string `json:"cstIPI,omitempty"`
 
 	// Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU= 
@@ -44,11 +44,29 @@ type Agast struct {
 	// Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
 	AccruablePISTaxation string `json:"accruablePISTaxation,omitempty"`
 
+	// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+	PisExemptLegalReasonCode string `json:"pisExemptLegalReasonCode,omitempty"`
+
+	// When specified a reason, this field holds the reason's description
+	PisExemptLegalReason string `json:"pisExemptLegalReason,omitempty"`
+
 	// Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
 	AccruableCOFINSTaxation string `json:"accruableCOFINSTaxation,omitempty"`
 
+	// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+	CofinsExemptLegalReasonCode string `json:"cofinsExemptLegalReasonCode,omitempty"`
+
+	// When specified a reason, this field holds the reason's description
+	CofinsExemptLegalReason string `json:"cofinsExemptLegalReason,omitempty"`
+
 	// Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
 	AccruableCSLLTaxation string `json:"accruableCSLLTaxation,omitempty"`
+
+	CsllExemptLegalReason string `json:"csllExemptLegalReason,omitempty"`
+
+	CsllExemptLegalReasonCode string `json:"csllExemptLegalReasonCode,omitempty"`
+
+	Withholding AgastWithholding `json:"withholding,omitempty"`
 
 	// for service items with City Jurisdiction, inform where the ISS tax is due
 	IssDueatDestination bool `json:"issDueatDestination,omitempty"`

@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,6 +20,7 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.Agast;
 import io.swagger.client.model.AgastCodeType;
 import io.swagger.client.model.AgastIcmsConf;
+import io.swagger.client.model.AgastWithholding;
 import io.swagger.client.model.TaxTypeRate;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ import java.util.List;
 /**
  * CustomAgast
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class CustomAgast {
   @SerializedName("code")
   private String code = null;
@@ -51,23 +52,23 @@ public class CustomAgast {
   private AgastCodeType codeType = null;
 
   /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
    */
   public enum CstIPIEnum {
-    @SerializedName("50")
-    _50("50"),
+    @SerializedName("T")
+    T("T"),
     
-    @SerializedName("51")
-    _51("51"),
+    @SerializedName("Z")
+    Z("Z"),
     
-    @SerializedName("52")
-    _52("52"),
+    @SerializedName("E")
+    E("E"),
     
-    @SerializedName("53")
-    _53("53"),
+    @SerializedName("N")
+    N("N"),
     
-    @SerializedName("54")
-    _54("54");
+    @SerializedName("I")
+    I("I");
 
     private String value;
 
@@ -146,6 +147,12 @@ public class CustomAgast {
   @SerializedName("accruablePISTaxation")
   private AccruablePISTaxationEnum accruablePISTaxation = null;
 
+  @SerializedName("pisExemptLegalReasonCode")
+  private String pisExemptLegalReasonCode = null;
+
+  @SerializedName("pisExemptLegalReason")
+  private String pisExemptLegalReason = null;
+
   /**
    * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
    */
@@ -180,6 +187,12 @@ public class CustomAgast {
   @SerializedName("accruableCOFINSTaxation")
   private AccruableCOFINSTaxationEnum accruableCOFINSTaxation = null;
 
+  @SerializedName("cofinsExemptLegalReasonCode")
+  private String cofinsExemptLegalReasonCode = null;
+
+  @SerializedName("cofinsExemptLegalReason")
+  private String cofinsExemptLegalReason = null;
+
   /**
    * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
    */
@@ -204,6 +217,15 @@ public class CustomAgast {
 
   @SerializedName("accruableCSLLTaxation")
   private AccruableCSLLTaxationEnum accruableCSLLTaxation = null;
+
+  @SerializedName("csllExemptLegalReason")
+  private String csllExemptLegalReason = null;
+
+  @SerializedName("csllExemptLegalReasonCode")
+  private String csllExemptLegalReasonCode = null;
+
+  @SerializedName("withholding")
+  private AgastWithholding withholding = null;
 
   @SerializedName("issDueatDestination")
   private Boolean issDueatDestination = null;
@@ -441,10 +463,10 @@ public class CustomAgast {
   }
 
    /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
    * @return cstIPI
   **/
-  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune ")
+  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE ")
   public CstIPIEnum getCstIPI() {
     return cstIPI;
   }
@@ -507,6 +529,42 @@ public class CustomAgast {
     this.accruablePISTaxation = accruablePISTaxation;
   }
 
+  public CustomAgast pisExemptLegalReasonCode(String pisExemptLegalReasonCode) {
+    this.pisExemptLegalReasonCode = pisExemptLegalReasonCode;
+    return this;
+  }
+
+   /**
+   * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+   * @return pisExemptLegalReasonCode
+  **/
+  @ApiModelProperty(example = "null", value = "When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption")
+  public String getPisExemptLegalReasonCode() {
+    return pisExemptLegalReasonCode;
+  }
+
+  public void setPisExemptLegalReasonCode(String pisExemptLegalReasonCode) {
+    this.pisExemptLegalReasonCode = pisExemptLegalReasonCode;
+  }
+
+  public CustomAgast pisExemptLegalReason(String pisExemptLegalReason) {
+    this.pisExemptLegalReason = pisExemptLegalReason;
+    return this;
+  }
+
+   /**
+   * When specified a reason, this field holds the reason's description
+   * @return pisExemptLegalReason
+  **/
+  @ApiModelProperty(example = "null", value = "When specified a reason, this field holds the reason's description")
+  public String getPisExemptLegalReason() {
+    return pisExemptLegalReason;
+  }
+
+  public void setPisExemptLegalReason(String pisExemptLegalReason) {
+    this.pisExemptLegalReason = pisExemptLegalReason;
+  }
+
   public CustomAgast accruableCOFINSTaxation(AccruableCOFINSTaxationEnum accruableCOFINSTaxation) {
     this.accruableCOFINSTaxation = accruableCOFINSTaxation;
     return this;
@@ -525,6 +583,42 @@ public class CustomAgast {
     this.accruableCOFINSTaxation = accruableCOFINSTaxation;
   }
 
+  public CustomAgast cofinsExemptLegalReasonCode(String cofinsExemptLegalReasonCode) {
+    this.cofinsExemptLegalReasonCode = cofinsExemptLegalReasonCode;
+    return this;
+  }
+
+   /**
+   * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+   * @return cofinsExemptLegalReasonCode
+  **/
+  @ApiModelProperty(example = "null", value = "When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption")
+  public String getCofinsExemptLegalReasonCode() {
+    return cofinsExemptLegalReasonCode;
+  }
+
+  public void setCofinsExemptLegalReasonCode(String cofinsExemptLegalReasonCode) {
+    this.cofinsExemptLegalReasonCode = cofinsExemptLegalReasonCode;
+  }
+
+  public CustomAgast cofinsExemptLegalReason(String cofinsExemptLegalReason) {
+    this.cofinsExemptLegalReason = cofinsExemptLegalReason;
+    return this;
+  }
+
+   /**
+   * When specified a reason, this field holds the reason's description
+   * @return cofinsExemptLegalReason
+  **/
+  @ApiModelProperty(example = "null", value = "When specified a reason, this field holds the reason's description")
+  public String getCofinsExemptLegalReason() {
+    return cofinsExemptLegalReason;
+  }
+
+  public void setCofinsExemptLegalReason(String cofinsExemptLegalReason) {
+    this.cofinsExemptLegalReason = cofinsExemptLegalReason;
+  }
+
   public CustomAgast accruableCSLLTaxation(AccruableCSLLTaxationEnum accruableCSLLTaxation) {
     this.accruableCSLLTaxation = accruableCSLLTaxation;
     return this;
@@ -541,6 +635,60 @@ public class CustomAgast {
 
   public void setAccruableCSLLTaxation(AccruableCSLLTaxationEnum accruableCSLLTaxation) {
     this.accruableCSLLTaxation = accruableCSLLTaxation;
+  }
+
+  public CustomAgast csllExemptLegalReason(String csllExemptLegalReason) {
+    this.csllExemptLegalReason = csllExemptLegalReason;
+    return this;
+  }
+
+   /**
+   * Get csllExemptLegalReason
+   * @return csllExemptLegalReason
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getCsllExemptLegalReason() {
+    return csllExemptLegalReason;
+  }
+
+  public void setCsllExemptLegalReason(String csllExemptLegalReason) {
+    this.csllExemptLegalReason = csllExemptLegalReason;
+  }
+
+  public CustomAgast csllExemptLegalReasonCode(String csllExemptLegalReasonCode) {
+    this.csllExemptLegalReasonCode = csllExemptLegalReasonCode;
+    return this;
+  }
+
+   /**
+   * Get csllExemptLegalReasonCode
+   * @return csllExemptLegalReasonCode
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getCsllExemptLegalReasonCode() {
+    return csllExemptLegalReasonCode;
+  }
+
+  public void setCsllExemptLegalReasonCode(String csllExemptLegalReasonCode) {
+    this.csllExemptLegalReasonCode = csllExemptLegalReasonCode;
+  }
+
+  public CustomAgast withholding(AgastWithholding withholding) {
+    this.withholding = withholding;
+    return this;
+  }
+
+   /**
+   * Get withholding
+   * @return withholding
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public AgastWithholding getWithholding() {
+    return withholding;
+  }
+
+  public void setWithholding(AgastWithholding withholding) {
+    this.withholding = withholding;
   }
 
   public CustomAgast issDueatDestination(Boolean issDueatDestination) {
@@ -700,8 +848,15 @@ public class CustomAgast {
         Objects.equals(this.ipiLegalTaxClass, customAgast.ipiLegalTaxClass) &&
         Objects.equals(this.pisCofinsTaxReporting, customAgast.pisCofinsTaxReporting) &&
         Objects.equals(this.accruablePISTaxation, customAgast.accruablePISTaxation) &&
+        Objects.equals(this.pisExemptLegalReasonCode, customAgast.pisExemptLegalReasonCode) &&
+        Objects.equals(this.pisExemptLegalReason, customAgast.pisExemptLegalReason) &&
         Objects.equals(this.accruableCOFINSTaxation, customAgast.accruableCOFINSTaxation) &&
+        Objects.equals(this.cofinsExemptLegalReasonCode, customAgast.cofinsExemptLegalReasonCode) &&
+        Objects.equals(this.cofinsExemptLegalReason, customAgast.cofinsExemptLegalReason) &&
         Objects.equals(this.accruableCSLLTaxation, customAgast.accruableCSLLTaxation) &&
+        Objects.equals(this.csllExemptLegalReason, customAgast.csllExemptLegalReason) &&
+        Objects.equals(this.csllExemptLegalReasonCode, customAgast.csllExemptLegalReasonCode) &&
+        Objects.equals(this.withholding, customAgast.withholding) &&
         Objects.equals(this.issDueatDestination, customAgast.issDueatDestination) &&
         Objects.equals(this.pisCofinsCreditNotAllowed, customAgast.pisCofinsCreditNotAllowed) &&
         Objects.equals(this.issTaxation, customAgast.issTaxation) &&
@@ -713,7 +868,7 @@ public class CustomAgast {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, description, hsCode, ex, cest, cean, codeType, cstIPI, ipiLegalTaxClass, pisCofinsTaxReporting, accruablePISTaxation, accruableCOFINSTaxation, accruableCSLLTaxation, issDueatDestination, pisCofinsCreditNotAllowed, issTaxation, federalTaxRate, specialProductClass, icmsConf, companyId);
+    return Objects.hash(code, description, hsCode, ex, cest, cean, codeType, cstIPI, ipiLegalTaxClass, pisCofinsTaxReporting, accruablePISTaxation, pisExemptLegalReasonCode, pisExemptLegalReason, accruableCOFINSTaxation, cofinsExemptLegalReasonCode, cofinsExemptLegalReason, accruableCSLLTaxation, csllExemptLegalReason, csllExemptLegalReasonCode, withholding, issDueatDestination, pisCofinsCreditNotAllowed, issTaxation, federalTaxRate, specialProductClass, icmsConf, companyId);
   }
 
 
@@ -733,8 +888,15 @@ public class CustomAgast {
     sb.append("    ipiLegalTaxClass: ").append(toIndentedString(ipiLegalTaxClass)).append("\n");
     sb.append("    pisCofinsTaxReporting: ").append(toIndentedString(pisCofinsTaxReporting)).append("\n");
     sb.append("    accruablePISTaxation: ").append(toIndentedString(accruablePISTaxation)).append("\n");
+    sb.append("    pisExemptLegalReasonCode: ").append(toIndentedString(pisExemptLegalReasonCode)).append("\n");
+    sb.append("    pisExemptLegalReason: ").append(toIndentedString(pisExemptLegalReason)).append("\n");
     sb.append("    accruableCOFINSTaxation: ").append(toIndentedString(accruableCOFINSTaxation)).append("\n");
+    sb.append("    cofinsExemptLegalReasonCode: ").append(toIndentedString(cofinsExemptLegalReasonCode)).append("\n");
+    sb.append("    cofinsExemptLegalReason: ").append(toIndentedString(cofinsExemptLegalReason)).append("\n");
     sb.append("    accruableCSLLTaxation: ").append(toIndentedString(accruableCSLLTaxation)).append("\n");
+    sb.append("    csllExemptLegalReason: ").append(toIndentedString(csllExemptLegalReason)).append("\n");
+    sb.append("    csllExemptLegalReasonCode: ").append(toIndentedString(csllExemptLegalReasonCode)).append("\n");
+    sb.append("    withholding: ").append(toIndentedString(withholding)).append("\n");
     sb.append("    issDueatDestination: ").append(toIndentedString(issDueatDestination)).append("\n");
     sb.append("    pisCofinsCreditNotAllowed: ").append(toIndentedString(pisCofinsCreditNotAllowed)).append("\n");
     sb.append("    issTaxation: ").append(toIndentedString(issTaxation)).append("\n");

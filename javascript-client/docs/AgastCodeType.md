@@ -1,4 +1,4 @@
-# Br16Api.AgastCodeType
+# AvaTaxBrazil.AgastCodeType
 
 ## Properties
 Name | Type | Description | Notes

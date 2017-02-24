@@ -1,4 +1,4 @@
-# Br16Api.IpbtConfItem
+# AvaTaxBrazil.IpbtConfItem
 
 ## Properties
 Name | Type | Description | Notes

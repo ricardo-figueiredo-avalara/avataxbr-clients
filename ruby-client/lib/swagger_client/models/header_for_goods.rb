@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -345,40 +345,12 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'transaction_type', transaction_type cannot be nil.")
       end
 
-      if @transaction_model.nil?
-        invalid_properties.push("invalid value for 'transaction_model', transaction_model cannot be nil.")
-      end
-
       if @e_doc_creator_type.nil?
         invalid_properties.push("invalid value for 'e_doc_creator_type', e_doc_creator_type cannot be nil.")
       end
 
-      if @entity_code.nil?
-        invalid_properties.push("invalid value for 'entity_code', entity_code cannot be nil.")
-      end
-
-      if @currency.nil?
-        invalid_properties.push("invalid value for 'currency', currency cannot be nil.")
-      end
-
       if @company_location.nil?
         invalid_properties.push("invalid value for 'company_location', company_location cannot be nil.")
-      end
-
-      if @transaction_date.nil?
-        invalid_properties.push("invalid value for 'transaction_date', transaction_date cannot be nil.")
-      end
-
-      if @invoice_number.nil?
-        invalid_properties.push("invalid value for 'invoice_number', invoice_number cannot be nil.")
-      end
-
-      if @invoice_serial.nil?
-        invalid_properties.push("invalid value for 'invoice_serial', invoice_serial cannot be nil.")
-      end
-
-      if @payment.nil?
-        invalid_properties.push("invalid value for 'payment', payment cannot be nil.")
       end
 
       return invalid_properties
@@ -397,25 +369,18 @@ module SwaggerClient
       return false if @transaction_type.nil?
       transaction_type_validator = EnumAttributeValidator.new('String', ["Sales", "Purchase", "SalesReturn", "PurchaseReturn", "TransferReturn", "Shipping", "ShippingReturn", "Transfer", "ReceiptAdjustment", "TransferAdjustment"])
       return false unless transaction_type_validator.valid?(@transaction_type)
-      return false if @transaction_model.nil?
       transaction_model_validator = EnumAttributeValidator.new('String', ["01", "1B", "02", "2D", "2E", "04", "06", "07", "08", "8B", "09", "10", "11", "13", "14", "15", "16", "18", "21", "22", "26", "27", "28", "29", "55", "57", "59", "60", "65"])
       return false unless transaction_model_validator.valid?(@transaction_model)
       return false if @e_doc_creator_type.nil?
       e_doc_creator_type_validator = EnumAttributeValidator.new('String', ["self", "other"])
       return false unless e_doc_creator_type_validator.valid?(@e_doc_creator_type)
-      return false if @entity_code.nil?
-      return false if @currency.nil?
       currency_validator = EnumAttributeValidator.new('String', ["BRL"])
       return false unless currency_validator.valid?(@currency)
       return false if @company_location.nil?
-      return false if @transaction_date.nil?
       tp_imp_validator = EnumAttributeValidator.new('String', ["0", "1", "2", "3", "4", "5"])
       return false unless tp_imp_validator.valid?(@tp_imp)
       ind_pres_validator = EnumAttributeValidator.new('String', ["0", "1", "2", "3", "4", "9"])
       return false unless ind_pres_validator.valid?(@ind_pres)
-      return false if @invoice_number.nil?
-      return false if @invoice_serial.nil?
-      return false if @payment.nil?
       return true
     end
 

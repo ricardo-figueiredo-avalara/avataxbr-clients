@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -21,13 +21,13 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * TaxByTypeSummaryJurisdictionForGoods
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class TaxByTypeSummaryJurisdictionForGoods {
   @SerializedName("jurisdictionName")
   private String jurisdictionName = null;
 
   /**
-   * Type of jurisdiction
+   * Type of jurisdiction - 'City' - 'State' - 'Country' 
    */
   public enum JurisdictionTypeEnum {
     @SerializedName("City")
@@ -81,10 +81,10 @@ public class TaxByTypeSummaryJurisdictionForGoods {
   }
 
    /**
-   * Type of jurisdiction
+   * Type of jurisdiction - 'City' - 'State' - 'Country' 
    * @return jurisdictionType
   **/
-  @ApiModelProperty(example = "null", value = "Type of jurisdiction")
+  @ApiModelProperty(example = "null", value = "Type of jurisdiction - 'City' - 'State' - 'Country' ")
   public JurisdictionTypeEnum getJurisdictionType() {
     return jurisdictionType;
   }

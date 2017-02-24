@@ -1,4 +1,4 @@
-# Br16Api.InformerForGoods
+# AvaTaxBrazil.InformerForGoods
 
 ## Properties
 Name | Type | Description | Notes

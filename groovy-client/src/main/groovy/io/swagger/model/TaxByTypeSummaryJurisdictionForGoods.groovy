@@ -9,7 +9,7 @@ class TaxByTypeSummaryJurisdictionForGoods {
   /* Jurisdiction used for calctax amount */
   String jurisdictionName = null
 
-  /* Type of jurisdiction */
+  /* Type of jurisdiction - 'City' - 'State' - 'Country'  */
   String jurisdictionType = null
 
   /* sum of referenced tax value by jurisdiction */

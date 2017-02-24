@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -117,7 +117,9 @@ public:
     /// </summary>
     utility::string_t getTransactionModel() const;
     void setTransactionModel(utility::string_t value);
-        /// <summary>
+    bool transactionModelIsSet() const;
+    void unsetTransactionModel();
+    /// <summary>
     /// Natureza da Opreração - &#39;Describe kind of this transaction, summary
     /// </summary>
     utility::string_t getTransactionClass() const;
@@ -141,12 +143,16 @@ public:
     /// </summary>
     utility::string_t getEntityCode() const;
     void setEntityCode(utility::string_t value);
-        /// <summary>
+    bool entityCodeIsSet() const;
+    void unsetEntityCode();
+    /// <summary>
     /// currency code
     /// </summary>
     utility::string_t getCurrency() const;
     void setCurrency(utility::string_t value);
-        /// <summary>
+    bool currencyIsSet() const;
+    void unsetCurrency();
+    /// <summary>
     /// This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity
     /// </summary>
     utility::string_t getCompanyLocation() const;
@@ -156,7 +162,9 @@ public:
     /// </summary>
     utility::string_t getTransactionDate() const;
     void setTransactionDate(utility::string_t value);
-        /// <summary>
+    bool transactionDateIsSet() const;
+    void unsetTransactionDate();
+    /// <summary>
     /// This string is the transaction date in ISO 8601 format, when products were shipped, can be empty or absent
     /// </summary>
     utility::string_t getShippingDate() const;
@@ -196,12 +204,16 @@ public:
     /// </summary>
     int32_t getInvoiceNumber() const;
     void setInvoiceNumber(int32_t value);
-        /// <summary>
+    bool invoiceNumberIsSet() const;
+    void unsetInvoiceNumber();
+    /// <summary>
     /// Invoice number, sequential unique by invoice serial (Número da nota fiscal) 
     /// </summary>
     int32_t getInvoiceSerial() const;
     void setInvoiceSerial(int32_t value);
-        /// <summary>
+    bool invoiceSerialIsSet() const;
+    void unsetInvoiceSerial();
+    /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<DefaultLocations> getDefaultLocations() const;
@@ -226,7 +238,9 @@ public:
     /// </summary>
     std::shared_ptr<Payment> getPayment() const;
     void setPayment(std::shared_ptr<Payment> value);
-        /// <summary>
+    bool paymentIsSet() const;
+    void unsetPayment();
+    /// <summary>
     /// 
     /// </summary>
     std::shared_ptr<PurchaseInfo> getPurchaseInfo() const;
@@ -256,16 +270,20 @@ utility::string_t m_NfceQrCode;
     bool m_NfceQrCodeIsSet;
 utility::string_t m_TransactionType;
     utility::string_t m_TransactionModel;
-    utility::string_t m_TransactionClass;
+    bool m_TransactionModelIsSet;
+utility::string_t m_TransactionClass;
     bool m_TransactionClassIsSet;
 utility::string_t m_EDocCreatorType;
     bool m_EDocCreatorPerspective;
     bool m_EDocCreatorPerspectiveIsSet;
 utility::string_t m_EntityCode;
-    utility::string_t m_Currency;
-    utility::string_t m_CompanyLocation;
+    bool m_EntityCodeIsSet;
+utility::string_t m_Currency;
+    bool m_CurrencyIsSet;
+utility::string_t m_CompanyLocation;
     utility::string_t m_TransactionDate;
-    utility::string_t m_ShippingDate;
+    bool m_TransactionDateIsSet;
+utility::string_t m_ShippingDate;
     bool m_ShippingDateIsSet;
 std::shared_ptr<AdditionalInformation> m_AdditionalInfo;
     bool m_AdditionalInfoIsSet;
@@ -276,15 +294,18 @@ int32_t m_IdDest;
 utility::string_t m_IndPres;
     bool m_IndPresIsSet;
 int32_t m_InvoiceNumber;
-    int32_t m_InvoiceSerial;
-    std::shared_ptr<DefaultLocations> m_DefaultLocations;
+    bool m_InvoiceNumberIsSet;
+int32_t m_InvoiceSerial;
+    bool m_InvoiceSerialIsSet;
+std::shared_ptr<DefaultLocations> m_DefaultLocations;
     bool m_DefaultLocationsIsSet;
 std::shared_ptr<Transport> m_Transport;
     bool m_TransportIsSet;
 std::vector<std::shared_ptr<NRef>> m_NfRef;
     bool m_NfRefIsSet;
 std::shared_ptr<Payment> m_Payment;
-    std::shared_ptr<PurchaseInfo> m_PurchaseInfo;
+    bool m_PaymentIsSet;
+std::shared_ptr<PurchaseInfo> m_PurchaseInfo;
     bool m_PurchaseInfoIsSet;
 std::shared_ptr<ExportInfo> m_Export;
     bool m_ExportIsSet;

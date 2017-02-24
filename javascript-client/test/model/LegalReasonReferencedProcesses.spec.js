@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.LegalReasonReferencedProcesses();
+    instance = new AvaTaxBrazil.LegalReasonReferencedProcesses();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('LegalReasonReferencedProcesses', function() {
     it('should create an instance of LegalReasonReferencedProcesses', function() {
       // uncomment below and update the code to test LegalReasonReferencedProcesses
-      //var instane = new Br16Api.LegalReasonReferencedProcesses();
-      //expect(instance).to.be.a(Br16Api.LegalReasonReferencedProcesses);
+      //var instane = new AvaTaxBrazil.LegalReasonReferencedProcesses();
+      //expect(instance).to.be.a(AvaTaxBrazil.LegalReasonReferencedProcesses);
     });
 
     it('should have the property nProc (base name: "nProc")', function() {
       // uncomment below and update the code to test the property nProc
-      //var instane = new Br16Api.LegalReasonReferencedProcesses();
+      //var instane = new AvaTaxBrazil.LegalReasonReferencedProcesses();
       //expect(instance).to.be();
     });
 
     it('should have the property indProc (base name: "indProc")', function() {
       // uncomment below and update the code to test the property indProc
-      //var instane = new Br16Api.LegalReasonReferencedProcesses();
+      //var instane = new AvaTaxBrazil.LegalReasonReferencedProcesses();
       //expect(instance).to.be();
     });
 

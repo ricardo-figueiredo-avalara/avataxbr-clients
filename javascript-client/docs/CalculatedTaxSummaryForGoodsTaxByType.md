@@ -1,4 +1,4 @@
-# Br16Api.CalculatedTaxSummaryForGoodsTaxByType
+# AvaTaxBrazil.CalculatedTaxSummaryForGoodsTaxByType
 
 ## Properties
 Name | Type | Description | Notes

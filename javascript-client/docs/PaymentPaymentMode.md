@@ -1,4 +1,4 @@
-# Br16Api.PaymentPaymentMode
+# AvaTaxBrazil.PaymentPaymentMode
 
 ## Properties
 Name | Type | Description | Notes

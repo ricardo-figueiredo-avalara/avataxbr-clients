@@ -68,9 +68,9 @@ namespace IO.Swagger.Model {
     public AgastCodeType CodeType { get; set; }
 
     /// <summary>
-    /// Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+    /// Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
     /// </summary>
-    /// <value>Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune </value>
+    /// <value>Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE </value>
     [DataMember(Name="cstIPI", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "cstIPI")]
     public string CstIPI { get; set; }
@@ -100,6 +100,22 @@ namespace IO.Swagger.Model {
     public string AccruablePISTaxation { get; set; }
 
     /// <summary>
+    /// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+    /// </summary>
+    /// <value>When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption</value>
+    [DataMember(Name="pisExemptLegalReasonCode", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "pisExemptLegalReasonCode")]
+    public string PisExemptLegalReasonCode { get; set; }
+
+    /// <summary>
+    /// When specified a reason, this field holds the reason's description
+    /// </summary>
+    /// <value>When specified a reason, this field holds the reason's description</value>
+    [DataMember(Name="pisExemptLegalReason", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "pisExemptLegalReason")]
+    public string PisExemptLegalReason { get; set; }
+
+    /// <summary>
     /// Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
     /// </summary>
     /// <value>Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE </value>
@@ -108,12 +124,49 @@ namespace IO.Swagger.Model {
     public string AccruableCOFINSTaxation { get; set; }
 
     /// <summary>
+    /// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+    /// </summary>
+    /// <value>When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption</value>
+    [DataMember(Name="cofinsExemptLegalReasonCode", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "cofinsExemptLegalReasonCode")]
+    public string CofinsExemptLegalReasonCode { get; set; }
+
+    /// <summary>
+    /// When specified a reason, this field holds the reason's description
+    /// </summary>
+    /// <value>When specified a reason, this field holds the reason's description</value>
+    [DataMember(Name="cofinsExemptLegalReason", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "cofinsExemptLegalReason")]
+    public string CofinsExemptLegalReason { get; set; }
+
+    /// <summary>
     /// Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
     /// </summary>
     /// <value>Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT </value>
     [DataMember(Name="accruableCSLLTaxation", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "accruableCSLLTaxation")]
     public string AccruableCSLLTaxation { get; set; }
+
+    /// <summary>
+    /// Gets or Sets CsllExemptLegalReason
+    /// </summary>
+    [DataMember(Name="csllExemptLegalReason", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "csllExemptLegalReason")]
+    public string CsllExemptLegalReason { get; set; }
+
+    /// <summary>
+    /// Gets or Sets CsllExemptLegalReasonCode
+    /// </summary>
+    [DataMember(Name="csllExemptLegalReasonCode", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "csllExemptLegalReasonCode")]
+    public string CsllExemptLegalReasonCode { get; set; }
+
+    /// <summary>
+    /// Gets or Sets Withholding
+    /// </summary>
+    [DataMember(Name="withholding", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "withholding")]
+    public AgastWithholding Withholding { get; set; }
 
     /// <summary>
     /// for service items with City Jurisdiction, inform where the ISS tax is due
@@ -181,8 +234,15 @@ namespace IO.Swagger.Model {
       sb.Append("  IpiLegalTaxClass: ").Append(IpiLegalTaxClass).Append("\n");
       sb.Append("  PisCofinsTaxReporting: ").Append(PisCofinsTaxReporting).Append("\n");
       sb.Append("  AccruablePISTaxation: ").Append(AccruablePISTaxation).Append("\n");
+      sb.Append("  PisExemptLegalReasonCode: ").Append(PisExemptLegalReasonCode).Append("\n");
+      sb.Append("  PisExemptLegalReason: ").Append(PisExemptLegalReason).Append("\n");
       sb.Append("  AccruableCOFINSTaxation: ").Append(AccruableCOFINSTaxation).Append("\n");
+      sb.Append("  CofinsExemptLegalReasonCode: ").Append(CofinsExemptLegalReasonCode).Append("\n");
+      sb.Append("  CofinsExemptLegalReason: ").Append(CofinsExemptLegalReason).Append("\n");
       sb.Append("  AccruableCSLLTaxation: ").Append(AccruableCSLLTaxation).Append("\n");
+      sb.Append("  CsllExemptLegalReason: ").Append(CsllExemptLegalReason).Append("\n");
+      sb.Append("  CsllExemptLegalReasonCode: ").Append(CsllExemptLegalReasonCode).Append("\n");
+      sb.Append("  Withholding: ").Append(Withholding).Append("\n");
       sb.Append("  IssDueatDestination: ").Append(IssDueatDestination).Append("\n");
       sb.Append("  PisCofinsCreditNotAllowed: ").Append(PisCofinsCreditNotAllowed).Append("\n");
       sb.Append("  IssTaxation: ").Append(IssTaxation).Append("\n");

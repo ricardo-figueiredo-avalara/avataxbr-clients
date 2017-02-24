@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,9 +30,9 @@ namespace IO.Swagger.Model
     public partial class TaxByTypeSummaryJurisdictionForGoods :  IEquatable<TaxByTypeSummaryJurisdictionForGoods>, IValidatableObject
     {
         /// <summary>
-        /// Type of jurisdiction
+        /// Type of jurisdiction - 'City' - 'State' - 'Country' 
         /// </summary>
-        /// <value>Type of jurisdiction</value>
+        /// <value>Type of jurisdiction - 'City' - 'State' - 'Country' </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum JurisdictionTypeEnum
         {
@@ -57,16 +57,16 @@ namespace IO.Swagger.Model
         }
 
         /// <summary>
-        /// Type of jurisdiction
+        /// Type of jurisdiction - 'City' - 'State' - 'Country' 
         /// </summary>
-        /// <value>Type of jurisdiction</value>
+        /// <value>Type of jurisdiction - 'City' - 'State' - 'Country' </value>
         [DataMember(Name="jurisdictionType", EmitDefaultValue=false)]
         public JurisdictionTypeEnum? JurisdictionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="TaxByTypeSummaryJurisdictionForGoods" /> class.
         /// </summary>
         /// <param name="JurisdictionName">Jurisdiction used for calctax amount.</param>
-        /// <param name="JurisdictionType">Type of jurisdiction.</param>
+        /// <param name="JurisdictionType">Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39; .</param>
         /// <param name="Tax">sum of referenced tax value by jurisdiction.</param>
         public TaxByTypeSummaryJurisdictionForGoods(string JurisdictionName = default(string), JurisdictionTypeEnum? JurisdictionType = default(JurisdictionTypeEnum?), double? Tax = default(double?))
         {

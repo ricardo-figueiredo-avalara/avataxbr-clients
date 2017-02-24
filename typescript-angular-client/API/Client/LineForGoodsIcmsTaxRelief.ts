@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -17,20 +17,36 @@ namespace API.Client {
 
     export interface LineForGoodsIcmsTaxRelief {
         /**
-         * When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
+         * When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
          */
-        "icmsTaxReliefReasonCode": number;
+        "reasonCode": LineForGoodsIcmsTaxRelief.ReasonCodeEnum;
 
         /**
          * ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
          */
-        "icmsReliefTaxRate"?: number;
+        "taxBaseDiscount"?: number;
 
         /**
          * Amount for Icms Relief (desoneração)
          */
-        "icmsReliefTaxAmount"?: number;
+        "taxAmount"?: number;
 
     }
 
+    export namespace LineForGoodsIcmsTaxRelief {
+        export enum ReasonCodeEnum {
+            _1 = <any> '1',
+            _3 = <any> '3',
+            _4 = <any> '4',
+            _5 = <any> '5',
+            _6 = <any> '6',
+            _7 = <any> '7',
+            _8 = <any> '8',
+            _9 = <any> '9',
+            _10 = <any> '10',
+            _11 = <any> '11',
+            _12 = <any> '12',
+            _16 = <any> '16'
+        }
+    }
 }

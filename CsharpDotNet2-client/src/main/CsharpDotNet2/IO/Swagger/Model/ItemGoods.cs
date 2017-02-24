@@ -132,14 +132,6 @@ namespace IO.Swagger.Model {
     public double? IcmsBaseDiscountForMonoPhaseSocialContr { get; set; }
 
     /// <summary>
-    /// tax substitution code - Codigo especificador da Substuicao Tributaria
-    /// </summary>
-    /// <value>tax substitution code - Codigo especificador da Substuicao Tributaria</value>
-    [DataMember(Name="cest", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "cest")]
-    public string Cest { get; set; }
-
-    /// <summary>
     /// GTIN NUMBER
     /// </summary>
     /// <value>GTIN NUMBER</value>
@@ -264,7 +256,6 @@ namespace IO.Swagger.Model {
       sb.Append("  IsPisCofinsEstimatedCredit: ").Append(IsPisCofinsEstimatedCredit).Append("\n");
       sb.Append("  PiscofinsRevenueType: ").Append(PiscofinsRevenueType).Append("\n");
       sb.Append("  IcmsBaseDiscountForMonoPhaseSocialContr: ").Append(IcmsBaseDiscountForMonoPhaseSocialContr).Append("\n");
-      sb.Append("  Cest: ").Append(Cest).Append("\n");
       sb.Append("  Cean: ").Append(Cean).Append("\n");
       sb.Append("  Nve: ").Append(Nve).Append("\n");
       sb.Append("  SalesUnit: ").Append(SalesUnit).Append("\n");

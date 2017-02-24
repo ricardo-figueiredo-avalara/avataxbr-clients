@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,42 +30,42 @@ namespace IO.Swagger.Model
     public partial class CustomAgast :  IEquatable<CustomAgast>, IValidatableObject
     {
         /// <summary>
-        /// Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+        /// Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
         /// </summary>
-        /// <value>Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune </value>
+        /// <value>Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CstIPIEnum
         {
             
             /// <summary>
-            /// Enum _50 for "50"
+            /// Enum T for "T"
             /// </summary>
-            [EnumMember(Value = "50")]
-            _50,
+            [EnumMember(Value = "T")]
+            T,
             
             /// <summary>
-            /// Enum _51 for "51"
+            /// Enum Z for "Z"
             /// </summary>
-            [EnumMember(Value = "51")]
-            _51,
+            [EnumMember(Value = "Z")]
+            Z,
             
             /// <summary>
-            /// Enum _52 for "52"
+            /// Enum E for "E"
             /// </summary>
-            [EnumMember(Value = "52")]
-            _52,
+            [EnumMember(Value = "E")]
+            E,
             
             /// <summary>
-            /// Enum _53 for "53"
+            /// Enum N for "N"
             /// </summary>
-            [EnumMember(Value = "53")]
-            _53,
+            [EnumMember(Value = "N")]
+            N,
             
             /// <summary>
-            /// Enum _54 for "54"
+            /// Enum I for "I"
             /// </summary>
-            [EnumMember(Value = "54")]
-            _54
+            [EnumMember(Value = "I")]
+            I
         }
 
         /// <summary>
@@ -308,9 +308,9 @@ namespace IO.Swagger.Model
         }
 
         /// <summary>
-        /// Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+        /// Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
         /// </summary>
-        /// <value>Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune </value>
+        /// <value>Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE </value>
         [DataMember(Name="cstIPI", EmitDefaultValue=false)]
         public CstIPIEnum? CstIPI { get; set; }
         /// <summary>
@@ -363,12 +363,19 @@ namespace IO.Swagger.Model
         /// <param name="Cest">tax substitution code - Codigo especificador da Substuicao Tributaria.</param>
         /// <param name="Cean">GTIN NUMBER.</param>
         /// <param name="CodeType">CodeType.</param>
-        /// <param name="CstIPI">Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune .</param>
+        /// <param name="CstIPI">Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE .</param>
         /// <param name="IpiLegalTaxClass">Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D; .</param>
         /// <param name="PisCofinsTaxReporting">when the company is Real Profit inform if this item is cumulative or no cumulative by default.</param>
         /// <param name="AccruablePISTaxation">Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE .</param>
+        /// <param name="PisExemptLegalReasonCode">When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption.</param>
+        /// <param name="PisExemptLegalReason">When specified a reason, this field holds the reason&#39;s description.</param>
         /// <param name="AccruableCOFINSTaxation">Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE .</param>
+        /// <param name="CofinsExemptLegalReasonCode">When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption.</param>
+        /// <param name="CofinsExemptLegalReason">When specified a reason, this field holds the reason&#39;s description.</param>
         /// <param name="AccruableCSLLTaxation">Inform if this item by nature is subject to CSLL taxation or exempt - &#39;T&#39; # TAXABLE - &#39;E&#39; # EXEMPT .</param>
+        /// <param name="CsllExemptLegalReason">CsllExemptLegalReason.</param>
+        /// <param name="CsllExemptLegalReasonCode">CsllExemptLegalReasonCode.</param>
+        /// <param name="Withholding">Withholding.</param>
         /// <param name="IssDueatDestination">for service items with City Jurisdiction, inform where the ISS tax is due.</param>
         /// <param name="PisCofinsCreditNotAllowed">on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative.</param>
         /// <param name="IssTaxation">- &#39;T&#39; # TAXABLE - TRIBUTÁVEL INCLUSIVE PARA EXPORTAÇÃO&#39; - &#39;E&#39; # TAXABLE WITH EXEMPTION FOR EXPORTS - ISENTO PARA SERVIÇOS PRESTADOS AO EXTERIOR (DEFAULT) - &#39;F&#39; # EXEMPT - &#39;A&#39; # SUSPENDED FOR ADMINISTRATIVE REASON - &#39;L&#39; # SUSPENDED FOR LEGAL DECISION - &#39;I&#39; # IMMUNE .</param>
@@ -376,7 +383,7 @@ namespace IO.Swagger.Model
         /// <param name="SpecialProductClass">SpecialProductClass.</param>
         /// <param name="IcmsConf">One per State.</param>
         /// <param name="CompanyId">Company ID (required).</param>
-        public CustomAgast(string Code = default(string), string Description = default(string), string HsCode = default(string), int? Ex = default(int?), string Cest = default(string), string Cean = default(string), AgastCodeType CodeType = default(AgastCodeType), CstIPIEnum? CstIPI = default(CstIPIEnum?), string IpiLegalTaxClass = default(string), PisCofinsTaxReportingEnum? PisCofinsTaxReporting = default(PisCofinsTaxReportingEnum?), AccruablePISTaxationEnum? AccruablePISTaxation = default(AccruablePISTaxationEnum?), AccruableCOFINSTaxationEnum? AccruableCOFINSTaxation = default(AccruableCOFINSTaxationEnum?), AccruableCSLLTaxationEnum? AccruableCSLLTaxation = default(AccruableCSLLTaxationEnum?), bool? IssDueatDestination = default(bool?), bool? PisCofinsCreditNotAllowed = default(bool?), IssTaxationEnum? IssTaxation = default(IssTaxationEnum?), List<TaxTypeRate> FederalTaxRate = default(List<TaxTypeRate>), SpecialProductClassEnum? SpecialProductClass = default(SpecialProductClassEnum?), List<AgastIcmsConf> IcmsConf = default(List<AgastIcmsConf>), Guid? CompanyId = default(Guid?))
+        public CustomAgast(string Code = default(string), string Description = default(string), string HsCode = default(string), int? Ex = default(int?), string Cest = default(string), string Cean = default(string), AgastCodeType CodeType = default(AgastCodeType), CstIPIEnum? CstIPI = default(CstIPIEnum?), string IpiLegalTaxClass = default(string), PisCofinsTaxReportingEnum? PisCofinsTaxReporting = default(PisCofinsTaxReportingEnum?), AccruablePISTaxationEnum? AccruablePISTaxation = default(AccruablePISTaxationEnum?), string PisExemptLegalReasonCode = default(string), string PisExemptLegalReason = default(string), AccruableCOFINSTaxationEnum? AccruableCOFINSTaxation = default(AccruableCOFINSTaxationEnum?), string CofinsExemptLegalReasonCode = default(string), string CofinsExemptLegalReason = default(string), AccruableCSLLTaxationEnum? AccruableCSLLTaxation = default(AccruableCSLLTaxationEnum?), string CsllExemptLegalReason = default(string), string CsllExemptLegalReasonCode = default(string), AgastWithholding Withholding = default(AgastWithholding), bool? IssDueatDestination = default(bool?), bool? PisCofinsCreditNotAllowed = default(bool?), IssTaxationEnum? IssTaxation = default(IssTaxationEnum?), List<TaxTypeRate> FederalTaxRate = default(List<TaxTypeRate>), SpecialProductClassEnum? SpecialProductClass = default(SpecialProductClassEnum?), List<AgastIcmsConf> IcmsConf = default(List<AgastIcmsConf>), Guid? CompanyId = default(Guid?))
         {
             // to ensure "Code" is required (not null)
             if (Code == null)
@@ -406,8 +413,15 @@ namespace IO.Swagger.Model
             this.IpiLegalTaxClass = IpiLegalTaxClass;
             this.PisCofinsTaxReporting = PisCofinsTaxReporting;
             this.AccruablePISTaxation = AccruablePISTaxation;
+            this.PisExemptLegalReasonCode = PisExemptLegalReasonCode;
+            this.PisExemptLegalReason = PisExemptLegalReason;
             this.AccruableCOFINSTaxation = AccruableCOFINSTaxation;
+            this.CofinsExemptLegalReasonCode = CofinsExemptLegalReasonCode;
+            this.CofinsExemptLegalReason = CofinsExemptLegalReason;
             this.AccruableCSLLTaxation = AccruableCSLLTaxation;
+            this.CsllExemptLegalReason = CsllExemptLegalReason;
+            this.CsllExemptLegalReasonCode = CsllExemptLegalReasonCode;
+            this.Withholding = Withholding;
             this.IssDueatDestination = IssDueatDestination;
             this.PisCofinsCreditNotAllowed = PisCofinsCreditNotAllowed;
             this.IssTaxation = IssTaxation;
@@ -464,6 +478,45 @@ namespace IO.Swagger.Model
         [DataMember(Name="ipiLegalTaxClass", EmitDefaultValue=false)]
         public string IpiLegalTaxClass { get; set; }
         /// <summary>
+        /// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+        /// </summary>
+        /// <value>When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption</value>
+        [DataMember(Name="pisExemptLegalReasonCode", EmitDefaultValue=false)]
+        public string PisExemptLegalReasonCode { get; set; }
+        /// <summary>
+        /// When specified a reason, this field holds the reason&#39;s description
+        /// </summary>
+        /// <value>When specified a reason, this field holds the reason&#39;s description</value>
+        [DataMember(Name="pisExemptLegalReason", EmitDefaultValue=false)]
+        public string PisExemptLegalReason { get; set; }
+        /// <summary>
+        /// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+        /// </summary>
+        /// <value>When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption</value>
+        [DataMember(Name="cofinsExemptLegalReasonCode", EmitDefaultValue=false)]
+        public string CofinsExemptLegalReasonCode { get; set; }
+        /// <summary>
+        /// When specified a reason, this field holds the reason&#39;s description
+        /// </summary>
+        /// <value>When specified a reason, this field holds the reason&#39;s description</value>
+        [DataMember(Name="cofinsExemptLegalReason", EmitDefaultValue=false)]
+        public string CofinsExemptLegalReason { get; set; }
+        /// <summary>
+        /// Gets or Sets CsllExemptLegalReason
+        /// </summary>
+        [DataMember(Name="csllExemptLegalReason", EmitDefaultValue=false)]
+        public string CsllExemptLegalReason { get; set; }
+        /// <summary>
+        /// Gets or Sets CsllExemptLegalReasonCode
+        /// </summary>
+        [DataMember(Name="csllExemptLegalReasonCode", EmitDefaultValue=false)]
+        public string CsllExemptLegalReasonCode { get; set; }
+        /// <summary>
+        /// Gets or Sets Withholding
+        /// </summary>
+        [DataMember(Name="withholding", EmitDefaultValue=false)]
+        public AgastWithholding Withholding { get; set; }
+        /// <summary>
         /// for service items with City Jurisdiction, inform where the ISS tax is due
         /// </summary>
         /// <value>for service items with City Jurisdiction, inform where the ISS tax is due</value>
@@ -512,8 +565,15 @@ namespace IO.Swagger.Model
             sb.Append("  IpiLegalTaxClass: ").Append(IpiLegalTaxClass).Append("\n");
             sb.Append("  PisCofinsTaxReporting: ").Append(PisCofinsTaxReporting).Append("\n");
             sb.Append("  AccruablePISTaxation: ").Append(AccruablePISTaxation).Append("\n");
+            sb.Append("  PisExemptLegalReasonCode: ").Append(PisExemptLegalReasonCode).Append("\n");
+            sb.Append("  PisExemptLegalReason: ").Append(PisExemptLegalReason).Append("\n");
             sb.Append("  AccruableCOFINSTaxation: ").Append(AccruableCOFINSTaxation).Append("\n");
+            sb.Append("  CofinsExemptLegalReasonCode: ").Append(CofinsExemptLegalReasonCode).Append("\n");
+            sb.Append("  CofinsExemptLegalReason: ").Append(CofinsExemptLegalReason).Append("\n");
             sb.Append("  AccruableCSLLTaxation: ").Append(AccruableCSLLTaxation).Append("\n");
+            sb.Append("  CsllExemptLegalReason: ").Append(CsllExemptLegalReason).Append("\n");
+            sb.Append("  CsllExemptLegalReasonCode: ").Append(CsllExemptLegalReasonCode).Append("\n");
+            sb.Append("  Withholding: ").Append(Withholding).Append("\n");
             sb.Append("  IssDueatDestination: ").Append(IssDueatDestination).Append("\n");
             sb.Append("  PisCofinsCreditNotAllowed: ").Append(PisCofinsCreditNotAllowed).Append("\n");
             sb.Append("  IssTaxation: ").Append(IssTaxation).Append("\n");
@@ -613,14 +673,49 @@ namespace IO.Swagger.Model
                     this.AccruablePISTaxation.Equals(other.AccruablePISTaxation)
                 ) && 
                 (
+                    this.PisExemptLegalReasonCode == other.PisExemptLegalReasonCode ||
+                    this.PisExemptLegalReasonCode != null &&
+                    this.PisExemptLegalReasonCode.Equals(other.PisExemptLegalReasonCode)
+                ) && 
+                (
+                    this.PisExemptLegalReason == other.PisExemptLegalReason ||
+                    this.PisExemptLegalReason != null &&
+                    this.PisExemptLegalReason.Equals(other.PisExemptLegalReason)
+                ) && 
+                (
                     this.AccruableCOFINSTaxation == other.AccruableCOFINSTaxation ||
                     this.AccruableCOFINSTaxation != null &&
                     this.AccruableCOFINSTaxation.Equals(other.AccruableCOFINSTaxation)
                 ) && 
                 (
+                    this.CofinsExemptLegalReasonCode == other.CofinsExemptLegalReasonCode ||
+                    this.CofinsExemptLegalReasonCode != null &&
+                    this.CofinsExemptLegalReasonCode.Equals(other.CofinsExemptLegalReasonCode)
+                ) && 
+                (
+                    this.CofinsExemptLegalReason == other.CofinsExemptLegalReason ||
+                    this.CofinsExemptLegalReason != null &&
+                    this.CofinsExemptLegalReason.Equals(other.CofinsExemptLegalReason)
+                ) && 
+                (
                     this.AccruableCSLLTaxation == other.AccruableCSLLTaxation ||
                     this.AccruableCSLLTaxation != null &&
                     this.AccruableCSLLTaxation.Equals(other.AccruableCSLLTaxation)
+                ) && 
+                (
+                    this.CsllExemptLegalReason == other.CsllExemptLegalReason ||
+                    this.CsllExemptLegalReason != null &&
+                    this.CsllExemptLegalReason.Equals(other.CsllExemptLegalReason)
+                ) && 
+                (
+                    this.CsllExemptLegalReasonCode == other.CsllExemptLegalReasonCode ||
+                    this.CsllExemptLegalReasonCode != null &&
+                    this.CsllExemptLegalReasonCode.Equals(other.CsllExemptLegalReasonCode)
+                ) && 
+                (
+                    this.Withholding == other.Withholding ||
+                    this.Withholding != null &&
+                    this.Withholding.Equals(other.Withholding)
                 ) && 
                 (
                     this.IssDueatDestination == other.IssDueatDestination ||
@@ -692,10 +787,24 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.PisCofinsTaxReporting.GetHashCode();
                 if (this.AccruablePISTaxation != null)
                     hash = hash * 59 + this.AccruablePISTaxation.GetHashCode();
+                if (this.PisExemptLegalReasonCode != null)
+                    hash = hash * 59 + this.PisExemptLegalReasonCode.GetHashCode();
+                if (this.PisExemptLegalReason != null)
+                    hash = hash * 59 + this.PisExemptLegalReason.GetHashCode();
                 if (this.AccruableCOFINSTaxation != null)
                     hash = hash * 59 + this.AccruableCOFINSTaxation.GetHashCode();
+                if (this.CofinsExemptLegalReasonCode != null)
+                    hash = hash * 59 + this.CofinsExemptLegalReasonCode.GetHashCode();
+                if (this.CofinsExemptLegalReason != null)
+                    hash = hash * 59 + this.CofinsExemptLegalReason.GetHashCode();
                 if (this.AccruableCSLLTaxation != null)
                     hash = hash * 59 + this.AccruableCSLLTaxation.GetHashCode();
+                if (this.CsllExemptLegalReason != null)
+                    hash = hash * 59 + this.CsllExemptLegalReason.GetHashCode();
+                if (this.CsllExemptLegalReasonCode != null)
+                    hash = hash * 59 + this.CsllExemptLegalReasonCode.GetHashCode();
+                if (this.Withholding != null)
+                    hash = hash * 59 + this.Withholding.GetHashCode();
                 if (this.IssDueatDestination != null)
                     hash = hash * 59 + this.IssDueatDestination.GetHashCode();
                 if (this.PisCofinsCreditNotAllowed != null)
@@ -740,6 +849,24 @@ namespace IO.Swagger.Model
             if (false == regexCean.Match(this.Cean).Success)
             {
                 yield return new ValidationResult("Invalid value for Cean, must match a pattern of /[0-9]{0}|[0-9]{8}|[0-9]{12,14}/.", new [] { "Cean" });
+            }
+
+            // PisExemptLegalReason (string) maxLength
+            if(this.PisExemptLegalReason != null && this.PisExemptLegalReason.Length > 1024)
+            {
+                yield return new ValidationResult("Invalid value for PisExemptLegalReason, length must be less than 1024.", new [] { "PisExemptLegalReason" });
+            }
+
+            // CofinsExemptLegalReason (string) maxLength
+            if(this.CofinsExemptLegalReason != null && this.CofinsExemptLegalReason.Length > 1024)
+            {
+                yield return new ValidationResult("Invalid value for CofinsExemptLegalReason, length must be less than 1024.", new [] { "CofinsExemptLegalReason" });
+            }
+
+            // CsllExemptLegalReason (string) maxLength
+            if(this.CsllExemptLegalReason != null && this.CsllExemptLegalReason.Length > 1024)
+            {
+                yield return new ValidationResult("Invalid value for CsllExemptLegalReason, length must be less than 1024.", new [] { "CsllExemptLegalReason" });
             }
 
             yield break;

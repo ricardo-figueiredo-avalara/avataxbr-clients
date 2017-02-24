@@ -1,6 +1,6 @@
-# Br16Api.CompanyAGASTApi
+# AvaTaxBrazil.CompanyAGASTApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,9 +21,9 @@ This operation return custom agast configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyAGASTApi();
+var apiInstance = new AvaTaxBrazil.CompanyAGASTApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -74,9 +74,9 @@ This operation return custom agast configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyAGASTApi();
+var apiInstance = new AvaTaxBrazil.CompanyAGASTApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -134,13 +134,13 @@ This method operation create a custom agast for one company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyAGASTApi();
+var apiInstance = new AvaTaxBrazil.CompanyAGASTApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
-var body = new Br16Api.CustomAgast(); // CustomAgast | Transaction Message
+var body = new AvaTaxBrazil.CustomAgast(); // CustomAgast | Transaction Message
 
 var opts = { 
   'text': "text_example" // String | Text query
@@ -185,9 +185,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyAGASTApi();
+var apiInstance = new AvaTaxBrazil.CompanyAGASTApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -234,15 +234,15 @@ This method operation create a custom agast for one company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyAGASTApi();
+var apiInstance = new AvaTaxBrazil.CompanyAGASTApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
 var code = "code_example"; // String | Agast Code
 
-var body = new Br16Api.CustomAgast(); // CustomAgast | Transaction Message
+var body = new AvaTaxBrazil.CustomAgast(); // CustomAgast | Transaction Message
 
 
 var callback = function(error, data, response) {

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.ItemGoods();
+    instance = new AvaTaxBrazil.ItemGoods();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,157 +50,151 @@
   describe('ItemGoods', function() {
     it('should create an instance of ItemGoods', function() {
       // uncomment below and update the code to test ItemGoods
-      //var instane = new Br16Api.ItemGoods();
-      //expect(instance).to.be.a(Br16Api.ItemGoods);
+      //var instane = new AvaTaxBrazil.ItemGoods();
+      //expect(instance).to.be.a(AvaTaxBrazil.ItemGoods);
     });
 
     it('should have the property sealCode (base name: "sealCode")', function() {
       // uncomment below and update the code to test the property sealCode
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property nFCI (base name: "nFCI")', function() {
       // uncomment below and update the code to test the property nFCI
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property isIcmsStSubstitute (base name: "isIcmsStSubstitute")', function() {
       // uncomment below and update the code to test the property isIcmsStSubstitute
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property productType (base name: "productType")', function() {
       // uncomment below and update the code to test the property productType
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property manufacturerEquivalent (base name: "manufacturerEquivalent")', function() {
       // uncomment below and update the code to test the property manufacturerEquivalent
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property appropriateIPIcreditWhenInGoing (base name: "appropriateIPIcreditWhenInGoing")', function() {
       // uncomment below and update the code to test the property appropriateIPIcreditWhenInGoing
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property usuallyAppropriatePISCOFINSCredit (base name: "usuallyAppropriatePISCOFINSCredit")', function() {
       // uncomment below and update the code to test the property usuallyAppropriatePISCOFINSCredit
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property isPisCofinsEstimatedCredit (base name: "isPisCofinsEstimatedCredit")', function() {
       // uncomment below and update the code to test the property isPisCofinsEstimatedCredit
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property piscofinsRevenueType (base name: "piscofinsRevenueType")', function() {
       // uncomment below and update the code to test the property piscofinsRevenueType
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property icmsBaseDiscountForMonoPhaseSocialContr (base name: "icmsBaseDiscountForMonoPhaseSocialContr")', function() {
       // uncomment below and update the code to test the property icmsBaseDiscountForMonoPhaseSocialContr
-      //var instane = new Br16Api.ItemGoods();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property cest (base name: "cest")', function() {
-      // uncomment below and update the code to test the property cest
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property cean (base name: "cean")', function() {
       // uncomment below and update the code to test the property cean
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property nve (base name: "nve")', function() {
       // uncomment below and update the code to test the property nve
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property salesUnit (base name: "salesUnit")', function() {
       // uncomment below and update the code to test the property salesUnit
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property salesUnitIPIfactor (base name: "salesUnitIPIfactor")', function() {
       // uncomment below and update the code to test the property salesUnitIPIfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property salesUnitIcmsfactor (base name: "salesUnitIcmsfactor")', function() {
       // uncomment below and update the code to test the property salesUnitIcmsfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property salesUnitIcmsStfactor (base name: "salesUnitIcmsStfactor")', function() {
       // uncomment below and update the code to test the property salesUnitIcmsStfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property salesUnitPisCofinsfactor (base name: "salesUnitPisCofinsfactor")', function() {
       // uncomment below and update the code to test the property salesUnitPisCofinsfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property purchaseUnit (base name: "purchaseUnit")', function() {
       // uncomment below and update the code to test the property purchaseUnit
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property purchaseUnitIPIfactor (base name: "purchaseUnitIPIfactor")', function() {
       // uncomment below and update the code to test the property purchaseUnitIPIfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property purchaseUnitIcmsfactor (base name: "purchaseUnitIcmsfactor")', function() {
       // uncomment below and update the code to test the property purchaseUnitIcmsfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property purchaseUnitIcmsStfactor (base name: "purchaseUnitIcmsStfactor")', function() {
       // uncomment below and update the code to test the property purchaseUnitIcmsStfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property purchaseUnitPisCofinsfactor (base name: "purchaseUnitPisCofinsfactor")', function() {
       // uncomment below and update the code to test the property purchaseUnitPisCofinsfactor
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property firstUse (base name: "firstUse")', function() {
       // uncomment below and update the code to test the property firstUse
-      //var instane = new Br16Api.ItemGoods();
+      //var instane = new AvaTaxBrazil.ItemGoods();
       //expect(instance).to.be();
     });
 

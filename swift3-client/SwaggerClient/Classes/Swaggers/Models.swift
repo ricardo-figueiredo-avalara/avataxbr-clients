@@ -249,14 +249,21 @@ class Decoders {
                 instance.accruablePISTaxation = Agast.AccruablePISTaxation(rawValue: (accruablePISTaxation))
             }
             
+            instance.pisExemptLegalReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["pisExemptLegalReasonCode"] as AnyObject?)
+            instance.pisExemptLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["pisExemptLegalReason"] as AnyObject?)
             if let accruableCOFINSTaxation = sourceDictionary["accruableCOFINSTaxation"] as? String { 
                 instance.accruableCOFINSTaxation = Agast.AccruableCOFINSTaxation(rawValue: (accruableCOFINSTaxation))
             }
             
+            instance.cofinsExemptLegalReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cofinsExemptLegalReasonCode"] as AnyObject?)
+            instance.cofinsExemptLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cofinsExemptLegalReason"] as AnyObject?)
             if let accruableCSLLTaxation = sourceDictionary["accruableCSLLTaxation"] as? String { 
                 instance.accruableCSLLTaxation = Agast.AccruableCSLLTaxation(rawValue: (accruableCSLLTaxation))
             }
             
+            instance.csllExemptLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["csllExemptLegalReason"] as AnyObject?)
+            instance.csllExemptLegalReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["csllExemptLegalReasonCode"] as AnyObject?)
+            instance.withholding = Decoders.decodeOptional(clazz: AgastWithholding.self, source: sourceDictionary["withholding"] as AnyObject?)
             instance.issDueatDestination = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["issDueatDestination"] as AnyObject?)
             instance.pisCofinsCreditNotAllowed = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["pisCofinsCreditNotAllowed"] as AnyObject?)
             if let issTaxation = sourceDictionary["issTaxation"] as? String { 
@@ -323,6 +330,95 @@ class Decoders {
             let instance = AgastIcmsConf()
             instance.code = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["code"] as AnyObject?)
             instance.state = Decoders.decodeOptional(clazz: StateEnum.self, source: sourceDictionary["state"] as AnyObject?)
+            return instance
+        }
+
+
+        // Decoder for [AgastWithholding]
+        Decoders.addDecoder(clazz: [AgastWithholding].self) { (source: AnyObject) -> [AgastWithholding] in
+            return Decoders.decode(clazz: [AgastWithholding].self, source: source)
+        }
+        // Decoder for AgastWithholding
+        Decoders.addDecoder(clazz: AgastWithholding.self) { (source: AnyObject) -> AgastWithholding in
+            let sourceDictionary = source as! [AnyHashable: Any]
+
+            let instance = AgastWithholding()
+            instance.IRRF = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["IRRF"] as AnyObject?)
+            instance.iRRFLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["IRRFLegalReason"] as AnyObject?)
+            instance.iNSSSubjectToDischarge = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["INSSSubjectToDischarge"] as AnyObject?)
+            instance.INSS = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["INSS"] as AnyObject?)
+            instance.iNSSLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["INSSLegalReason"] as AnyObject?)
+            instance.iNSsForSimples = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["INSsForSimples"] as AnyObject?)
+            instance.iNSSForSimplesLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["INSSForSimplesLegalReason"] as AnyObject?)
+            instance.PIS = Decoders.decodeOptional(clazz: AgastWithholdingPIS.self, source: sourceDictionary["PIS"] as AnyObject?)
+            instance.COFINS = Decoders.decodeOptional(clazz: AgastWithholdingCOFINS.self, source: sourceDictionary["COFINS"] as AnyObject?)
+            instance.CSLL = Decoders.decodeOptional(clazz: AgastWithholdingCSLL.self, source: sourceDictionary["CSLL"] as AnyObject?)
+            return instance
+        }
+
+
+        // Decoder for [AgastWithholdingCOFINS]
+        Decoders.addDecoder(clazz: [AgastWithholdingCOFINS].self) { (source: AnyObject) -> [AgastWithholdingCOFINS] in
+            return Decoders.decode(clazz: [AgastWithholdingCOFINS].self, source: source)
+        }
+        // Decoder for AgastWithholdingCOFINS
+        Decoders.addDecoder(clazz: AgastWithholdingCOFINS.self) { (source: AnyObject) -> AgastWithholdingCOFINS in
+            let sourceDictionary = source as! [AnyHashable: Any]
+
+            let instance = AgastWithholdingCOFINS()
+            instance.legalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["legalReason"] as AnyObject?)
+            instance.business = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["business"] as AnyObject?)
+            instance.businessLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["businessLegalReason"] as AnyObject?)
+            instance.federalGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["federalGovernment"] as AnyObject?)
+            instance.federalGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["federalGovernmentLegalReason"] as AnyObject?)
+            instance.stateGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["stateGovernment"] as AnyObject?)
+            instance.stateGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["stateGovernmentLegalReason"] as AnyObject?)
+            instance.cityGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["cityGovernment"] as AnyObject?)
+            instance.cityGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cityGovernmentLegalReason"] as AnyObject?)
+            return instance
+        }
+
+
+        // Decoder for [AgastWithholdingCSLL]
+        Decoders.addDecoder(clazz: [AgastWithholdingCSLL].self) { (source: AnyObject) -> [AgastWithholdingCSLL] in
+            return Decoders.decode(clazz: [AgastWithholdingCSLL].self, source: source)
+        }
+        // Decoder for AgastWithholdingCSLL
+        Decoders.addDecoder(clazz: AgastWithholdingCSLL.self) { (source: AnyObject) -> AgastWithholdingCSLL in
+            let sourceDictionary = source as! [AnyHashable: Any]
+
+            let instance = AgastWithholdingCSLL()
+            instance.legalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["legalReason"] as AnyObject?)
+            instance.business = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["business"] as AnyObject?)
+            instance.businessLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["businessLegalReason"] as AnyObject?)
+            instance.federalGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["federalGovernment"] as AnyObject?)
+            instance.federalGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["federalGovernmentLegalReason"] as AnyObject?)
+            instance.stateGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["stateGovernment"] as AnyObject?)
+            instance.stateGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["stateGovernmentLegalReason"] as AnyObject?)
+            instance.cityGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["cityGovernment"] as AnyObject?)
+            instance.cityGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cityGovernmentLegalReason"] as AnyObject?)
+            return instance
+        }
+
+
+        // Decoder for [AgastWithholdingPIS]
+        Decoders.addDecoder(clazz: [AgastWithholdingPIS].self) { (source: AnyObject) -> [AgastWithholdingPIS] in
+            return Decoders.decode(clazz: [AgastWithholdingPIS].self, source: source)
+        }
+        // Decoder for AgastWithholdingPIS
+        Decoders.addDecoder(clazz: AgastWithholdingPIS.self) { (source: AnyObject) -> AgastWithholdingPIS in
+            let sourceDictionary = source as! [AnyHashable: Any]
+
+            let instance = AgastWithholdingPIS()
+            instance.legalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["legalReason"] as AnyObject?)
+            instance.business = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["business"] as AnyObject?)
+            instance.businessLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["businessLegalReason"] as AnyObject?)
+            instance.federalGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["federalGovernment"] as AnyObject?)
+            instance.federalGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["federalGovernmentLegalReason"] as AnyObject?)
+            instance.stateGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["stateGovernment"] as AnyObject?)
+            instance.stateGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["stateGovernmentLegalReason"] as AnyObject?)
+            instance.cityGovernment = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["cityGovernment"] as AnyObject?)
+            instance.cityGovernmentLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cityGovernmentLegalReason"] as AnyObject?)
             return instance
         }
 
@@ -716,14 +812,21 @@ class Decoders {
                 instance.accruablePISTaxation = CustomAgast.AccruablePISTaxation(rawValue: (accruablePISTaxation))
             }
             
+            instance.pisExemptLegalReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["pisExemptLegalReasonCode"] as AnyObject?)
+            instance.pisExemptLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["pisExemptLegalReason"] as AnyObject?)
             if let accruableCOFINSTaxation = sourceDictionary["accruableCOFINSTaxation"] as? String { 
                 instance.accruableCOFINSTaxation = CustomAgast.AccruableCOFINSTaxation(rawValue: (accruableCOFINSTaxation))
             }
             
+            instance.cofinsExemptLegalReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cofinsExemptLegalReasonCode"] as AnyObject?)
+            instance.cofinsExemptLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cofinsExemptLegalReason"] as AnyObject?)
             if let accruableCSLLTaxation = sourceDictionary["accruableCSLLTaxation"] as? String { 
                 instance.accruableCSLLTaxation = CustomAgast.AccruableCSLLTaxation(rawValue: (accruableCSLLTaxation))
             }
             
+            instance.csllExemptLegalReason = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["csllExemptLegalReason"] as AnyObject?)
+            instance.csllExemptLegalReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["csllExemptLegalReasonCode"] as AnyObject?)
+            instance.withholding = Decoders.decodeOptional(clazz: AgastWithholding.self, source: sourceDictionary["withholding"] as AnyObject?)
             instance.issDueatDestination = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["issDueatDestination"] as AnyObject?)
             instance.pisCofinsCreditNotAllowed = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["pisCofinsCreditNotAllowed"] as AnyObject?)
             if let issTaxation = sourceDictionary["issTaxation"] as? String { 
@@ -852,9 +955,6 @@ class Decoders {
                 instance.specializationType = CustomTaxTypeRate.SpecializationType(rawValue: (specializationType))
             }
             
-            instance.exemptionReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["exemptionReasonCode"] as AnyObject?)
-            instance.customExemptionReasonDescription = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["customExemptionReasonDescription"] as AnyObject?)
-            instance.withholding = Decoders.decodeOptional(clazz: TaxTypeRateWithholding.self, source: sourceDictionary["withholding"] as AnyObject?)
             instance.companyId = Decoders.decodeOptional(clazz: UUID.self, source: sourceDictionary["companyId"] as AnyObject?)
             return instance
         }
@@ -1739,7 +1839,6 @@ class Decoders {
             }
             
             instance.icmsBaseDiscountForMonoPhaseSocialContr = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["icmsBaseDiscountForMonoPhaseSocialContr"] as AnyObject?)
-            instance.cest = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cest"] as AnyObject?)
             instance.cean = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["cean"] as AnyObject?)
             instance.nve = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["nve"] as AnyObject?)
             instance.salesUnit = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["salesUnit"] as AnyObject?)
@@ -2020,9 +2119,12 @@ class Decoders {
             let sourceDictionary = source as! [AnyHashable: Any]
 
             let instance = LineForGoodsIcmsTaxRelief()
-            instance.icmsTaxReliefReasonCode = Decoders.decodeOptional(clazz: Int32.self, source: sourceDictionary["icmsTaxReliefReasonCode"] as AnyObject?)
-            instance.icmsReliefTaxRate = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["icmsReliefTaxRate"] as AnyObject?)
-            instance.icmsReliefTaxAmount = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["icmsReliefTaxAmount"] as AnyObject?)
+            if let reasonCode = sourceDictionary["reasonCode"] as? String { 
+                instance.reasonCode = LineForGoodsIcmsTaxRelief.ReasonCode(rawValue: (reasonCode))
+            }
+            
+            instance.taxBaseDiscount = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["taxBaseDiscount"] as AnyObject?)
+            instance.taxAmount = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["taxAmount"] as AnyObject?)
             return instance
         }
 
@@ -3946,27 +4048,6 @@ class Decoders {
                 instance.specializationType = TaxTypeRate.SpecializationType(rawValue: (specializationType))
             }
             
-            instance.exemptionReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["exemptionReasonCode"] as AnyObject?)
-            instance.customExemptionReasonDescription = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["customExemptionReasonDescription"] as AnyObject?)
-            instance.withholding = Decoders.decodeOptional(clazz: TaxTypeRateWithholding.self, source: sourceDictionary["withholding"] as AnyObject?)
-            return instance
-        }
-
-
-        // Decoder for [TaxTypeRateWithholding]
-        Decoders.addDecoder(clazz: [TaxTypeRateWithholding].self) { (source: AnyObject) -> [TaxTypeRateWithholding] in
-            return Decoders.decode(clazz: [TaxTypeRateWithholding].self, source: source)
-        }
-        // Decoder for TaxTypeRateWithholding
-        Decoders.addDecoder(clazz: TaxTypeRateWithholding.self) { (source: AnyObject) -> TaxTypeRateWithholding in
-            let sourceDictionary = source as! [AnyHashable: Any]
-
-            let instance = TaxTypeRateWithholding()
-            instance.all = Decoders.decodeOptional(clazz: WithholdDef.self, source: sourceDictionary["all"] as AnyObject?)
-            instance.business = Decoders.decodeOptional(clazz: WithholdDef.self, source: sourceDictionary["business"] as AnyObject?)
-            instance.federalGovernment = Decoders.decodeOptional(clazz: WithholdDef.self, source: sourceDictionary["federalGovernment"] as AnyObject?)
-            instance.stateGovernment = Decoders.decodeOptional(clazz: WithholdDef.self, source: sourceDictionary["stateGovernment"] as AnyObject?)
-            instance.cityGovernment = Decoders.decodeOptional(clazz: WithholdDef.self, source: sourceDictionary["cityGovernment"] as AnyObject?)
             return instance
         }
 
@@ -4190,21 +4271,6 @@ class Decoders {
             instance.serieNumber = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["serieNumber"] as AnyObject?)
             instance.gunBarrelSerieNumber = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["gunBarrelSerieNumber"] as AnyObject?)
             instance.weaponDescription = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["weaponDescription"] as AnyObject?)
-            return instance
-        }
-
-
-        // Decoder for [WithholdDef]
-        Decoders.addDecoder(clazz: [WithholdDef].self) { (source: AnyObject) -> [WithholdDef] in
-            return Decoders.decode(clazz: [WithholdDef].self, source: source)
-        }
-        // Decoder for WithholdDef
-        Decoders.addDecoder(clazz: WithholdDef.self) { (source: AnyObject) -> WithholdDef in
-            let sourceDictionary = source as! [AnyHashable: Any]
-
-            let instance = WithholdDef()
-            instance.exemptionReasonCode = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["exemptionReasonCode"] as AnyObject?)
-            instance.customExemptionReasonDescription = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["customExemptionReasonDescription"] as AnyObject?)
             return instance
         }
 

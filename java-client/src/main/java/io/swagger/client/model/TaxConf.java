@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * TaxConf
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class TaxConf {
   @SerializedName("code")
   private String code = null;
@@ -36,23 +36,32 @@ public class TaxConf {
   private Boolean financialImpact = null;
 
   /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    */
   public enum CstIPIEnum {
-    @SerializedName("50")
-    _50("50"),
+    @SerializedName("T")
+    T("T"),
     
-    @SerializedName("51")
-    _51("51"),
+    @SerializedName("Z")
+    Z("Z"),
     
-    @SerializedName("52")
-    _52("52"),
+    @SerializedName("E")
+    E("E"),
     
-    @SerializedName("53")
-    _53("53"),
+    @SerializedName("H")
+    H("H"),
     
-    @SerializedName("54")
-    _54("54");
+    @SerializedName("N")
+    N("N"),
+    
+    @SerializedName("I")
+    I("I"),
+    
+    @SerializedName("O")
+    O("O"),
+    
+    @SerializedName("OZ")
+    OZ("OZ");
 
     private String value;
 
@@ -73,7 +82,7 @@ public class TaxConf {
   private String ipiLegalTaxClass = null;
 
   /**
-   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
    */
   public enum AccruablePISTaxationEnum {
     @SerializedName("T")
@@ -89,7 +98,13 @@ public class TaxConf {
     H("H"),
     
     @SerializedName("N")
-    N("N");
+    N("N"),
+    
+    @SerializedName("O")
+    O("O"),
+    
+    @SerializedName("OZ")
+    OZ("OZ");
 
     private String value;
 
@@ -113,7 +128,7 @@ public class TaxConf {
   private String pisExemptLegalReason = null;
 
   /**
-   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    */
   public enum AccruableCOFINSTaxationEnum {
     @SerializedName("T")
@@ -129,7 +144,13 @@ public class TaxConf {
     H("H"),
     
     @SerializedName("N")
-    N("N");
+    N("N"),
+    
+    @SerializedName("O")
+    O("O"),
+    
+    @SerializedName("OZ")
+    OZ("OZ");
 
     private String value;
 
@@ -218,10 +239,10 @@ public class TaxConf {
   }
 
    /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    * @return cstIPI
   **/
-  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune ")
+  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES ")
   public CstIPIEnum getCstIPI() {
     return cstIPI;
   }
@@ -254,10 +275,10 @@ public class TaxConf {
   }
 
    /**
-   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
    * @return accruablePISTaxation
   **/
-  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
+  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES ")
   public AccruablePISTaxationEnum getAccruablePISTaxation() {
     return accruablePISTaxation;
   }
@@ -308,10 +329,10 @@ public class TaxConf {
   }
 
    /**
-   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    * @return accruableCOFINSTaxation
   **/
-  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
+  @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES ")
   public AccruableCOFINSTaxationEnum getAccruableCOFINSTaxation() {
     return accruableCOFINSTaxation;
   }

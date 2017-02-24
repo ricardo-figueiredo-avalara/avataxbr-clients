@@ -8,7 +8,7 @@
 import Foundation
 
 
-/** Tax Rate */
+/** Tax Rate Obs: AR - \&quot;a recolher\&quot; (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço)  */
 public class TaxType: JSONEncodable {
 
     public init() {}

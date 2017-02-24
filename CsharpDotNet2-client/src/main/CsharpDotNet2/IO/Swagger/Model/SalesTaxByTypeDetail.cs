@@ -29,9 +29,9 @@ namespace IO.Swagger.Model {
     public string JurisdictionName { get; set; }
 
     /// <summary>
-    /// Type of jurisdiction - 'city' - 'state' - 'country' 
+    /// Type of jurisdiction - 'City' - 'State' - 'Country' 
     /// </summary>
-    /// <value>Type of jurisdiction - 'city' - 'state' - 'country' </value>
+    /// <value>Type of jurisdiction - 'City' - 'State' - 'Country' </value>
     [DataMember(Name="jurisdictionType", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "jurisdictionType")]
     public string JurisdictionType { get; set; }

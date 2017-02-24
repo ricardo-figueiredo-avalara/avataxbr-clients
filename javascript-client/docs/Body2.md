@@ -1,4 +1,4 @@
-# Br16Api.Body2
+# AvaTaxBrazil.Body2
 
 ## Properties
 Name | Type | Description | Notes

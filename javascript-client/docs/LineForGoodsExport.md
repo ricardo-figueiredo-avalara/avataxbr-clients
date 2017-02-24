@@ -1,4 +1,4 @@
-# Br16Api.LineForGoodsExport
+# AvaTaxBrazil.LineForGoodsExport
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Br16Api.FuelPumpNumber
+# AvaTaxBrazil.FuelPumpNumber
 
 ## Properties
 Name | Type | Description | Notes

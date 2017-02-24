@@ -1,4 +1,4 @@
-# Br16Api.EntityForGoods
+# AvaTaxBrazil.EntityForGoods
 
 ## Properties
 Name | Type | Description | Notes

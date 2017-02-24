@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.LegalReason();
+    instance = new AvaTaxBrazil.LegalReason();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('LegalReason', function() {
     it('should create an instance of LegalReason', function() {
       // uncomment below and update the code to test LegalReason
-      //var instane = new Br16Api.LegalReason();
-      //expect(instance).to.be.a(Br16Api.LegalReason);
+      //var instane = new AvaTaxBrazil.LegalReason();
+      //expect(instance).to.be.a(AvaTaxBrazil.LegalReason);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property scope (base name: "scope")', function() {
       // uncomment below and update the code to test the property scope
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property disable (base name: "disable")', function() {
       // uncomment below and update the code to test the property disable
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property legalCode (base name: "legalCode")', function() {
       // uncomment below and update the code to test the property legalCode
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property showInInvoice (base name: "showInInvoice")', function() {
       // uncomment below and update the code to test the property showInInvoice
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property referencedProcesses (base name: "referencedProcesses")', function() {
       // uncomment below and update the code to test the property referencedProcesses
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 
     it('should have the property taxScope (base name: "taxScope")', function() {
       // uncomment below and update the code to test the property taxScope
-      //var instane = new Br16Api.LegalReason();
+      //var instane = new AvaTaxBrazil.LegalReason();
       //expect(instance).to.be();
     });
 

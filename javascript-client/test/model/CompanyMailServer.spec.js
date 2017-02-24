@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.CompanyMailServer();
+    instance = new AvaTaxBrazil.CompanyMailServer();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('CompanyMailServer', function() {
     it('should create an instance of CompanyMailServer', function() {
       // uncomment below and update the code to test CompanyMailServer
-      //var instane = new Br16Api.CompanyMailServer();
-      //expect(instance).to.be.a(Br16Api.CompanyMailServer);
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
+      //expect(instance).to.be.a(AvaTaxBrazil.CompanyMailServer);
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 
     it('should have the property password (base name: "password")', function() {
       // uncomment below and update the code to test the property password
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 
     it('should have the property smtpAddress (base name: "smtpAddress")', function() {
       // uncomment below and update the code to test the property smtpAddress
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 
     it('should have the property port (base name: "port")', function() {
       // uncomment below and update the code to test the property port
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 
     it('should have the property emailFrom (base name: "emailFrom")', function() {
       // uncomment below and update the code to test the property emailFrom
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 
     it('should have the property protocol (base name: "protocol")', function() {
       // uncomment below and update the code to test the property protocol
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 
     it('should have the property templatemessageToEmail (base name: "templatemessageToEmail")', function() {
       // uncomment below and update the code to test the property templatemessageToEmail
-      //var instane = new Br16Api.CompanyMailServer();
+      //var instane = new AvaTaxBrazil.CompanyMailServer();
       //expect(instance).to.be();
     });
 

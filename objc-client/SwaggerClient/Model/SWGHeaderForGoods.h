@@ -2,8 +2,8 @@
 #import "SWGObject.h"
 
 /**
-* BR16 - API
-* This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+* AvaTax Brazil
+* The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 *
 * OpenAPI spec version: 1.0
 * 
@@ -51,7 +51,7 @@
 /* This string indicates the type of transaction for which tax should be calculated. 
  */
 @property(nonatomic) NSString* transactionType;
-/* This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e)  
+/* This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e)  [optional]
  */
 @property(nonatomic) NSString* transactionModel;
 /* Natureza da Opreração - 'Describe kind of this transaction, summary [optional]
@@ -62,16 +62,16 @@
 /* This Flag is used only when eDocCreatorType is other and the return show Taxes using eDocCreator perspective or self perspective. [optional]
  */
 @property(nonatomic) NSNumber* eDocCreatorPerspective;
-/* This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company. 
+/* This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company. [optional]
  */
 @property(nonatomic) NSString* entityCode;
-/* currency code 
+/* currency code [optional]
  */
 @property(nonatomic) NSString* currency;
 /* This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity 
  */
 @property(nonatomic) NSString* companyLocation;
-/* This string is the transaction date in ISO 8601 format, create transaction date 
+/* This string is the transaction date in ISO 8601 format, create transaction date [optional]
  */
 @property(nonatomic) NSString* transactionDate;
 /* This string is the transaction date in ISO 8601 format, when products were shipped, can be empty or absent [optional]
@@ -88,10 +88,10 @@
 /* Presence indicator - '0' # Not applicable - '1' # Presential; - '2' # Remote, internet; - '3' # Remote, phone; - '4' # NFC-e home delivery; - '9' # Remote, others  [optional]
  */
 @property(nonatomic) NSString* indPres;
-/* Invoice number, sequential unique by invoice serial (Número da nota fiscal) 
+/* Invoice number, sequential unique by invoice serial (Número da nota fiscal) [optional]
  */
 @property(nonatomic) NSNumber* invoiceNumber;
-/* Invoice number, sequential unique by invoice serial (Número da nota fiscal)  
+/* Invoice number, sequential unique by invoice serial (Número da nota fiscal)  [optional]
  */
 @property(nonatomic) NSNumber* invoiceSerial;
 

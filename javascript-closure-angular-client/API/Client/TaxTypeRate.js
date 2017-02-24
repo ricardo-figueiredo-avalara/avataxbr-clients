@@ -44,26 +44,6 @@ API.Client.TaxTypeRate.prototype.quantityUnidBase;
  */
 API.Client.TaxTypeRate.prototype.specializationType;
 
-/**
- * UUID Reference to an item in the LegalReason store. 
- * @type {!string}
- * @export
- */
-API.Client.TaxTypeRate.prototype.exemptionReasonCode;
-
-/**
- * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
- * @type {!string}
- * @export
- */
-API.Client.TaxTypeRate.prototype.customExemptionReasonDescription;
-
-/**
- * @type {!API.Client.TaxTypeRate_withholding}
- * @export
- */
-API.Client.TaxTypeRate.prototype.withholding;
-
 /** @enum {string} */
 API.Client.TaxTypeRate.TaxModelEnum = { 
   rate: 'rate',

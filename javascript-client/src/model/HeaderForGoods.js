@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('./AdditionalInformation'), require('./DefaultLocations'), require('./ExportInfo'), require('./HeaderForGoodsParticipants'), require('./NRef'), require('./Payment'), require('./PurchaseInfo'), require('./Transport'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.HeaderForGoods = factory(root.Br16Api.ApiClient, root.Br16Api.AdditionalInformation, root.Br16Api.DefaultLocations, root.Br16Api.ExportInfo, root.Br16Api.HeaderForGoodsParticipants, root.Br16Api.NRef, root.Br16Api.Payment, root.Br16Api.PurchaseInfo, root.Br16Api.Transport);
+    root.AvaTaxBrazil.HeaderForGoods = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.AdditionalInformation, root.AvaTaxBrazil.DefaultLocations, root.AvaTaxBrazil.ExportInfo, root.AvaTaxBrazil.HeaderForGoodsParticipants, root.AvaTaxBrazil.NRef, root.AvaTaxBrazil.Payment, root.AvaTaxBrazil.PurchaseInfo, root.AvaTaxBrazil.Transport);
   }
 }(this, function(ApiClient, AdditionalInformation, DefaultLocations, ExportInfo, HeaderForGoodsParticipants, NRef, Payment, PurchaseInfo, Transport) {
   'use strict';
@@ -44,17 +44,10 @@
    * @param accountId {String} This string is a UUID issued by Avalara to identify the Avalara account that owns the company identified by the companyCode on the next line.
    * @param companyCode {String} string is a code maintained by the client application to uniquely identify the company for which this transaction is being recorded. It is unique within the context of an Account. It will be limited to 60 characters when creating a Company
    * @param transactionType {module:model/HeaderForGoods.TransactionTypeEnum} This string indicates the type of transaction for which tax should be calculated.
-   * @param transactionModel {module:model/HeaderForGoods.TransactionModelEnum} This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) 
    * @param eDocCreatorType {module:model/HeaderForGoods.EDocCreatorTypeEnum} 
-   * @param entityCode {String} This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.
-   * @param currency {module:model/HeaderForGoods.CurrencyEnum} currency code
    * @param companyLocation {String} This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity
-   * @param transactionDate {String} This string is the transaction date in ISO 8601 format, create transaction date
-   * @param invoiceNumber {Number} Invoice number, sequential unique by invoice serial (Número da nota fiscal)
-   * @param invoiceSerial {Number} Invoice number, sequential unique by invoice serial (Número da nota fiscal) 
-   * @param payment {module:model/Payment} 
    */
-  var exports = function(accountId, companyCode, transactionType, transactionModel, eDocCreatorType, entityCode, currency, companyLocation, transactionDate, invoiceNumber, invoiceSerial, payment) {
+  var exports = function(accountId, companyCode, transactionType, eDocCreatorType, companyLocation) {
     var _this = this;
 
 
@@ -65,25 +58,25 @@
 
 
     _this['transactionType'] = transactionType;
-    _this['transactionModel'] = transactionModel;
+
 
     _this['eDocCreatorType'] = eDocCreatorType;
 
-    _this['entityCode'] = entityCode;
-    _this['currency'] = currency;
+
+
     _this['companyLocation'] = companyLocation;
-    _this['transactionDate'] = transactionDate;
 
 
 
 
 
-    _this['invoiceNumber'] = invoiceNumber;
-    _this['invoiceSerial'] = invoiceSerial;
 
 
 
-    _this['payment'] = payment;
+
+
+
+
 
 
   };

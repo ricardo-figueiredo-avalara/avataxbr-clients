@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    BR16 - API
+    AvaTax Brazil
 
-    This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+    The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
     OpenAPI spec version: 1.0
     
@@ -22,6 +22,10 @@ from .agast import Agast
 from .agast_code_type import AgastCodeType
 from .agast_extend_for_sefaz import AgastExtendForSefaz
 from .agast_icms_conf import AgastIcmsConf
+from .agast_withholding import AgastWithholding
+from .agast_withholding_cofins import AgastWithholdingCOFINS
+from .agast_withholding_csll import AgastWithholdingCSLL
+from .agast_withholding_pis import AgastWithholdingPIS
 from .body import Body
 from .body_1 import Body1
 from .body_2 import Body2
@@ -184,7 +188,6 @@ from .tax_by_type_tax import TaxByTypeTax
 from .tax_conf import TaxConf
 from .tax_type import TaxType
 from .tax_type_rate import TaxTypeRate
-from .tax_type_rate_withholding import TaxTypeRateWithholding
 from .transaction_for_goods_in import TransactionForGoodsIn
 from .transaction_for_goods_out import TransactionForGoodsOut
 from .transaction_for_sefaz_goods import TransactionForSefazGoods
@@ -196,5 +199,4 @@ from .vehicle import Vehicle
 from .vehicle_id import VehicleID
 from .vehicle_transp import VehicleTransp
 from .weapon import Weapon
-from .withhold_def import WithholdDef
 from .withholding_mode import WithholdingMode

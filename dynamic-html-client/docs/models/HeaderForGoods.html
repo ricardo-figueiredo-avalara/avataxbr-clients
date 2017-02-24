@@ -60,7 +60,7 @@
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">transactionModel : String
+  <li class="param-required-false">transactionModel : String
     <br/>This string indicates the type of transaction for which tax should be calculated. - &#39;01&#39; # Nota Fiscal 1/1A - &#39;1B&#39; # Nota Fiscal Avulsa - &#39;02&#39; # Nota Fiscal de Venda a-Consumidor - &#39;2D&#39; # Cupom Fiscal - &#39;2E&#39; # Cupom Fiscal-Bilhete de Passagem - &#39;04&#39; # Nota Fiscal de Produtor - &#39;06&#39; # Nota Fiscal/Conta de Energia Elétrica - &#39;07&#39; # Nota Fiscal de Serviço de Transporte - &#39;08&#39; # Conhecimento de Transporte Rodoviário de-Cargas - &#39;8B&#39; # Conhecimento de Transporte de-Cargas Avulso - &#39;09&#39; # Conhecimento de Transporte Aquaviário de-Cargas - &#39;10&#39; # Conhecimento Aéreo - &#39;11&#39; # Conhecimento de Transporte Ferroviário de-Cargas - &#39;13&#39; # Bilhete de Passagem Rodoviário - &#39;14&#39; # Bilhete de Passagem Aquaviário - &#39;15&#39; # Bilhete de Passagem e-Nota de-Bagagem - &#39;16&#39; # Bilhete de Passagem Ferroviário - &#39;18&#39; # Resumo de Movimento Diário - &#39;21&#39; # Nota Fiscal de Serviço de-Comunicação - &#39;22&#39; # Nota Fiscal de Serviço de Telecomunicação - &#39;26&#39; # Conhecimento de Transporte Multimodal de-Cargas - &#39;27&#39; # Nota Fiscal De Transporte Ferroviário De-Carga - &#39;28&#39; # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - &#39;29&#39; # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - &#39;55&#39; # Nota Fiscal Eletrônica (NF-e) - &#39;57&#39; # Conhecimento de Transporte Eletrônico (CT-e) - &#39;59&#39; # Cupom Fiscal Eletrônico (CF-e-SAT) - &#39;60&#39; # Cupom Fiscal Eletrônico (CF-e-ECF) - &#39;65&#39; # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) 
       <dl class="param-enum">
         <dt>Enum:
@@ -119,12 +119,12 @@
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">entityCode : String
+  <li class="param-required-false">entityCode : String
     <br/>This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">currency : String
+  <li class="param-required-false">currency : String
     <br/>currency code
       <dl class="param-enum">
         <dt>Enum:
@@ -139,7 +139,7 @@
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">transactionDate : String
+  <li class="param-required-false">transactionDate : String
     <br/>This string is the transaction date in ISO 8601 format, create transaction date
   </li>
 </ul>
@@ -189,12 +189,12 @@
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">invoiceNumber : Integer
+  <li class="param-required-false">invoiceNumber : Integer
     <br/>Invoice number, sequential unique by invoice serial (Número da nota fiscal)
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">invoiceSerial : Integer
+  <li class="param-required-false">invoiceSerial : Integer
     <br/>Invoice number, sequential unique by invoice serial (Número da nota fiscal) 
   </li>
 </ul>
@@ -214,7 +214,7 @@
   </li>
 </ul>
 <ul class="parameter">
-  <li class="param-required-true">payment : Payment
+  <li class="param-required-false">payment : Payment
     <br/>
   </li>
 </ul>

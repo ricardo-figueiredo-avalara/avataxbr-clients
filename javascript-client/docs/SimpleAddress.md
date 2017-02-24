@@ -1,4 +1,4 @@
-# Br16Api.SimpleAddress
+# AvaTaxBrazil.SimpleAddress
 
 ## Properties
 Name | Type | Description | Notes

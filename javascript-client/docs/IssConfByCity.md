@@ -1,4 +1,4 @@
-# Br16Api.IssConfByCity
+# AvaTaxBrazil.IssConfByCity
 
 ## Properties
 Name | Type | Description | Notes

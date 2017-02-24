@@ -1,4 +1,4 @@
-# Br16Api.Vehicle
+# AvaTaxBrazil.Vehicle
 
 ## Properties
 Name | Type | Description | Notes

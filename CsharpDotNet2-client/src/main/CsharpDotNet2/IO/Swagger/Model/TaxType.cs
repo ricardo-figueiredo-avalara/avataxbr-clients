@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Model {
 
   /// <summary>
-  /// Tax Rate
+  /// Tax Rate Obs: AR - \&quot;a recolher\&quot; (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço) 
   /// </summary>
   [DataContract]
   public class TaxType {

@@ -17,14 +17,17 @@
 </ul>
 <ul class="parameter">
   <li class="param-required-false">cstIPI : String
-    <br/>Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune 
+    <br/>Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES 
       <dl class="param-enum">
         <dt>Enum:
-            <dd>50</dd>
-            <dd>51</dd>
-            <dd>52</dd>
-            <dd>53</dd>
-            <dd>54</dd>
+            <dd>T</dd>
+            <dd>Z</dd>
+            <dd>E</dd>
+            <dd>H</dd>
+            <dd>N</dd>
+            <dd>I</dd>
+            <dd>O</dd>
+            <dd>OZ</dd>
         </dt>
       </dl>
   </li>
@@ -36,7 +39,7 @@
 </ul>
 <ul class="parameter">
   <li class="param-required-false">accruablePISTaxation : String
-    <br/>Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
+    <br/>Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE - &#39;O&#39; # OTHER - &#39;OZ&#39;# OTHER AND ZERO VALUES 
       <dl class="param-enum">
         <dt>Enum:
             <dd>T</dd>
@@ -44,6 +47,8 @@
             <dd>E</dd>
             <dd>H</dd>
             <dd>N</dd>
+            <dd>O</dd>
+            <dd>OZ</dd>
         </dt>
       </dl>
   </li>
@@ -60,7 +65,7 @@
 </ul>
 <ul class="parameter">
   <li class="param-required-false">accruableCOFINSTaxation : String
-    <br/>Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
+    <br/>Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES 
       <dl class="param-enum">
         <dt>Enum:
             <dd>T</dd>
@@ -68,6 +73,8 @@
             <dd>E</dd>
             <dd>H</dd>
             <dd>N</dd>
+            <dd>O</dd>
+            <dd>OZ</dd>
         </dt>
       </dl>
   </li>

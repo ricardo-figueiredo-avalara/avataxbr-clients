@@ -1,4 +1,4 @@
-# Br16Api.SalesLinesIn
+# AvaTaxBrazil.SalesLinesIn
 
 ## Properties
 Name | Type | Description | Notes

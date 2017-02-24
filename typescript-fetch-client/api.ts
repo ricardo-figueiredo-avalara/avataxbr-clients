@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -19,7 +19,7 @@ import * as assign from "core-js/library/fn/object/assign";
 interface Dictionary<T> { [index: string]: T; }
 export interface FetchAPI { (url: string, init?: any): Promise<any>; }
 
-const BASE_PATH = "https://br16-dev-app03.br.avalara.com/v2".replace(/\/+$/, "");
+const BASE_PATH = "http://avataxbr-sandbox.avalarabrasil.com.br/v2".replace(/\/+$/, "");
 
 export interface FetchArgs {
     url: string;
@@ -128,7 +128,7 @@ export interface Agast {
     "cean"?: string;
     "codeType"?: AgastCodeType;
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
      */
     "cstIPI"?: AgastCstIPIEnum;
     /**
@@ -144,13 +144,32 @@ export interface Agast {
      */
     "accruablePISTaxation"?: AgastAccruablePISTaxationEnum;
     /**
+     * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+     */
+    "pisExemptLegalReasonCode"?: string;
+    /**
+     * When specified a reason, this field holds the reason's description
+     */
+    "pisExemptLegalReason"?: string;
+    /**
      * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
      */
     "accruableCOFINSTaxation"?: AgastAccruableCOFINSTaxationEnum;
     /**
+     * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+     */
+    "cofinsExemptLegalReasonCode"?: string;
+    /**
+     * When specified a reason, this field holds the reason's description
+     */
+    "cofinsExemptLegalReason"?: string;
+    /**
      * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
      */
     "accruableCSLLTaxation"?: AgastAccruableCSLLTaxationEnum;
+    "csllExemptLegalReason"?: string;
+    "csllExemptLegalReasonCode"?: string;
+    "withholding"?: AgastWithholding;
     /**
      * for service items with City Jurisdiction, inform where the ISS tax is due
      */
@@ -174,7 +193,7 @@ export interface Agast {
     "icmsConf"?: Array<AgastIcmsConf>;
 }
 
-export type AgastCstIPIEnum = "50" | "51" | "52" | "53" | "54";
+export type AgastCstIPIEnum = "T" | "Z" | "E" | "N" | "I";
 export type AgastPisCofinsTaxReportingEnum = "cumulative" | "noCumulative";
 export type AgastAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N";
 export type AgastAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N";
@@ -231,6 +250,115 @@ export interface AgastExtendForSefaz {
 export interface AgastIcmsConf {
     "code"?: string;
     "state"?: StateEnum;
+}
+
+/**
+ * inform if this item is subject to withholding tax on service Transactions, default true
+ */
+export interface AgastWithholding {
+    "iRRF"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "iRRFLegalReason"?: string;
+    /**
+     * Item subjecto to payroll discharge Item sujeto à desoneraçãode folha de pagamento 
+     */
+    "iNSSSubjectToDischarge"?: boolean;
+    "iNSS"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "iNSSLegalReason"?: string;
+    "iNSsForSimples"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "iNSSForSimplesLegalReason"?: string;
+    "pIS"?: AgastWithholdingPIS;
+    "cOFINS"?: AgastWithholdingCOFINS;
+    "cSLL"?: AgastWithholdingCSLL;
+}
+
+/**
+ * inform if this item is subject to withholding COFINS on service Transactions, by entity type, default true
+ */
+export interface AgastWithholdingCOFINS {
+    "legalReason"?: string;
+    "business"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "businessLegalReason"?: string;
+    "federalGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "federalGovernmentLegalReason"?: string;
+    "stateGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "stateGovernmentLegalReason"?: string;
+    "cityGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "cityGovernmentLegalReason"?: string;
+}
+
+/**
+ * inform if this item is subject to withholding CSLL on service Transactions, by entity type, default true
+ */
+export interface AgastWithholdingCSLL {
+    "legalReason"?: string;
+    "business"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "businessLegalReason"?: string;
+    "federalGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "federalGovernmentLegalReason"?: string;
+    "stateGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "stateGovernmentLegalReason"?: string;
+    "cityGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "cityGovernmentLegalReason"?: string;
+}
+
+/**
+ * inform if this item is subject to withholding PIS on service Transactions, by entity type, default true
+ */
+export interface AgastWithholdingPIS {
+    "legalReason"?: string;
+    "business"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "businessLegalReason"?: string;
+    "federalGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "federalGovernmentLegalReason"?: string;
+    "stateGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "stateGovernmentLegalReason"?: string;
+    "cityGovernment"?: boolean;
+    /**
+     * reference id to TaxLegalReason
+     */
+    "cityGovernmentLegalReason"?: string;
 }
 
 export interface Body {
@@ -344,7 +472,7 @@ export interface CfopConf {
      */
     "financialImpact"?: boolean;
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "cstIPI"?: CfopConfCstIPIEnum;
     /**
@@ -352,7 +480,7 @@ export interface CfopConf {
      */
     "ipiLegalTaxClass"?: string;
     /**
-     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
      */
     "accruablePISTaxation"?: CfopConfAccruablePISTaxationEnum;
     /**
@@ -364,7 +492,7 @@ export interface CfopConf {
      */
     "pisExemptLegalReason"?: string;
     /**
-     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "accruableCOFINSTaxation"?: CfopConfAccruableCOFINSTaxationEnum;
     /**
@@ -426,9 +554,9 @@ export interface CfopConf {
     "specificForProductClass"?: CfopConfSpecificForProductClassEnum;
 }
 
-export type CfopConfCstIPIEnum = "50" | "51" | "52" | "53" | "54";
-export type CfopConfAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N";
-export type CfopConfAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N";
+export type CfopConfCstIPIEnum = "T" | "Z" | "E" | "H" | "N" | "I" | "O" | "OZ";
+export type CfopConfAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
+export type CfopConfAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
 export type CfopConfWayTypeEnum = "in" | "out";
 export type CfopConfProductTypeEnum = "FOR PRODUCT" | "FOR MERCHANDISE" | "NO RESTRICTION";
 export type CfopConfSpecificForProductClassEnum = "OTHERS" | "COMMUNICATION" | "ENERGY" | "TRANSPORT" | "FUEL AND LUBRIFICANT" | "VEHICLE" | "ALCOHOLIC BEVERAGES" | "WEAPONS" | "AMMO" | "PERFUM" | "TOBACCO";
@@ -599,7 +727,7 @@ export interface CustomAgast {
     "cean"?: string;
     "codeType"?: AgastCodeType;
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
      */
     "cstIPI"?: CustomAgastCstIPIEnum;
     /**
@@ -615,13 +743,32 @@ export interface CustomAgast {
      */
     "accruablePISTaxation"?: CustomAgastAccruablePISTaxationEnum;
     /**
+     * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+     */
+    "pisExemptLegalReasonCode"?: string;
+    /**
+     * When specified a reason, this field holds the reason's description
+     */
+    "pisExemptLegalReason"?: string;
+    /**
      * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
      */
     "accruableCOFINSTaxation"?: CustomAgastAccruableCOFINSTaxationEnum;
     /**
+     * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+     */
+    "cofinsExemptLegalReasonCode"?: string;
+    /**
+     * When specified a reason, this field holds the reason's description
+     */
+    "cofinsExemptLegalReason"?: string;
+    /**
      * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
      */
     "accruableCSLLTaxation"?: CustomAgastAccruableCSLLTaxationEnum;
+    "csllExemptLegalReason"?: string;
+    "csllExemptLegalReasonCode"?: string;
+    "withholding"?: AgastWithholding;
     /**
      * for service items with City Jurisdiction, inform where the ISS tax is due
      */
@@ -649,7 +796,7 @@ export interface CustomAgast {
     "companyId": string;
 }
 
-export type CustomAgastCstIPIEnum = "50" | "51" | "52" | "53" | "54";
+export type CustomAgastCstIPIEnum = "T" | "Z" | "E" | "N" | "I";
 export type CustomAgastPisCofinsTaxReportingEnum = "cumulative" | "noCumulative";
 export type CustomAgastAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N";
 export type CustomAgastAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N";
@@ -749,7 +896,7 @@ export interface CustomProcessScenario {
      */
     "financialImpact"?: boolean;
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "cstIPI"?: CustomProcessScenarioCstIPIEnum;
     /**
@@ -757,7 +904,7 @@ export interface CustomProcessScenario {
      */
     "ipiLegalTaxClass"?: string;
     /**
-     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
      */
     "accruablePISTaxation"?: CustomProcessScenarioAccruablePISTaxationEnum;
     /**
@@ -769,7 +916,7 @@ export interface CustomProcessScenario {
      */
     "pisExemptLegalReason"?: string;
     /**
-     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "accruableCOFINSTaxation"?: CustomProcessScenarioAccruableCOFINSTaxationEnum;
     /**
@@ -809,9 +956,9 @@ export interface CustomProcessScenario {
     "companyId": string;
 }
 
-export type CustomProcessScenarioCstIPIEnum = "50" | "51" | "52" | "53" | "54";
-export type CustomProcessScenarioAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N";
-export type CustomProcessScenarioAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N";
+export type CustomProcessScenarioCstIPIEnum = "T" | "Z" | "E" | "H" | "N" | "I" | "O" | "OZ";
+export type CustomProcessScenarioAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
+export type CustomProcessScenarioAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
 export type CustomProcessScenarioTypeEnum = "SALES" | "PURCHASE" | "SALES_RETURN" | "PURCHASE_RETURN" | "TRANSFER_RETURN" | "SHIPPING" | "SHIPPING_RETURN" | "TRANSFER" | "RECEIPT_AJUSTE" | "TRANSFER_AJUSTE";
 export type CustomProcessScenarioWayTypeEnum = "in" | "out";
 export type CustomProcessScenarioGoalEnum = "Normal" | "Complementary" | "Voided" | "Replacement" | "Return" | "Adjustment";
@@ -831,15 +978,6 @@ export interface CustomTaxTypeRate {
     "srvAmount"?: number;
     "quantityUnidBase"?: string;
     "specializationType"?: CustomTaxTypeRateSpecializationTypeEnum;
-    /**
-     * UUID Reference to an item in the LegalReason store. 
-     */
-    "exemptionReasonCode"?: string;
-    /**
-     * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-     */
-    "customExemptionReasonDescription"?: string;
-    "withholding"?: TaxTypeRateWithholding;
     /**
      * Company ID
      */
@@ -869,7 +1007,7 @@ export interface DetailsCalculatedTax {
      */
     "jurisdictionName"?: string;
     /**
-     * Type of jurisdiction
+     * Type of jurisdiction - 'City' - 'State' - 'Country' 
      */
     "jurisdictionType"?: DetailsCalculatedTaxJurisdictionTypeEnum;
     /**
@@ -910,7 +1048,7 @@ export interface DetailsCalculatedTax {
     "taxRuleType"?: DetailsCalculatedTaxTaxRuleTypeEnum;
 }
 
-export type DetailsCalculatedTaxJurisdictionTypeEnum = "city" | "state" | "country";
+export type DetailsCalculatedTaxJurisdictionTypeEnum = "City" | "State" | "Country";
 export type DetailsCalculatedTaxTaxTypeEnum = "icms" | "icmsSt" | "icmsStSd" | "icmsPartOwn" | "icmsPartDest" | "icmsDifaFCP" | "icmsDifaDest" | "icmsDifaRemet" | "icmsRf" | "icmsDeson" | "icmsCredsn" | "pis" | "pisSt" | "cofins" | "cofinsSt" | "ipi" | "ipiReturned" | "ii" | "iof" | "aproxtribState" | "aproxtribFed" | "aproxtrib";
 export type DetailsCalculatedTaxTaxRuleTypeEnum = "SELLER" | "BUYER" | "TRANSACTION" | "ITEM" | "TAX";
 export interface DetailsCalculatedTaxItem {
@@ -923,7 +1061,7 @@ export interface DetailsCalculatedTaxItem {
      */
     "jurisdictionName"?: string;
     /**
-     * Type of jurisdiction
+     * Type of jurisdiction - 'City' - 'State' - 'Country' 
      */
     "jurisdictionType"?: DetailsCalculatedTaxItemJurisdictionTypeEnum;
     /**
@@ -968,7 +1106,7 @@ export interface DetailsCalculatedTaxItem {
     "cst"?: string;
 }
 
-export type DetailsCalculatedTaxItemJurisdictionTypeEnum = "city" | "state" | "country";
+export type DetailsCalculatedTaxItemJurisdictionTypeEnum = "City" | "State" | "Country";
 export type DetailsCalculatedTaxItemTaxTypeEnum = "icms" | "icmsSt" | "icmsStSd" | "icmsPartOwn" | "icmsPartDest" | "icmsDifaFCP" | "icmsDifaDest" | "icmsDifaRemet" | "icmsRf" | "icmsDeson" | "icmsCredsn" | "pis" | "pisSt" | "cofins" | "cofinsSt" | "ipi" | "ipiReturned" | "ii" | "iof" | "aproxtribState" | "aproxtribFed" | "aproxtrib";
 export type DetailsCalculatedTaxItemTaxRuleTypeEnum = "SELLER" | "BUYER" | "TRANSACTION" | "ITEM" | "TAX";
 export interface Entity {
@@ -1263,7 +1401,7 @@ export interface HeaderForGoods {
     /**
      * This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) 
      */
-    "transactionModel": HeaderForGoodsTransactionModelEnum;
+    "transactionModel"?: HeaderForGoodsTransactionModelEnum;
     /**
      * Natureza da Opreração - 'Describe kind of this transaction, summary
      */
@@ -1276,11 +1414,11 @@ export interface HeaderForGoods {
     /**
      * This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.
      */
-    "entityCode": string;
+    "entityCode"?: string;
     /**
      * currency code
      */
-    "currency": HeaderForGoodsCurrencyEnum;
+    "currency"?: HeaderForGoodsCurrencyEnum;
     /**
      * This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity
      */
@@ -1288,7 +1426,7 @@ export interface HeaderForGoods {
     /**
      * This string is the transaction date in ISO 8601 format, create transaction date
      */
-    "transactionDate": string;
+    "transactionDate"?: string;
     /**
      * This string is the transaction date in ISO 8601 format, when products were shipped, can be empty or absent
      */
@@ -1309,11 +1447,11 @@ export interface HeaderForGoods {
     /**
      * Invoice number, sequential unique by invoice serial (Número da nota fiscal)
      */
-    "invoiceNumber": number;
+    "invoiceNumber"?: number;
     /**
      * Invoice number, sequential unique by invoice serial (Número da nota fiscal) 
      */
-    "invoiceSerial": number;
+    "invoiceSerial"?: number;
     "defaultLocations"?: DefaultLocations;
     /**
      * Shipment
@@ -1323,7 +1461,7 @@ export interface HeaderForGoods {
      * Transactions or other invoices referenced
      */
     "nfRef"?: Array<NRef>;
-    "payment": Payment;
+    "payment"?: Payment;
     "purchaseInfo"?: PurchaseInfo;
     "export"?: ExportInfo;
 }
@@ -1798,10 +1936,6 @@ export interface ItemGoods {
      */
     "icmsBaseDiscountForMonoPhaseSocialContr"?: number;
     /**
-     * tax substitution code - Codigo especificador da Substuicao Tributaria
-     */
-    "cest"?: string;
-    /**
      * GTIN NUMBER
      */
     "cean"?: string;
@@ -2188,19 +2322,20 @@ export interface LineForGoodsExport {
 
 export interface LineForGoodsIcmsTaxRelief {
     /**
-     * When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
+     * When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
      */
-    "icmsTaxReliefReasonCode": number;
+    "reasonCode": LineForGoodsIcmsTaxReliefReasonCodeEnum;
     /**
      * ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
      */
-    "icmsReliefTaxRate"?: number;
+    "taxBaseDiscount"?: number;
     /**
      * Amount for Icms Relief (desoneração)
      */
-    "icmsReliefTaxAmount"?: number;
+    "taxAmount"?: number;
 }
 
+export type LineForGoodsIcmsTaxReliefReasonCodeEnum = "1" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "16";
 /**
  * indirect exportation
  */
@@ -2876,7 +3011,7 @@ export interface ProcessScenario {
      */
     "financialImpact"?: boolean;
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "cstIPI"?: ProcessScenarioCstIPIEnum;
     /**
@@ -2884,7 +3019,7 @@ export interface ProcessScenario {
      */
     "ipiLegalTaxClass"?: string;
     /**
-     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
      */
     "accruablePISTaxation"?: ProcessScenarioAccruablePISTaxationEnum;
     /**
@@ -2896,7 +3031,7 @@ export interface ProcessScenario {
      */
     "pisExemptLegalReason"?: string;
     /**
-     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "accruableCOFINSTaxation"?: ProcessScenarioAccruableCOFINSTaxationEnum;
     /**
@@ -2932,9 +3067,9 @@ export interface ProcessScenario {
     "cfops"?: Array<CfopConf>;
 }
 
-export type ProcessScenarioCstIPIEnum = "50" | "51" | "52" | "53" | "54";
-export type ProcessScenarioAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N";
-export type ProcessScenarioAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N";
+export type ProcessScenarioCstIPIEnum = "T" | "Z" | "E" | "H" | "N" | "I" | "O" | "OZ";
+export type ProcessScenarioAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
+export type ProcessScenarioAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
 export type ProcessScenarioTypeEnum = "SALES" | "PURCHASE" | "SALES_RETURN" | "PURCHASE_RETURN" | "TRANSFER_RETURN" | "SHIPPING" | "SHIPPING_RETURN" | "TRANSFER" | "RECEIPT_AJUSTE" | "TRANSFER_AJUSTE";
 export type ProcessScenarioWayTypeEnum = "in" | "out";
 export type ProcessScenarioGoalEnum = "Normal" | "Complementary" | "Voided" | "Replacement" | "Return" | "Adjustment";
@@ -3300,7 +3435,7 @@ export interface PurchaseTaxByTypeDetail {
      */
     "jurisdictionName"?: string;
     /**
-     * Type of jurisdiction - 'city' - 'state' - 'country' 
+     * Type of jurisdiction - 'City' - 'State' - 'Country' 
      */
     "jurisdictionType"?: PurchaseTaxByTypeDetailJurisdictionTypeEnum;
     /**
@@ -3345,7 +3480,7 @@ export interface PurchaseTaxByTypeDetail {
     "taxRuleType"?: PurchaseTaxByTypeDetailTaxRuleTypeEnum;
 }
 
-export type PurchaseTaxByTypeDetailJurisdictionTypeEnum = "city" | "state" | "country";
+export type PurchaseTaxByTypeDetailJurisdictionTypeEnum = "City" | "State" | "Country";
 export type PurchaseTaxByTypeDetailTaxTypeEnum = "pis" | "pisRf" | "cofins" | "cofinsRf" | "csll" | "csllRf" | "irrf" | "inssAr" | "inssRf" | "issRf";
 export type PurchaseTaxByTypeDetailTaxRuleTypeEnum = "SELLER" | "BUYER" | "TRANSACTION" | "ITEM" | "TAX";
 export interface PurchaseTaxesConfig {
@@ -3849,7 +3984,7 @@ export interface SalesTaxByTypeDetail {
      */
     "jurisdictionName"?: string;
     /**
-     * Type of jurisdiction - 'city' - 'state' - 'country' 
+     * Type of jurisdiction - 'City' - 'State' - 'Country' 
      */
     "jurisdictionType"?: SalesTaxByTypeDetailJurisdictionTypeEnum;
     /**
@@ -3894,7 +4029,7 @@ export interface SalesTaxByTypeDetail {
     "taxRuleType"?: SalesTaxByTypeDetailTaxRuleTypeEnum;
 }
 
-export type SalesTaxByTypeDetailJurisdictionTypeEnum = "city" | "state" | "country";
+export type SalesTaxByTypeDetailJurisdictionTypeEnum = "City" | "State" | "Country";
 export type SalesTaxByTypeDetailTaxTypeEnum = "aproxtribCity" | "aproxtribFed" | "pis" | "pisRf" | "cofins" | "cofinsRf" | "csll" | "csllRf" | "irrf" | "inss" | "inssRf" | "iss" | "issRf" | "irpj";
 export type SalesTaxByTypeDetailTaxRuleTypeEnum = "SELLER" | "BUYER" | "TRANSACTION" | "ITEM" | "TAX";
 export interface SalesTaxesConfig {
@@ -4140,7 +4275,7 @@ export interface TaxByTypeSummaryJurisdictionForGoods {
      */
     "jurisdictionName"?: string;
     /**
-     * Type of jurisdiction
+     * Type of jurisdiction - 'City' - 'State' - 'Country' 
      */
     "jurisdictionType"?: TaxByTypeSummaryJurisdictionForGoodsJurisdictionTypeEnum;
     /**
@@ -4171,7 +4306,7 @@ export interface TaxConf {
      */
     "financialImpact"?: boolean;
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "cstIPI"?: TaxConfCstIPIEnum;
     /**
@@ -4179,7 +4314,7 @@ export interface TaxConf {
      */
     "ipiLegalTaxClass"?: string;
     /**
-     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
      */
     "accruablePISTaxation"?: TaxConfAccruablePISTaxationEnum;
     /**
@@ -4191,7 +4326,7 @@ export interface TaxConf {
      */
     "pisExemptLegalReason"?: string;
     /**
-     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     "accruableCOFINSTaxation"?: TaxConfAccruableCOFINSTaxationEnum;
     /**
@@ -4212,11 +4347,11 @@ export interface TaxConf {
     "icmsConf"?: Array<IcmsTaxConf>;
 }
 
-export type TaxConfCstIPIEnum = "50" | "51" | "52" | "53" | "54";
-export type TaxConfAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N";
-export type TaxConfAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N";
+export type TaxConfCstIPIEnum = "T" | "Z" | "E" | "H" | "N" | "I" | "O" | "OZ";
+export type TaxConfAccruablePISTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
+export type TaxConfAccruableCOFINSTaxationEnum = "T" | "Z" | "E" | "H" | "N" | "O" | "OZ";
 /**
- * Tax Rate
+ * Tax Rate Obs: AR - \"a recolher\" (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço) 
  */
 export interface TaxType {
 }
@@ -4237,30 +4372,10 @@ export interface TaxTypeRate {
     "srvAmount"?: number;
     "quantityUnidBase"?: string;
     "specializationType"?: TaxTypeRateSpecializationTypeEnum;
-    /**
-     * UUID Reference to an item in the LegalReason store. 
-     */
-    "exemptionReasonCode"?: string;
-    /**
-     * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-     */
-    "customExemptionReasonDescription"?: string;
-    "withholding"?: TaxTypeRateWithholding;
 }
 
 export type TaxTypeRateTaxModelEnum = "rate" | "srf";
 export type TaxTypeRateSpecializationTypeEnum = "basic" | "monophase" | "taxSubstitution";
-/**
- * Assign an empty object for simple withholding, null (no key) for no withholding. Detailed behaviors for specific targets may be set by using the available optional keys. 
- */
-export interface TaxTypeRateWithholding {
-    "all"?: WithholdDef;
-    "business"?: WithholdDef;
-    "federalGovernment"?: WithholdDef;
-    "stateGovernment"?: WithholdDef;
-    "cityGovernment"?: WithholdDef;
-}
-
 export interface TransactionForGoodsIn {
     "header"?: HeaderForGoods;
     "lines"?: Array<LineForGoods>;
@@ -4468,14 +4583,6 @@ export interface Weapon {
 }
 
 export type WeaponWeaponRestrictionTypeEnum = "0" | "1";
-export interface WithholdDef {
-    /**
-     * UUID Reference to an item in the LegalReason store.
-     */
-    "exemptionReasonCode"?: string;
-    "customExemptionReasonDescription"?: string;
-}
-
 /**
  * Using the placing reference in PCC for PIS (P), COFINS (C) and COFINS (C).  x = tax is not subject to withholding.  - 'xxx' - 'PCC' - 'PCx' - 'PxC' - 'Pxx' - 'xCC' - 'xxC' - 'xCx' 
  */
@@ -5033,7 +5140,7 @@ export const AuthApiFetchParamCreator = {
     /** 
      * authorization
      * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-     * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
      */
     authPost(params: {  "authorization": string; }, options?: any): FetchArgs {
         // verify required parameter "authorization" is set
@@ -5041,6 +5148,29 @@ export const AuthApiFetchParamCreator = {
             throw new Error("Missing required parameter authorization when calling authPost");
         }
         const baseUrl = `/auth`;
+        let urlObj = url.parse(baseUrl, true);
+        let fetchOptions: RequestInit = assign({}, { method: "POST" }, options);
+
+        let contentTypeHeader: Dictionary<string>;
+        fetchOptions.headers = assign({
+            "Authorization": params["authorization"],
+        }, contentTypeHeader);
+        return {
+            url: url.format(urlObj),
+            options: fetchOptions,
+        };
+    },
+    /** 
+     * authorization
+     * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+     */
+    v2AuthPost(params: {  "authorization": string; }, options?: any): FetchArgs {
+        // verify required parameter "authorization" is set
+        if (params["authorization"] == null) {
+            throw new Error("Missing required parameter authorization when calling v2AuthPost");
+        }
+        const baseUrl = `/v2/auth`;
         let urlObj = url.parse(baseUrl, true);
         let fetchOptions: RequestInit = assign({}, { method: "POST" }, options);
 
@@ -5062,10 +5192,27 @@ export const AuthApiFp = {
     /** 
      * authorization
      * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-     * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
      */
     authPost(params: { "authorization": string;  }, options?: any): (fetch: FetchAPI, basePath?: string) => Promise<InlineResponse200> {
         const fetchArgs = AuthApiFetchParamCreator.authPost(params, options);
+        return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
+            return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        };
+    },
+    /** 
+     * authorization
+     * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+     */
+    v2AuthPost(params: { "authorization": string;  }, options?: any): (fetch: FetchAPI, basePath?: string) => Promise<InlineResponse200> {
+        const fetchArgs = AuthApiFetchParamCreator.v2AuthPost(params, options);
         return (fetch: FetchAPI = isomorphicFetch, basePath: string = BASE_PATH) => {
             return fetch(basePath + fetchArgs.url, fetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -5085,10 +5232,18 @@ export class AuthApi extends BaseAPI {
     /** 
      * authorization
      * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-     * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
      */
     authPost(params: {  "authorization": string; }, options?: any) {
         return AuthApiFp.authPost(params, options)(this.fetch, this.basePath);
+    }
+    /** 
+     * authorization
+     * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+     * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+     */
+    v2AuthPost(params: {  "authorization": string; }, options?: any) {
+        return AuthApiFp.v2AuthPost(params, options)(this.fetch, this.basePath);
     }
 };
 
@@ -5100,10 +5255,18 @@ export const AuthApiFactory = function (fetch?: FetchAPI, basePath?: string) {
         /** 
          * authorization
          * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-         * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+         * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
          */
         authPost(params: {  "authorization": string; }, options?: any) {
             return AuthApiFp.authPost(params, options)(fetch, basePath);
+        },
+        /** 
+         * authorization
+         * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+         * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+         */
+        v2AuthPost(params: {  "authorization": string; }, options?: any) {
+            return AuthApiFp.v2AuthPost(params, options)(fetch, basePath);
         },
     };
 };

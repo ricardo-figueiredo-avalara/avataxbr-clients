@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -126,30 +126,6 @@ class TaxTypeRateTest extends \PHPUnit_Framework_TestCase
      * Test attribute "specialization_type"
      */
     public function testPropertySpecializationType()
-    {
-
-    }
-
-    /**
-     * Test attribute "exemption_reason_code"
-     */
-    public function testPropertyExemptionReasonCode()
-    {
-
-    }
-
-    /**
-     * Test attribute "custom_exemption_reason_description"
-     */
-    public function testPropertyCustomExemptionReasonDescription()
-    {
-
-    }
-
-    /**
-     * Test attribute "withholding"
-     */
-    public function testPropertyWithholding()
     {
 
     }

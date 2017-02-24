@@ -1,4 +1,4 @@
-# Br16Api.PayRecLinesIn
+# AvaTaxBrazil.PayRecLinesIn
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# Br16Api.InlineResponse201
+# AvaTaxBrazil.InlineResponse201
 
 ## Properties
 Name | Type | Description | Notes

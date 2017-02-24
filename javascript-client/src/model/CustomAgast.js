@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -14,18 +14,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Agast', 'model/AgastCodeType', 'model/AgastIcmsConf', 'model/TaxTypeRate'], factory);
+    define(['ApiClient', 'model/Agast', 'model/AgastCodeType', 'model/AgastIcmsConf', 'model/AgastWithholding', 'model/TaxTypeRate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Agast'), require('./AgastCodeType'), require('./AgastIcmsConf'), require('./TaxTypeRate'));
+    module.exports = factory(require('../ApiClient'), require('./Agast'), require('./AgastCodeType'), require('./AgastIcmsConf'), require('./AgastWithholding'), require('./TaxTypeRate'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.CustomAgast = factory(root.Br16Api.ApiClient, root.Br16Api.Agast, root.Br16Api.AgastCodeType, root.Br16Api.AgastIcmsConf, root.Br16Api.TaxTypeRate);
+    root.AvaTaxBrazil.CustomAgast = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.Agast, root.AvaTaxBrazil.AgastCodeType, root.AvaTaxBrazil.AgastIcmsConf, root.AvaTaxBrazil.AgastWithholding, root.AvaTaxBrazil.TaxTypeRate);
   }
-}(this, function(ApiClient, Agast, AgastCodeType, AgastIcmsConf, TaxTypeRate) {
+}(this, function(ApiClient, Agast, AgastCodeType, AgastIcmsConf, AgastWithholding, TaxTypeRate) {
   'use strict';
 
 
@@ -120,7 +120,7 @@ exports.prototype['cean'] = undefined;
 exports.prototype['codeType'] = undefined;
 
   /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
    * @member {module:model/Agast.CstIPIEnum} cstIPI
    */
 exports.prototype['cstIPI'] = undefined;
@@ -144,16 +144,55 @@ exports.prototype['pisCofinsTaxReporting'] = undefined;
 exports.prototype['accruablePISTaxation'] = undefined;
 
   /**
+   * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+   * @member {String} pisExemptLegalReasonCode
+   */
+exports.prototype['pisExemptLegalReasonCode'] = undefined;
+
+  /**
+   * When specified a reason, this field holds the reason's description
+   * @member {String} pisExemptLegalReason
+   */
+exports.prototype['pisExemptLegalReason'] = undefined;
+
+  /**
    * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
    * @member {module:model/Agast.AccruableCOFINSTaxationEnum} accruableCOFINSTaxation
    */
 exports.prototype['accruableCOFINSTaxation'] = undefined;
 
   /**
+   * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+   * @member {String} cofinsExemptLegalReasonCode
+   */
+exports.prototype['cofinsExemptLegalReasonCode'] = undefined;
+
+  /**
+   * When specified a reason, this field holds the reason's description
+   * @member {String} cofinsExemptLegalReason
+   */
+exports.prototype['cofinsExemptLegalReason'] = undefined;
+
+  /**
    * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
    * @member {module:model/Agast.AccruableCSLLTaxationEnum} accruableCSLLTaxation
    */
 exports.prototype['accruableCSLLTaxation'] = undefined;
+
+  /**
+   * @member {String} csllExemptLegalReason
+   */
+exports.prototype['csllExemptLegalReason'] = undefined;
+
+  /**
+   * @member {String} csllExemptLegalReasonCode
+   */
+exports.prototype['csllExemptLegalReasonCode'] = undefined;
+
+  /**
+   * @member {module:model/AgastWithholding} withholding
+   */
+exports.prototype['withholding'] = undefined;
 
   /**
    * for service items with City Jurisdiction, inform where the ISS tax is due

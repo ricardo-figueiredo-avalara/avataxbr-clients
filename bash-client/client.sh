@@ -8,12 +8,12 @@
 # ! swagger-codegen (https://github.com/swagger-api/swagger-codegen) 
 # ! FROM SWAGGER SPECIFICATION IN JSON.
 # !
-# ! Generated on: 2017-02-16T18:26:15.560Z
+# ! Generated on: 2017-02-24T19:47:57.103Z
 # !
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #
-# This is a Bash client for BR16 - API. 
+# This is a Bash client for AvaTax Brazil. 
 #
 # LICENSE:
 # 
@@ -64,6 +64,7 @@ operation_parameters_minimum_occurences["createAccountCompany:::accountId"]=1
 operation_parameters_minimum_occurences["createAccountCompany:::body"]=1
 operation_parameters_minimum_occurences["getZipCode:::zipcode"]=1
 operation_parameters_minimum_occurences["authPost:::Authorization"]=1
+operation_parameters_minimum_occurences["v2AuthPost:::Authorization"]=1
 operation_parameters_minimum_occurences["createCompany:::body"]=1
 operation_parameters_minimum_occurences["deleteAccountCompany:::accountId"]=1
 operation_parameters_minimum_occurences["deleteAccountCompany:::companyId"]=1
@@ -372,6 +373,7 @@ operation_parameters_maximum_occurences["createAccountCompany:::accountId"]=0
 operation_parameters_maximum_occurences["createAccountCompany:::body"]=0
 operation_parameters_maximum_occurences["getZipCode:::zipcode"]=0
 operation_parameters_maximum_occurences["authPost:::Authorization"]=0
+operation_parameters_maximum_occurences["v2AuthPost:::Authorization"]=0
 operation_parameters_maximum_occurences["createCompany:::body"]=0
 operation_parameters_maximum_occurences["deleteAccountCompany:::accountId"]=0
 operation_parameters_maximum_occurences["deleteAccountCompany:::companyId"]=0
@@ -677,6 +679,7 @@ operation_parameters_collection_type["createAccountCompany:::accountId"]=""
 operation_parameters_collection_type["createAccountCompany:::body"]=""
 operation_parameters_collection_type["getZipCode:::zipcode"]=""
 operation_parameters_collection_type["authPost:::Authorization"]=""
+operation_parameters_collection_type["v2AuthPost:::Authorization"]=""
 operation_parameters_collection_type["createCompany:::body"]=""
 operation_parameters_collection_type["deleteAccountCompany:::accountId"]=""
 operation_parameters_collection_type["deleteAccountCompany:::companyId"]=""
@@ -1403,7 +1406,7 @@ build_request_path() {
 print_help() {
 cat <<EOF
 
-$(tput bold)$(tput setaf 7)BR16 - API command line client (API version 1.0)$(tput sgr0)
+$(tput bold)$(tput setaf 7)AvaTax Brazil command line client (API version 1.0)$(tput sgr0)
 
 $(tput bold)$(tput setaf 7)Usage$(tput sgr0)
 
@@ -1458,6 +1461,7 @@ echo "  $ops" | column -t -s ';'
     echo -e "$(tput bold)$(tput setaf 7)[auth]$(tput sgr0)"
 read -d '' ops <<EOF
   $(tput setaf 6)authPost$(tput sgr0);authorization
+  $(tput setaf 6)v2AuthPost$(tput sgr0);authorization
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
@@ -1705,7 +1709,7 @@ echo "  $ops" | column -t -s ';'
     echo -e "  -V,--version\t\t\t\tPrint API version"
     echo -e "  --about\t\t\t\tPrint the information about service"
     echo -e "  --host $(tput setaf 6)<url>$(tput sgr0)\t\t\t\tSpecify the host URL "
-echo -e "              \t\t\t\t(e.g. 'https://br16-dev-app03.br.avalara.com')"
+echo -e "              \t\t\t\t(e.g. 'https://avataxbr-sandbox.avalarabrasil.com.br')"
 
     echo -e "  --force\t\t\t\tForce command invocation in spite of missing"
     echo -e "         \t\t\t\trequired parameters or wrong content type"
@@ -1725,14 +1729,14 @@ echo -e "              \t\t\t\t(e.g. 'https://br16-dev-app03.br.avalara.com')"
 ##############################################################################
 print_about() {
     echo ""
-    echo -e "$(tput bold)$(tput setaf 7)BR16 - API command line client (API version 1.0)$(tput sgr0)"
+    echo -e "$(tput bold)$(tput setaf 7)AvaTax Brazil command line client (API version 1.0)$(tput sgr0)"
     echo ""
     echo -e "License: "
     echo -e "Contact: "
     echo ""
 read -d '' appdescription <<EOF
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 EOF
 echo "$appdescription" | fold -sw 80
 }
@@ -1745,7 +1749,7 @@ echo "$appdescription" | fold -sw 80
 ##############################################################################
 print_version() {
     echo ""
-    echo -e "$(tput bold)BR16 - API command line client (API version 1.0)$(tput sgr0)"
+    echo -e "$(tput bold)AvaTax Brazil command line client (API version 1.0)$(tput sgr0)"
     echo ""
 }
 
@@ -3192,7 +3196,53 @@ Generate Base64:
 " | fold -sw 80
     echo -e ""
     echo -e "$(tput bold)$(tput setaf 7)Parameters$(tput sgr0)"
-    echo -e "  * $(tput setaf 2)Authorization$(tput sgr0) $(tput setaf 4)[String]$(tput sgr0) $(tput setaf 1)(required)$(tput sgr0)$(tput sgr0) - Authorization: Basic VGVzdDoxMjM=
+    echo -e "  * $(tput setaf 2)Authorization$(tput sgr0) $(tput setaf 4)[String]$(tput sgr0) $(tput setaf 1)(required)$(tput sgr0)$(tput sgr0) - Accepts \"Basic + hash\", where hash is {user}:{password} base64 encoded.
+ $(tput setaf 3)Specify as: Authorization:value$(tput sgr0)" | fold -sw 80 | sed '2,$s/^/    /'
+    echo ""
+    echo -e "$(tput bold)$(tput setaf 7)Responses$(tput sgr0)"
+    case 200 in
+        1*)
+        echo -e "$(tput setaf 7)  200;Token$(tput sgr0)" | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+        ;;
+        2*)
+        echo -e "$(tput setaf 2)  200;Token$(tput sgr0)" | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+        ;;
+        3*)
+        echo -e "$(tput setaf 3)  200;Token$(tput sgr0)" | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+        ;;
+        4*)
+        echo -e "$(tput setaf 1)  200;Token$(tput sgr0)" | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+        ;;
+        5*)
+        echo -e "$(tput setaf 5)  200;Token$(tput sgr0)" | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+        ;;
+        *)
+        echo -e "$(tput setaf 7)  200;Token$(tput sgr0)" | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+        ;;
+    esac
+}
+##############################################################################
+#
+# Print help for v2AuthPost operation
+#
+##############################################################################
+print_v2AuthPost_help() {
+    echo ""
+    echo -e "$(tput bold)$(tput setaf 7)v2AuthPost - authorization$(tput sgr0)"
+    echo -e ""
+    echo -e "Authorization: Basic VGVzdDoxMjM=
+
+Generate Base64:
+
+- auth = \"{user}:{password}\"
+
+- base = base64(auth)
+
+- header[\"Authorization\"] = \"Basic \" + base
+" | fold -sw 80
+    echo -e ""
+    echo -e "$(tput bold)$(tput setaf 7)Parameters$(tput sgr0)"
+    echo -e "  * $(tput setaf 2)Authorization$(tput sgr0) $(tput setaf 4)[String]$(tput sgr0) $(tput setaf 1)(required)$(tput sgr0)$(tput sgr0) - Accepts \"Basic + hash\", where hash is {user}:{password} base64 encoded.
  $(tput setaf 3)Specify as: Authorization:value$(tput sgr0)" | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "$(tput bold)$(tput setaf 7)Responses$(tput sgr0)"
@@ -23370,6 +23420,37 @@ call_authPost() {
 
 ##############################################################################
 #
+# Call v2AuthPost operation
+#
+##############################################################################
+call_v2AuthPost() {
+    local path_parameter_names=()
+    local query_parameter_names=()
+
+    if [[ $force = false ]]; then
+        validate_request_parameters "/v2/v2/auth" path_parameter_names query_parameter_names
+    fi
+
+    local path=$(build_request_path "/v2/v2/auth" path_parameter_names query_parameter_names)
+    local method="POST"
+    local headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
 # Call companiesGet operation
 #
 ##############################################################################
@@ -29206,6 +29287,9 @@ case $key in
     authPost)
     operation="authPost"
     ;;
+    v2AuthPost)
+    operation="v2AuthPost"
+    ;;
     companiesGet)
     operation="companiesGet"
     ;;
@@ -29651,6 +29735,9 @@ case $operation in
     ;;
     authPost)
     call_authPost
+    ;;
+    v2AuthPost)
+    call_v2AuthPost
     ;;
     companiesGet)
     call_companiesGet

@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -14,31 +14,52 @@ require 'date'
 module SwaggerClient
 
   class LineForGoodsIcmsTaxRelief
-    # When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
-    attr_accessor :icms_tax_relief_reason_code
+    # When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
+    attr_accessor :reason_code
 
     # ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
-    attr_accessor :icms_relief_tax_rate
+    attr_accessor :tax_base_discount
 
     # Amount for Icms Relief (desoneração)
-    attr_accessor :icms_relief_tax_amount
+    attr_accessor :tax_amount
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'icms_tax_relief_reason_code' => :'icmsTaxReliefReasonCode',
-        :'icms_relief_tax_rate' => :'icmsReliefTaxRate',
-        :'icms_relief_tax_amount' => :'icmsReliefTaxAmount'
+        :'reason_code' => :'reasonCode',
+        :'tax_base_discount' => :'taxBaseDiscount',
+        :'tax_amount' => :'taxAmount'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'icms_tax_relief_reason_code' => :'Integer',
-        :'icms_relief_tax_rate' => :'Float',
-        :'icms_relief_tax_amount' => :'Float'
+        :'reason_code' => :'String',
+        :'tax_base_discount' => :'Float',
+        :'tax_amount' => :'Float'
       }
     end
 
@@ -50,16 +71,16 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'icmsTaxReliefReasonCode')
-        self.icms_tax_relief_reason_code = attributes[:'icmsTaxReliefReasonCode']
+      if attributes.has_key?(:'reasonCode')
+        self.reason_code = attributes[:'reasonCode']
       end
 
-      if attributes.has_key?(:'icmsReliefTaxRate')
-        self.icms_relief_tax_rate = attributes[:'icmsReliefTaxRate']
+      if attributes.has_key?(:'taxBaseDiscount')
+        self.tax_base_discount = attributes[:'taxBaseDiscount']
       end
 
-      if attributes.has_key?(:'icmsReliefTaxAmount')
-        self.icms_relief_tax_amount = attributes[:'icmsReliefTaxAmount']
+      if attributes.has_key?(:'taxAmount')
+        self.tax_amount = attributes[:'taxAmount']
       end
 
     end
@@ -68,8 +89,8 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @icms_tax_relief_reason_code.nil?
-        invalid_properties.push("invalid value for 'icms_tax_relief_reason_code', icms_tax_relief_reason_code cannot be nil.")
+      if @reason_code.nil?
+        invalid_properties.push("invalid value for 'reason_code', reason_code cannot be nil.")
       end
 
       return invalid_properties
@@ -78,8 +99,20 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @icms_tax_relief_reason_code.nil?
+      return false if @reason_code.nil?
+      reason_code_validator = EnumAttributeValidator.new('String', ["1", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "16"])
+      return false unless reason_code_validator.valid?(@reason_code)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] reason_code Object to be assigned
+    def reason_code=(reason_code)
+      validator = EnumAttributeValidator.new('String', ["1", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "16"])
+      unless validator.valid?(reason_code)
+        fail ArgumentError, "invalid value for 'reason_code', must be one of #{validator.allowable_values}."
+      end
+      @reason_code = reason_code
     end
 
     # Checks equality by comparing each attribute.
@@ -87,9 +120,9 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          icms_tax_relief_reason_code == o.icms_tax_relief_reason_code &&
-          icms_relief_tax_rate == o.icms_relief_tax_rate &&
-          icms_relief_tax_amount == o.icms_relief_tax_amount
+          reason_code == o.reason_code &&
+          tax_base_discount == o.tax_base_discount &&
+          tax_amount == o.tax_amount
     end
 
     # @see the `==` method
@@ -101,7 +134,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [icms_tax_relief_reason_code, icms_relief_tax_rate, icms_relief_tax_amount].hash
+      [reason_code, tax_base_discount, tax_amount].hash
     end
 
     # Builds the object from hash

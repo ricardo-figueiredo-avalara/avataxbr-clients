@@ -1,7 +1,7 @@
-# BR16 - API Bash client
+# AvaTax Brazil Bash client
 
 ## Overview
-This is a Bash client script for accessing BR16 - API service.
+This is a Bash client script for accessing AvaTax Brazil service.
 
 The script uses  cURL underneath for making all REST calls.
 

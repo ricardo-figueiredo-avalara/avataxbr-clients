@@ -1,4 +1,4 @@
-# Br16Api.CompanyConfiguration
+# AvaTaxBrazil.CompanyConfiguration
 
 ## Properties
 Name | Type | Description | Notes

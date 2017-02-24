@@ -24,7 +24,7 @@ namespace IO.Swagger.Client
         /// Initializes a new instance of the <see cref="ApiClient" /> class.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath="https://br16-dev-app03.br.avalara.com/v2")
+        public ApiClient(String basePath="http://avataxbr-sandbox.avalarabrasil.com.br/v2")
         {
             BasePath = basePath;
             RestClient = new RestClient(BasePath);

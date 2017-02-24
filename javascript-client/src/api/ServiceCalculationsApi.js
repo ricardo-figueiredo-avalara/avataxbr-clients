@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Message'), require('../model/PaymentTransactionIn'), require('../model/PaymentTransactionOut'), require('../model/PurchaseTransactionIn'), require('../model/PurchaseTransactionOut'), require('../model/ReceiptTransactionIn'), require('../model/ReceiptTransactionOut'), require('../model/SalesTransactionIn'), require('../model/SalesTransactionOut'), require('../model/ValidationError'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.ServiceCalculationsApi = factory(root.Br16Api.ApiClient, root.Br16Api.Message, root.Br16Api.PaymentTransactionIn, root.Br16Api.PaymentTransactionOut, root.Br16Api.PurchaseTransactionIn, root.Br16Api.PurchaseTransactionOut, root.Br16Api.ReceiptTransactionIn, root.Br16Api.ReceiptTransactionOut, root.Br16Api.SalesTransactionIn, root.Br16Api.SalesTransactionOut, root.Br16Api.ValidationError);
+    root.AvaTaxBrazil.ServiceCalculationsApi = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.Message, root.AvaTaxBrazil.PaymentTransactionIn, root.AvaTaxBrazil.PaymentTransactionOut, root.AvaTaxBrazil.PurchaseTransactionIn, root.AvaTaxBrazil.PurchaseTransactionOut, root.AvaTaxBrazil.ReceiptTransactionIn, root.AvaTaxBrazil.ReceiptTransactionOut, root.AvaTaxBrazil.SalesTransactionIn, root.AvaTaxBrazil.SalesTransactionOut, root.AvaTaxBrazil.ValidationError);
   }
 }(this, function(ApiClient, Message, PaymentTransactionIn, PaymentTransactionOut, PurchaseTransactionIn, PurchaseTransactionOut, ReceiptTransactionIn, ReceiptTransactionOut, SalesTransactionIn, SalesTransactionOut, ValidationError) {
   'use strict';

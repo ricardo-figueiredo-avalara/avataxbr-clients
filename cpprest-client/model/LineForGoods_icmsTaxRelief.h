@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -22,6 +22,7 @@
 
 #include "ModelBase.h"
 
+#include <cpprest/details/basic_types.h>
 
 namespace io {
 namespace swagger {
@@ -53,31 +54,31 @@ public:
     /// LineForGoods_icmsTaxRelief members
 
     /// <summary>
-    /// When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
+    /// When item transaction subject to desoneration, this is the reason code - &#39;1&#39; # Táxi; - &#39;3&#39; # Produtor Agropecuário; - &#39;4&#39; # Frotista/Locadora; - &#39;5&#39; # Diplomático/Consular; - &#39;6&#39; # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - &#39;7&#39; # SUFRAMA; - &#39;8&#39; # Venda a órgão Público; - &#39;9&#39; # Outros - &#39;10&#39; # Deficiente Condutor - &#39;11&#39; # Deficiente não condutor - &#39;12&#39; # Fomento agropecuário - &#39;16&#39; # Olimpíadas Rio 2016 
     /// </summary>
-    int32_t getIcmsTaxReliefReasonCode() const;
-    void setIcmsTaxReliefReasonCode(int32_t value);
+    utility::string_t getReasonCode() const;
+    void setReasonCode(utility::string_t value);
         /// <summary>
     /// ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
     /// </summary>
-    double getIcmsReliefTaxRate() const;
-    void setIcmsReliefTaxRate(double value);
-    bool icmsReliefTaxRateIsSet() const;
-    void unsetIcmsReliefTaxRate();
+    double getTaxBaseDiscount() const;
+    void setTaxBaseDiscount(double value);
+    bool taxBaseDiscountIsSet() const;
+    void unsetTaxBaseDiscount();
     /// <summary>
     /// Amount for Icms Relief (desoneração)
     /// </summary>
-    double getIcmsReliefTaxAmount() const;
-    void setIcmsReliefTaxAmount(double value);
-    bool icmsReliefTaxAmountIsSet() const;
-    void unsetIcmsReliefTaxAmount();
+    double getTaxAmount() const;
+    void setTaxAmount(double value);
+    bool taxAmountIsSet() const;
+    void unsetTaxAmount();
 
 protected:
-    int32_t m_IcmsTaxReliefReasonCode;
-    double m_IcmsReliefTaxRate;
-    bool m_IcmsReliefTaxRateIsSet;
-double m_IcmsReliefTaxAmount;
-    bool m_IcmsReliefTaxAmountIsSet;
+    utility::string_t m_ReasonCode;
+    double m_TaxBaseDiscount;
+    bool m_TaxBaseDiscountIsSet;
+double m_TaxAmount;
+    bool m_TaxAmountIsSet;
 };
 
 }

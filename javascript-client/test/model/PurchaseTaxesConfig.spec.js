@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.PurchaseTaxesConfig();
+    instance = new AvaTaxBrazil.PurchaseTaxesConfig();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,97 +50,97 @@
   describe('PurchaseTaxesConfig', function() {
     it('should create an instance of PurchaseTaxesConfig', function() {
       // uncomment below and update the code to test PurchaseTaxesConfig
-      //var instane = new Br16Api.PurchaseTaxesConfig();
-      //expect(instance).to.be.a(Br16Api.PurchaseTaxesConfig);
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
+      //expect(instance).to.be.a(AvaTaxBrazil.PurchaseTaxesConfig);
     });
 
     it('should have the property entityAccruableCOFINSTaxation (base name: "entityAccruableCOFINSTaxation")', function() {
       // uncomment below and update the code to test the property entityAccruableCOFINSTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property entityAccruableCSLLTaxation (base name: "entityAccruableCSLLTaxation")', function() {
       // uncomment below and update the code to test the property entityAccruableCSLLTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property entityAccruablePISTaxation (base name: "entityAccruablePISTaxation")', function() {
       // uncomment below and update the code to test the property entityAccruablePISTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property accruableCOFINSExempCodeTaxation (base name: "accruableCOFINSExempCodeTaxation")', function() {
       // uncomment below and update the code to test the property accruableCOFINSExempCodeTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property accruablePISExempCodeTaxation (base name: "accruablePISExempCodeTaxation")', function() {
       // uncomment below and update the code to test the property accruablePISExempCodeTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property accruablePISExemptReasonTaxation (base name: "accruablePISExemptReasonTaxation")', function() {
       // uncomment below and update the code to test the property accruablePISExemptReasonTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property accruableCOFINSExemptReasonTaxation (base name: "accruableCOFINSExemptReasonTaxation")', function() {
       // uncomment below and update the code to test the property accruableCOFINSExemptReasonTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property accruableCSLLExemptReasonTaxation (base name: "accruableCSLLExemptReasonTaxation")', function() {
       // uncomment below and update the code to test the property accruableCSLLExemptReasonTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingPIS (base name: "withholdingPIS")', function() {
       // uncomment below and update the code to test the property withholdingPIS
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingCOFINS (base name: "withholdingCOFINS")', function() {
       // uncomment below and update the code to test the property withholdingCOFINS
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingCSLL (base name: "withholdingCSLL")', function() {
       // uncomment below and update the code to test the property withholdingCSLL
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingIRRF (base name: "withholdingIRRF")', function() {
       // uncomment below and update the code to test the property withholdingIRRF
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdCOFINSExemptReasonTaxation (base name: "withholdCOFINSExemptReasonTaxation")', function() {
       // uncomment below and update the code to test the property withholdCOFINSExemptReasonTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdCSLLExemptReasonTaxation (base name: "withholdCSLLExemptReasonTaxation")', function() {
       // uncomment below and update the code to test the property withholdCSLLExemptReasonTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdPISExemptReasonTaxation (base name: "withholdPISExemptReasonTaxation")', function() {
       // uncomment below and update the code to test the property withholdPISExemptReasonTaxation
-      //var instane = new Br16Api.PurchaseTaxesConfig();
+      //var instane = new AvaTaxBrazil.PurchaseTaxesConfig();
       //expect(instance).to.be();
     });
 

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.VehicleID();
+    instance = new AvaTaxBrazil.VehicleID();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('VehicleID', function() {
     it('should create an instance of VehicleID', function() {
       // uncomment below and update the code to test VehicleID
-      //var instane = new Br16Api.VehicleID();
-      //expect(instance).to.be.a(Br16Api.VehicleID);
+      //var instane = new AvaTaxBrazil.VehicleID();
+      //expect(instance).to.be.a(AvaTaxBrazil.VehicleID);
     });
 
     it('should have the property licensePlate (base name: "licensePlate")', function() {
       // uncomment below and update the code to test the property licensePlate
-      //var instane = new Br16Api.VehicleID();
+      //var instane = new AvaTaxBrazil.VehicleID();
       //expect(instance).to.be();
     });
 
     it('should have the property stateCode (base name: "stateCode")', function() {
       // uncomment below and update the code to test the property stateCode
-      //var instane = new Br16Api.VehicleID();
+      //var instane = new AvaTaxBrazil.VehicleID();
       //expect(instance).to.be();
     });
 
     it('should have the property rtnc (base name: "rtnc")', function() {
       // uncomment below and update the code to test the property rtnc
-      //var instane = new Br16Api.VehicleID();
+      //var instane = new AvaTaxBrazil.VehicleID();
       //expect(instance).to.be();
     });
 

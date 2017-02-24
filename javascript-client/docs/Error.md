@@ -1,4 +1,4 @@
-# Br16Api.Error
+# AvaTaxBrazil.Error
 
 ## Properties
 Name | Type | Description | Notes

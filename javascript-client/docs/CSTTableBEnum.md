@@ -1,4 +1,4 @@
-# Br16Api.CSTTableBEnum
+# AvaTaxBrazil.CSTTableBEnum
 
 ## Enum
 

@@ -1,4 +1,4 @@
-# Br16Api.HeaderBaseInfo
+# AvaTaxBrazil.HeaderBaseInfo
 
 ## Properties
 Name | Type | Description | Notes

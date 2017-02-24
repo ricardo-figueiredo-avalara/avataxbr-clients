@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('./SalesDefaultLocations'), require('./SalesEntity'), require('./SalesHeaderIn'), require('./SalesHeaderOutPayment'), require('./SalesTaxesConfig'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.SalesHeaderOut = factory(root.Br16Api.ApiClient, root.Br16Api.SalesDefaultLocations, root.Br16Api.SalesEntity, root.Br16Api.SalesHeaderIn, root.Br16Api.SalesHeaderOutPayment, root.Br16Api.SalesTaxesConfig);
+    root.AvaTaxBrazil.SalesHeaderOut = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.SalesDefaultLocations, root.AvaTaxBrazil.SalesEntity, root.AvaTaxBrazil.SalesHeaderIn, root.AvaTaxBrazil.SalesHeaderOutPayment, root.AvaTaxBrazil.SalesTaxesConfig);
   }
 }(this, function(ApiClient, SalesDefaultLocations, SalesEntity, SalesHeaderIn, SalesHeaderOutPayment, SalesTaxesConfig) {
   'use strict';

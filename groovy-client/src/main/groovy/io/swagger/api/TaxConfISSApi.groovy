@@ -16,7 +16,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class TaxConfISSApi {
-    String basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     String versionPath = "/api/v1"
 
     def createIssConfByCity ( IssConfByCity issConfByCity, Closure onSuccess, Closure onFailure)  {

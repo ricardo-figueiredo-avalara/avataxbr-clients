@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"code": @"code", @"_description": @"description", @"hsCode": @"hsCode", @"ex": @"ex", @"cest": @"cest", @"cean": @"cean", @"codeType": @"codeType", @"cstIPI": @"cstIPI", @"ipiLegalTaxClass": @"ipiLegalTaxClass", @"pisCofinsTaxReporting": @"pisCofinsTaxReporting", @"accruablePISTaxation": @"accruablePISTaxation", @"accruableCOFINSTaxation": @"accruableCOFINSTaxation", @"accruableCSLLTaxation": @"accruableCSLLTaxation", @"issDueatDestination": @"issDueatDestination", @"pisCofinsCreditNotAllowed": @"pisCofinsCreditNotAllowed", @"issTaxation": @"issTaxation", @"federalTaxRate": @"federalTaxRate", @"specialProductClass": @"specialProductClass", @"icmsConf": @"icmsConf" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"code": @"code", @"_description": @"description", @"hsCode": @"hsCode", @"ex": @"ex", @"cest": @"cest", @"cean": @"cean", @"codeType": @"codeType", @"cstIPI": @"cstIPI", @"ipiLegalTaxClass": @"ipiLegalTaxClass", @"pisCofinsTaxReporting": @"pisCofinsTaxReporting", @"accruablePISTaxation": @"accruablePISTaxation", @"pisExemptLegalReasonCode": @"pisExemptLegalReasonCode", @"pisExemptLegalReason": @"pisExemptLegalReason", @"accruableCOFINSTaxation": @"accruableCOFINSTaxation", @"cofinsExemptLegalReasonCode": @"cofinsExemptLegalReasonCode", @"cofinsExemptLegalReason": @"cofinsExemptLegalReason", @"accruableCSLLTaxation": @"accruableCSLLTaxation", @"csllExemptLegalReason": @"csllExemptLegalReason", @"csllExemptLegalReasonCode": @"csllExemptLegalReasonCode", @"withholding": @"withholding", @"issDueatDestination": @"issDueatDestination", @"pisCofinsCreditNotAllowed": @"pisCofinsCreditNotAllowed", @"issTaxation": @"issTaxation", @"federalTaxRate": @"federalTaxRate", @"specialProductClass": @"specialProductClass", @"icmsConf": @"icmsConf" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_description", @"hsCode", @"ex", @"cest", @"cean", @"codeType", @"cstIPI", @"ipiLegalTaxClass", @"pisCofinsTaxReporting", @"accruablePISTaxation", @"accruableCOFINSTaxation", @"accruableCSLLTaxation", @"issDueatDestination", @"pisCofinsCreditNotAllowed", @"issTaxation", @"federalTaxRate", @"specialProductClass", @"icmsConf"];
+  NSArray *optionalProperties = @[@"_description", @"hsCode", @"ex", @"cest", @"cean", @"codeType", @"cstIPI", @"ipiLegalTaxClass", @"pisCofinsTaxReporting", @"accruablePISTaxation", @"pisExemptLegalReasonCode", @"pisExemptLegalReason", @"accruableCOFINSTaxation", @"cofinsExemptLegalReasonCode", @"cofinsExemptLegalReason", @"accruableCSLLTaxation", @"csllExemptLegalReason", @"csllExemptLegalReasonCode", @"withholding", @"issDueatDestination", @"pisCofinsCreditNotAllowed", @"issTaxation", @"federalTaxRate", @"specialProductClass", @"icmsConf"];
   return [optionalProperties containsObject:propertyName];
 }
 

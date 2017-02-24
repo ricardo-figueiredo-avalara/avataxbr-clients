@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,6 +30,93 @@ namespace IO.Swagger.Model
     public partial class LineForGoodsIcmsTaxRelief :  IEquatable<LineForGoodsIcmsTaxRelief>, IValidatableObject
     {
         /// <summary>
+        /// When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
+        /// </summary>
+        /// <value>When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 </value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ReasonCodeEnum
+        {
+            
+            /// <summary>
+            /// Enum _1 for "1"
+            /// </summary>
+            [EnumMember(Value = "1")]
+            _1,
+            
+            /// <summary>
+            /// Enum _3 for "3"
+            /// </summary>
+            [EnumMember(Value = "3")]
+            _3,
+            
+            /// <summary>
+            /// Enum _4 for "4"
+            /// </summary>
+            [EnumMember(Value = "4")]
+            _4,
+            
+            /// <summary>
+            /// Enum _5 for "5"
+            /// </summary>
+            [EnumMember(Value = "5")]
+            _5,
+            
+            /// <summary>
+            /// Enum _6 for "6"
+            /// </summary>
+            [EnumMember(Value = "6")]
+            _6,
+            
+            /// <summary>
+            /// Enum _7 for "7"
+            /// </summary>
+            [EnumMember(Value = "7")]
+            _7,
+            
+            /// <summary>
+            /// Enum _8 for "8"
+            /// </summary>
+            [EnumMember(Value = "8")]
+            _8,
+            
+            /// <summary>
+            /// Enum _9 for "9"
+            /// </summary>
+            [EnumMember(Value = "9")]
+            _9,
+            
+            /// <summary>
+            /// Enum _10 for "10"
+            /// </summary>
+            [EnumMember(Value = "10")]
+            _10,
+            
+            /// <summary>
+            /// Enum _11 for "11"
+            /// </summary>
+            [EnumMember(Value = "11")]
+            _11,
+            
+            /// <summary>
+            /// Enum _12 for "12"
+            /// </summary>
+            [EnumMember(Value = "12")]
+            _12,
+            
+            /// <summary>
+            /// Enum _16 for "16"
+            /// </summary>
+            [EnumMember(Value = "16")]
+            _16
+        }
+
+        /// <summary>
+        /// When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
+        /// </summary>
+        /// <value>When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 </value>
+        [DataMember(Name="reasonCode", EmitDefaultValue=false)]
+        public ReasonCodeEnum? ReasonCode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="LineForGoodsIcmsTaxRelief" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -37,42 +124,36 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LineForGoodsIcmsTaxRelief" /> class.
         /// </summary>
-        /// <param name="IcmsTaxReliefReasonCode">When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016  (required).</param>
-        /// <param name="IcmsReliefTaxRate">ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração).</param>
-        /// <param name="IcmsReliefTaxAmount">Amount for Icms Relief (desoneração).</param>
-        public LineForGoodsIcmsTaxRelief(int? IcmsTaxReliefReasonCode = default(int?), double? IcmsReliefTaxRate = default(double?), double? IcmsReliefTaxAmount = default(double?))
+        /// <param name="ReasonCode">When item transaction subject to desoneration, this is the reason code - &#39;1&#39; # Táxi; - &#39;3&#39; # Produtor Agropecuário; - &#39;4&#39; # Frotista/Locadora; - &#39;5&#39; # Diplomático/Consular; - &#39;6&#39; # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - &#39;7&#39; # SUFRAMA; - &#39;8&#39; # Venda a órgão Público; - &#39;9&#39; # Outros - &#39;10&#39; # Deficiente Condutor - &#39;11&#39; # Deficiente não condutor - &#39;12&#39; # Fomento agropecuário - &#39;16&#39; # Olimpíadas Rio 2016  (required).</param>
+        /// <param name="TaxBaseDiscount">ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração).</param>
+        /// <param name="TaxAmount">Amount for Icms Relief (desoneração).</param>
+        public LineForGoodsIcmsTaxRelief(ReasonCodeEnum? ReasonCode = default(ReasonCodeEnum?), double? TaxBaseDiscount = default(double?), double? TaxAmount = default(double?))
         {
-            // to ensure "IcmsTaxReliefReasonCode" is required (not null)
-            if (IcmsTaxReliefReasonCode == null)
+            // to ensure "ReasonCode" is required (not null)
+            if (ReasonCode == null)
             {
-                throw new InvalidDataException("IcmsTaxReliefReasonCode is a required property for LineForGoodsIcmsTaxRelief and cannot be null");
+                throw new InvalidDataException("ReasonCode is a required property for LineForGoodsIcmsTaxRelief and cannot be null");
             }
             else
             {
-                this.IcmsTaxReliefReasonCode = IcmsTaxReliefReasonCode;
+                this.ReasonCode = ReasonCode;
             }
-            this.IcmsReliefTaxRate = IcmsReliefTaxRate;
-            this.IcmsReliefTaxAmount = IcmsReliefTaxAmount;
+            this.TaxBaseDiscount = TaxBaseDiscount;
+            this.TaxAmount = TaxAmount;
         }
         
-        /// <summary>
-        /// When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
-        /// </summary>
-        /// <value>When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 </value>
-        [DataMember(Name="icmsTaxReliefReasonCode", EmitDefaultValue=false)]
-        public int? IcmsTaxReliefReasonCode { get; set; }
         /// <summary>
         /// ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
         /// </summary>
         /// <value>ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)</value>
-        [DataMember(Name="icmsReliefTaxRate", EmitDefaultValue=false)]
-        public double? IcmsReliefTaxRate { get; set; }
+        [DataMember(Name="taxBaseDiscount", EmitDefaultValue=false)]
+        public double? TaxBaseDiscount { get; set; }
         /// <summary>
         /// Amount for Icms Relief (desoneração)
         /// </summary>
         /// <value>Amount for Icms Relief (desoneração)</value>
-        [DataMember(Name="icmsReliefTaxAmount", EmitDefaultValue=false)]
-        public double? IcmsReliefTaxAmount { get; set; }
+        [DataMember(Name="taxAmount", EmitDefaultValue=false)]
+        public double? TaxAmount { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -81,9 +162,9 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class LineForGoodsIcmsTaxRelief {\n");
-            sb.Append("  IcmsTaxReliefReasonCode: ").Append(IcmsTaxReliefReasonCode).Append("\n");
-            sb.Append("  IcmsReliefTaxRate: ").Append(IcmsReliefTaxRate).Append("\n");
-            sb.Append("  IcmsReliefTaxAmount: ").Append(IcmsReliefTaxAmount).Append("\n");
+            sb.Append("  ReasonCode: ").Append(ReasonCode).Append("\n");
+            sb.Append("  TaxBaseDiscount: ").Append(TaxBaseDiscount).Append("\n");
+            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,19 +202,19 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.IcmsTaxReliefReasonCode == other.IcmsTaxReliefReasonCode ||
-                    this.IcmsTaxReliefReasonCode != null &&
-                    this.IcmsTaxReliefReasonCode.Equals(other.IcmsTaxReliefReasonCode)
+                    this.ReasonCode == other.ReasonCode ||
+                    this.ReasonCode != null &&
+                    this.ReasonCode.Equals(other.ReasonCode)
                 ) && 
                 (
-                    this.IcmsReliefTaxRate == other.IcmsReliefTaxRate ||
-                    this.IcmsReliefTaxRate != null &&
-                    this.IcmsReliefTaxRate.Equals(other.IcmsReliefTaxRate)
+                    this.TaxBaseDiscount == other.TaxBaseDiscount ||
+                    this.TaxBaseDiscount != null &&
+                    this.TaxBaseDiscount.Equals(other.TaxBaseDiscount)
                 ) && 
                 (
-                    this.IcmsReliefTaxAmount == other.IcmsReliefTaxAmount ||
-                    this.IcmsReliefTaxAmount != null &&
-                    this.IcmsReliefTaxAmount.Equals(other.IcmsReliefTaxAmount)
+                    this.TaxAmount == other.TaxAmount ||
+                    this.TaxAmount != null &&
+                    this.TaxAmount.Equals(other.TaxAmount)
                 );
         }
 
@@ -148,12 +229,12 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.IcmsTaxReliefReasonCode != null)
-                    hash = hash * 59 + this.IcmsTaxReliefReasonCode.GetHashCode();
-                if (this.IcmsReliefTaxRate != null)
-                    hash = hash * 59 + this.IcmsReliefTaxRate.GetHashCode();
-                if (this.IcmsReliefTaxAmount != null)
-                    hash = hash * 59 + this.IcmsReliefTaxAmount.GetHashCode();
+                if (this.ReasonCode != null)
+                    hash = hash * 59 + this.ReasonCode.GetHashCode();
+                if (this.TaxBaseDiscount != null)
+                    hash = hash * 59 + this.TaxBaseDiscount.GetHashCode();
+                if (this.TaxAmount != null)
+                    hash = hash * 59 + this.TaxAmount.GetHashCode();
                 return hash;
             }
         }

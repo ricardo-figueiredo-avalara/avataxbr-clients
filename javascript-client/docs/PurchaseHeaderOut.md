@@ -1,4 +1,4 @@
-# Br16Api.PurchaseHeaderOut
+# AvaTaxBrazil.PurchaseHeaderOut
 
 ## Properties
 Name | Type | Description | Notes

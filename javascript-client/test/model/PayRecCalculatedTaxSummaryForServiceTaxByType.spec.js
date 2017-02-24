@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+    instance = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('PayRecCalculatedTaxSummaryForServiceTaxByType', function() {
     it('should create an instance of PayRecCalculatedTaxSummaryForServiceTaxByType', function() {
       // uncomment below and update the code to test PayRecCalculatedTaxSummaryForServiceTaxByType
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
-      //expect(instance).to.be.a(Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType);
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //expect(instance).to.be.a(AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType);
     });
 
     it('should have the property issRf (base name: "issRf")', function() {
       // uncomment below and update the code to test the property issRf
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
       //expect(instance).to.be();
     });
 
     it('should have the property pisRf (base name: "pisRf")', function() {
       // uncomment below and update the code to test the property pisRf
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
       //expect(instance).to.be();
     });
 
     it('should have the property cofinsRf (base name: "cofinsRf")', function() {
       // uncomment below and update the code to test the property cofinsRf
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
       //expect(instance).to.be();
     });
 
     it('should have the property csllRf (base name: "csllRf")', function() {
       // uncomment below and update the code to test the property csllRf
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
       //expect(instance).to.be();
     });
 
     it('should have the property irrf (base name: "irrf")', function() {
       // uncomment below and update the code to test the property irrf
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
       //expect(instance).to.be();
     });
 
     it('should have the property inssRf (base name: "inssRf")', function() {
       // uncomment below and update the code to test the property inssRf
-      //var instane = new Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType();
+      //var instane = new AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType();
       //expect(instance).to.be();
     });
 

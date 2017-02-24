@@ -1,4 +1,4 @@
-# Br16Api.PaymentTerms
+# AvaTaxBrazil.PaymentTerms
 
 ## Enum
 

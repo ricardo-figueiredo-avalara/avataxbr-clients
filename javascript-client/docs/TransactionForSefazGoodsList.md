@@ -1,4 +1,4 @@
-# Br16Api.TransactionForSefazGoodsList
+# AvaTaxBrazil.TransactionForSefazGoodsList
 
 ## Properties
 Name | Type | Description | Notes

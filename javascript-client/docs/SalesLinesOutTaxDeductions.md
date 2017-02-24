@@ -1,4 +1,4 @@
-# Br16Api.SalesLinesOutTaxDeductions
+# AvaTaxBrazil.SalesLinesOutTaxDeductions
 
 ## Properties
 Name | Type | Description | Notes

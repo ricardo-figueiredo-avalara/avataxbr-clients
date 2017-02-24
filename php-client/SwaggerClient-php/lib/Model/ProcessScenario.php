@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -176,21 +176,28 @@ class ProcessScenario implements ArrayAccess
         return self::$getters;
     }
 
-    const CST_IPI__50 = '50';
-    const CST_IPI__51 = '51';
-    const CST_IPI__52 = '52';
-    const CST_IPI__53 = '53';
-    const CST_IPI__54 = '54';
+    const CST_IPI_T = 'T';
+    const CST_IPI_Z = 'Z';
+    const CST_IPI_E = 'E';
+    const CST_IPI_H = 'H';
+    const CST_IPI_N = 'N';
+    const CST_IPI_I = 'I';
+    const CST_IPI_O = 'O';
+    const CST_IPI_OZ = 'OZ';
     const ACCRUABLE_PIS_TAXATION_T = 'T';
     const ACCRUABLE_PIS_TAXATION_Z = 'Z';
     const ACCRUABLE_PIS_TAXATION_E = 'E';
     const ACCRUABLE_PIS_TAXATION_H = 'H';
     const ACCRUABLE_PIS_TAXATION_N = 'N';
+    const ACCRUABLE_PIS_TAXATION_O = 'O';
+    const ACCRUABLE_PIS_TAXATION_OZ = 'OZ';
     const ACCRUABLE_COFINS_TAXATION_T = 'T';
     const ACCRUABLE_COFINS_TAXATION_Z = 'Z';
     const ACCRUABLE_COFINS_TAXATION_E = 'E';
     const ACCRUABLE_COFINS_TAXATION_H = 'H';
     const ACCRUABLE_COFINS_TAXATION_N = 'N';
+    const ACCRUABLE_COFINS_TAXATION_O = 'O';
+    const ACCRUABLE_COFINS_TAXATION_OZ = 'OZ';
     const TYPE_SALES = 'SALES';
     const TYPE_PURCHASE = 'PURCHASE';
     const TYPE_SALES_RETURN = 'SALES_RETURN';
@@ -219,11 +226,14 @@ class ProcessScenario implements ArrayAccess
     public function getCstIpiAllowableValues()
     {
         return [
-            self::CST_IPI__50,
-            self::CST_IPI__51,
-            self::CST_IPI__52,
-            self::CST_IPI__53,
-            self::CST_IPI__54,
+            self::CST_IPI_T,
+            self::CST_IPI_Z,
+            self::CST_IPI_E,
+            self::CST_IPI_H,
+            self::CST_IPI_N,
+            self::CST_IPI_I,
+            self::CST_IPI_O,
+            self::CST_IPI_OZ,
         ];
     }
     
@@ -239,6 +249,8 @@ class ProcessScenario implements ArrayAccess
             self::ACCRUABLE_PIS_TAXATION_E,
             self::ACCRUABLE_PIS_TAXATION_H,
             self::ACCRUABLE_PIS_TAXATION_N,
+            self::ACCRUABLE_PIS_TAXATION_O,
+            self::ACCRUABLE_PIS_TAXATION_OZ,
         ];
     }
     
@@ -254,6 +266,8 @@ class ProcessScenario implements ArrayAccess
             self::ACCRUABLE_COFINS_TAXATION_E,
             self::ACCRUABLE_COFINS_TAXATION_H,
             self::ACCRUABLE_COFINS_TAXATION_N,
+            self::ACCRUABLE_COFINS_TAXATION_O,
+            self::ACCRUABLE_COFINS_TAXATION_OZ,
         ];
     }
     
@@ -354,12 +368,12 @@ class ProcessScenario implements ArrayAccess
             $invalid_properties[] = "invalid value for 'code', the character length must be smaller than or equal to 60.";
         }
 
-        $allowed_values = ["50", "51", "52", "53", "54"];
+        $allowed_values = ["T", "Z", "E", "H", "N", "I", "O", "OZ"];
         if (!in_array($this->container['cst_ipi'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'cst_ipi', must be one of #{allowed_values}.";
         }
 
-        $allowed_values = ["T", "Z", "E", "H", "N"];
+        $allowed_values = ["T", "Z", "E", "H", "N", "O", "OZ"];
         if (!in_array($this->container['accruable_pis_taxation'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'accruable_pis_taxation', must be one of #{allowed_values}.";
         }
@@ -372,7 +386,7 @@ class ProcessScenario implements ArrayAccess
             $invalid_properties[] = "invalid value for 'pis_exempt_legal_reason', the character length must be smaller than or equal to 1024.";
         }
 
-        $allowed_values = ["T", "Z", "E", "H", "N"];
+        $allowed_values = ["T", "Z", "E", "H", "N", "O", "OZ"];
         if (!in_array($this->container['accruable_cofins_taxation'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'accruable_cofins_taxation', must be one of #{allowed_values}.";
         }
@@ -424,11 +438,11 @@ class ProcessScenario implements ArrayAccess
         if (strlen($this->container['code']) > 60) {
             return false;
         }
-        $allowed_values = ["50", "51", "52", "53", "54"];
+        $allowed_values = ["T", "Z", "E", "H", "N", "I", "O", "OZ"];
         if (!in_array($this->container['cst_ipi'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["T", "Z", "E", "H", "N"];
+        $allowed_values = ["T", "Z", "E", "H", "N", "O", "OZ"];
         if (!in_array($this->container['accruable_pis_taxation'], $allowed_values)) {
             return false;
         }
@@ -438,7 +452,7 @@ class ProcessScenario implements ArrayAccess
         if (strlen($this->container['pis_exempt_legal_reason']) > 1024) {
             return false;
         }
-        $allowed_values = ["T", "Z", "E", "H", "N"];
+        $allowed_values = ["T", "Z", "E", "H", "N", "O", "OZ"];
         if (!in_array($this->container['accruable_cofins_taxation'], $allowed_values)) {
             return false;
         }
@@ -548,14 +562,14 @@ class ProcessScenario implements ArrayAccess
 
     /**
      * Sets cst_ipi
-     * @param string $cst_ipi Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune
+     * @param string $cst_ipi Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES
      * @return $this
      */
     public function setCstIpi($cst_ipi)
     {
-        $allowed_values = array('50', '51', '52', '53', '54');
+        $allowed_values = array('T', 'Z', 'E', 'H', 'N', 'I', 'O', 'OZ');
         if (!is_null($cst_ipi) && (!in_array($cst_ipi, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'cst_ipi', must be one of '50', '51', '52', '53', '54'");
+            throw new \InvalidArgumentException("Invalid value for 'cst_ipi', must be one of 'T', 'Z', 'E', 'H', 'N', 'I', 'O', 'OZ'");
         }
         $this->container['cst_ipi'] = $cst_ipi;
 
@@ -594,14 +608,14 @@ class ProcessScenario implements ArrayAccess
 
     /**
      * Sets accruable_pis_taxation
-     * @param string $accruable_pis_taxation Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE
+     * @param string $accruable_pis_taxation Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES
      * @return $this
      */
     public function setAccruablePisTaxation($accruable_pis_taxation)
     {
-        $allowed_values = array('T', 'Z', 'E', 'H', 'N');
+        $allowed_values = array('T', 'Z', 'E', 'H', 'N', 'O', 'OZ');
         if (!is_null($accruable_pis_taxation) && (!in_array($accruable_pis_taxation, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'accruable_pis_taxation', must be one of 'T', 'Z', 'E', 'H', 'N'");
+            throw new \InvalidArgumentException("Invalid value for 'accruable_pis_taxation', must be one of 'T', 'Z', 'E', 'H', 'N', 'O', 'OZ'");
         }
         $this->container['accruable_pis_taxation'] = $accruable_pis_taxation;
 
@@ -669,14 +683,14 @@ class ProcessScenario implements ArrayAccess
 
     /**
      * Sets accruable_cofins_taxation
-     * @param string $accruable_cofins_taxation Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE
+     * @param string $accruable_cofins_taxation Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES
      * @return $this
      */
     public function setAccruableCofinsTaxation($accruable_cofins_taxation)
     {
-        $allowed_values = array('T', 'Z', 'E', 'H', 'N');
+        $allowed_values = array('T', 'Z', 'E', 'H', 'N', 'O', 'OZ');
         if (!is_null($accruable_cofins_taxation) && (!in_array($accruable_cofins_taxation, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'accruable_cofins_taxation', must be one of 'T', 'Z', 'E', 'H', 'N'");
+            throw new \InvalidArgumentException("Invalid value for 'accruable_cofins_taxation', must be one of 'T', 'Z', 'E', 'H', 'N', 'O', 'OZ'");
         }
         $this->container['accruable_cofins_taxation'] = $accruable_cofins_taxation;
 

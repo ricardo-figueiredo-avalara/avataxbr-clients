@@ -1,8 +1,8 @@
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -35,6 +35,14 @@ isa_ok($api, 'WWW::SwaggerClient::AuthApi');
 {
     my $authorization = undef; # replace NULL with a proper value
     my $result = $api->auth_post(authorization => $authorization);
+}
+
+#
+# v2_auth_post test
+#
+{
+    my $authorization = undef; # replace NULL with a proper value
+    my $result = $api->v2_auth_post(authorization => $authorization);
 }
 
 

@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -19,12 +19,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.TaxType;
 import io.swagger.client.model.TaxTypeRate;
-import io.swagger.client.model.TaxTypeRateWithholding;
 
 /**
  * CustomTaxTypeRate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class CustomTaxTypeRate {
   @SerializedName("taxType")
   private TaxType taxType = null;
@@ -90,15 +89,6 @@ public class CustomTaxTypeRate {
 
   @SerializedName("specializationType")
   private SpecializationTypeEnum specializationType = null;
-
-  @SerializedName("exemptionReasonCode")
-  private String exemptionReasonCode = null;
-
-  @SerializedName("customExemptionReasonDescription")
-  private String customExemptionReasonDescription = null;
-
-  @SerializedName("withholding")
-  private TaxTypeRateWithholding withholding = null;
 
   @SerializedName("companyId")
   private String companyId = null;
@@ -211,60 +201,6 @@ public class CustomTaxTypeRate {
     this.specializationType = specializationType;
   }
 
-  public CustomTaxTypeRate exemptionReasonCode(String exemptionReasonCode) {
-    this.exemptionReasonCode = exemptionReasonCode;
-    return this;
-  }
-
-   /**
-   * UUID Reference to an item in the LegalReason store. 
-   * @return exemptionReasonCode
-  **/
-  @ApiModelProperty(example = "null", value = "UUID Reference to an item in the LegalReason store. ")
-  public String getExemptionReasonCode() {
-    return exemptionReasonCode;
-  }
-
-  public void setExemptionReasonCode(String exemptionReasonCode) {
-    this.exemptionReasonCode = exemptionReasonCode;
-  }
-
-  public CustomTaxTypeRate customExemptionReasonDescription(String customExemptionReasonDescription) {
-    this.customExemptionReasonDescription = customExemptionReasonDescription;
-    return this;
-  }
-
-   /**
-   * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-   * @return customExemptionReasonDescription
-  **/
-  @ApiModelProperty(example = "null", value = "Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). ")
-  public String getCustomExemptionReasonDescription() {
-    return customExemptionReasonDescription;
-  }
-
-  public void setCustomExemptionReasonDescription(String customExemptionReasonDescription) {
-    this.customExemptionReasonDescription = customExemptionReasonDescription;
-  }
-
-  public CustomTaxTypeRate withholding(TaxTypeRateWithholding withholding) {
-    this.withholding = withholding;
-    return this;
-  }
-
-   /**
-   * Get withholding
-   * @return withholding
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public TaxTypeRateWithholding getWithholding() {
-    return withholding;
-  }
-
-  public void setWithholding(TaxTypeRateWithholding withholding) {
-    this.withholding = withholding;
-  }
-
   public CustomTaxTypeRate companyId(String companyId) {
     this.companyId = companyId;
     return this;
@@ -299,15 +235,12 @@ public class CustomTaxTypeRate {
         Objects.equals(this.srvAmount, customTaxTypeRate.srvAmount) &&
         Objects.equals(this.quantityUnidBase, customTaxTypeRate.quantityUnidBase) &&
         Objects.equals(this.specializationType, customTaxTypeRate.specializationType) &&
-        Objects.equals(this.exemptionReasonCode, customTaxTypeRate.exemptionReasonCode) &&
-        Objects.equals(this.customExemptionReasonDescription, customTaxTypeRate.customExemptionReasonDescription) &&
-        Objects.equals(this.withholding, customTaxTypeRate.withholding) &&
         Objects.equals(this.companyId, customTaxTypeRate.companyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taxType, taxModel, rate, srvAmount, quantityUnidBase, specializationType, exemptionReasonCode, customExemptionReasonDescription, withholding, companyId);
+    return Objects.hash(taxType, taxModel, rate, srvAmount, quantityUnidBase, specializationType, companyId);
   }
 
 
@@ -322,9 +255,6 @@ public class CustomTaxTypeRate {
     sb.append("    srvAmount: ").append(toIndentedString(srvAmount)).append("\n");
     sb.append("    quantityUnidBase: ").append(toIndentedString(quantityUnidBase)).append("\n");
     sb.append("    specializationType: ").append(toIndentedString(specializationType)).append("\n");
-    sb.append("    exemptionReasonCode: ").append(toIndentedString(exemptionReasonCode)).append("\n");
-    sb.append("    customExemptionReasonDescription: ").append(toIndentedString(customExemptionReasonDescription)).append("\n");
-    sb.append("    withholding: ").append(toIndentedString(withholding)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("}");
     return sb.toString();

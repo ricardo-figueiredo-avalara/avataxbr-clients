@@ -2,7 +2,6 @@ package io.swagger.model;
 
 import io.swagger.model.TaxType;
 import io.swagger.model.TaxTypeRate;
-import io.swagger.model.TaxTypeRateWithholding;
 
 import io.swagger.annotations.ApiModelProperty;
 import javax.xml.bind.annotation.XmlElement;
@@ -93,12 +92,6 @@ public enum SpecializationTypeEnum {
 
   @ApiModelProperty(example = "null", value = "")
   private SpecializationTypeEnum specializationType = null;
-  @ApiModelProperty(example = "null", value = "UUID Reference to an item in the LegalReason store. ")
-  private String exemptionReasonCode = null;
-  @ApiModelProperty(example = "null", value = "Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). ")
-  private String customExemptionReasonDescription = null;
-  @ApiModelProperty(example = "null", value = "")
-  private TaxTypeRateWithholding withholding = null;
   @ApiModelProperty(example = "null", required = true, value = "Company ID")
   private String companyId = null;
 
@@ -163,36 +156,6 @@ public enum SpecializationTypeEnum {
     this.specializationType = specializationType;
   }
  /**
-   * UUID Reference to an item in the LegalReason store. 
-   * @return exemptionReasonCode
-  **/
-  public String getExemptionReasonCode() {
-    return exemptionReasonCode;
-  }
-  public void setExemptionReasonCode(String exemptionReasonCode) {
-    this.exemptionReasonCode = exemptionReasonCode;
-  }
- /**
-   * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-   * @return customExemptionReasonDescription
-  **/
-  public String getCustomExemptionReasonDescription() {
-    return customExemptionReasonDescription;
-  }
-  public void setCustomExemptionReasonDescription(String customExemptionReasonDescription) {
-    this.customExemptionReasonDescription = customExemptionReasonDescription;
-  }
- /**
-   * Get withholding
-   * @return withholding
-  **/
-  public TaxTypeRateWithholding getWithholding() {
-    return withholding;
-  }
-  public void setWithholding(TaxTypeRateWithholding withholding) {
-    this.withholding = withholding;
-  }
- /**
    * Company ID
    * @return companyId
   **/
@@ -214,9 +177,6 @@ public enum SpecializationTypeEnum {
     sb.append("    srvAmount: ").append(toIndentedString(srvAmount)).append("\n");
     sb.append("    quantityUnidBase: ").append(toIndentedString(quantityUnidBase)).append("\n");
     sb.append("    specializationType: ").append(toIndentedString(specializationType)).append("\n");
-    sb.append("    exemptionReasonCode: ").append(toIndentedString(exemptionReasonCode)).append("\n");
-    sb.append("    customExemptionReasonDescription: ").append(toIndentedString(customExemptionReasonDescription)).append("\n");
-    sb.append("    withholding: ").append(toIndentedString(withholding)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("}");
     return sb.toString();

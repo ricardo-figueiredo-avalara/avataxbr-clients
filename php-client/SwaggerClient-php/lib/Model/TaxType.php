@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * TaxType Class Doc Comment
  *
  * @category    Class */
- // @description Tax Rate
+ // @description Tax Rate Obs: AR - \&quot;a recolher\&quot; (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço)
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -44,13 +44,20 @@ use \ArrayAccess;
 class TaxType {
     const INSS = 'INSS';
     const INSS_RF = 'INSS_RF';
+    const INSS_AR = 'INSS_AR';
     const IRRF = 'IRRF';
     const PIS = 'PIS';
     const PIS_RF = 'PIS_RF';
+    const PIS_RP = 'PIS_RP';
+    const PIS_PP = 'PIS_PP';
     const COFINS = 'COFINS';
     const COFINS_RF = 'COFINS_RF';
+    const COFINS_RP = 'COFINS_RP';
+    const COFINS_PP = 'COFINS_PP';
     const CSLL = 'CSLL';
     const CSLL_RF = 'CSLL_RF';
+    const CSLL_PP = 'CSLL_PP';
+    const CSLL_RP = 'CSLL_RP';
     const IRPJ = 'IRPJ';
     const ISS = 'ISS';
     const ISS_RF = 'ISS_RF';

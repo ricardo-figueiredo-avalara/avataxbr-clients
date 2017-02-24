@@ -24,5 +24,12 @@ public interface AuthApi  {
     @Produces({ "application/json" })
     @ApiOperation(value = "authorization", tags={  })
     public InlineResponse200 authPost(@HeaderParam("Authorization") String authorization);
+
+    @POST
+    @Path("/v2/auth")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "authorization", tags={  })
+    public InlineResponse200 v2AuthPost(@HeaderParam("Authorization") String authorization);
 }
 

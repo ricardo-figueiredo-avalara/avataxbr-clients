@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('./ItemSimple'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.ItemGoods = factory(root.Br16Api.ApiClient, root.Br16Api.ItemSimple);
+    root.AvaTaxBrazil.ItemGoods = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.ItemSimple);
   }
 }(this, function(ApiClient, ItemSimple) {
   'use strict';
@@ -52,7 +52,6 @@
 
     ItemSimple.call(_this, companyId, code, agast);
     _this['sealCode'] = sealCode;
-
 
 
 
@@ -122,9 +121,6 @@
       }
       if (data.hasOwnProperty('icmsBaseDiscountForMonoPhaseSocialContr')) {
         obj['icmsBaseDiscountForMonoPhaseSocialContr'] = ApiClient.convertToType(data['icmsBaseDiscountForMonoPhaseSocialContr'], 'Number');
-      }
-      if (data.hasOwnProperty('cest')) {
-        obj['cest'] = ApiClient.convertToType(data['cest'], 'String');
       }
       if (data.hasOwnProperty('cean')) {
         obj['cean'] = ApiClient.convertToType(data['cean'], 'String');
@@ -223,11 +219,6 @@
    * @member {Number} icmsBaseDiscountForMonoPhaseSocialContr
    */
   exports.prototype['icmsBaseDiscountForMonoPhaseSocialContr'] = undefined;
-  /**
-   * tax substitution code - Codigo especificador da Substuicao Tributaria
-   * @member {String} cest
-   */
-  exports.prototype['cest'] = undefined;
   /**
    * GTIN NUMBER
    * @member {String} cean

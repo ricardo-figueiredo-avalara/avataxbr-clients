@@ -1,4 +1,4 @@
-# Br16Api.Fuel
+# AvaTaxBrazil.Fuel
 
 ## Properties
 Name | Type | Description | Notes

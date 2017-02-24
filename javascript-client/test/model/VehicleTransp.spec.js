@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.VehicleTransp();
+    instance = new AvaTaxBrazil.VehicleTransp();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('VehicleTransp', function() {
     it('should create an instance of VehicleTransp', function() {
       // uncomment below and update the code to test VehicleTransp
-      //var instane = new Br16Api.VehicleTransp();
-      //expect(instance).to.be.a(Br16Api.VehicleTransp);
+      //var instane = new AvaTaxBrazil.VehicleTransp();
+      //expect(instance).to.be.a(AvaTaxBrazil.VehicleTransp);
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new Br16Api.VehicleTransp();
+      //var instane = new AvaTaxBrazil.VehicleTransp();
       //expect(instance).to.be();
     });
 
     it('should have the property automobile (base name: "automobile")', function() {
       // uncomment below and update the code to test the property automobile
-      //var instane = new Br16Api.VehicleTransp();
+      //var instane = new AvaTaxBrazil.VehicleTransp();
       //expect(instance).to.be();
     });
 
     it('should have the property trailer (base name: "trailer")', function() {
       // uncomment below and update the code to test the property trailer
-      //var instane = new Br16Api.VehicleTransp();
+      //var instane = new AvaTaxBrazil.VehicleTransp();
       //expect(instance).to.be();
     });
 
     it('should have the property wagon (base name: "wagon")', function() {
       // uncomment below and update the code to test the property wagon
-      //var instane = new Br16Api.VehicleTransp();
+      //var instane = new AvaTaxBrazil.VehicleTransp();
       //expect(instance).to.be();
     });
 
     it('should have the property ferry (base name: "ferry")', function() {
       // uncomment below and update the code to test the property ferry
-      //var instane = new Br16Api.VehicleTransp();
+      //var instane = new AvaTaxBrazil.VehicleTransp();
       //expect(instance).to.be();
     });
 

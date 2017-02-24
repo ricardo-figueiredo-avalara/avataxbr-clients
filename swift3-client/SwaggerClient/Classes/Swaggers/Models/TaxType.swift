@@ -8,17 +8,24 @@
 import Foundation
 
 
-/** Tax Rate */
+/** Tax Rate Obs: AR - \&quot;a recolher\&quot; (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço)  */
 public enum TaxType: String {
     case inss = "INSS"
     case inssRf = "INSS_RF"
+    case inssAr = "INSS_AR"
     case irrf = "IRRF"
     case pis = "PIS"
     case pisRf = "PIS_RF"
+    case pisRp = "PIS_RP"
+    case pisPp = "PIS_PP"
     case cofins = "COFINS"
     case cofinsRf = "COFINS_RF"
+    case cofinsRp = "COFINS_RP"
+    case cofinsPp = "COFINS_PP"
     case csll = "CSLL"
     case csllRf = "CSLL_RF"
+    case csllPp = "CSLL_PP"
+    case csllRp = "CSLL_RP"
     case irpj = "IRPJ"
     case iss = "ISS"
     case issRf = "ISS_RF"

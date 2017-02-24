@@ -1,4 +1,4 @@
-# Br16Api.SefazInvoiceBasicStatus
+# AvaTaxBrazil.SefazInvoiceBasicStatus
 
 ## Properties
 Name | Type | Description | Notes

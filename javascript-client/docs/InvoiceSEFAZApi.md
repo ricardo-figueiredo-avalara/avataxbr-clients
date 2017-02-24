@@ -1,6 +1,6 @@
-# Br16Api.InvoiceSEFAZApi
+# AvaTaxBrazil.InvoiceSEFAZApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,13 +23,13 @@ Send disable range of NFes to SEFAZ
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.SefazDisableRangeIn(); // SefazDisableRangeIn | Disable Range e-Invoice
+var body = new AvaTaxBrazil.SefazDisableRangeIn(); // SefazDisableRangeIn | Disable Range e-Invoice
 
 
 var callback = function(error, data, response) {
@@ -72,15 +72,15 @@ Cancel the invoice
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
 var key = "key_example"; // String | Invoice Key
 
-var body = new Br16Api.SefazItDeleteIn(); // SefazItDeleteIn | Cancel Message
+var body = new AvaTaxBrazil.SefazItDeleteIn(); // SefazItDeleteIn | Cancel Message
 
 
 var callback = function(error, data, response) {
@@ -124,9 +124,9 @@ Retrieve the invoice
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
@@ -173,9 +173,9 @@ Retrieve the invoice
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
@@ -222,15 +222,15 @@ Fix Letter
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
 var key = "key_example"; // String | Invoice Key
 
-var body = new Br16Api.SefazItPutIn(); // SefazItPutIn | Fix Message
+var body = new AvaTaxBrazil.SefazItPutIn(); // SefazItPutIn | Fix Message
 
 
 var callback = function(error, data, response) {
@@ -274,13 +274,13 @@ Send a invoice to SEFAZ
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = [new Br16Api.TransactionForSefazGoods()]; // [TransactionForSefazGoods] | Invoices
+var body = [new AvaTaxBrazil.TransactionForSefazGoods()]; // [TransactionForSefazGoods] | Invoices
 
 
 var callback = function(error, data, response) {
@@ -323,9 +323,9 @@ Retrieve Status of SEFAZ Server
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSEFAZApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSEFAZApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 

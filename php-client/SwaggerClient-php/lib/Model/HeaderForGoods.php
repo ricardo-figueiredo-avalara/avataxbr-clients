@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -482,9 +482,6 @@ class HeaderForGoods implements ArrayAccess
             $invalid_properties[] = "invalid value for 'transaction_type', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['transaction_model'] === null) {
-            $invalid_properties[] = "'transaction_model' can't be null";
-        }
         $allowed_values = ["01", "1B", "02", "2D", "2E", "04", "06", "07", "08", "8B", "09", "10", "11", "13", "14", "15", "16", "18", "21", "22", "26", "27", "28", "29", "55", "57", "59", "60", "65"];
         if (!in_array($this->container['transaction_model'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'transaction_model', must be one of #{allowed_values}.";
@@ -498,12 +495,6 @@ class HeaderForGoods implements ArrayAccess
             $invalid_properties[] = "invalid value for 'e_doc_creator_type', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['entity_code'] === null) {
-            $invalid_properties[] = "'entity_code' can't be null";
-        }
-        if ($this->container['currency'] === null) {
-            $invalid_properties[] = "'currency' can't be null";
-        }
         $allowed_values = ["BRL"];
         if (!in_array($this->container['currency'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'currency', must be one of #{allowed_values}.";
@@ -511,9 +502,6 @@ class HeaderForGoods implements ArrayAccess
 
         if ($this->container['company_location'] === null) {
             $invalid_properties[] = "'company_location' can't be null";
-        }
-        if ($this->container['transaction_date'] === null) {
-            $invalid_properties[] = "'transaction_date' can't be null";
         }
         $allowed_values = ["0", "1", "2", "3", "4", "5"];
         if (!in_array($this->container['tp_imp'], $allowed_values)) {
@@ -525,15 +513,6 @@ class HeaderForGoods implements ArrayAccess
             $invalid_properties[] = "invalid value for 'ind_pres', must be one of #{allowed_values}.";
         }
 
-        if ($this->container['invoice_number'] === null) {
-            $invalid_properties[] = "'invoice_number' can't be null";
-        }
-        if ($this->container['invoice_serial'] === null) {
-            $invalid_properties[] = "'invoice_serial' can't be null";
-        }
-        if ($this->container['payment'] === null) {
-            $invalid_properties[] = "'payment' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -571,9 +550,6 @@ class HeaderForGoods implements ArrayAccess
         if (!in_array($this->container['transaction_type'], $allowed_values)) {
             return false;
         }
-        if ($this->container['transaction_model'] === null) {
-            return false;
-        }
         $allowed_values = ["01", "1B", "02", "2D", "2E", "04", "06", "07", "08", "8B", "09", "10", "11", "13", "14", "15", "16", "18", "21", "22", "26", "27", "28", "29", "55", "57", "59", "60", "65"];
         if (!in_array($this->container['transaction_model'], $allowed_values)) {
             return false;
@@ -585,20 +561,11 @@ class HeaderForGoods implements ArrayAccess
         if (!in_array($this->container['e_doc_creator_type'], $allowed_values)) {
             return false;
         }
-        if ($this->container['entity_code'] === null) {
-            return false;
-        }
-        if ($this->container['currency'] === null) {
-            return false;
-        }
         $allowed_values = ["BRL"];
         if (!in_array($this->container['currency'], $allowed_values)) {
             return false;
         }
         if ($this->container['company_location'] === null) {
-            return false;
-        }
-        if ($this->container['transaction_date'] === null) {
             return false;
         }
         $allowed_values = ["0", "1", "2", "3", "4", "5"];
@@ -607,15 +574,6 @@ class HeaderForGoods implements ArrayAccess
         }
         $allowed_values = ["0", "1", "2", "3", "4", "9"];
         if (!in_array($this->container['ind_pres'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['invoice_number'] === null) {
-            return false;
-        }
-        if ($this->container['invoice_serial'] === null) {
-            return false;
-        }
-        if ($this->container['payment'] === null) {
             return false;
         }
         return true;
@@ -826,7 +784,7 @@ class HeaderForGoods implements ArrayAccess
     public function setTransactionModel($transaction_model)
     {
         $allowed_values = array('01', '1B', '02', '2D', '2E', '04', '06', '07', '08', '8B', '09', '10', '11', '13', '14', '15', '16', '18', '21', '22', '26', '27', '28', '29', '55', '57', '59', '60', '65');
-        if ((!in_array($transaction_model, $allowed_values))) {
+        if (!is_null($transaction_model) && (!in_array($transaction_model, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'transaction_model', must be one of '01', '1B', '02', '2D', '2E', '04', '06', '07', '08', '8B', '09', '10', '11', '13', '14', '15', '16', '18', '21', '22', '26', '27', '28', '29', '55', '57', '59', '60', '65'");
         }
         $this->container['transaction_model'] = $transaction_model;
@@ -939,7 +897,7 @@ class HeaderForGoods implements ArrayAccess
     public function setCurrency($currency)
     {
         $allowed_values = array('BRL');
-        if ((!in_array($currency, $allowed_values))) {
+        if (!is_null($currency) && (!in_array($currency, $allowed_values))) {
             throw new \InvalidArgumentException("Invalid value for 'currency', must be one of 'BRL'");
         }
         $this->container['currency'] = $currency;

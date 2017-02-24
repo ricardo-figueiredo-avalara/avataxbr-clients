@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.IpbtConfItem();
+    instance = new AvaTaxBrazil.IpbtConfItem();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('IpbtConfItem', function() {
     it('should create an instance of IpbtConfItem', function() {
       // uncomment below and update the code to test IpbtConfItem
-      //var instane = new Br16Api.IpbtConfItem();
-      //expect(instance).to.be.a(Br16Api.IpbtConfItem);
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
+      //expect(instance).to.be.a(AvaTaxBrazil.IpbtConfItem);
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new Br16Api.IpbtConfItem();
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
       //expect(instance).to.be();
     });
 
     it('should have the property federalTax (base name: "federalTax")', function() {
       // uncomment below and update the code to test the property federalTax
-      //var instane = new Br16Api.IpbtConfItem();
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
       //expect(instance).to.be();
     });
 
     it('should have the property importTax (base name: "importTax")', function() {
       // uncomment below and update the code to test the property importTax
-      //var instane = new Br16Api.IpbtConfItem();
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
       //expect(instance).to.be();
     });
 
     it('should have the property stateTax (base name: "stateTax")', function() {
       // uncomment below and update the code to test the property stateTax
-      //var instane = new Br16Api.IpbtConfItem();
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
       //expect(instance).to.be();
     });
 
     it('should have the property cityTax (base name: "cityTax")', function() {
       // uncomment below and update the code to test the property cityTax
-      //var instane = new Br16Api.IpbtConfItem();
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
       //expect(instance).to.be();
     });
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new Br16Api.IpbtConfItem();
+      //var instane = new AvaTaxBrazil.IpbtConfItem();
       //expect(instance).to.be();
     });
 

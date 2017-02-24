@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -47,8 +47,6 @@ ItemGoods::ItemGoods()
     m_PiscofinsRevenueTypeIsSet = false;
     m_IcmsBaseDiscountForMonoPhaseSocialContr = 0.0;
     m_IcmsBaseDiscountForMonoPhaseSocialContrIsSet = false;
-    m_Cest = U("");
-    m_CestIsSet = false;
     m_Cean = U("");
     m_CeanIsSet = false;
     m_Nve = U("");
@@ -138,10 +136,6 @@ web::json::value ItemGoods::toJson() const
     if(m_IcmsBaseDiscountForMonoPhaseSocialContrIsSet)
     {
         val[U("icmsBaseDiscountForMonoPhaseSocialContr")] = ModelBase::toJson(m_IcmsBaseDiscountForMonoPhaseSocialContr);
-    }
-    if(m_CestIsSet)
-    {
-        val[U("cest")] = ModelBase::toJson(m_Cest);
     }
     if(m_CeanIsSet)
     {
@@ -254,11 +248,6 @@ void ItemGoods::fromJson(web::json::value& val)
     if(val.has_field(U("icmsBaseDiscountForMonoPhaseSocialContr")))
     {
         setIcmsBaseDiscountForMonoPhaseSocialContr(ModelBase::doubleFromJson(val[U("icmsBaseDiscountForMonoPhaseSocialContr")]));
-    }
-    if(val.has_field(U("cest")))
-    {
-        setCest(ModelBase::stringFromJson(val[U("cest")]));
-        
     }
     if(val.has_field(U("cean")))
     {
@@ -380,11 +369,6 @@ void ItemGoods::toMultipart(std::shared_ptr<MultipartFormData> multipart, const 
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("icmsBaseDiscountForMonoPhaseSocialContr"), m_IcmsBaseDiscountForMonoPhaseSocialContr));
     }
-    if(m_CestIsSet)
-    {
-        multipart->add(ModelBase::toHttpContent(namePrefix + U("cest"), m_Cest));
-        
-    }
     if(m_CeanIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("cean"), m_Cean));
@@ -504,11 +488,6 @@ void ItemGoods::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, cons
     if(multipart->hasContent(U("icmsBaseDiscountForMonoPhaseSocialContr")))
     {
         setIcmsBaseDiscountForMonoPhaseSocialContr(ModelBase::doubleFromHttpContent(multipart->getContent(U("icmsBaseDiscountForMonoPhaseSocialContr"))));
-    }
-    if(multipart->hasContent(U("cest")))
-    {
-        setCest(ModelBase::stringFromHttpContent(multipart->getContent(U("cest"))));
-        
     }
     if(multipart->hasContent(U("cean")))
     {
@@ -792,23 +771,6 @@ bool ItemGoods::icmsBaseDiscountForMonoPhaseSocialContrIsSet() const
 void ItemGoods::unsetIcmsBaseDiscountForMonoPhaseSocialContr()
 {
     m_IcmsBaseDiscountForMonoPhaseSocialContrIsSet = false;
-}
-utility::string_t ItemGoods::getCest() const
-{
-    return m_Cest;
-}
-void ItemGoods::setCest(utility::string_t value)
-{
-    m_Cest = value;
-    m_CestIsSet = true;
-}
-bool ItemGoods::cestIsSet() const
-{
-    return m_CestIsSet;
-}
-void ItemGoods::unsetCest()
-{
-    m_CestIsSet = false;
 }
 utility::string_t ItemGoods::getCean() const
 {

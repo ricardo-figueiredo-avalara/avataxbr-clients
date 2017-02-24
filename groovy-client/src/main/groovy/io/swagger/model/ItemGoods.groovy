@@ -51,9 +51,6 @@ class ItemGoods {
   /* Discount allowed on icms base when PIS/COFINS are Monophase */
   Double icmsBaseDiscountForMonoPhaseSocialContr = null
 
-  /* tax substitution code - Codigo especificador da Substuicao Tributaria */
-  String cest = null
-
   /* GTIN NUMBER */
   String cean = null
 

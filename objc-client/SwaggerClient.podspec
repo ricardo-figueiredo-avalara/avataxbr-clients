@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
     s.name             = "SwaggerClient"
     s.version          = "1.0.0"
 
-    s.summary          = "BR16 - API"
+    s.summary          = "AvaTax Brazil"
     s.description      = <<-DESC
-                         This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+                         The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
                          DESC
 
     s.platform     = :ios, '7.0'

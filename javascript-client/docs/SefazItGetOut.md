@@ -1,4 +1,4 @@
-# Br16Api.SefazItGetOut
+# AvaTaxBrazil.SefazItGetOut
 
 ## Properties
 Name | Type | Description | Notes

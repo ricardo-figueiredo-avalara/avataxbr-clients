@@ -1,6 +1,6 @@
-# Br16Api.TaxConfCFOPApi
+# AvaTaxBrazil.TaxConfCFOPApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,11 +19,11 @@ create a new CFOP configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfCFOPApi();
+var apiInstance = new AvaTaxBrazil.TaxConfCFOPApi();
 
-var body = new Br16Api.CfopConf(); // CfopConf | The pet JSON you want to post
+var body = new AvaTaxBrazil.CfopConf(); // CfopConf | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {
@@ -63,9 +63,9 @@ disable a CFOP.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfCFOPApi();
+var apiInstance = new AvaTaxBrazil.TaxConfCFOPApi();
 
 var code = "code_example"; // String | CFOP Code
 
@@ -109,9 +109,9 @@ This operation return CFOP configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfCFOPApi();
+var apiInstance = new AvaTaxBrazil.TaxConfCFOPApi();
 
 var code = "code_example"; // String | CFOP Code
 
@@ -155,9 +155,9 @@ This operation return CFOP configurations that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfCFOPApi();
+var apiInstance = new AvaTaxBrazil.TaxConfCFOPApi();
 
 var opts = { 
   'suffixcode': "suffixcode_example", // String | Identify this CFOP, the CFOP Code has two parts N.XXX where N the prefix is the operation scope type if IN or OUT and if is in state, other state, other country and suffix XXX is the operation type 
@@ -204,13 +204,13 @@ update a CFOP configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfCFOPApi();
+var apiInstance = new AvaTaxBrazil.TaxConfCFOPApi();
 
 var code = "code_example"; // String | CFOP Code
 
-var taxconfcfop = new Br16Api.CfopConf(); // CfopConf | The pet JSON you want to post
+var taxconfcfop = new AvaTaxBrazil.CfopConf(); // CfopConf | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {

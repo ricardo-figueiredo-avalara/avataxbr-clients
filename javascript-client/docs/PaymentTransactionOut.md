@@ -1,4 +1,4 @@
-# Br16Api.PaymentTransactionOut
+# AvaTaxBrazil.PaymentTransactionOut
 
 ## Properties
 Name | Type | Description | Notes

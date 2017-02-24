@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.IcmsConfInterStateIcmsSTConf();
+    instance = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('IcmsConfInterStateIcmsSTConf', function() {
     it('should create an instance of IcmsConfInterStateIcmsSTConf', function() {
       // uncomment below and update the code to test IcmsConfInterStateIcmsSTConf
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
-      //expect(instance).to.be.a(Br16Api.IcmsConfInterStateIcmsSTConf);
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
+      //expect(instance).to.be.a(AvaTaxBrazil.IcmsConfInterStateIcmsSTConf);
     });
 
     it('should have the property protocolType (base name: "protocolType")', function() {
       // uncomment below and update the code to test the property protocolType
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property hasReductionOfMVAForSimples (base name: "hasReductionOfMVAForSimples")', function() {
       // uncomment below and update the code to test the property hasReductionOfMVAForSimples
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property reductionOfMVAForSimples (base name: "reductionOfMVAForSimples")', function() {
       // uncomment below and update the code to test the property reductionOfMVAForSimples
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property calcMode (base name: "calcMode")', function() {
       // uncomment below and update the code to test the property calcMode
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property icmsStBaseDiscount (base name: "icmsStBaseDiscount")', function() {
       // uncomment below and update the code to test the property icmsStBaseDiscount
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property mvaRate (base name: "mvaRate")', function() {
       // uncomment below and update the code to test the property mvaRate
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property srp (base name: "srp")', function() {
       // uncomment below and update the code to test the property srp
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 
     it('should have the property srpUnit (base name: "srpUnit")', function() {
       // uncomment below and update the code to test the property srpUnit
-      //var instane = new Br16Api.IcmsConfInterStateIcmsSTConf();
+      //var instane = new AvaTaxBrazil.IcmsConfInterStateIcmsSTConf();
       //expect(instance).to.be();
     });
 

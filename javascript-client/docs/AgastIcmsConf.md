@@ -1,4 +1,4 @@
-# Br16Api.AgastIcmsConf
+# AvaTaxBrazil.AgastIcmsConf
 
 ## Properties
 Name | Type | Description | Notes

@@ -2,8 +2,8 @@
 #import "SWGObject.h"
 
 /**
-* BR16 - API
-* This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+* AvaTax Brazil
+* The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 *
 * OpenAPI spec version: 1.0
 * 
@@ -16,6 +16,7 @@
 
 #import "SWGAgastCodeType.h"
 #import "SWGAgastIcmsConf.h"
+#import "SWGAgastWithholding.h"
 #import "SWGTaxTypeRate.h"
 
 
@@ -44,7 +45,7 @@
 @property(nonatomic) NSString* cean;
 
 @property(nonatomic) SWGAgastCodeType* codeType;
-/* Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune  [optional]
+/* Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE  [optional]
  */
 @property(nonatomic) NSString* cstIPI;
 /* Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU=  [optional]
@@ -56,12 +57,30 @@
 /* Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE  [optional]
  */
 @property(nonatomic) NSString* accruablePISTaxation;
+/* When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption [optional]
+ */
+@property(nonatomic) NSString* pisExemptLegalReasonCode;
+/* When specified a reason, this field holds the reason's description [optional]
+ */
+@property(nonatomic) NSString* pisExemptLegalReason;
 /* Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE  [optional]
  */
 @property(nonatomic) NSString* accruableCOFINSTaxation;
+/* When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption [optional]
+ */
+@property(nonatomic) NSString* cofinsExemptLegalReasonCode;
+/* When specified a reason, this field holds the reason's description [optional]
+ */
+@property(nonatomic) NSString* cofinsExemptLegalReason;
 /* Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT  [optional]
  */
 @property(nonatomic) NSString* accruableCSLLTaxation;
+
+@property(nonatomic) NSString* csllExemptLegalReason;
+
+@property(nonatomic) NSString* csllExemptLegalReasonCode;
+
+@property(nonatomic) SWGAgastWithholding* withholding;
 /* for service items with City Jurisdiction, inform where the ISS tax is due [optional]
  */
 @property(nonatomic) NSNumber* issDueatDestination;

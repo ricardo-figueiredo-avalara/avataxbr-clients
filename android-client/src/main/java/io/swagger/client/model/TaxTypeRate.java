@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -13,7 +13,6 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.TaxType;
-import io.swagger.client.model.TaxTypeRateWithholding;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -38,12 +37,6 @@ public class TaxTypeRate {
   };
   @SerializedName("specializationType")
   private SpecializationTypeEnum specializationType = null;
-  @SerializedName("exemptionReasonCode")
-  private String exemptionReasonCode = null;
-  @SerializedName("customExemptionReasonDescription")
-  private String customExemptionReasonDescription = null;
-  @SerializedName("withholding")
-  private TaxTypeRateWithholding withholding = null;
 
   /**
    **/
@@ -108,38 +101,6 @@ public class TaxTypeRate {
     this.specializationType = specializationType;
   }
 
-  /**
-   * UUID Reference to an item in the LegalReason store. 
-   **/
-  @ApiModelProperty(value = "UUID Reference to an item in the LegalReason store. ")
-  public String getExemptionReasonCode() {
-    return exemptionReasonCode;
-  }
-  public void setExemptionReasonCode(String exemptionReasonCode) {
-    this.exemptionReasonCode = exemptionReasonCode;
-  }
-
-  /**
-   * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-   **/
-  @ApiModelProperty(value = "Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). ")
-  public String getCustomExemptionReasonDescription() {
-    return customExemptionReasonDescription;
-  }
-  public void setCustomExemptionReasonDescription(String customExemptionReasonDescription) {
-    this.customExemptionReasonDescription = customExemptionReasonDescription;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public TaxTypeRateWithholding getWithholding() {
-    return withholding;
-  }
-  public void setWithholding(TaxTypeRateWithholding withholding) {
-    this.withholding = withholding;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -155,10 +116,7 @@ public class TaxTypeRate {
         (this.rate == null ? taxTypeRate.rate == null : this.rate.equals(taxTypeRate.rate)) &&
         (this.srvAmount == null ? taxTypeRate.srvAmount == null : this.srvAmount.equals(taxTypeRate.srvAmount)) &&
         (this.quantityUnidBase == null ? taxTypeRate.quantityUnidBase == null : this.quantityUnidBase.equals(taxTypeRate.quantityUnidBase)) &&
-        (this.specializationType == null ? taxTypeRate.specializationType == null : this.specializationType.equals(taxTypeRate.specializationType)) &&
-        (this.exemptionReasonCode == null ? taxTypeRate.exemptionReasonCode == null : this.exemptionReasonCode.equals(taxTypeRate.exemptionReasonCode)) &&
-        (this.customExemptionReasonDescription == null ? taxTypeRate.customExemptionReasonDescription == null : this.customExemptionReasonDescription.equals(taxTypeRate.customExemptionReasonDescription)) &&
-        (this.withholding == null ? taxTypeRate.withholding == null : this.withholding.equals(taxTypeRate.withholding));
+        (this.specializationType == null ? taxTypeRate.specializationType == null : this.specializationType.equals(taxTypeRate.specializationType));
   }
 
   @Override
@@ -170,9 +128,6 @@ public class TaxTypeRate {
     result = 31 * result + (this.srvAmount == null ? 0: this.srvAmount.hashCode());
     result = 31 * result + (this.quantityUnidBase == null ? 0: this.quantityUnidBase.hashCode());
     result = 31 * result + (this.specializationType == null ? 0: this.specializationType.hashCode());
-    result = 31 * result + (this.exemptionReasonCode == null ? 0: this.exemptionReasonCode.hashCode());
-    result = 31 * result + (this.customExemptionReasonDescription == null ? 0: this.customExemptionReasonDescription.hashCode());
-    result = 31 * result + (this.withholding == null ? 0: this.withholding.hashCode());
     return result;
   }
 
@@ -187,9 +142,6 @@ public class TaxTypeRate {
     sb.append("  srvAmount: ").append(srvAmount).append("\n");
     sb.append("  quantityUnidBase: ").append(quantityUnidBase).append("\n");
     sb.append("  specializationType: ").append(specializationType).append("\n");
-    sb.append("  exemptionReasonCode: ").append(exemptionReasonCode).append("\n");
-    sb.append("  customExemptionReasonDescription: ").append(customExemptionReasonDescription).append("\n");
-    sb.append("  withholding: ").append(withholding).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

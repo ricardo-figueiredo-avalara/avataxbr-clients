@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('./Fuel'), require('./LineForGoodsCalculatedTax'), require('./LineForGoodsDi'), require('./LineForGoodsExport'), require('./LineForGoodsIcmsTaxRelief'), require('./Medicine'), require('./Vehicle'), require('./Weapon'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.LineForGoods = factory(root.Br16Api.ApiClient, root.Br16Api.Fuel, root.Br16Api.LineForGoodsCalculatedTax, root.Br16Api.LineForGoodsDi, root.Br16Api.LineForGoodsExport, root.Br16Api.LineForGoodsIcmsTaxRelief, root.Br16Api.Medicine, root.Br16Api.Vehicle, root.Br16Api.Weapon);
+    root.AvaTaxBrazil.LineForGoods = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.Fuel, root.AvaTaxBrazil.LineForGoodsCalculatedTax, root.AvaTaxBrazil.LineForGoodsDi, root.AvaTaxBrazil.LineForGoodsExport, root.AvaTaxBrazil.LineForGoodsIcmsTaxRelief, root.AvaTaxBrazil.Medicine, root.AvaTaxBrazil.Vehicle, root.AvaTaxBrazil.Weapon);
   }
 }(this, function(ApiClient, Fuel, LineForGoodsCalculatedTax, LineForGoodsDi, LineForGoodsExport, LineForGoodsIcmsTaxRelief, Medicine, Vehicle, Weapon) {
   'use strict';

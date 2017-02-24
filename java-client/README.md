@@ -86,7 +86,7 @@ public class AGASTApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**createAccountCompany**](docs/AccountApi.md#createAccountCompany) | **POST** /accounts/{accountId}/companies | Create company and your data configuration
 *AddressApi* | [**getZipCode**](docs/AddressApi.md#getZipCode) | **GET** /addresses/{zipcode} | 
 *AuthApi* | [**authPost**](docs/AuthApi.md#authPost) | **POST** /auth | authorization
+*AuthApi* | [**v2AuthPost**](docs/AuthApi.md#v2AuthPost) | **POST** /v2/auth | authorization
 *CompanyApi* | [**companiesGet**](docs/CompanyApi.md#companiesGet) | **GET** /companies | Retrieve Companies by account
 *CompanyApi* | [**createCompany**](docs/CompanyApi.md#createCompany) | **POST** /companies | Create company and your data configuration
 *CompanyApi* | [**deleteAccountCompany**](docs/CompanyApi.md#deleteAccountCompany) | **DELETE** /accounts/{accountId}/companies/{companyId} | 
@@ -225,6 +226,10 @@ Class | Method | HTTP request | Description
  - [AgastCodeType](docs/AgastCodeType.md)
  - [AgastExtendForSefaz](docs/AgastExtendForSefaz.md)
  - [AgastIcmsConf](docs/AgastIcmsConf.md)
+ - [AgastWithholding](docs/AgastWithholding.md)
+ - [AgastWithholdingCOFINS](docs/AgastWithholdingCOFINS.md)
+ - [AgastWithholdingCSLL](docs/AgastWithholdingCSLL.md)
+ - [AgastWithholdingPIS](docs/AgastWithholdingPIS.md)
  - [Body](docs/Body.md)
  - [Body1](docs/Body1.md)
  - [Body2](docs/Body2.md)
@@ -387,7 +392,6 @@ Class | Method | HTTP request | Description
  - [TaxConf](docs/TaxConf.md)
  - [TaxType](docs/TaxType.md)
  - [TaxTypeRate](docs/TaxTypeRate.md)
- - [TaxTypeRateWithholding](docs/TaxTypeRateWithholding.md)
  - [TransactionForGoodsIn](docs/TransactionForGoodsIn.md)
  - [TransactionForGoodsOut](docs/TransactionForGoodsOut.md)
  - [TransactionForSefazGoods](docs/TransactionForSefazGoods.md)
@@ -399,7 +403,6 @@ Class | Method | HTTP request | Description
  - [VehicleID](docs/VehicleID.md)
  - [VehicleTransp](docs/VehicleTransp.md)
  - [Weapon](docs/Weapon.md)
- - [WithholdDef](docs/WithholdDef.md)
  - [WithholdingMode](docs/WithholdingMode.md)
 
 

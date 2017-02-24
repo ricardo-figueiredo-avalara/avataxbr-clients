@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -17,7 +17,7 @@ describe SwaggerClient::Configuration do
   before(:each) do
     # uncomment below to setup host and base_path
     #require 'URI'
-    #uri = URI.parse("https://br16-dev-app03.br.avalara.com/v2")
+    #uri = URI.parse("http://avataxbr-sandbox.avalarabrasil.com.br/v2")
     #SwaggerClient.configure do |c|
     #  c.host = uri.host
     #  c.base_path = uri.path
@@ -27,14 +27,14 @@ describe SwaggerClient::Configuration do
   describe '#base_url' do
     it 'should have the default value' do
       # uncomment below to test default value of the base path
-      #expect(config.base_url).to eq("https://br16-dev-app03.br.avalara.com/v2")
+      #expect(config.base_url).to eq("http://avataxbr-sandbox.avalarabrasil.com.br/v2")
     end
 
     it 'should remove trailing slashes' do
       [nil, '', '/', '//'].each do |base_path|
         config.base_path = base_path
         # uncomment below to test trailing slashes
-        #expect(config.base_url).to eq("https://br16-dev-app03.br.avalara.com/v2")
+        #expect(config.base_url).to eq("http://avataxbr-sandbox.avalarabrasil.com.br/v2")
       end
     end
   end

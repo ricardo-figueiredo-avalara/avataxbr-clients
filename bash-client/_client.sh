@@ -10,7 +10,7 @@
 # !
 # ! Based on: https://github.com/Valodim/zsh-curl-completion/blob/master/_curl 
 # !
-# ! Generated on: 2017-02-16T18:26:15.560Z
+# ! Generated on: 2017-02-24T19:47:57.103Z
 # !
 # !
 # ! Installation:
@@ -265,7 +265,8 @@ case $state in
             "deleteAgast[]" \
             "getAgastList[]" \
             "updateAgast[Update agast]"             "accountsAccountIdCompaniesGet[Retrieve Companies by account]" \
-            "createAccountCompany[Create company and your data configuration]"             "getZipCode[]"             "authPost[authorization]"             "companiesGet[Retrieve Companies by account]" \
+            "createAccountCompany[Create company and your data configuration]"             "getZipCode[]"             "authPost[authorization]" \
+            "v2AuthPost[authorization]"             "companiesGet[Retrieve Companies by account]" \
             "createCompany[Create company and your data configuration]" \
             "deleteAccountCompany[]" \
             "deleteCompany[]" \
@@ -419,7 +420,15 @@ case $state in
       authPost)
         local -a _op_arguments
         _op_arguments=(
-                              "Authorization\::Authorization: Basic VGVzdDoxMjM=
+                              "Authorization\::Accepts \"Basic + hash\", where hash is {user}:{password} base64 encoded.
+"
+)
+        _describe -t actions 'operations' _op_arguments && ret=0
+        ;;
+      v2AuthPost)
+        local -a _op_arguments
+        _op_arguments=(
+                              "Authorization\::Accepts \"Basic + hash\", where hash is {user}:{password} base64 encoded.
 "
 )
         _describe -t actions 'operations' _op_arguments && ret=0

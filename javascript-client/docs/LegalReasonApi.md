@@ -1,6 +1,6 @@
-# Br16Api.LegalReasonApi
+# AvaTaxBrazil.LegalReasonApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,11 +19,11 @@ Create Legal Reason.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.LegalReasonApi();
+var apiInstance = new AvaTaxBrazil.LegalReasonApi();
 
-var body = new Br16Api.LegalReason(); // LegalReason | 
+var body = new AvaTaxBrazil.LegalReason(); // LegalReason | 
 
 
 var callback = function(error, data, response) {
@@ -63,9 +63,9 @@ Delete a Legal Reason entry.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.LegalReasonApi();
+var apiInstance = new AvaTaxBrazil.LegalReasonApi();
 
 var uuid = "uuid_example"; // String | 
 
@@ -107,9 +107,9 @@ Get single Legal Reason.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.LegalReasonApi();
+var apiInstance = new AvaTaxBrazil.LegalReasonApi();
 
 var uuid = "uuid_example"; // String | 
 
@@ -151,9 +151,9 @@ List Legal Reasons.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.LegalReasonApi();
+var apiInstance = new AvaTaxBrazil.LegalReasonApi();
 
 var opts = { 
   'companyId': "companyId_example" // String | Filters by company domain entries. Provide \"global\" to retrive only \"global\" entries. CompanyId searches also match global entries. 
@@ -196,11 +196,11 @@ Update Legal Reason.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.LegalReasonApi();
+var apiInstance = new AvaTaxBrazil.LegalReasonApi();
 
-var body = new Br16Api.LegalReason(); // LegalReason | 
+var body = new AvaTaxBrazil.LegalReason(); // LegalReason | 
 
 
 var callback = function(error, data, response) {

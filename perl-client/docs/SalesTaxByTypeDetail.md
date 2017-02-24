@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **location_type** | **string** | This string captures the applicable location type. Location used for calc. Buyer or Seller | [optional] 
 **jurisdiction_name** | **string** | Jurisdiction used for calctax amount | [optional] 
-**jurisdiction_type** | **string** | Type of jurisdiction - &#39;city&#39; - &#39;state&#39; - &#39;country&#39;  | [optional] 
+**jurisdiction_type** | **string** | Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  | [optional] 
 **tax_type** | **string** | Tax identificator - &#39;aproxtribCity&#39; - &#39;aproxtribFed&#39; - &#39;pis&#39; - &#39;pisRf&#39; - &#39;cofins&#39; - &#39;cofinsRf&#39; - &#39;csll&#39; - &#39;csllRf&#39; - &#39;irrf&#39; - &#39;inss&#39; - &#39;inssRf&#39; - &#39;iss&#39; - &#39;issRf&#39; - &#39;irpj&#39;  | [optional] 
 **rate_type** | **string** | Name of configuration rate | [optional] 
 **scenario** | **string** | This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in. | [optional] 

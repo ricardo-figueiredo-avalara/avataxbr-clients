@@ -1,6 +1,6 @@
-# Br16Api.GoodsTransactionsApi
+# AvaTaxBrazil.GoodsTransactionsApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,13 +18,13 @@ This method has more then one operation model, (a) AS IS, the system only stores
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.GoodsTransactionsApi();
+var apiInstance = new AvaTaxBrazil.GoodsTransactionsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.TransactionForGoodsIn(); // TransactionForGoodsIn | Transaction Message
+var body = new AvaTaxBrazil.TransactionForGoodsIn(); // TransactionForGoodsIn | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -67,13 +67,13 @@ This method has more then one operation model, (a) AS IS, the system only stores
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.GoodsTransactionsApi();
+var apiInstance = new AvaTaxBrazil.GoodsTransactionsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.TransactionForGoodsIn(); // TransactionForGoodsIn | Transaction Message
+var body = new AvaTaxBrazil.TransactionForGoodsIn(); // TransactionForGoodsIn | Transaction Message
 
 
 var callback = function(error, data, response) {

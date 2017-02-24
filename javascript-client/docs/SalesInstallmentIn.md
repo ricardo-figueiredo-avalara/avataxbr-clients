@@ -1,4 +1,4 @@
-# Br16Api.SalesInstallmentIn
+# AvaTaxBrazil.SalesInstallmentIn
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.LineForGoodsIndExport();
+    instance = new AvaTaxBrazil.LineForGoodsIndExport();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('LineForGoodsIndExport', function() {
     it('should create an instance of LineForGoodsIndExport', function() {
       // uncomment below and update the code to test LineForGoodsIndExport
-      //var instane = new Br16Api.LineForGoodsIndExport();
-      //expect(instance).to.be.a(Br16Api.LineForGoodsIndExport);
+      //var instane = new AvaTaxBrazil.LineForGoodsIndExport();
+      //expect(instance).to.be.a(AvaTaxBrazil.LineForGoodsIndExport);
     });
 
     it('should have the property registerNumber (base name: "registerNumber")', function() {
       // uncomment below and update the code to test the property registerNumber
-      //var instane = new Br16Api.LineForGoodsIndExport();
+      //var instane = new AvaTaxBrazil.LineForGoodsIndExport();
       //expect(instance).to.be();
     });
 
     it('should have the property accessKey (base name: "accessKey")', function() {
       // uncomment below and update the code to test the property accessKey
-      //var instane = new Br16Api.LineForGoodsIndExport();
+      //var instane = new AvaTaxBrazil.LineForGoodsIndExport();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instane = new Br16Api.LineForGoodsIndExport();
+      //var instane = new AvaTaxBrazil.LineForGoodsIndExport();
       //expect(instance).to.be();
     });
 

@@ -10,9 +10,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -92,7 +92,7 @@ class AuthApi
      *
      * authorization
      *
-     * @param string $authorization Authorization: Basic VGVzdDoxMjM&#x3D; (required)
+     * @param string $authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\InlineResponse200
      */
@@ -107,7 +107,7 @@ class AuthApi
      *
      * authorization
      *
-     * @param string $authorization Authorization: Basic VGVzdDoxMjM&#x3D; (required)
+     * @param string $authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
@@ -153,6 +153,87 @@ class AuthApi
                 $headerParams,
                 '\Swagger\Client\Model\InlineResponse200',
                 '/auth'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation v2AuthPost
+     *
+     * authorization
+     *
+     * @param string $authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\InlineResponse200
+     */
+    public function v2AuthPost($authorization)
+    {
+        list($response) = $this->v2AuthPostWithHttpInfo($authorization);
+        return $response;
+    }
+
+    /**
+     * Operation v2AuthPostWithHttpInfo
+     *
+     * authorization
+     *
+     * @param string $authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function v2AuthPostWithHttpInfo($authorization)
+    {
+        // verify the required parameter 'authorization' is set
+        if ($authorization === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $authorization when calling v2AuthPost');
+        }
+        // parse inputs
+        $resourcePath = "/v2/auth";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // header params
+        if ($authorization !== null) {
+            $headerParams['Authorization'] = $this->apiClient->getSerializer()->toHeaderValue($authorization);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\InlineResponse200',
+                '/v2/auth'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];

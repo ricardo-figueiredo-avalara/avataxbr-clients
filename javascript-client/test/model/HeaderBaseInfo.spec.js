@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.HeaderBaseInfo();
+    instance = new AvaTaxBrazil.HeaderBaseInfo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('HeaderBaseInfo', function() {
     it('should create an instance of HeaderBaseInfo', function() {
       // uncomment below and update the code to test HeaderBaseInfo
-      //var instane = new Br16Api.HeaderBaseInfo();
-      //expect(instance).to.be.a(Br16Api.HeaderBaseInfo);
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
+      //expect(instance).to.be.a(AvaTaxBrazil.HeaderBaseInfo);
     });
 
     it('should have the property accountId (base name: "accountId")', function() {
       // uncomment below and update the code to test the property accountId
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property companyCode (base name: "companyCode")', function() {
       // uncomment below and update the code to test the property companyCode
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionType (base name: "transactionType")', function() {
       // uncomment below and update the code to test the property transactionType
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property documentCode (base name: "documentCode")', function() {
       // uncomment below and update the code to test the property documentCode
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property currency (base name: "currency")', function() {
       // uncomment below and update the code to test the property currency
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property transactionDate (base name: "transactionDate")', function() {
       // uncomment below and update the code to test the property transactionDate
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property taxCalculationDate (base name: "taxCalculationDate")', function() {
       // uncomment below and update the code to test the property taxCalculationDate
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 
     it('should have the property companyLocation (base name: "companyLocation")', function() {
       // uncomment below and update the code to test the property companyLocation
-      //var instane = new Br16Api.HeaderBaseInfo();
+      //var instane = new AvaTaxBrazil.HeaderBaseInfo();
       //expect(instance).to.be();
     });
 

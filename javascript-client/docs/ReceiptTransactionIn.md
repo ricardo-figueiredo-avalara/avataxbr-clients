@@ -1,4 +1,4 @@
-# Br16Api.ReceiptTransactionIn
+# AvaTaxBrazil.ReceiptTransactionIn
 
 ## Properties
 Name | Type | Description | Notes

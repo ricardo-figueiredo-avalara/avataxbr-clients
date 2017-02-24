@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -171,6 +171,22 @@ class CustomAgastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "pis_exempt_legal_reason_code"
+     */
+    public function testPropertyPisExemptLegalReasonCode()
+    {
+
+    }
+
+    /**
+     * Test attribute "pis_exempt_legal_reason"
+     */
+    public function testPropertyPisExemptLegalReason()
+    {
+
+    }
+
+    /**
      * Test attribute "accruable_cofins_taxation"
      */
     public function testPropertyAccruableCofinsTaxation()
@@ -179,9 +195,49 @@ class CustomAgastTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "cofins_exempt_legal_reason_code"
+     */
+    public function testPropertyCofinsExemptLegalReasonCode()
+    {
+
+    }
+
+    /**
+     * Test attribute "cofins_exempt_legal_reason"
+     */
+    public function testPropertyCofinsExemptLegalReason()
+    {
+
+    }
+
+    /**
      * Test attribute "accruable_csll_taxation"
      */
     public function testPropertyAccruableCsllTaxation()
+    {
+
+    }
+
+    /**
+     * Test attribute "csll_exempt_legal_reason"
+     */
+    public function testPropertyCsllExemptLegalReason()
+    {
+
+    }
+
+    /**
+     * Test attribute "csll_exempt_legal_reason_code"
+     */
+    public function testPropertyCsllExemptLegalReasonCode()
+    {
+
+    }
+
+    /**
+     * Test attribute "withholding"
+     */
+    public function testPropertyWithholding()
     {
 
     }

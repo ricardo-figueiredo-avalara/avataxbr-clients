@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -21,11 +21,11 @@ namespace model {
 
 LineForGoods_icmsTaxRelief::LineForGoods_icmsTaxRelief()
 {
-    m_IcmsTaxReliefReasonCode = 0;
-    m_IcmsReliefTaxRate = 0.0;
-    m_IcmsReliefTaxRateIsSet = false;
-    m_IcmsReliefTaxAmount = 0.0;
-    m_IcmsReliefTaxAmountIsSet = false;
+    m_ReasonCode = U("");
+    m_TaxBaseDiscount = 0.0;
+    m_TaxBaseDiscountIsSet = false;
+    m_TaxAmount = 0.0;
+    m_TaxAmountIsSet = false;
     
 }
 
@@ -42,14 +42,14 @@ web::json::value LineForGoods_icmsTaxRelief::toJson() const
 {
     web::json::value val = web::json::value::object();
 
-    val[U("icmsTaxReliefReasonCode")] = ModelBase::toJson(m_IcmsTaxReliefReasonCode);
-    if(m_IcmsReliefTaxRateIsSet)
+    val[U("reasonCode")] = ModelBase::toJson(m_ReasonCode);
+    if(m_TaxBaseDiscountIsSet)
     {
-        val[U("icmsReliefTaxRate")] = ModelBase::toJson(m_IcmsReliefTaxRate);
+        val[U("taxBaseDiscount")] = ModelBase::toJson(m_TaxBaseDiscount);
     }
-    if(m_IcmsReliefTaxAmountIsSet)
+    if(m_TaxAmountIsSet)
     {
-        val[U("icmsReliefTaxAmount")] = ModelBase::toJson(m_IcmsReliefTaxAmount);
+        val[U("taxAmount")] = ModelBase::toJson(m_TaxAmount);
     }
     
 
@@ -58,14 +58,14 @@ web::json::value LineForGoods_icmsTaxRelief::toJson() const
 
 void LineForGoods_icmsTaxRelief::fromJson(web::json::value& val)
 {
-    setIcmsTaxReliefReasonCode(ModelBase::int32_tFromJson(val[U("icmsTaxReliefReasonCode")]));
-    if(val.has_field(U("icmsReliefTaxRate")))
+    setReasonCode(ModelBase::stringFromJson(val[U("reasonCode")]));
+    if(val.has_field(U("taxBaseDiscount")))
     {
-        setIcmsReliefTaxRate(ModelBase::doubleFromJson(val[U("icmsReliefTaxRate")]));
+        setTaxBaseDiscount(ModelBase::doubleFromJson(val[U("taxBaseDiscount")]));
     }
-    if(val.has_field(U("icmsReliefTaxAmount")))
+    if(val.has_field(U("taxAmount")))
     {
-        setIcmsReliefTaxAmount(ModelBase::doubleFromJson(val[U("icmsReliefTaxAmount")]));
+        setTaxAmount(ModelBase::doubleFromJson(val[U("taxAmount")]));
     }
     
 }
@@ -78,14 +78,14 @@ void LineForGoods_icmsTaxRelief::toMultipart(std::shared_ptr<MultipartFormData> 
         namePrefix += U(".");
     }
 
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("icmsTaxReliefReasonCode"), m_IcmsTaxReliefReasonCode));
-    if(m_IcmsReliefTaxRateIsSet)
+    multipart->add(ModelBase::toHttpContent(namePrefix + U("reasonCode"), m_ReasonCode));
+    if(m_TaxBaseDiscountIsSet)
     {
-        multipart->add(ModelBase::toHttpContent(namePrefix + U("icmsReliefTaxRate"), m_IcmsReliefTaxRate));
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("taxBaseDiscount"), m_TaxBaseDiscount));
     }
-    if(m_IcmsReliefTaxAmountIsSet)
+    if(m_TaxAmountIsSet)
     {
-        multipart->add(ModelBase::toHttpContent(namePrefix + U("icmsReliefTaxAmount"), m_IcmsReliefTaxAmount));
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("taxAmount"), m_TaxAmount));
     }
     
 }
@@ -98,61 +98,61 @@ void LineForGoods_icmsTaxRelief::fromMultiPart(std::shared_ptr<MultipartFormData
         namePrefix += U(".");
     }
 
-    setIcmsTaxReliefReasonCode(ModelBase::int32_tFromHttpContent(multipart->getContent(U("icmsTaxReliefReasonCode"))));
-    if(multipart->hasContent(U("icmsReliefTaxRate")))
+    setReasonCode(ModelBase::stringFromHttpContent(multipart->getContent(U("reasonCode"))));
+    if(multipart->hasContent(U("taxBaseDiscount")))
     {
-        setIcmsReliefTaxRate(ModelBase::doubleFromHttpContent(multipart->getContent(U("icmsReliefTaxRate"))));
+        setTaxBaseDiscount(ModelBase::doubleFromHttpContent(multipart->getContent(U("taxBaseDiscount"))));
     }
-    if(multipart->hasContent(U("icmsReliefTaxAmount")))
+    if(multipart->hasContent(U("taxAmount")))
     {
-        setIcmsReliefTaxAmount(ModelBase::doubleFromHttpContent(multipart->getContent(U("icmsReliefTaxAmount"))));
+        setTaxAmount(ModelBase::doubleFromHttpContent(multipart->getContent(U("taxAmount"))));
     }
     
 }
 
 
-int32_t LineForGoods_icmsTaxRelief::getIcmsTaxReliefReasonCode() const
+utility::string_t LineForGoods_icmsTaxRelief::getReasonCode() const
 {
-    return m_IcmsTaxReliefReasonCode;
+    return m_ReasonCode;
 }
-void LineForGoods_icmsTaxRelief::setIcmsTaxReliefReasonCode(int32_t value)
+void LineForGoods_icmsTaxRelief::setReasonCode(utility::string_t value)
 {
-    m_IcmsTaxReliefReasonCode = value;
+    m_ReasonCode = value;
     
 }
-double LineForGoods_icmsTaxRelief::getIcmsReliefTaxRate() const
+double LineForGoods_icmsTaxRelief::getTaxBaseDiscount() const
 {
-    return m_IcmsReliefTaxRate;
+    return m_TaxBaseDiscount;
 }
-void LineForGoods_icmsTaxRelief::setIcmsReliefTaxRate(double value)
+void LineForGoods_icmsTaxRelief::setTaxBaseDiscount(double value)
 {
-    m_IcmsReliefTaxRate = value;
-    m_IcmsReliefTaxRateIsSet = true;
+    m_TaxBaseDiscount = value;
+    m_TaxBaseDiscountIsSet = true;
 }
-bool LineForGoods_icmsTaxRelief::icmsReliefTaxRateIsSet() const
+bool LineForGoods_icmsTaxRelief::taxBaseDiscountIsSet() const
 {
-    return m_IcmsReliefTaxRateIsSet;
+    return m_TaxBaseDiscountIsSet;
 }
-void LineForGoods_icmsTaxRelief::unsetIcmsReliefTaxRate()
+void LineForGoods_icmsTaxRelief::unsetTaxBaseDiscount()
 {
-    m_IcmsReliefTaxRateIsSet = false;
+    m_TaxBaseDiscountIsSet = false;
 }
-double LineForGoods_icmsTaxRelief::getIcmsReliefTaxAmount() const
+double LineForGoods_icmsTaxRelief::getTaxAmount() const
 {
-    return m_IcmsReliefTaxAmount;
+    return m_TaxAmount;
 }
-void LineForGoods_icmsTaxRelief::setIcmsReliefTaxAmount(double value)
+void LineForGoods_icmsTaxRelief::setTaxAmount(double value)
 {
-    m_IcmsReliefTaxAmount = value;
-    m_IcmsReliefTaxAmountIsSet = true;
+    m_TaxAmount = value;
+    m_TaxAmountIsSet = true;
 }
-bool LineForGoods_icmsTaxRelief::icmsReliefTaxAmountIsSet() const
+bool LineForGoods_icmsTaxRelief::taxAmountIsSet() const
 {
-    return m_IcmsReliefTaxAmountIsSet;
+    return m_TaxAmountIsSet;
 }
-void LineForGoods_icmsTaxRelief::unsetIcmsReliefTaxAmount()
+void LineForGoods_icmsTaxRelief::unsetTaxAmount()
 {
-    m_IcmsReliefTaxAmountIsSet = false;
+    m_TaxAmountIsSet = false;
 }
 
 }

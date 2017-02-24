@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.InformerForGoods();
+    instance = new AvaTaxBrazil.InformerForGoods();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,103 +50,103 @@
   describe('InformerForGoods', function() {
     it('should create an instance of InformerForGoods', function() {
       // uncomment below and update the code to test InformerForGoods
-      //var instane = new Br16Api.InformerForGoods();
-      //expect(instance).to.be.a(Br16Api.InformerForGoods);
+      //var instane = new AvaTaxBrazil.InformerForGoods();
+      //expect(instance).to.be.a(AvaTaxBrazil.InformerForGoods);
     });
 
     it('should have the property header (base name: "header")', function() {
       // uncomment below and update the code to test the property header
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property line (base name: "line")', function() {
       // uncomment below and update the code to test the property line
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property company (base name: "_company")', function() {
       // uncomment below and update the code to test the property company
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property entity (base name: "_entity")', function() {
       // uncomment below and update the code to test the property entity
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property emitter (base name: "emitter")', function() {
       // uncomment below and update the code to test the property emitter
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property receiver (base name: "receiver")', function() {
       // uncomment below and update the code to test the property receiver
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property transporter (base name: "transporter")', function() {
       // uncomment below and update the code to test the property transporter
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property csts (base name: "csts")', function() {
       // uncomment below and update the code to test the property csts
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property amount (base name: "amount")', function() {
       // uncomment below and update the code to test the property amount
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property discount (base name: "discount")', function() {
       // uncomment below and update the code to test the property discount
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property quantity (base name: "quantity")', function() {
       // uncomment below and update the code to test the property quantity
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property unitPrice (base name: "unitPrice")', function() {
       // uncomment below and update the code to test the property unitPrice
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property freightAmount (base name: "freightAmount")', function() {
       // uncomment below and update the code to test the property freightAmount
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property insuranceAmount (base name: "insuranceAmount")', function() {
       // uncomment below and update the code to test the property insuranceAmount
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property otherCostAmount (base name: "otherCostAmount")', function() {
       // uncomment below and update the code to test the property otherCostAmount
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 
     it('should have the property exemptValue (base name: "exemptValue")', function() {
       // uncomment below and update the code to test the property exemptValue
-      //var instane = new Br16Api.InformerForGoods();
+      //var instane = new AvaTaxBrazil.InformerForGoods();
       //expect(instance).to.be();
     });
 

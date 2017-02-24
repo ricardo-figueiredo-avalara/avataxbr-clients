@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>BR16 - API</title>
+    <title>AvaTax Brazil</title>
     <style type="text/css">
       body {
 	font-family: Trebuchet MS, sans-serif;
@@ -179,8 +179,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>BR16 - API</h1>
-    <div class="app-desc">This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts</div>
+  <h1>AvaTax Brazil</h1>
+    <div class="app-desc">The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.</div>
     <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
     <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
     <div class="app-desc">Version: 1.0</div>
@@ -214,6 +214,7 @@ font-style: italic;
   <h4><a href="#Auth">Auth</a></h4>
   <ul>
   <li><a href="#authPost"><code><span class="http-method">post</span> /auth</code></a></li>
+  <li><a href="#v2AuthPost"><code><span class="http-method">post</span> /v2/auth</code></a></li>
   </ul>
   <h4><a href="#Company">Company</a></h4>
   <ul>
@@ -442,9 +443,48 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "ipiLegalTaxClass" : "aeiou",
-  "cean" : "aeiou",
-  "pisCofinsTaxReporting" : "aeiou",
+  "withholding" : {
+    "INSsForSimples" : true,
+    "INSSLegalReason" : "aeiou",
+    "INSSForSimplesLegalReason" : "aeiou",
+    "INSS" : true,
+    "COFINS" : {
+      "stateGovernment" : true,
+      "federalGovernmentLegalReason" : "aeiou",
+      "cityGovernment" : true,
+      "businessLegalReason" : "aeiou",
+      "business" : true,
+      "legalReason" : "aeiou",
+      "federalGovernment" : true,
+      "stateGovernmentLegalReason" : "aeiou",
+      "cityGovernmentLegalReason" : "aeiou"
+    },
+    "PIS" : {
+      "stateGovernment" : true,
+      "federalGovernmentLegalReason" : "aeiou",
+      "cityGovernment" : true,
+      "businessLegalReason" : "aeiou",
+      "business" : true,
+      "legalReason" : "aeiou",
+      "federalGovernment" : true,
+      "stateGovernmentLegalReason" : "aeiou",
+      "cityGovernmentLegalReason" : "aeiou"
+    },
+    "IRRFLegalReason" : "aeiou",
+    "INSSSubjectToDischarge" : true,
+    "IRRF" : true,
+    "CSLL" : {
+      "stateGovernment" : true,
+      "federalGovernmentLegalReason" : "aeiou",
+      "cityGovernment" : true,
+      "businessLegalReason" : "aeiou",
+      "business" : true,
+      "legalReason" : "aeiou",
+      "federalGovernment" : true,
+      "stateGovernmentLegalReason" : "aeiou",
+      "cityGovernmentLegalReason" : "aeiou"
+    }
+  },
   "code" : "aeiou",
   "codeType" : {
     "code" : 123,
@@ -452,40 +492,37 @@ font-style: italic;
   },
   "cstIPI" : "aeiou",
   "accruablePISTaxation" : "aeiou",
+  "cofinsExemptLegalReasonCode" : "aeiou",
   "issDueatDestination" : true,
   "description" : "aeiou",
+  "cofinsExemptLegalReason" : "aeiou",
+  "accruableCOFINSTaxation" : "aeiou",
+  "accruableCSLLTaxation" : "aeiou",
+  "icmsConf" : [ {
+    "code" : "aeiou",
+    "state" : { }
+  } ],
+  "ipiLegalTaxClass" : "aeiou",
+  "cean" : "aeiou",
+  "pisCofinsTaxReporting" : "aeiou",
+  "pisExemptLegalReasonCode" : "aeiou",
+  "csllExemptLegalReason" : "aeiou",
+  "csllExemptLegalReasonCode" : "aeiou",
   "issTaxation" : "aeiou",
   "specialProductClass" : "aeiou",
   "cest" : "aeiou",
   "federalTaxRate" : [ {
-    "withholding" : {
-      "all" : {
-        "exemptionReasonCode" : "aeiou",
-        "customExemptionReasonDescription" : "aeiou"
-      },
-      "stateGovernment" : "",
-      "cityGovernment" : "",
-      "business" : "",
-      "federalGovernment" : ""
-    },
     "specializationType" : "aeiou",
-    "exemptionReasonCode" : "aeiou",
     "taxModel" : "aeiou",
     "rate" : 1.3579000000000001069366817318950779736042022705078125,
-    "customExemptionReasonDescription" : "aeiou",
     "quantityUnidBase" : "aeiou",
     "srvAmount" : 1.3579000000000001069366817318950779736042022705078125,
     "taxType" : { }
   } ],
   "ex" : 123,
+  "pisExemptLegalReason" : "aeiou",
   "hsCode" : "aeiou",
-  "accruableCOFINSTaxation" : "aeiou",
-  "pisCofinsCreditNotAllowed" : true,
-  "accruableCSLLTaxation" : "aeiou",
-  "icmsConf" : [ {
-    "code" : "aeiou",
-    "state" : { }
-  } ]
+  "pisCofinsCreditNotAllowed" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -1035,6 +1072,65 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /auth</code></pre></div>
     <div class="method-summary">authorization (<span class="nickname">authPost</span>)</div>
+    <div class="method-notes">Authorization: Basic VGVzdDoxMjM&#x3D;
+
+Generate Base64:
+
+- auth &#x3D; &quot;{user}:{password}&quot;
+
+- base &#x3D; base64(auth)
+
+- header[&quot;Authorization&quot;] &#x3D; &quot;Basic &quot; + base
+</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200">inline_response_200</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "expired" : "2000-01-23T04:56:07.000+00:00",
+  "token" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Token
+        <a href="#inline_response_200">inline_response_200</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="v2AuthPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /v2/auth</code></pre></div>
+    <div class="method-summary">authorization (<span class="nickname">v2AuthPost</span>)</div>
     <div class="method-notes">Authorization: Basic VGVzdDoxMjM&#x3D;
 
 Generate Base64:
@@ -5353,9 +5449,9 @@ Send the file as a base64 string.
     "lineTaxedDiscount" : 1.3579000000000001069366817318950779736042022705078125,
     "useType" : "aeiou",
     "icmsTaxRelief" : {
-      "icmsTaxReliefReasonCode" : 123,
-      "icmsReliefTaxAmount" : 1.3579000000000001069366817318950779736042022705078125,
-      "icmsReliefTaxRate" : 1.3579000000000001069366817318950779736042022705078125
+      "taxBaseDiscount" : 1.3579000000000001069366817318950779736042022705078125,
+      "reasonCode" : "aeiou",
+      "taxAmount" : 1.3579000000000001069366817318950779736042022705078125
     },
     "vehicle" : {
       "colorName" : "aeiou",
@@ -5750,9 +5846,9 @@ Send the file as a base64 string.
     "lineTaxedDiscount" : 1.3579000000000001069366817318950779736042022705078125,
     "useType" : "aeiou",
     "icmsTaxRelief" : {
-      "icmsTaxReliefReasonCode" : 123,
-      "icmsReliefTaxAmount" : 1.3579000000000001069366817318950779736042022705078125,
-      "icmsReliefTaxRate" : 1.3579000000000001069366817318950779736042022705078125
+      "taxBaseDiscount" : 1.3579000000000001069366817318950779736042022705078125,
+      "reasonCode" : "aeiou",
+      "taxAmount" : 1.3579000000000001069366817318950779736042022705078125
     },
     "vehicle" : {
       "colorName" : "aeiou",
@@ -6147,9 +6243,9 @@ Send the file as a base64 string.
     "lineTaxedDiscount" : 1.3579000000000001069366817318950779736042022705078125,
     "useType" : "aeiou",
     "icmsTaxRelief" : {
-      "icmsTaxReliefReasonCode" : 123,
-      "icmsReliefTaxAmount" : 1.3579000000000001069366817318950779736042022705078125,
-      "icmsReliefTaxRate" : 1.3579000000000001069366817318950779736042022705078125
+      "taxBaseDiscount" : 1.3579000000000001069366817318950779736042022705078125,
+      "reasonCode" : "aeiou",
+      "taxAmount" : 1.3579000000000001069366817318950779736042022705078125
     },
     "vehicle" : {
       "colorName" : "aeiou",
@@ -6543,9 +6639,9 @@ Send the file as a base64 string.
     "lineTaxedDiscount" : 1.3579000000000001069366817318950779736042022705078125,
     "useType" : "aeiou",
     "icmsTaxRelief" : {
-      "icmsTaxReliefReasonCode" : 123,
-      "icmsReliefTaxAmount" : 1.3579000000000001069366817318950779736042022705078125,
-      "icmsReliefTaxRate" : 1.3579000000000001069366817318950779736042022705078125
+      "taxBaseDiscount" : 1.3579000000000001069366817318950779736042022705078125,
+      "reasonCode" : "aeiou",
+      "taxAmount" : 1.3579000000000001069366817318950779736042022705078125
     },
     "vehicle" : {
       "colorName" : "aeiou",
@@ -11409,6 +11505,10 @@ FiledByAvalara  This event can only be sent by Avalara Systems. Reconciled -&gt;
     <li><a href="#AgastExtendForSefaz"><code>AgastExtendForSefaz</code></a></li>
     <li><a href="#Agast_codeType"><code>Agast_codeType</code></a></li>
     <li><a href="#Agast_icmsConf"><code>Agast_icmsConf</code></a></li>
+    <li><a href="#Agast_withholding"><code>Agast_withholding</code></a></li>
+    <li><a href="#Agast_withholding_COFINS"><code>Agast_withholding_COFINS</code></a></li>
+    <li><a href="#Agast_withholding_CSLL"><code>Agast_withholding_CSLL</code></a></li>
+    <li><a href="#Agast_withholding_PIS"><code>Agast_withholding_PIS</code></a></li>
     <li><a href="#body"><code>body</code></a></li>
     <li><a href="#body_1"><code>body_1</code></a></li>
     <li><a href="#body_2"><code>body_2</code></a></li>
@@ -11571,7 +11671,6 @@ FiledByAvalara  This event can only be sent by Avalara Systems. Reconciled -&gt;
     <li><a href="#TaxConf"><code>TaxConf</code></a></li>
     <li><a href="#TaxType"><code>TaxType</code></a></li>
     <li><a href="#TaxTypeRate"><code>TaxTypeRate</code></a></li>
-    <li><a href="#TaxTypeRate_withholding"><code>TaxTypeRate_withholding</code></a></li>
     <li><a href="#TransactionForGoodsIn"><code>TransactionForGoodsIn</code></a></li>
     <li><a href="#TransactionForGoodsOut"><code>TransactionForGoodsOut</code></a></li>
     <li><a href="#TransactionForSefazGoods"><code>TransactionForSefazGoods</code></a></li>
@@ -11583,7 +11682,6 @@ FiledByAvalara  This event can only be sent by Avalara Systems. Reconciled -&gt;
     <li><a href="#VehicleID"><code>VehicleID</code></a></li>
     <li><a href="#VehicleTransp"><code>VehicleTransp</code></a></li>
     <li><a href="#Weapon"><code>Weapon</code></a></li>
-    <li><a href="#WithholdDef"><code>WithholdDef</code></a></li>
     <li><a href="#WithholdingMode"><code>WithholdingMode</code></a></li>
   </ol>
 
@@ -11647,14 +11745,14 @@ FiledByAvalara  This event can only be sent by Avalara Systems. Reconciled -&gt;
 <div class="param">cean (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> GTIN NUMBER </div>
 <div class="param">codeType (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_codeType">Agast_codeType</a></span>  </div>
 <div class="param">cstIPI (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this process is subject to IPI taxation on output process
-- &#39;50&#39; # Saída Tributada
-- &#39;51&#39; # Saída Tributável com Alíquota Zero
-- &#39;52&#39; # Saída Isenta
-- &#39;53&#39; # Saída Não-Tributada
-- &#39;54&#39; # Saída Imune
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;I&#39;  # IMMUNE
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">50</div><div class="param-enum">51</div><div class="param-enum">52</div><div class="param-enum">53</div><div class="param-enum">54</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">N</div><div class="param-enum">I</div>
 <div class="param">ipiLegalTaxClass (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Legal tax classificação for IPI (enquadramento tributário)
 When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;
  </div>
@@ -11670,6 +11768,8 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+<div class="param">pisExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption </div>
+<div class="param">pisExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specified a reason, this field holds the reason&#39;s description </div>
 <div class="param">accruableCOFINSTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to COFINS taxation or exempt
 - &#39;T&#39; # TAXABLE
 - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00
@@ -11679,12 +11779,17 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+<div class="param">cofinsExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption </div>
+<div class="param">cofinsExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specified a reason, this field holds the reason&#39;s description </div>
 <div class="param">accruableCSLLTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to CSLL taxation or exempt
 - &#39;T&#39; # TAXABLE
 - &#39;E&#39; # EXEMPT
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">T</div><div class="param-enum">E</div>
+<div class="param">csllExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">csllExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">withholding (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_withholding">Agast_withholding</a></span>  </div>
 <div class="param">issDueatDestination (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> for service items with City Jurisdiction, inform where the ISS tax is due </div>
 <div class="param">pisCofinsCreditNotAllowed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative </div>
 <div class="param">issTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> - &#39;T&#39; # TAXABLE - TRIBUTÁVEL INCLUSIVE PARA EXPORTAÇÃO&#39;
@@ -11737,6 +11842,69 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
     <div class="field-items">
       <div class="param">code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
 <div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#StateEnum">StateEnum</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="Agast_withholding">Agast_withholding - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>inform if this item is subject to withholding tax on service Transactions, default true</div>
+    <div class="field-items">
+      <div class="param">IRRF (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">IRRFLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">INSSSubjectToDischarge (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Item subjecto to payroll discharge
+Item sujeto à desoneraçãode folha de pagamento
+ </div>
+<div class="param">INSS (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">INSSLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">INSsForSimples (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">INSSForSimplesLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">PIS (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_withholding_PIS">Agast_withholding_PIS</a></span>  </div>
+<div class="param">COFINS (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_withholding_COFINS">Agast_withholding_COFINS</a></span>  </div>
+<div class="param">CSLL (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_withholding_CSLL">Agast_withholding_CSLL</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="Agast_withholding_COFINS">Agast_withholding_COFINS - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>inform if this item is subject to withholding COFINS on service Transactions, by entity type, default true</div>
+    <div class="field-items">
+      <div class="param">legalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">business (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">businessLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">federalGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">federalGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">stateGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">stateGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">cityGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">cityGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="Agast_withholding_CSLL">Agast_withholding_CSLL - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>inform if this item is subject to withholding CSLL on service Transactions, by entity type, default true</div>
+    <div class="field-items">
+      <div class="param">legalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">business (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">businessLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">federalGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">federalGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">stateGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">stateGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">cityGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">cityGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="Agast_withholding_PIS">Agast_withholding_PIS - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>inform if this item is subject to withholding PIS on service Transactions, by entity type, default true</div>
+    <div class="field-items">
+      <div class="param">legalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">business (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">businessLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">federalGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">federalGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">stateGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">stateGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
+<div class="param">cityGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">cityGovernmentLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference id to TaxLegalReason </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -11903,14 +12071,17 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
 <div class="param">stockImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has inventory impact. </div>
 <div class="param">financialImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has financial impact. </div>
 <div class="param">cstIPI (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this process is subject to IPI taxation on output process
-- &#39;50&#39; # Saída Tributada
-- &#39;51&#39; # Saída Tributável com Alíquota Zero
-- &#39;52&#39; # Saída Isenta
-- &#39;53&#39; # Saída Não-Tributada
-- &#39;54&#39; # Saída Imune
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;I&#39;  # IMMUNE
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">50</div><div class="param-enum">51</div><div class="param-enum">52</div><div class="param-enum">53</div><div class="param-enum">54</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">I</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">ipiLegalTaxClass (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Legal tax classificação for IPI (enquadramento)
 When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;
  </div>
@@ -11920,20 +12091,24 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
 - &#39;E&#39; # EXEMPT
 - &#39;H&#39; # SUSPENDED
 - &#39;N&#39; # NO TAXABLE
+- &#39;O&#39; # OTHER
+- &#39;OZ&#39;# OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">pisExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">pisExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">accruableCOFINSTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to COFINS taxation or exempt
-- &#39;T&#39; # TAXABLE
-- &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00
-- &#39;E&#39; # EXEMPT
-- &#39;H&#39; # SUSPENDED
-- &#39;N&#39; # NO TAXABLE
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">cofinsExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">cofinsExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">allowIPIcreditWhenInGoing (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process allow IPI credit to Input process </div>
@@ -12088,14 +12263,14 @@ Isenção do ICMS no Simples Nacional para faixa de receita bruta
 <div class="param">cean (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> GTIN NUMBER </div>
 <div class="param">codeType (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_codeType">Agast_codeType</a></span>  </div>
 <div class="param">cstIPI (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this process is subject to IPI taxation on output process
-- &#39;50&#39; # Saída Tributada
-- &#39;51&#39; # Saída Tributável com Alíquota Zero
-- &#39;52&#39; # Saída Isenta
-- &#39;53&#39; # Saída Não-Tributada
-- &#39;54&#39; # Saída Imune
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;I&#39;  # IMMUNE
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">50</div><div class="param-enum">51</div><div class="param-enum">52</div><div class="param-enum">53</div><div class="param-enum">54</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">N</div><div class="param-enum">I</div>
 <div class="param">ipiLegalTaxClass (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Legal tax classificação for IPI (enquadramento tributário)
 When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;
  </div>
@@ -12111,6 +12286,8 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+<div class="param">pisExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption </div>
+<div class="param">pisExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specified a reason, this field holds the reason&#39;s description </div>
 <div class="param">accruableCOFINSTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to COFINS taxation or exempt
 - &#39;T&#39; # TAXABLE
 - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00
@@ -12120,12 +12297,17 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+<div class="param">cofinsExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption </div>
+<div class="param">cofinsExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specified a reason, this field holds the reason&#39;s description </div>
 <div class="param">accruableCSLLTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to CSLL taxation or exempt
 - &#39;T&#39; # TAXABLE
 - &#39;E&#39; # EXEMPT
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">T</div><div class="param-enum">E</div>
+<div class="param">csllExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">csllExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">withholding (optional)</div><div class="param-desc"><span class="param-type"><a href="#Agast_withholding">Agast_withholding</a></span>  </div>
 <div class="param">issDueatDestination (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> for service items with City Jurisdiction, inform where the ISS tax is due </div>
 <div class="param">pisCofinsCreditNotAllowed (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative </div>
 <div class="param">issTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> - &#39;T&#39; # TAXABLE - TRIBUTÁVEL INCLUSIVE PARA EXPORTAÇÃO&#39;
@@ -12189,14 +12371,17 @@ When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, 
 <div class="param">stockImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has inventory impact. </div>
 <div class="param">financialImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has financial impact. </div>
 <div class="param">cstIPI (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this process is subject to IPI taxation on output process
-- &#39;50&#39; # Saída Tributada
-- &#39;51&#39; # Saída Tributável com Alíquota Zero
-- &#39;52&#39; # Saída Isenta
-- &#39;53&#39; # Saída Não-Tributada
-- &#39;54&#39; # Saída Imune
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;I&#39;  # IMMUNE
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">50</div><div class="param-enum">51</div><div class="param-enum">52</div><div class="param-enum">53</div><div class="param-enum">54</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">I</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">ipiLegalTaxClass (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Legal tax classificação for IPI (enquadramento)
 When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;
  </div>
@@ -12206,20 +12391,24 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
 - &#39;E&#39; # EXEMPT
 - &#39;H&#39; # SUSPENDED
 - &#39;N&#39; # NO TAXABLE
+- &#39;O&#39; # OTHER
+- &#39;OZ&#39;# OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">pisExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">pisExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">accruableCOFINSTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to COFINS taxation or exempt
-- &#39;T&#39; # TAXABLE
-- &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00
-- &#39;E&#39; # EXEMPT
-- &#39;H&#39; # SUSPENDED
-- &#39;N&#39; # NO TAXABLE
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">cofinsExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">cofinsExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">allowIPIcreditWhenInGoing (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process allow IPI credit to Input process </div>
@@ -12253,12 +12442,6 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
 <div class="param">specializationType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">basic</div><div class="param-enum">monophase</div><div class="param-enum">taxSubstitution</div>
-<div class="param">exemptionReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Reference to an item in the LegalReason store.
- </div>
-<div class="param">customExemptionReasonDescription (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Optional textual reason description, to be used when reason codes
-are generic (i.e. reason code 999 &#x3D; Other).
- </div>
-<div class="param">withholding (optional)</div><div class="param-desc"><span class="param-type"><a href="#TaxTypeRate_withholding">TaxTypeRate_withholding</a></span>  </div>
 <div class="param">companyId </div><div class="param-desc"><span class="param-type"><a href="#UUID">UUID</a></span> Company ID format: uuid</div>
     </div>  <!-- field-items -->
   </div>
@@ -12279,9 +12462,13 @@ are generic (i.e. reason code 999 &#x3D; Other).
     <div class="field-items">
       <div class="param">locationType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string captures the applicable location type. Location used for calc. Buyer or Seller </div>
 <div class="param">jurisdictionName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Jurisdiction used for calctax amount </div>
-<div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction </div>
+<div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction
+- &#39;City&#39;
+- &#39;State&#39;
+- &#39;Country&#39;
+ </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">city</div><div class="param-enum">state</div><div class="param-enum">country</div>
+        <div class="param-enum">City</div><div class="param-enum">State</div><div class="param-enum">Country</div>
 <div class="param">taxType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tax identificator </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">icms</div><div class="param-enum">icmsSt</div><div class="param-enum">icmsStSd</div><div class="param-enum">icmsPartOwn</div><div class="param-enum">icmsPartDest</div><div class="param-enum">icmsDifaFCP</div><div class="param-enum">icmsDifaDest</div><div class="param-enum">icmsDifaRemet</div><div class="param-enum">icmsRf</div><div class="param-enum">icmsDeson</div><div class="param-enum">icmsCredsn</div><div class="param-enum">pis</div><div class="param-enum">pisSt</div><div class="param-enum">cofins</div><div class="param-enum">cofinsSt</div><div class="param-enum">ipi</div><div class="param-enum">ipiReturned</div><div class="param-enum">ii</div><div class="param-enum">iof</div><div class="param-enum">aproxtribState</div><div class="param-enum">aproxtribFed</div><div class="param-enum">aproxtrib</div>
@@ -12303,9 +12490,13 @@ are generic (i.e. reason code 999 &#x3D; Other).
     <div class="field-items">
       <div class="param">locationType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string captures the applicable location type. Location used for calc. Buyer or Seller </div>
 <div class="param">jurisdictionName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Jurisdiction used for calctax amount </div>
-<div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction </div>
+<div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction
+- &#39;City&#39;
+- &#39;State&#39;
+- &#39;Country&#39;
+ </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">city</div><div class="param-enum">state</div><div class="param-enum">country</div>
+        <div class="param-enum">City</div><div class="param-enum">State</div><div class="param-enum">Country</div>
 <div class="param">taxType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tax identificator </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">icms</div><div class="param-enum">icmsSt</div><div class="param-enum">icmsStSd</div><div class="param-enum">icmsPartOwn</div><div class="param-enum">icmsPartDest</div><div class="param-enum">icmsDifaFCP</div><div class="param-enum">icmsDifaDest</div><div class="param-enum">icmsDifaRemet</div><div class="param-enum">icmsRf</div><div class="param-enum">icmsDeson</div><div class="param-enum">icmsCredsn</div><div class="param-enum">pis</div><div class="param-enum">pisSt</div><div class="param-enum">cofins</div><div class="param-enum">cofinsSt</div><div class="param-enum">ipi</div><div class="param-enum">ipiReturned</div><div class="param-enum">ii</div><div class="param-enum">iof</div><div class="param-enum">aproxtribState</div><div class="param-enum">aproxtribFed</div><div class="param-enum">aproxtrib</div>
@@ -12546,7 +12737,7 @@ This decimal 12 integers and 3 decimals - R$
 <div class="param">transactionType </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string indicates the type of transaction for which tax should be calculated. </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">Sales</div><div class="param-enum">Purchase</div><div class="param-enum">SalesReturn</div><div class="param-enum">PurchaseReturn</div><div class="param-enum">TransferReturn</div><div class="param-enum">Shipping</div><div class="param-enum">ShippingReturn</div><div class="param-enum">Transfer</div><div class="param-enum">ReceiptAdjustment</div><div class="param-enum">TransferAdjustment</div>
-<div class="param">transactionModel </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string indicates the type of transaction for which tax should be calculated.
+<div class="param">transactionModel (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string indicates the type of transaction for which tax should be calculated.
 - &#39;01&#39; # Nota Fiscal 1/1A
 - &#39;1B&#39; # Nota Fiscal Avulsa
 - &#39;02&#39; # Nota Fiscal de Venda a-Consumidor
@@ -12584,12 +12775,12 @@ This decimal 12 integers and 3 decimals - R$
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">self</div><div class="param-enum">other</div>
 <div class="param">eDocCreatorPerspective (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This Flag is used only when eDocCreatorType is other and the return show Taxes using eDocCreator perspective or self perspective. </div>
-<div class="param">entityCode </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company. </div>
-<div class="param">currency </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> currency code </div>
+<div class="param">entityCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company. </div>
+<div class="param">currency (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> currency code </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">BRL</div>
 <div class="param">companyLocation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity </div>
-<div class="param">transactionDate </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string is the transaction date in ISO 8601 format, create transaction date </div>
+<div class="param">transactionDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string is the transaction date in ISO 8601 format, create transaction date </div>
 <div class="param">shippingDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string is the transaction date in ISO 8601 format, when products were shipped, can be empty or absent </div>
 <div class="param">additionalInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#AdditionalInformation">AdditionalInformation</a></span>  </div>
 <div class="param">tpImp (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> how the document will be printed
@@ -12622,13 +12813,13 @@ Quando uma pessoa com endereço em outro estado, compra uma mercadoria de forma 
  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">0</div><div class="param-enum">1</div><div class="param-enum">2</div><div class="param-enum">3</div><div class="param-enum">4</div><div class="param-enum">9</div>
-<div class="param">invoiceNumber </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Invoice number, sequential unique by invoice serial (Número da nota fiscal) </div>
-<div class="param">invoiceSerial </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Invoice number, sequential unique by invoice serial (Número da nota fiscal)
+<div class="param">invoiceNumber (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Invoice number, sequential unique by invoice serial (Número da nota fiscal) </div>
+<div class="param">invoiceSerial (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Invoice number, sequential unique by invoice serial (Número da nota fiscal)
  </div>
 <div class="param">defaultLocations (optional)</div><div class="param-desc"><span class="param-type"><a href="#DefaultLocations">DefaultLocations</a></span>  </div>
 <div class="param">transport (optional)</div><div class="param-desc"><span class="param-type"><a href="#Transport">Transport</a></span> Shipment </div>
 <div class="param">nfRef (optional)</div><div class="param-desc"><span class="param-type"><a href="#NRef">array[NRef]</a></span> Transactions or other invoices referenced </div>
-<div class="param">payment </div><div class="param-desc"><span class="param-type"><a href="#Payment">Payment</a></span>  </div>
+<div class="param">payment (optional)</div><div class="param-desc"><span class="param-type"><a href="#Payment">Payment</a></span>  </div>
 <div class="param">purchaseInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PurchaseInfo">PurchaseInfo</a></span>  </div>
 <div class="param">export (optional)</div><div class="param-desc"><span class="param-type"><a href="#ExportInfo">ExportInfo</a></span>  </div>
     </div>  <!-- field-items -->
@@ -12975,7 +13166,6 @@ Deverá ser utilizado quando a empresa que irá vender a mercadoria sujeita ao I
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">01</div><div class="param-enum">02</div><div class="param-enum">03</div><div class="param-enum">04</div><div class="param-enum">05</div><div class="param-enum">06</div><div class="param-enum">07</div>
 <div class="param">icmsBaseDiscountForMonoPhaseSocialContr (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> Discount allowed on icms base when PIS/COFINS are Monophase format: double</div>
-<div class="param">cest (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> tax substitution code - Codigo especificador da Substuicao Tributaria </div>
 <div class="param">cean (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> GTIN NUMBER </div>
 <div class="param">nve (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nomenclatura de Valor aduaneio e Estatístico - NCM extension code </div>
 <div class="param">salesUnit (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
@@ -13248,22 +13438,24 @@ Estado do comprador ou encomendante
     <h3 class="field-label"><a name="LineForGoods_icmsTaxRelief">LineForGoods_icmsTaxRelief - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">icmsTaxReliefReasonCode </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> When item transaction subject to desoneration, this is the reason code
-- 1 # Táxi;
-- 3 # Produtor Agropecuário;
-- 4 # Frotista/Locadora;
-- 5 # Diplomático/Consular;
-- 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações);
-- 7 # SUFRAMA;
-- 8 # Venda a órgão Público;
-- 9 # Outros
-- 10 # Deficiente Condutor
-- 11 # Deficiente não condutor
-- 12 # Fomento agropecuário
-- 16 # Olimpíadas Rio 2016
+      <div class="param">reasonCode </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When item transaction subject to desoneration, this is the reason code
+- &#39;1&#39; # Táxi;
+- &#39;3&#39; # Produtor Agropecuário;
+- &#39;4&#39; # Frotista/Locadora;
+- &#39;5&#39; # Diplomático/Consular;
+- &#39;6&#39; # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações);
+- &#39;7&#39; # SUFRAMA;
+- &#39;8&#39; # Venda a órgão Público;
+- &#39;9&#39; # Outros
+- &#39;10&#39; # Deficiente Condutor
+- &#39;11&#39; # Deficiente não condutor
+- &#39;12&#39; # Fomento agropecuário
+- &#39;16&#39; # Olimpíadas Rio 2016
  </div>
-<div class="param">icmsReliefTaxRate (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração) format: double</div>
-<div class="param">icmsReliefTaxAmount (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> Amount for Icms Relief (desoneração) format: double</div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">1</div><div class="param-enum">3</div><div class="param-enum">4</div><div class="param-enum">5</div><div class="param-enum">6</div><div class="param-enum">7</div><div class="param-enum">8</div><div class="param-enum">9</div><div class="param-enum">10</div><div class="param-enum">11</div><div class="param-enum">12</div><div class="param-enum">16</div>
+<div class="param">taxBaseDiscount (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração) format: double</div>
+<div class="param">taxAmount (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> Amount for Icms Relief (desoneração) format: double</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -13697,14 +13889,17 @@ When ASIS, the transaction is stored without executing tax determination (no Cal
 <div class="param">stockImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has inventory impact. </div>
 <div class="param">financialImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has financial impact. </div>
 <div class="param">cstIPI (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this process is subject to IPI taxation on output process
-- &#39;50&#39; # Saída Tributada
-- &#39;51&#39; # Saída Tributável com Alíquota Zero
-- &#39;52&#39; # Saída Isenta
-- &#39;53&#39; # Saída Não-Tributada
-- &#39;54&#39; # Saída Imune
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;I&#39;  # IMMUNE
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">50</div><div class="param-enum">51</div><div class="param-enum">52</div><div class="param-enum">53</div><div class="param-enum">54</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">I</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">ipiLegalTaxClass (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Legal tax classificação for IPI (enquadramento)
 When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;
  </div>
@@ -13714,20 +13909,24 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
 - &#39;E&#39; # EXEMPT
 - &#39;H&#39; # SUSPENDED
 - &#39;N&#39; # NO TAXABLE
+- &#39;O&#39; # OTHER
+- &#39;OZ&#39;# OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">pisExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">pisExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">accruableCOFINSTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to COFINS taxation or exempt
-- &#39;T&#39; # TAXABLE
-- &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00
-- &#39;E&#39; # EXEMPT
-- &#39;H&#39; # SUSPENDED
-- &#39;N&#39; # NO TAXABLE
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">cofinsExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">cofinsExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">allowIPIcreditWhenInGoing (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process allow IPI credit to Input process </div>
@@ -13984,12 +14183,12 @@ Informação do contrato
       <div class="param">locationType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string captures the applicable location type. Location used for calc. Buyer or Seller </div>
 <div class="param">jurisdictionName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Jurisdiction used for calctax amount </div>
 <div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction
-- &#39;city&#39;
-- &#39;state&#39;
-- &#39;country&#39;
+- &#39;City&#39;
+- &#39;State&#39;
+- &#39;Country&#39;
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">city</div><div class="param-enum">state</div><div class="param-enum">country</div>
+        <div class="param-enum">City</div><div class="param-enum">State</div><div class="param-enum">Country</div>
 <div class="param">taxType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tax identificator
 - &#39;pis&#39;
 - &#39;pisRf&#39;
@@ -14386,12 +14585,12 @@ This attribute will allow users to identify such scenarios and trigger the exemp
       <div class="param">locationType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This string captures the applicable location type. Location used for calc. Buyer or Seller </div>
 <div class="param">jurisdictionName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Jurisdiction used for calctax amount </div>
 <div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction
-- &#39;city&#39;
-- &#39;state&#39;
-- &#39;country&#39;
+- &#39;City&#39;
+- &#39;State&#39;
+- &#39;Country&#39;
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">city</div><div class="param-enum">state</div><div class="param-enum">country</div>
+        <div class="param-enum">City</div><div class="param-enum">State</div><div class="param-enum">Country</div>
 <div class="param">taxType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tax identificator
 - &#39;aproxtribCity&#39;
 - &#39;aproxtribFed&#39;
@@ -14695,7 +14894,11 @@ This attribute will allow users to identify such scenarios and trigger the exemp
     <div class='model-description'></div>
     <div class="field-items">
       <div class="param">jurisdictionName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Jurisdiction used for calctax amount </div>
-<div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction </div>
+<div class="param">jurisdictionType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of jurisdiction
+- &#39;City&#39;
+- &#39;State&#39;
+- &#39;Country&#39;
+ </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">City</div><div class="param-enum">State</div><div class="param-enum">Country</div>
 <div class="param">tax (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> sum of referenced tax value by jurisdiction format: double</div>
@@ -14716,14 +14919,17 @@ This attribute will allow users to identify such scenarios and trigger the exemp
 <div class="param">stockImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has inventory impact. </div>
 <div class="param">financialImpact (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process has financial impact. </div>
 <div class="param">cstIPI (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this process is subject to IPI taxation on output process
-- &#39;50&#39; # Saída Tributada
-- &#39;51&#39; # Saída Tributável com Alíquota Zero
-- &#39;52&#39; # Saída Isenta
-- &#39;53&#39; # Saída Não-Tributada
-- &#39;54&#39; # Saída Imune
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;I&#39;  # IMMUNE
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">50</div><div class="param-enum">51</div><div class="param-enum">52</div><div class="param-enum">53</div><div class="param-enum">54</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">I</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">ipiLegalTaxClass (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Legal tax classificação for IPI (enquadramento)
 When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;
  </div>
@@ -14733,20 +14939,24 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
 - &#39;E&#39; # EXEMPT
 - &#39;H&#39; # SUSPENDED
 - &#39;N&#39; # NO TAXABLE
+- &#39;O&#39; # OTHER
+- &#39;OZ&#39;# OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">pisExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">pisExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">accruableCOFINSTaxation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Inform if this item by nature is subject to COFINS taxation or exempt
-- &#39;T&#39; # TAXABLE
-- &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00
-- &#39;E&#39; # EXEMPT
-- &#39;H&#39; # SUSPENDED
-- &#39;N&#39; # NO TAXABLE
+- &#39;T&#39;  # TAXABLE
+- &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00
+- &#39;E&#39;  # EXEMPT
+- &#39;H&#39;  # SUSPENDED
+- &#39;N&#39;  # NO TAXABLE    
+- &#39;O&#39;  # OTHER
+- &#39;OZ&#39; # OTHER AND ZERO VALUES
  </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div>
+        <div class="param-enum">T</div><div class="param-enum">Z</div><div class="param-enum">E</div><div class="param-enum">H</div><div class="param-enum">N</div><div class="param-enum">O</div><div class="param-enum">OZ</div>
 <div class="param">cofinsExemptLegalReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When exempt, taxable with zero, suspended, not taxable, this field holds the official code number </div>
 <div class="param">cofinsExemptLegalReason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When specifi reason, this field has the description </div>
 <div class="param">allowIPIcreditWhenInGoing (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inform that the process allow IPI credit to Input process </div>
@@ -14755,7 +14965,10 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
   </div>
   <div class="model">
     <h3 class="field-label"><a name="TaxType">TaxType - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'>Tax Rate</div>
+    <div class='model-description'>Tax Rate
+Obs: AR - &quot;a recolher&quot; (serviço).
+RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço)
+</div>
     <div class="field-items">
           </div>  <!-- field-items -->
   </div>
@@ -14773,25 +14986,6 @@ When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Ane
 <div class="param">specializationType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">basic</div><div class="param-enum">monophase</div><div class="param-enum">taxSubstitution</div>
-<div class="param">exemptionReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Reference to an item in the LegalReason store.
- </div>
-<div class="param">customExemptionReasonDescription (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Optional textual reason description, to be used when reason codes
-are generic (i.e. reason code 999 &#x3D; Other).
- </div>
-<div class="param">withholding (optional)</div><div class="param-desc"><span class="param-type"><a href="#TaxTypeRate_withholding">TaxTypeRate_withholding</a></span>  </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="TaxTypeRate_withholding">TaxTypeRate_withholding - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'>Assign an empty object for simple withholding, null (no key) for no withholding.
-Detailed behaviors for specific targets may be set by using the available optional keys.
-</div>
-    <div class="field-items">
-      <div class="param">all (optional)</div><div class="param-desc"><span class="param-type"><a href="#WithholdDef">WithholdDef</a></span>  </div>
-<div class="param">business (optional)</div><div class="param-desc"><span class="param-type"><a href="#WithholdDef">WithholdDef</a></span>  </div>
-<div class="param">federalGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#WithholdDef">WithholdDef</a></span>  </div>
-<div class="param">stateGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#WithholdDef">WithholdDef</a></span>  </div>
-<div class="param">cityGovernment (optional)</div><div class="param-desc"><span class="param-type"><a href="#WithholdDef">WithholdDef</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -14984,14 +15178,6 @@ the attributes, except atribute type,  follow rule allOf then only one of this a
 Número de série do cano
  </div>
 <div class="param">weaponDescription </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> weapon description </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="WithholdDef">WithholdDef - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">exemptionReasonCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Reference to an item in the LegalReason store. </div>
-<div class="param">customExemptionReasonDescription (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

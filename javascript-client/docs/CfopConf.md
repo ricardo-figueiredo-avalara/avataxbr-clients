@@ -1,4 +1,4 @@
-# Br16Api.CfopConf
+# AvaTaxBrazil.CfopConf
 
 ## Properties
 Name | Type | Description | Notes

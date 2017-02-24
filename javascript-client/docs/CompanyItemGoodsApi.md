@@ -1,6 +1,6 @@
-# Br16Api.CompanyItemGoodsApi
+# AvaTaxBrazil.CompanyItemGoodsApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,15 +22,15 @@ Change the code of a given item.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemGoodsApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemGoodsApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
 var code = "code_example"; // String | Item Code
 
-var body = new Br16Api.Body1(); // Body1 | Requisition
+var body = new AvaTaxBrazil.Body1(); // Body1 | Requisition
 
 var opts = { 
   'goods': "goods_example", // String | Provide to apply to goods items.
@@ -80,9 +80,9 @@ This operation return custom agast configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemGoodsApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemGoodsApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -136,9 +136,9 @@ This operation return custom agast configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemGoodsApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemGoodsApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -197,15 +197,15 @@ This method operation create a custom agast for one company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemGoodsApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemGoodsApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
 var avalaraProductType = "goods"; // String | Avalara Product Type
 
-var body = new Br16Api.ItemGoods(); // ItemGoods | Transaction Message
+var body = new AvaTaxBrazil.ItemGoods(); // ItemGoods | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -247,9 +247,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemGoodsApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemGoodsApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -299,9 +299,9 @@ This method operation create a custom agast for one company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemGoodsApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemGoodsApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -309,7 +309,7 @@ var code = "code_example"; // String | Item Code
 
 var avalaraProductType = "goods"; // String | Avalara Product Type
 
-var body = new Br16Api.ItemGoods(); // ItemGoods | Transaction Message
+var body = new AvaTaxBrazil.ItemGoods(); // ItemGoods | Transaction Message
 
 
 var callback = function(error, data, response) {

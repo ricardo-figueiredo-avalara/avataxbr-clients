@@ -137,7 +137,7 @@ public enum TransactionModelEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", required = true, value = "This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) ")
+  @ApiModelProperty(example = "null", value = "This string indicates the type of transaction for which tax should be calculated. - '01' # Nota Fiscal 1/1A - '1B' # Nota Fiscal Avulsa - '02' # Nota Fiscal de Venda a-Consumidor - '2D' # Cupom Fiscal - '2E' # Cupom Fiscal-Bilhete de Passagem - '04' # Nota Fiscal de Produtor - '06' # Nota Fiscal/Conta de Energia Elétrica - '07' # Nota Fiscal de Serviço de Transporte - '08' # Conhecimento de Transporte Rodoviário de-Cargas - '8B' # Conhecimento de Transporte de-Cargas Avulso - '09' # Conhecimento de Transporte Aquaviário de-Cargas - '10' # Conhecimento Aéreo - '11' # Conhecimento de Transporte Ferroviário de-Cargas - '13' # Bilhete de Passagem Rodoviário - '14' # Bilhete de Passagem Aquaviário - '15' # Bilhete de Passagem e-Nota de-Bagagem - '16' # Bilhete de Passagem Ferroviário - '18' # Resumo de Movimento Diário - '21' # Nota Fiscal de Serviço de-Comunicação - '22' # Nota Fiscal de Serviço de Telecomunicação - '26' # Conhecimento de Transporte Multimodal de-Cargas - '27' # Nota Fiscal De Transporte Ferroviário De-Carga - '28' # Nota Fiscal/Conta de Fornecimento de Gás-Canalizado - '29' # Nota Fiscal/Conta de Fornecimento de Água-Canalizada - '55' # Nota Fiscal Eletrônica (NF-e) - '57' # Conhecimento de Transporte Eletrônico (CT-e) - '59' # Cupom Fiscal Eletrônico (CF-e-SAT) - '60' # Cupom Fiscal Eletrônico (CF-e-ECF) - '65' # Nota Fiscal Eletrônica ao-Consumidor Final (NFC-e) ")
   private TransactionModelEnum transactionModel = null;
   @ApiModelProperty(example = "null", value = "Natureza da Opreração - 'Describe kind of this transaction, summary")
   private String transactionClass = null;
@@ -178,7 +178,7 @@ public enum EDocCreatorTypeEnum {
   private EDocCreatorTypeEnum eDocCreatorType = null;
   @ApiModelProperty(example = "null", value = "This Flag is used only when eDocCreatorType is other and the return show Taxes using eDocCreator perspective or self perspective.")
   private Boolean eDocCreatorPerspective = true;
-  @ApiModelProperty(example = "null", required = true, value = "This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.")
+  @ApiModelProperty(example = "null", value = "This string is a code maintained by the client application and recorded in CUP to uniquely identify the party with whom the company (identified by companyCode) is transacting. It is unique within the context of a Company.")
   private String entityCode = null;
 
 @XmlType(name="CurrencyEnum")
@@ -213,11 +213,11 @@ public enum CurrencyEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", required = true, value = "currency code")
+  @ApiModelProperty(example = "null", value = "currency code")
   private CurrencyEnum currency = null;
   @ApiModelProperty(example = "null", required = true, value = "This string contains a previously configured company code which may also have codes needed for tax return purposes. These codes are maintained through the customer portal. Main company address identity")
   private String companyLocation = null;
-  @ApiModelProperty(example = "null", required = true, value = "This string is the transaction date in ISO 8601 format, create transaction date")
+  @ApiModelProperty(example = "null", value = "This string is the transaction date in ISO 8601 format, create transaction date")
   private String transactionDate = null;
   @ApiModelProperty(example = "null", value = "This string is the transaction date in ISO 8601 format, when products were shipped, can be empty or absent")
   private String shippingDate = null;
@@ -295,9 +295,9 @@ public enum IndPresEnum {
 
   @ApiModelProperty(example = "null", value = "Presence indicator - '0' # Not applicable - '1' # Presential; - '2' # Remote, internet; - '3' # Remote, phone; - '4' # NFC-e home delivery; - '9' # Remote, others ")
   private IndPresEnum indPres = null;
-  @ApiModelProperty(example = "null", required = true, value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal)")
+  @ApiModelProperty(example = "null", value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal)")
   private Integer invoiceNumber = null;
-  @ApiModelProperty(example = "null", required = true, value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal) ")
+  @ApiModelProperty(example = "null", value = "Invoice number, sequential unique by invoice serial (Número da nota fiscal) ")
   private Integer invoiceSerial = null;
   @ApiModelProperty(example = "null", value = "")
   private DefaultLocations defaultLocations = null;
@@ -305,7 +305,7 @@ public enum IndPresEnum {
   private Transport transport = null;
   @ApiModelProperty(example = "null", value = "Transactions or other invoices referenced")
   private List<NRef> nfRef = new ArrayList<NRef>();
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "")
   private Payment payment = null;
   @ApiModelProperty(example = "null", value = "")
   private PurchaseInfo purchaseInfo = null;

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.Weapon();
+    instance = new AvaTaxBrazil.Weapon();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('Weapon', function() {
     it('should create an instance of Weapon', function() {
       // uncomment below and update the code to test Weapon
-      //var instane = new Br16Api.Weapon();
-      //expect(instance).to.be.a(Br16Api.Weapon);
+      //var instane = new AvaTaxBrazil.Weapon();
+      //expect(instance).to.be.a(AvaTaxBrazil.Weapon);
     });
 
     it('should have the property weaponRestrictionType (base name: "weaponRestrictionType")', function() {
       // uncomment below and update the code to test the property weaponRestrictionType
-      //var instane = new Br16Api.Weapon();
+      //var instane = new AvaTaxBrazil.Weapon();
       //expect(instance).to.be();
     });
 
     it('should have the property serieNumber (base name: "serieNumber")', function() {
       // uncomment below and update the code to test the property serieNumber
-      //var instane = new Br16Api.Weapon();
+      //var instane = new AvaTaxBrazil.Weapon();
       //expect(instance).to.be();
     });
 
     it('should have the property gunBarrelSerieNumber (base name: "gunBarrelSerieNumber")', function() {
       // uncomment below and update the code to test the property gunBarrelSerieNumber
-      //var instane = new Br16Api.Weapon();
+      //var instane = new AvaTaxBrazil.Weapon();
       //expect(instance).to.be();
     });
 
     it('should have the property weaponDescription (base name: "weaponDescription")', function() {
       // uncomment below and update the code to test the property weaponDescription
-      //var instane = new Br16Api.Weapon();
+      //var instane = new AvaTaxBrazil.Weapon();
       //expect(instance).to.be();
     });
 

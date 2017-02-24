@@ -27,7 +27,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"https://br16-dev-app03.br.avalara.com/v2";
+        self.host = @"http://avataxbr-sandbox.avalarabrasil.com.br/v2";
         self.username = @"";
         self.password = @"";
         self.accessToken= @"";

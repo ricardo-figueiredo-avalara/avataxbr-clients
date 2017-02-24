@@ -24,7 +24,7 @@ public class DetailsCalculatedTaxItem  {
 @XmlEnum(String.class)
 public enum JurisdictionTypeEnum {
 
-    @XmlEnumValue("city") CITY(String.valueOf("city")), @XmlEnumValue("state") STATE(String.valueOf("state")), @XmlEnumValue("country") COUNTRY(String.valueOf("country"));
+    @XmlEnumValue("City") CITY(String.valueOf("City")), @XmlEnumValue("State") STATE(String.valueOf("State")), @XmlEnumValue("Country") COUNTRY(String.valueOf("Country"));
 
 
     private String value;
@@ -52,7 +52,7 @@ public enum JurisdictionTypeEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", value = "Type of jurisdiction")
+  @ApiModelProperty(example = "null", value = "Type of jurisdiction - 'City' - 'State' - 'Country' ")
   private JurisdictionTypeEnum jurisdictionType = null;
 
 @XmlType(name="TaxTypeEnum")
@@ -168,7 +168,7 @@ public enum TaxRuleTypeEnum {
     this.jurisdictionName = jurisdictionName;
   }
  /**
-   * Type of jurisdiction
+   * Type of jurisdiction - 'City' - 'State' - 'Country' 
    * @return jurisdictionType
   **/
   public JurisdictionTypeEnum getJurisdictionType() {

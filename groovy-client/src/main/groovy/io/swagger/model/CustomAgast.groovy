@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import io.swagger.model.Agast;
 import io.swagger.model.AgastCodeType;
 import io.swagger.model.AgastIcmsConf;
+import io.swagger.model.AgastWithholding;
 import io.swagger.model.ArrayList;
 import io.swagger.model.TaxTypeRate;
 import java.util.List;
@@ -32,7 +33,7 @@ class CustomAgast {
 
     AgastCodeType codeType = null
 
-  /* Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune  */
+  /* Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE  */
   String cstIPI = null
 
   /* Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU=  */
@@ -44,11 +45,29 @@ class CustomAgast {
   /* Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE  */
   String accruablePISTaxation = null
 
+  /* When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption */
+  String pisExemptLegalReasonCode = null
+
+  /* When specified a reason, this field holds the reason's description */
+  String pisExemptLegalReason = null
+
   /* Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE  */
   String accruableCOFINSTaxation = null
 
+  /* When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption */
+  String cofinsExemptLegalReasonCode = null
+
+  /* When specified a reason, this field holds the reason's description */
+  String cofinsExemptLegalReason = null
+
   /* Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT  */
   String accruableCSLLTaxation = null
+
+    String csllExemptLegalReason = null
+
+    String csllExemptLegalReasonCode = null
+
+    AgastWithholding withholding = null
 
   /* for service items with City Jurisdiction, inform where the ISS tax is due */
   Boolean issDueatDestination = null

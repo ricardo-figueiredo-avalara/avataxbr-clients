@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    BR16 - API
+    AvaTax Brazil
 
-    This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+    The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
     OpenAPI spec version: 1.0
     
@@ -123,7 +123,7 @@ class DetailsCalculatedTax(object):
     def jurisdiction_type(self):
         """
         Gets the jurisdiction_type of this DetailsCalculatedTax.
-        Type of jurisdiction
+        Type of jurisdiction - 'City' - 'State' - 'Country' 
 
         :return: The jurisdiction_type of this DetailsCalculatedTax.
         :rtype: str
@@ -134,12 +134,12 @@ class DetailsCalculatedTax(object):
     def jurisdiction_type(self, jurisdiction_type):
         """
         Sets the jurisdiction_type of this DetailsCalculatedTax.
-        Type of jurisdiction
+        Type of jurisdiction - 'City' - 'State' - 'Country' 
 
         :param jurisdiction_type: The jurisdiction_type of this DetailsCalculatedTax.
         :type: str
         """
-        allowed_values = ["city", "state", "country"]
+        allowed_values = ["City", "State", "Country"]
         if jurisdiction_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `jurisdiction_type` ({0}), must be one of {1}"

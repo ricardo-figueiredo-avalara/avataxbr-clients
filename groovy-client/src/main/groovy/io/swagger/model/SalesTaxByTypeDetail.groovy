@@ -14,7 +14,7 @@ class SalesTaxByTypeDetail {
   /* Jurisdiction used for calctax amount */
   String jurisdictionName = null
 
-  /* Type of jurisdiction - 'city' - 'state' - 'country'  */
+  /* Type of jurisdiction - 'City' - 'State' - 'Country'  */
   String jurisdictionType = null
 
   /* Tax identificator - 'aproxtribCity' - 'aproxtribFed' - 'pis' - 'pisRf' - 'cofins' - 'cofinsRf' - 'csll' - 'csllRf' - 'irrf' - 'inss' - 'inssRf' - 'iss' - 'issRf' - 'irpj'  */

@@ -1,4 +1,4 @@
-# Br16Api.PayRecCalculatedTaxSummaryForServiceTaxByType
+# AvaTaxBrazil.PayRecCalculatedTaxSummaryForServiceTaxByType
 
 ## Properties
 Name | Type | Description | Notes

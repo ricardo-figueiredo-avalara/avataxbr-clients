@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -41,10 +41,23 @@ CustomAgast::CustomAgast()
     m_PisCofinsTaxReportingIsSet = false;
     m_AccruablePISTaxation = U("");
     m_AccruablePISTaxationIsSet = false;
+    m_PisExemptLegalReasonCode = U("");
+    m_PisExemptLegalReasonCodeIsSet = false;
+    m_PisExemptLegalReason = U("");
+    m_PisExemptLegalReasonIsSet = false;
     m_AccruableCOFINSTaxation = U("");
     m_AccruableCOFINSTaxationIsSet = false;
+    m_CofinsExemptLegalReasonCode = U("");
+    m_CofinsExemptLegalReasonCodeIsSet = false;
+    m_CofinsExemptLegalReason = U("");
+    m_CofinsExemptLegalReasonIsSet = false;
     m_AccruableCSLLTaxation = U("");
     m_AccruableCSLLTaxationIsSet = false;
+    m_CsllExemptLegalReason = U("");
+    m_CsllExemptLegalReasonIsSet = false;
+    m_CsllExemptLegalReasonCode = U("");
+    m_CsllExemptLegalReasonCodeIsSet = false;
+    m_WithholdingIsSet = false;
     m_IssDueatDestination = false;
     m_IssDueatDestinationIsSet = false;
     m_PisCofinsCreditNotAllowed = false;
@@ -113,13 +126,41 @@ web::json::value CustomAgast::toJson() const
     {
         val[U("accruablePISTaxation")] = ModelBase::toJson(m_AccruablePISTaxation);
     }
+    if(m_PisExemptLegalReasonCodeIsSet)
+    {
+        val[U("pisExemptLegalReasonCode")] = ModelBase::toJson(m_PisExemptLegalReasonCode);
+    }
+    if(m_PisExemptLegalReasonIsSet)
+    {
+        val[U("pisExemptLegalReason")] = ModelBase::toJson(m_PisExemptLegalReason);
+    }
     if(m_AccruableCOFINSTaxationIsSet)
     {
         val[U("accruableCOFINSTaxation")] = ModelBase::toJson(m_AccruableCOFINSTaxation);
     }
+    if(m_CofinsExemptLegalReasonCodeIsSet)
+    {
+        val[U("cofinsExemptLegalReasonCode")] = ModelBase::toJson(m_CofinsExemptLegalReasonCode);
+    }
+    if(m_CofinsExemptLegalReasonIsSet)
+    {
+        val[U("cofinsExemptLegalReason")] = ModelBase::toJson(m_CofinsExemptLegalReason);
+    }
     if(m_AccruableCSLLTaxationIsSet)
     {
         val[U("accruableCSLLTaxation")] = ModelBase::toJson(m_AccruableCSLLTaxation);
+    }
+    if(m_CsllExemptLegalReasonIsSet)
+    {
+        val[U("csllExemptLegalReason")] = ModelBase::toJson(m_CsllExemptLegalReason);
+    }
+    if(m_CsllExemptLegalReasonCodeIsSet)
+    {
+        val[U("csllExemptLegalReasonCode")] = ModelBase::toJson(m_CsllExemptLegalReasonCode);
+    }
+    if(m_WithholdingIsSet)
+    {
+        val[U("withholding")] = ModelBase::toJson(m_Withholding);
     }
     if(m_IssDueatDestinationIsSet)
     {
@@ -224,14 +265,54 @@ void CustomAgast::fromJson(web::json::value& val)
         setAccruablePISTaxation(ModelBase::stringFromJson(val[U("accruablePISTaxation")]));
         
     }
+    if(val.has_field(U("pisExemptLegalReasonCode")))
+    {
+        setPisExemptLegalReasonCode(ModelBase::stringFromJson(val[U("pisExemptLegalReasonCode")]));
+        
+    }
+    if(val.has_field(U("pisExemptLegalReason")))
+    {
+        setPisExemptLegalReason(ModelBase::stringFromJson(val[U("pisExemptLegalReason")]));
+        
+    }
     if(val.has_field(U("accruableCOFINSTaxation")))
     {
         setAccruableCOFINSTaxation(ModelBase::stringFromJson(val[U("accruableCOFINSTaxation")]));
         
     }
+    if(val.has_field(U("cofinsExemptLegalReasonCode")))
+    {
+        setCofinsExemptLegalReasonCode(ModelBase::stringFromJson(val[U("cofinsExemptLegalReasonCode")]));
+        
+    }
+    if(val.has_field(U("cofinsExemptLegalReason")))
+    {
+        setCofinsExemptLegalReason(ModelBase::stringFromJson(val[U("cofinsExemptLegalReason")]));
+        
+    }
     if(val.has_field(U("accruableCSLLTaxation")))
     {
         setAccruableCSLLTaxation(ModelBase::stringFromJson(val[U("accruableCSLLTaxation")]));
+        
+    }
+    if(val.has_field(U("csllExemptLegalReason")))
+    {
+        setCsllExemptLegalReason(ModelBase::stringFromJson(val[U("csllExemptLegalReason")]));
+        
+    }
+    if(val.has_field(U("csllExemptLegalReasonCode")))
+    {
+        setCsllExemptLegalReasonCode(ModelBase::stringFromJson(val[U("csllExemptLegalReasonCode")]));
+        
+    }
+    if(val.has_field(U("withholding")))
+    {
+        if(!val[U("withholding")].is_null())
+        {
+            std::shared_ptr<Agast_withholding> newItem(new Agast_withholding());
+            newItem->fromJson(val[U("withholding")]);
+            setWithholding( newItem );
+        }
         
     }
     if(val.has_field(U("issDueatDestination")))
@@ -361,14 +442,52 @@ void CustomAgast::toMultipart(std::shared_ptr<MultipartFormData> multipart, cons
         multipart->add(ModelBase::toHttpContent(namePrefix + U("accruablePISTaxation"), m_AccruablePISTaxation));
         
     }
+    if(m_PisExemptLegalReasonCodeIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("pisExemptLegalReasonCode"), m_PisExemptLegalReasonCode));
+        
+    }
+    if(m_PisExemptLegalReasonIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("pisExemptLegalReason"), m_PisExemptLegalReason));
+        
+    }
     if(m_AccruableCOFINSTaxationIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("accruableCOFINSTaxation"), m_AccruableCOFINSTaxation));
         
     }
+    if(m_CofinsExemptLegalReasonCodeIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("cofinsExemptLegalReasonCode"), m_CofinsExemptLegalReasonCode));
+        
+    }
+    if(m_CofinsExemptLegalReasonIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("cofinsExemptLegalReason"), m_CofinsExemptLegalReason));
+        
+    }
     if(m_AccruableCSLLTaxationIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("accruableCSLLTaxation"), m_AccruableCSLLTaxation));
+        
+    }
+    if(m_CsllExemptLegalReasonIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("csllExemptLegalReason"), m_CsllExemptLegalReason));
+        
+    }
+    if(m_CsllExemptLegalReasonCodeIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("csllExemptLegalReasonCode"), m_CsllExemptLegalReasonCode));
+        
+    }
+    if(m_WithholdingIsSet)
+    {
+        if (m_Withholding.get())
+        {
+            m_Withholding->toMultipart(multipart, U("withholding."));
+        }
         
     }
     if(m_IssDueatDestinationIsSet)
@@ -480,14 +599,54 @@ void CustomAgast::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, co
         setAccruablePISTaxation(ModelBase::stringFromHttpContent(multipart->getContent(U("accruablePISTaxation"))));
         
     }
+    if(multipart->hasContent(U("pisExemptLegalReasonCode")))
+    {
+        setPisExemptLegalReasonCode(ModelBase::stringFromHttpContent(multipart->getContent(U("pisExemptLegalReasonCode"))));
+        
+    }
+    if(multipart->hasContent(U("pisExemptLegalReason")))
+    {
+        setPisExemptLegalReason(ModelBase::stringFromHttpContent(multipart->getContent(U("pisExemptLegalReason"))));
+        
+    }
     if(multipart->hasContent(U("accruableCOFINSTaxation")))
     {
         setAccruableCOFINSTaxation(ModelBase::stringFromHttpContent(multipart->getContent(U("accruableCOFINSTaxation"))));
         
     }
+    if(multipart->hasContent(U("cofinsExemptLegalReasonCode")))
+    {
+        setCofinsExemptLegalReasonCode(ModelBase::stringFromHttpContent(multipart->getContent(U("cofinsExemptLegalReasonCode"))));
+        
+    }
+    if(multipart->hasContent(U("cofinsExemptLegalReason")))
+    {
+        setCofinsExemptLegalReason(ModelBase::stringFromHttpContent(multipart->getContent(U("cofinsExemptLegalReason"))));
+        
+    }
     if(multipart->hasContent(U("accruableCSLLTaxation")))
     {
         setAccruableCSLLTaxation(ModelBase::stringFromHttpContent(multipart->getContent(U("accruableCSLLTaxation"))));
+        
+    }
+    if(multipart->hasContent(U("csllExemptLegalReason")))
+    {
+        setCsllExemptLegalReason(ModelBase::stringFromHttpContent(multipart->getContent(U("csllExemptLegalReason"))));
+        
+    }
+    if(multipart->hasContent(U("csllExemptLegalReasonCode")))
+    {
+        setCsllExemptLegalReasonCode(ModelBase::stringFromHttpContent(multipart->getContent(U("csllExemptLegalReasonCode"))));
+        
+    }
+    if(multipart->hasContent(U("withholding")))
+    {
+        if(multipart->hasContent(U("withholding")))
+        {
+            std::shared_ptr<Agast_withholding> newItem(new Agast_withholding());
+            newItem->fromMultiPart(multipart, U("withholding."));
+            setWithholding( newItem );
+        }
         
     }
     if(multipart->hasContent(U("issDueatDestination")))
@@ -738,6 +897,40 @@ void CustomAgast::unsetAccruablePISTaxation()
 {
     m_AccruablePISTaxationIsSet = false;
 }
+utility::string_t CustomAgast::getPisExemptLegalReasonCode() const
+{
+    return m_PisExemptLegalReasonCode;
+}
+void CustomAgast::setPisExemptLegalReasonCode(utility::string_t value)
+{
+    m_PisExemptLegalReasonCode = value;
+    m_PisExemptLegalReasonCodeIsSet = true;
+}
+bool CustomAgast::pisExemptLegalReasonCodeIsSet() const
+{
+    return m_PisExemptLegalReasonCodeIsSet;
+}
+void CustomAgast::unsetPisExemptLegalReasonCode()
+{
+    m_PisExemptLegalReasonCodeIsSet = false;
+}
+utility::string_t CustomAgast::getPisExemptLegalReason() const
+{
+    return m_PisExemptLegalReason;
+}
+void CustomAgast::setPisExemptLegalReason(utility::string_t value)
+{
+    m_PisExemptLegalReason = value;
+    m_PisExemptLegalReasonIsSet = true;
+}
+bool CustomAgast::pisExemptLegalReasonIsSet() const
+{
+    return m_PisExemptLegalReasonIsSet;
+}
+void CustomAgast::unsetPisExemptLegalReason()
+{
+    m_PisExemptLegalReasonIsSet = false;
+}
 utility::string_t CustomAgast::getAccruableCOFINSTaxation() const
 {
     return m_AccruableCOFINSTaxation;
@@ -755,6 +948,40 @@ void CustomAgast::unsetAccruableCOFINSTaxation()
 {
     m_AccruableCOFINSTaxationIsSet = false;
 }
+utility::string_t CustomAgast::getCofinsExemptLegalReasonCode() const
+{
+    return m_CofinsExemptLegalReasonCode;
+}
+void CustomAgast::setCofinsExemptLegalReasonCode(utility::string_t value)
+{
+    m_CofinsExemptLegalReasonCode = value;
+    m_CofinsExemptLegalReasonCodeIsSet = true;
+}
+bool CustomAgast::cofinsExemptLegalReasonCodeIsSet() const
+{
+    return m_CofinsExemptLegalReasonCodeIsSet;
+}
+void CustomAgast::unsetCofinsExemptLegalReasonCode()
+{
+    m_CofinsExemptLegalReasonCodeIsSet = false;
+}
+utility::string_t CustomAgast::getCofinsExemptLegalReason() const
+{
+    return m_CofinsExemptLegalReason;
+}
+void CustomAgast::setCofinsExemptLegalReason(utility::string_t value)
+{
+    m_CofinsExemptLegalReason = value;
+    m_CofinsExemptLegalReasonIsSet = true;
+}
+bool CustomAgast::cofinsExemptLegalReasonIsSet() const
+{
+    return m_CofinsExemptLegalReasonIsSet;
+}
+void CustomAgast::unsetCofinsExemptLegalReason()
+{
+    m_CofinsExemptLegalReasonIsSet = false;
+}
 utility::string_t CustomAgast::getAccruableCSLLTaxation() const
 {
     return m_AccruableCSLLTaxation;
@@ -771,6 +998,57 @@ bool CustomAgast::accruableCSLLTaxationIsSet() const
 void CustomAgast::unsetAccruableCSLLTaxation()
 {
     m_AccruableCSLLTaxationIsSet = false;
+}
+utility::string_t CustomAgast::getCsllExemptLegalReason() const
+{
+    return m_CsllExemptLegalReason;
+}
+void CustomAgast::setCsllExemptLegalReason(utility::string_t value)
+{
+    m_CsllExemptLegalReason = value;
+    m_CsllExemptLegalReasonIsSet = true;
+}
+bool CustomAgast::csllExemptLegalReasonIsSet() const
+{
+    return m_CsllExemptLegalReasonIsSet;
+}
+void CustomAgast::unsetCsllExemptLegalReason()
+{
+    m_CsllExemptLegalReasonIsSet = false;
+}
+utility::string_t CustomAgast::getCsllExemptLegalReasonCode() const
+{
+    return m_CsllExemptLegalReasonCode;
+}
+void CustomAgast::setCsllExemptLegalReasonCode(utility::string_t value)
+{
+    m_CsllExemptLegalReasonCode = value;
+    m_CsllExemptLegalReasonCodeIsSet = true;
+}
+bool CustomAgast::csllExemptLegalReasonCodeIsSet() const
+{
+    return m_CsllExemptLegalReasonCodeIsSet;
+}
+void CustomAgast::unsetCsllExemptLegalReasonCode()
+{
+    m_CsllExemptLegalReasonCodeIsSet = false;
+}
+std::shared_ptr<Agast_withholding> CustomAgast::getWithholding() const
+{
+    return m_Withholding;
+}
+void CustomAgast::setWithholding(std::shared_ptr<Agast_withholding> value)
+{
+    m_Withholding = value;
+    m_WithholdingIsSet = true;
+}
+bool CustomAgast::withholdingIsSet() const
+{
+    return m_WithholdingIsSet;
+}
+void CustomAgast::unsetWithholding()
+{
+    m_WithholdingIsSet = false;
 }
 bool CustomAgast::getIssDueatDestination() const
 {

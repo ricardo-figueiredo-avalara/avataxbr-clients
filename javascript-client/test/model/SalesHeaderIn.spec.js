@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.SalesHeaderIn();
+    instance = new AvaTaxBrazil.SalesHeaderIn();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('SalesHeaderIn', function() {
     it('should create an instance of SalesHeaderIn', function() {
       // uncomment below and update the code to test SalesHeaderIn
-      //var instane = new Br16Api.SalesHeaderIn();
-      //expect(instance).to.be.a(Br16Api.SalesHeaderIn);
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
+      //expect(instance).to.be.a(AvaTaxBrazil.SalesHeaderIn);
     });
 
     it('should have the property customerCode (base name: "customerCode")', function() {
       // uncomment below and update the code to test the property customerCode
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property purchaseOrderNumber (base name: "purchaseOrderNumber")', function() {
       // uncomment below and update the code to test the property purchaseOrderNumber
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property rpsNumber (base name: "rpsNumber")', function() {
       // uncomment below and update the code to test the property rpsNumber
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property rpsSerie (base name: "rpsSerie")', function() {
       // uncomment below and update the code to test the property rpsSerie
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property discriminationIn (base name: "discriminationIn")', function() {
       // uncomment below and update the code to test the property discriminationIn
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property entity (base name: "entity")', function() {
       // uncomment below and update the code to test the property entity
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property payment (base name: "payment")', function() {
       // uncomment below and update the code to test the property payment
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property taxesConfig (base name: "taxesConfig")', function() {
       // uncomment below and update the code to test the property taxesConfig
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 
     it('should have the property defaultLocations (base name: "defaultLocations")', function() {
       // uncomment below and update the code to test the property defaultLocations
-      //var instane = new Br16Api.SalesHeaderIn();
+      //var instane = new AvaTaxBrazil.SalesHeaderIn();
       //expect(instance).to.be();
     });
 

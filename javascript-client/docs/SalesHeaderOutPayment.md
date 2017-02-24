@@ -1,4 +1,4 @@
-# Br16Api.SalesHeaderOutPayment
+# AvaTaxBrazil.SalesHeaderOutPayment
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.Fuel();
+    instance = new AvaTaxBrazil.Fuel();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('Fuel', function() {
     it('should create an instance of Fuel', function() {
       // uncomment below and update the code to test Fuel
-      //var instane = new Br16Api.Fuel();
-      //expect(instance).to.be.a(Br16Api.Fuel);
+      //var instane = new AvaTaxBrazil.Fuel();
+      //expect(instance).to.be.a(AvaTaxBrazil.Fuel);
     });
 
     it('should have the property prodANPCode (base name: "prodANPCode")', function() {
       // uncomment below and update the code to test the property prodANPCode
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 
     it('should have the property perMixGN (base name: "perMixGN")', function() {
       // uncomment below and update the code to test the property perMixGN
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 
     it('should have the property authorizationCodeCODIF (base name: "authorizationCodeCODIF")', function() {
       // uncomment below and update the code to test the property authorizationCodeCODIF
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 
     it('should have the property quantityOnRoomTemperature (base name: "quantityOnRoomTemperature")', function() {
       // uncomment below and update the code to test the property quantityOnRoomTemperature
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 
     it('should have the property stateCodeOfUndUser (base name: "stateCodeOfUndUser")', function() {
       // uncomment below and update the code to test the property stateCodeOfUndUser
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 
     it('should have the property cide (base name: "cide")', function() {
       // uncomment below and update the code to test the property cide
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 
     it('should have the property pumpNumber (base name: "pumpNumber")', function() {
       // uncomment below and update the code to test the property pumpNumber
-      //var instane = new Br16Api.Fuel();
+      //var instane = new AvaTaxBrazil.Fuel();
       //expect(instance).to.be();
     });
 

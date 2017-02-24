@@ -1,4 +1,4 @@
-# Br16Api.HeaderForGoodsParticipants
+# AvaTaxBrazil.HeaderForGoodsParticipants
 
 ## Properties
 Name | Type | Description | Notes

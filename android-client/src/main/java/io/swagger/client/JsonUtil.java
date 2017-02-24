@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -87,6 +87,22 @@ public class JsonUtil {
     
     if ("AgastIcmsConf".equalsIgnoreCase(className)) {
       return new TypeToken<List<AgastIcmsConf>>(){}.getType();
+    }
+    
+    if ("AgastWithholding".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AgastWithholding>>(){}.getType();
+    }
+    
+    if ("AgastWithholdingCOFINS".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AgastWithholdingCOFINS>>(){}.getType();
+    }
+    
+    if ("AgastWithholdingCSLL".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AgastWithholdingCSLL>>(){}.getType();
+    }
+    
+    if ("AgastWithholdingPIS".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AgastWithholdingPIS>>(){}.getType();
     }
     
     if ("Body".equalsIgnoreCase(className)) {
@@ -737,10 +753,6 @@ public class JsonUtil {
       return new TypeToken<List<TaxTypeRate>>(){}.getType();
     }
     
-    if ("TaxTypeRateWithholding".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TaxTypeRateWithholding>>(){}.getType();
-    }
-    
     if ("TransactionForGoodsIn".equalsIgnoreCase(className)) {
       return new TypeToken<List<TransactionForGoodsIn>>(){}.getType();
     }
@@ -785,10 +797,6 @@ public class JsonUtil {
       return new TypeToken<List<Weapon>>(){}.getType();
     }
     
-    if ("WithholdDef".equalsIgnoreCase(className)) {
-      return new TypeToken<List<WithholdDef>>(){}.getType();
-    }
-    
     if ("WithholdingMode".equalsIgnoreCase(className)) {
       return new TypeToken<List<WithholdingMode>>(){}.getType();
     }
@@ -829,6 +837,22 @@ public class JsonUtil {
     
     if ("AgastIcmsConf".equalsIgnoreCase(className)) {
       return new TypeToken<AgastIcmsConf>(){}.getType();
+    }
+    
+    if ("AgastWithholding".equalsIgnoreCase(className)) {
+      return new TypeToken<AgastWithholding>(){}.getType();
+    }
+    
+    if ("AgastWithholdingCOFINS".equalsIgnoreCase(className)) {
+      return new TypeToken<AgastWithholdingCOFINS>(){}.getType();
+    }
+    
+    if ("AgastWithholdingCSLL".equalsIgnoreCase(className)) {
+      return new TypeToken<AgastWithholdingCSLL>(){}.getType();
+    }
+    
+    if ("AgastWithholdingPIS".equalsIgnoreCase(className)) {
+      return new TypeToken<AgastWithholdingPIS>(){}.getType();
     }
     
     if ("Body".equalsIgnoreCase(className)) {
@@ -1479,10 +1503,6 @@ public class JsonUtil {
       return new TypeToken<TaxTypeRate>(){}.getType();
     }
     
-    if ("TaxTypeRateWithholding".equalsIgnoreCase(className)) {
-      return new TypeToken<TaxTypeRateWithholding>(){}.getType();
-    }
-    
     if ("TransactionForGoodsIn".equalsIgnoreCase(className)) {
       return new TypeToken<TransactionForGoodsIn>(){}.getType();
     }
@@ -1525,10 +1545,6 @@ public class JsonUtil {
     
     if ("Weapon".equalsIgnoreCase(className)) {
       return new TypeToken<Weapon>(){}.getType();
-    }
-    
-    if ("WithholdDef".equalsIgnoreCase(className)) {
-      return new TypeToken<WithholdDef>(){}.getType();
     }
     
     if ("WithholdingMode".equalsIgnoreCase(className)) {

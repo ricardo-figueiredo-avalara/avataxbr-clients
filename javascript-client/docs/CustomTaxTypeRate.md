@@ -1,4 +1,4 @@
-# Br16Api.CustomTaxTypeRate
+# AvaTaxBrazil.CustomTaxTypeRate
 
 ## Properties
 Name | Type | Description | Notes

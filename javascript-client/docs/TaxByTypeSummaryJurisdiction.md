@@ -1,4 +1,4 @@
-# Br16Api.TaxByTypeSummaryJurisdiction
+# AvaTaxBrazil.TaxByTypeSummaryJurisdiction
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -14,18 +14,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/TaxType', 'model/TaxTypeRateWithholding'], factory);
+    define(['ApiClient', 'model/TaxType'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./TaxType'), require('./TaxTypeRateWithholding'));
+    module.exports = factory(require('../ApiClient'), require('./TaxType'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.TaxTypeRate = factory(root.Br16Api.ApiClient, root.Br16Api.TaxType, root.Br16Api.TaxTypeRateWithholding);
+    root.AvaTaxBrazil.TaxTypeRate = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.TaxType);
   }
-}(this, function(ApiClient, TaxType, TaxTypeRateWithholding) {
+}(this, function(ApiClient, TaxType) {
   'use strict';
 
 
@@ -49,9 +49,6 @@
 
     _this['taxType'] = taxType;
     _this['taxModel'] = taxModel;
-
-
-
 
 
 
@@ -87,15 +84,6 @@
       if (data.hasOwnProperty('specializationType')) {
         obj['specializationType'] = ApiClient.convertToType(data['specializationType'], 'String');
       }
-      if (data.hasOwnProperty('exemptionReasonCode')) {
-        obj['exemptionReasonCode'] = ApiClient.convertToType(data['exemptionReasonCode'], 'String');
-      }
-      if (data.hasOwnProperty('customExemptionReasonDescription')) {
-        obj['customExemptionReasonDescription'] = ApiClient.convertToType(data['customExemptionReasonDescription'], 'String');
-      }
-      if (data.hasOwnProperty('withholding')) {
-        obj['withholding'] = TaxTypeRateWithholding.constructFromObject(data['withholding']);
-      }
     }
     return obj;
   }
@@ -127,20 +115,6 @@
    * @member {module:model/TaxTypeRate.SpecializationTypeEnum} specializationType
    */
   exports.prototype['specializationType'] = undefined;
-  /**
-   * UUID Reference to an item in the LegalReason store. 
-   * @member {String} exemptionReasonCode
-   */
-  exports.prototype['exemptionReasonCode'] = undefined;
-  /**
-   * Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-   * @member {String} customExemptionReasonDescription
-   */
-  exports.prototype['customExemptionReasonDescription'] = undefined;
-  /**
-   * @member {module:model/TaxTypeRateWithholding} withholding
-   */
-  exports.prototype['withholding'] = undefined;
 
 
   /**

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.Vehicle();
+    instance = new AvaTaxBrazil.Vehicle();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,151 +50,151 @@
   describe('Vehicle', function() {
     it('should create an instance of Vehicle', function() {
       // uncomment below and update the code to test Vehicle
-      //var instane = new Br16Api.Vehicle();
-      //expect(instance).to.be.a(Br16Api.Vehicle);
+      //var instane = new AvaTaxBrazil.Vehicle();
+      //expect(instance).to.be.a(AvaTaxBrazil.Vehicle);
     });
 
     it('should have the property tpOp (base name: "tpOp")', function() {
       // uncomment below and update the code to test the property tpOp
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property chassisNumber (base name: "chassisNumber")', function() {
       // uncomment below and update the code to test the property chassisNumber
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property colorCode (base name: "colorCode")', function() {
       // uncomment below and update the code to test the property colorCode
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property colorName (base name: "colorName")', function() {
       // uncomment below and update the code to test the property colorName
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property cvPower (base name: "cvPower")', function() {
       // uncomment below and update the code to test the property cvPower
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property cylinderVolumCC (base name: "cylinderVolumCC")', function() {
       // uncomment below and update the code to test the property cylinderVolumCC
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property netWeight (base name: "netWeight")', function() {
       // uncomment below and update the code to test the property netWeight
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property grossWeight (base name: "grossWeight")', function() {
       // uncomment below and update the code to test the property grossWeight
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property serialNumber (base name: "serialNumber")', function() {
       // uncomment below and update the code to test the property serialNumber
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property fuelType (base name: "fuelType")', function() {
       // uncomment below and update the code to test the property fuelType
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property engineNumber (base name: "engineNumber")', function() {
       // uncomment below and update the code to test the property engineNumber
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property cmt (base name: "cmt")', function() {
       // uncomment below and update the code to test the property cmt
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property lengthBetweenAxis (base name: "lengthBetweenAxis")', function() {
       // uncomment below and update the code to test the property lengthBetweenAxis
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property modelYear (base name: "modelYear")', function() {
       // uncomment below and update the code to test the property modelYear
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property manufactoryYear (base name: "manufactoryYear")', function() {
       // uncomment below and update the code to test the property manufactoryYear
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property paintType (base name: "paintType")', function() {
       // uncomment below and update the code to test the property paintType
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property vehicleRENAVAMType (base name: "vehicleRENAVAMType")', function() {
       // uncomment below and update the code to test the property vehicleRENAVAMType
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property specieRENAVAMType (base name: "specieRENAVAMType")', function() {
       // uncomment below and update the code to test the property specieRENAVAMType
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property modelRENAVAMCode (base name: "modelRENAVAMCode")', function() {
       // uncomment below and update the code to test the property modelRENAVAMCode
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property colorDENATRANCode (base name: "colorDENATRANCode")', function() {
       // uncomment below and update the code to test the property colorDENATRANCode
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property vin (base name: "vin")', function() {
       // uncomment below and update the code to test the property vin
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property vehicleManufactoryStatus (base name: "vehicleManufactoryStatus")', function() {
       // uncomment below and update the code to test the property vehicleManufactoryStatus
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property maxOccupantsQuantity (base name: "maxOccupantsQuantity")', function() {
       // uncomment below and update the code to test the property maxOccupantsQuantity
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 
     it('should have the property restrictionType (base name: "restrictionType")', function() {
       // uncomment below and update the code to test the property restrictionType
-      //var instane = new Br16Api.Vehicle();
+      //var instane = new AvaTaxBrazil.Vehicle();
       //expect(instance).to.be();
     });
 

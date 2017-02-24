@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,14 +30,14 @@ public class CustomProcessScenario {
   @SerializedName("financialImpact")
   private Boolean financialImpact = null;
   public enum CstIPIEnum {
-     50,  51,  52,  53,  54, 
+     T,  Z,  E,  H,  N,  I,  O,  OZ, 
   };
   @SerializedName("cstIPI")
   private CstIPIEnum cstIPI = null;
   @SerializedName("ipiLegalTaxClass")
   private String ipiLegalTaxClass = null;
   public enum AccruablePISTaxationEnum {
-     T,  Z,  E,  H,  N, 
+     T,  Z,  E,  H,  N,  O,  OZ, 
   };
   @SerializedName("accruablePISTaxation")
   private AccruablePISTaxationEnum accruablePISTaxation = null;
@@ -46,7 +46,7 @@ public class CustomProcessScenario {
   @SerializedName("pisExemptLegalReason")
   private String pisExemptLegalReason = null;
   public enum AccruableCOFINSTaxationEnum {
-     T,  Z,  E,  H,  N, 
+     T,  Z,  E,  H,  N,  O,  OZ, 
   };
   @SerializedName("accruableCOFINSTaxation")
   private AccruableCOFINSTaxationEnum accruableCOFINSTaxation = null;
@@ -116,9 +116,9 @@ public class CustomProcessScenario {
   }
 
   /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    **/
-  @ApiModelProperty(value = "Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune ")
+  @ApiModelProperty(value = "Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES ")
   public CstIPIEnum getCstIPI() {
     return cstIPI;
   }
@@ -138,9 +138,9 @@ public class CustomProcessScenario {
   }
 
   /**
-   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
    **/
-  @ApiModelProperty(value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
+  @ApiModelProperty(value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES ")
   public AccruablePISTaxationEnum getAccruablePISTaxation() {
     return accruablePISTaxation;
   }
@@ -171,9 +171,9 @@ public class CustomProcessScenario {
   }
 
   /**
-   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    **/
-  @ApiModelProperty(value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
+  @ApiModelProperty(value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES ")
   public AccruableCOFINSTaxationEnum getAccruableCOFINSTaxation() {
     return accruableCOFINSTaxation;
   }

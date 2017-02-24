@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -48,17 +48,17 @@ namespace IO.Swagger.Client
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (https://br16-dev-app03.br.avalara.com/v2).
+        /// with default configuration and base path (http://avataxbr-sandbox.avalarabrasil.com.br/v2).
         /// </summary>
         public ApiClient()
         {
             Configuration = Configuration.Default;
-            RestClient = new RestClient("https://br16-dev-app03.br.avalara.com/v2");
+            RestClient = new RestClient("http://avataxbr-sandbox.avalarabrasil.com.br/v2");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://br16-dev-app03.br.avalara.com/v2).
+        /// with default base path (http://avataxbr-sandbox.avalarabrasil.com.br/v2).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config = null)
@@ -68,7 +68,7 @@ namespace IO.Swagger.Client
             else
                 Configuration = config;
 
-            RestClient = new RestClient("https://br16-dev-app03.br.avalara.com/v2");
+            RestClient = new RestClient("http://avataxbr-sandbox.avalarabrasil.com.br/v2");
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace IO.Swagger.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://br16-dev-app03.br.avalara.com/v2")
+        public ApiClient(String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

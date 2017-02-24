@@ -1,6 +1,6 @@
-# Br16Api.CompanyLocationApi
+# AvaTaxBrazil.CompanyLocationApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,9 +21,9 @@ This operation return location
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyLocationApi();
+var apiInstance = new AvaTaxBrazil.CompanyLocationApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -70,9 +70,9 @@ This operation return all locations
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyLocationApi();
+var apiInstance = new AvaTaxBrazil.CompanyLocationApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -124,13 +124,13 @@ This method operation create a new location for company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyLocationApi();
+var apiInstance = new AvaTaxBrazil.CompanyLocationApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
-var body = new Br16Api.Location(); // Location | Transaction Message
+var body = new AvaTaxBrazil.Location(); // Location | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -171,9 +171,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyLocationApi();
+var apiInstance = new AvaTaxBrazil.CompanyLocationApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -220,15 +220,15 @@ This method operation update a location for company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyLocationApi();
+var apiInstance = new AvaTaxBrazil.CompanyLocationApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
 var code = "code_example"; // String | Location Code
 
-var body = new Br16Api.Location(); // Location | Transaction Message
+var body = new AvaTaxBrazil.Location(); // Location | Transaction Message
 
 
 var callback = function(error, data, response) {

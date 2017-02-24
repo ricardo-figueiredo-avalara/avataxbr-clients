@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 
 
 /**
- * Tax Rate
+ * Tax Rate Obs: AR - \"a recolher\" (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço) 
  */
 public enum TaxType {
   
@@ -12,19 +12,33 @@ public enum TaxType {
   
   INSS_RF("INSS_RF"),
   
+  INSS_AR("INSS_AR"),
+  
   IRRF("IRRF"),
   
   PIS("PIS"),
   
   PIS_RF("PIS_RF"),
   
+  PIS_RP("PIS_RP"),
+  
+  PIS_PP("PIS_PP"),
+  
   COFINS("COFINS"),
   
   COFINS_RF("COFINS_RF"),
   
+  COFINS_RP("COFINS_RP"),
+  
+  COFINS_PP("COFINS_PP"),
+  
   CSLL("CSLL"),
   
   CSLL_RF("CSLL_RF"),
+  
+  CSLL_PP("CSLL_PP"),
+  
+  CSLL_RP("CSLL_RP"),
   
   IRPJ("IRPJ"),
   

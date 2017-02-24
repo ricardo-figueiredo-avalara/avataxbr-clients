@@ -8,7 +8,7 @@
 # ! swagger-codegen (https://github.com/swagger-api/swagger-codegen) 
 # ! FROM SWAGGER SPECIFICATION IN JSON.
 # !
-# ! Generated on: 2017-02-16T18:26:15.560Z
+# ! Generated on: 2017-02-24T19:47:57.103Z
 # ! 
 # !
 # ! System wide installation:
@@ -80,6 +80,7 @@ _()
     operations["createAccountCompany"]=1
     operations["getZipCode"]=1
     operations["authPost"]=1
+    operations["v2AuthPost"]=1
     operations["companiesGet"]=1
     operations["createCompany"]=1
     operations["deleteAccountCompany"]=1
@@ -207,6 +208,7 @@ _()
     operation_parameters["createAccountCompany"]="accountId= "
     operation_parameters["getZipCode"]="zipcode= "
     operation_parameters["authPost"]="Authorization: "
+    operation_parameters["v2AuthPost"]="Authorization: "
     operation_parameters["companiesGet"]=""
     operation_parameters["createCompany"]=""
     operation_parameters["deleteAccountCompany"]="accountId= companyId= "

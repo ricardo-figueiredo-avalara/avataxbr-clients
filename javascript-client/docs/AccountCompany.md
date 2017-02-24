@@ -1,4 +1,4 @@
-# Br16Api.AccountCompany
+# AvaTaxBrazil.AccountCompany
 
 ## Properties
 Name | Type | Description | Notes

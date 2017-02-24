@@ -1,4 +1,4 @@
-# Br16Api.ItemSimple
+# AvaTaxBrazil.ItemSimple
 
 ## Properties
 Name | Type | Description | Notes

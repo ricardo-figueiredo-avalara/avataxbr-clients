@@ -7,7 +7,7 @@ import java.util.UUID
 case class PurchaseTaxByTypeDetail (
   locationType: Option[String],  // This string captures the applicable location type. Location used for calc. Buyer or Seller
 jurisdictionName: Option[String],  // Jurisdiction used for calctax amount
-jurisdictionType: Option[String],  // Type of jurisdiction - &#39;city&#39; - &#39;state&#39; - &#39;country&#39; 
+jurisdictionType: Option[String],  // Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39; 
 taxType: Option[String],  // Tax identificator - &#39;pis&#39; - &#39;pisRf&#39; - &#39;cofins&#39; - &#39;cofinsRf&#39; - &#39;csll&#39; - &#39;csllRf&#39; - &#39;irrf&#39; - &#39;inssAr&#39; - &#39;inssRf&#39; - &#39;issRf&#39; 
 rateType: Option[String],  // Name of configuration rate
 scenario: Option[String],  // This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in.

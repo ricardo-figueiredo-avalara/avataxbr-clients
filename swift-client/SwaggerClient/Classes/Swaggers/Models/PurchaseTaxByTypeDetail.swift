@@ -10,9 +10,9 @@ import Foundation
 
 public class PurchaseTaxByTypeDetail: JSONEncodable {
     public enum JurisdictionType: String { 
-        case City = "city"
-        case State = "state"
-        case Country = "country"
+        case City = "City"
+        case State = "State"
+        case Country = "Country"
     }
     public enum TaxType: String { 
         case Pis = "pis"
@@ -37,7 +37,7 @@ public class PurchaseTaxByTypeDetail: JSONEncodable {
     public var locationType: String?
     /** Jurisdiction used for calctax amount */
     public var jurisdictionName: String?
-    /** Type of jurisdiction - &#39;city&#39; - &#39;state&#39; - &#39;country&#39;  */
+    /** Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  */
     public var jurisdictionType: JurisdictionType?
     /** Tax identificator - &#39;pis&#39; - &#39;pisRf&#39; - &#39;cofins&#39; - &#39;cofinsRf&#39; - &#39;csll&#39; - &#39;csllRf&#39; - &#39;irrf&#39; - &#39;inssAr&#39; - &#39;inssRf&#39; - &#39;issRf&#39;  */
     public var taxType: TaxType?

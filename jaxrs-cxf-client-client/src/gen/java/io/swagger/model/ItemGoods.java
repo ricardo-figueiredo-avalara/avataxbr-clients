@@ -142,8 +142,6 @@ public enum PiscofinsRevenueTypeEnum {
   private PiscofinsRevenueTypeEnum piscofinsRevenueType = null;
   @ApiModelProperty(example = "null", value = "Discount allowed on icms base when PIS/COFINS are Monophase")
   private Double icmsBaseDiscountForMonoPhaseSocialContr = null;
-  @ApiModelProperty(example = "null", value = "tax substitution code - Codigo especificador da Substuicao Tributaria")
-  private String cest = null;
   @ApiModelProperty(example = "null", value = "GTIN NUMBER")
   private String cean = null;
   @ApiModelProperty(example = "null", value = "Nomenclatura de Valor aduaneio e Estatístico - NCM extension code")
@@ -322,16 +320,6 @@ public enum PiscofinsRevenueTypeEnum {
     this.icmsBaseDiscountForMonoPhaseSocialContr = icmsBaseDiscountForMonoPhaseSocialContr;
   }
  /**
-   * tax substitution code - Codigo especificador da Substuicao Tributaria
-   * @return cest
-  **/
-  public String getCest() {
-    return cest;
-  }
-  public void setCest(String cest) {
-    this.cest = cest;
-  }
- /**
    * GTIN NUMBER
    * @return cean
   **/
@@ -482,7 +470,6 @@ public enum PiscofinsRevenueTypeEnum {
     sb.append("    isPisCofinsEstimatedCredit: ").append(toIndentedString(isPisCofinsEstimatedCredit)).append("\n");
     sb.append("    piscofinsRevenueType: ").append(toIndentedString(piscofinsRevenueType)).append("\n");
     sb.append("    icmsBaseDiscountForMonoPhaseSocialContr: ").append(toIndentedString(icmsBaseDiscountForMonoPhaseSocialContr)).append("\n");
-    sb.append("    cest: ").append(toIndentedString(cest)).append("\n");
     sb.append("    cean: ").append(toIndentedString(cean)).append("\n");
     sb.append("    nve: ").append(toIndentedString(nve)).append("\n");
     sb.append("    salesUnit: ").append(toIndentedString(salesUnit)).append("\n");

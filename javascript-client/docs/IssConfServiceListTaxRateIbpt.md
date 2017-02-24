@@ -1,4 +1,4 @@
-# Br16Api.IssConfServiceListTaxRateIbpt
+# AvaTaxBrazil.IssConfServiceListTaxRateIbpt
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('superagent'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.ApiClient = factory(root.superagent);
+    root.AvaTaxBrazil.ApiClient = factory(root.superagent);
   }
 }(this, function(superagent) {
   'use strict';
@@ -44,9 +44,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://br16-dev-app03.br.avalara.com/v2
+     * @default http://avataxbr-sandbox.avalarabrasil.com.br/v2
      */
-    this.basePath = 'https://br16-dev-app03.br.avalara.com/v2'.replace(/\/+$/, '');
+    this.basePath = 'http://avataxbr-sandbox.avalarabrasil.com.br/v2'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

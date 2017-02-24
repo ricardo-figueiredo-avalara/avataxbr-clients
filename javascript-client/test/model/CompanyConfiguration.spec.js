@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.CompanyConfiguration();
+    instance = new AvaTaxBrazil.CompanyConfiguration();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('CompanyConfiguration', function() {
     it('should create an instance of CompanyConfiguration', function() {
       // uncomment below and update the code to test CompanyConfiguration
-      //var instane = new Br16Api.CompanyConfiguration();
-      //expect(instance).to.be.a(Br16Api.CompanyConfiguration);
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
+      //expect(instance).to.be.a(AvaTaxBrazil.CompanyConfiguration);
     });
 
     it('should have the property certificate (base name: "certificate")', function() {
       // uncomment below and update the code to test the property certificate
-      //var instane = new Br16Api.CompanyConfiguration();
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
       //expect(instance).to.be();
     });
 
     it('should have the property certificatepwd (base name: "certificatepwd")', function() {
       // uncomment below and update the code to test the property certificatepwd
-      //var instane = new Br16Api.CompanyConfiguration();
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
       //expect(instance).to.be();
     });
 
     it('should have the property certificateexpiration (base name: "certificateexpiration")', function() {
       // uncomment below and update the code to test the property certificateexpiration
-      //var instane = new Br16Api.CompanyConfiguration();
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
       //expect(instance).to.be();
     });
 
     it('should have the property logo (base name: "logo")', function() {
       // uncomment below and update the code to test the property logo
-      //var instane = new Br16Api.CompanyConfiguration();
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
       //expect(instance).to.be();
     });
 
     it('should have the property tpImpNFe (base name: "tpImpNFe")', function() {
       // uncomment below and update the code to test the property tpImpNFe
-      //var instane = new Br16Api.CompanyConfiguration();
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
       //expect(instance).to.be();
     });
 
     it('should have the property tpImpNFCe (base name: "tpImpNFCe")', function() {
       // uncomment below and update the code to test the property tpImpNFCe
-      //var instane = new Br16Api.CompanyConfiguration();
+      //var instane = new AvaTaxBrazil.CompanyConfiguration();
       //expect(instance).to.be();
     });
 

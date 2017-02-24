@@ -110,13 +110,6 @@ API.Client.ItemGoods.prototype.piscofinsRevenueType;
 API.Client.ItemGoods.prototype.icmsBaseDiscountForMonoPhaseSocialContr;
 
 /**
- * tax substitution code - Codigo especificador da Substuicao Tributaria
- * @type {!string}
- * @export
- */
-API.Client.ItemGoods.prototype.cest;
-
-/**
  * GTIN NUMBER
  * @type {!string}
  * @export

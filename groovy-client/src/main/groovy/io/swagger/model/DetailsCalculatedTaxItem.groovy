@@ -15,7 +15,7 @@ class DetailsCalculatedTaxItem {
   /* Jurisdiction used for calctax amount */
   String jurisdictionName = null
 
-  /* Type of jurisdiction */
+  /* Type of jurisdiction - 'City' - 'State' - 'Country'  */
   String jurisdictionType = null
 
   /* Tax identificator */

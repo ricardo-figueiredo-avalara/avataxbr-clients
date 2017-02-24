@@ -20,7 +20,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class InvoiceSEFAZApi {
-    String basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     String versionPath = "/api/v1"
 
     def invoicesSefazDelete ( String authorization, SefazDisableRangeIn body, Closure onSuccess, Closure onFailure)  {

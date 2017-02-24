@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -29,6 +29,7 @@
 #include "TaxTypeRate.h"
 #include <vector>
 #include "UUID.h"
+#include "Agast_withholding.h"
 
 namespace io {
 namespace swagger {
@@ -107,7 +108,7 @@ public:
     bool codeTypeIsSet() const;
     void unsetCodeType();
     /// <summary>
-    /// Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune 
+    /// Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE 
     /// </summary>
     utility::string_t getCstIPI() const;
     void setCstIPI(utility::string_t value);
@@ -135,6 +136,20 @@ public:
     bool accruablePISTaxationIsSet() const;
     void unsetAccruablePISTaxation();
     /// <summary>
+    /// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+    /// </summary>
+    utility::string_t getPisExemptLegalReasonCode() const;
+    void setPisExemptLegalReasonCode(utility::string_t value);
+    bool pisExemptLegalReasonCodeIsSet() const;
+    void unsetPisExemptLegalReasonCode();
+    /// <summary>
+    /// When specified a reason, this field holds the reason&#39;s description
+    /// </summary>
+    utility::string_t getPisExemptLegalReason() const;
+    void setPisExemptLegalReason(utility::string_t value);
+    bool pisExemptLegalReasonIsSet() const;
+    void unsetPisExemptLegalReason();
+    /// <summary>
     /// Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE 
     /// </summary>
     utility::string_t getAccruableCOFINSTaxation() const;
@@ -142,12 +157,47 @@ public:
     bool accruableCOFINSTaxationIsSet() const;
     void unsetAccruableCOFINSTaxation();
     /// <summary>
+    /// When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+    /// </summary>
+    utility::string_t getCofinsExemptLegalReasonCode() const;
+    void setCofinsExemptLegalReasonCode(utility::string_t value);
+    bool cofinsExemptLegalReasonCodeIsSet() const;
+    void unsetCofinsExemptLegalReasonCode();
+    /// <summary>
+    /// When specified a reason, this field holds the reason&#39;s description
+    /// </summary>
+    utility::string_t getCofinsExemptLegalReason() const;
+    void setCofinsExemptLegalReason(utility::string_t value);
+    bool cofinsExemptLegalReasonIsSet() const;
+    void unsetCofinsExemptLegalReason();
+    /// <summary>
     /// Inform if this item by nature is subject to CSLL taxation or exempt - &#39;T&#39; # TAXABLE - &#39;E&#39; # EXEMPT 
     /// </summary>
     utility::string_t getAccruableCSLLTaxation() const;
     void setAccruableCSLLTaxation(utility::string_t value);
     bool accruableCSLLTaxationIsSet() const;
     void unsetAccruableCSLLTaxation();
+    /// <summary>
+    /// 
+    /// </summary>
+    utility::string_t getCsllExemptLegalReason() const;
+    void setCsllExemptLegalReason(utility::string_t value);
+    bool csllExemptLegalReasonIsSet() const;
+    void unsetCsllExemptLegalReason();
+    /// <summary>
+    /// 
+    /// </summary>
+    utility::string_t getCsllExemptLegalReasonCode() const;
+    void setCsllExemptLegalReasonCode(utility::string_t value);
+    bool csllExemptLegalReasonCodeIsSet() const;
+    void unsetCsllExemptLegalReasonCode();
+    /// <summary>
+    /// 
+    /// </summary>
+    std::shared_ptr<Agast_withholding> getWithholding() const;
+    void setWithholding(std::shared_ptr<Agast_withholding> value);
+    bool withholdingIsSet() const;
+    void unsetWithholding();
     /// <summary>
     /// for service items with City Jurisdiction, inform where the ISS tax is due
     /// </summary>
@@ -216,10 +266,24 @@ utility::string_t m_PisCofinsTaxReporting;
     bool m_PisCofinsTaxReportingIsSet;
 utility::string_t m_AccruablePISTaxation;
     bool m_AccruablePISTaxationIsSet;
+utility::string_t m_PisExemptLegalReasonCode;
+    bool m_PisExemptLegalReasonCodeIsSet;
+utility::string_t m_PisExemptLegalReason;
+    bool m_PisExemptLegalReasonIsSet;
 utility::string_t m_AccruableCOFINSTaxation;
     bool m_AccruableCOFINSTaxationIsSet;
+utility::string_t m_CofinsExemptLegalReasonCode;
+    bool m_CofinsExemptLegalReasonCodeIsSet;
+utility::string_t m_CofinsExemptLegalReason;
+    bool m_CofinsExemptLegalReasonIsSet;
 utility::string_t m_AccruableCSLLTaxation;
     bool m_AccruableCSLLTaxationIsSet;
+utility::string_t m_CsllExemptLegalReason;
+    bool m_CsllExemptLegalReasonIsSet;
+utility::string_t m_CsllExemptLegalReasonCode;
+    bool m_CsllExemptLegalReasonCodeIsSet;
+std::shared_ptr<Agast_withholding> m_Withholding;
+    bool m_WithholdingIsSet;
 bool m_IssDueatDestination;
     bool m_IssDueatDestinationIsSet;
 bool m_PisCofinsCreditNotAllowed;

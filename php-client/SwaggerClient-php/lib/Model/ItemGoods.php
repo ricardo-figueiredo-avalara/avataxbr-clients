@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -70,7 +70,6 @@ class ItemGoods implements ArrayAccess
         'is_pis_cofins_estimated_credit' => 'bool',
         'piscofins_revenue_type' => 'string',
         'icms_base_discount_for_mono_phase_social_contr' => 'double',
-        'cest' => 'string',
         'cean' => 'string',
         'nve' => 'string',
         'sales_unit' => 'string',
@@ -111,7 +110,6 @@ class ItemGoods implements ArrayAccess
         'is_pis_cofins_estimated_credit' => 'isPisCofinsEstimatedCredit',
         'piscofins_revenue_type' => 'piscofinsRevenueType',
         'icms_base_discount_for_mono_phase_social_contr' => 'icmsBaseDiscountForMonoPhaseSocialContr',
-        'cest' => 'cest',
         'cean' => 'cean',
         'nve' => 'nve',
         'sales_unit' => 'salesUnit',
@@ -148,7 +146,6 @@ class ItemGoods implements ArrayAccess
         'is_pis_cofins_estimated_credit' => 'setIsPisCofinsEstimatedCredit',
         'piscofins_revenue_type' => 'setPiscofinsRevenueType',
         'icms_base_discount_for_mono_phase_social_contr' => 'setIcmsBaseDiscountForMonoPhaseSocialContr',
-        'cest' => 'setCest',
         'cean' => 'setCean',
         'nve' => 'setNve',
         'sales_unit' => 'setSalesUnit',
@@ -185,7 +182,6 @@ class ItemGoods implements ArrayAccess
         'is_pis_cofins_estimated_credit' => 'getIsPisCofinsEstimatedCredit',
         'piscofins_revenue_type' => 'getPiscofinsRevenueType',
         'icms_base_discount_for_mono_phase_social_contr' => 'getIcmsBaseDiscountForMonoPhaseSocialContr',
-        'cest' => 'getCest',
         'cean' => 'getCean',
         'nve' => 'getNve',
         'sales_unit' => 'getSalesUnit',
@@ -321,7 +317,6 @@ class ItemGoods implements ArrayAccess
         $this->container['is_pis_cofins_estimated_credit'] = isset($data['is_pis_cofins_estimated_credit']) ? $data['is_pis_cofins_estimated_credit'] : null;
         $this->container['piscofins_revenue_type'] = isset($data['piscofins_revenue_type']) ? $data['piscofins_revenue_type'] : null;
         $this->container['icms_base_discount_for_mono_phase_social_contr'] = isset($data['icms_base_discount_for_mono_phase_social_contr']) ? $data['icms_base_discount_for_mono_phase_social_contr'] : null;
-        $this->container['cest'] = isset($data['cest']) ? $data['cest'] : null;
         $this->container['cean'] = isset($data['cean']) ? $data['cean'] : null;
         $this->container['nve'] = isset($data['nve']) ? $data['nve'] : null;
         $this->container['sales_unit'] = isset($data['sales_unit']) ? $data['sales_unit'] : null;
@@ -392,10 +387,6 @@ class ItemGoods implements ArrayAccess
             $invalid_properties[] = "invalid value for 'piscofins_revenue_type', must be one of #{allowed_values}.";
         }
 
-        if (!is_null($this->container['cest']) && !preg_match("/[0-9]{7}/", $this->container['cest'])) {
-            $invalid_properties[] = "invalid value for 'cest', must be conform to the pattern /[0-9]{7}/.";
-        }
-
         if (!is_null($this->container['cean']) && !preg_match("/[0-9]{0}|[0-9]{8}|[0-9]{12,14}/", $this->container['cean'])) {
             $invalid_properties[] = "invalid value for 'cean', must be conform to the pattern /[0-9]{0}|[0-9]{8}|[0-9]{12,14}/.";
         }
@@ -460,9 +451,6 @@ class ItemGoods implements ArrayAccess
         }
         $allowed_values = ["01", "02", "03", "04", "05", "06", "07"];
         if (!in_array($this->container['piscofins_revenue_type'], $allowed_values)) {
-            return false;
-        }
-        if (!preg_match("/[0-9]{7}/", $this->container['cest'])) {
             return false;
         }
         if (!preg_match("/[0-9]{0}|[0-9]{8}|[0-9]{12,14}/", $this->container['cean'])) {
@@ -825,32 +813,6 @@ class ItemGoods implements ArrayAccess
     public function setIcmsBaseDiscountForMonoPhaseSocialContr($icms_base_discount_for_mono_phase_social_contr)
     {
         $this->container['icms_base_discount_for_mono_phase_social_contr'] = $icms_base_discount_for_mono_phase_social_contr;
-
-        return $this;
-    }
-
-    /**
-     * Gets cest
-     * @return string
-     */
-    public function getCest()
-    {
-        return $this->container['cest'];
-    }
-
-    /**
-     * Sets cest
-     * @param string $cest tax substitution code - Codigo especificador da Substuicao Tributaria
-     * @return $this
-     */
-    public function setCest($cest)
-    {
-
-        if (!is_null($cest) && (!preg_match("/[0-9]{7}/", $cest))) {
-            throw new \InvalidArgumentException("invalid value for $cest when calling ItemGoods., must conform to the pattern /[0-9]{7}/.");
-        }
-
-        $this->container['cest'] = $cest;
 
         return $this;
     }

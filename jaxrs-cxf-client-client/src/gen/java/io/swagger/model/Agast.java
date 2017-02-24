@@ -2,6 +2,7 @@ package io.swagger.model;
 
 import io.swagger.model.AgastCodeType;
 import io.swagger.model.AgastIcmsConf;
+import io.swagger.model.AgastWithholding;
 import io.swagger.model.TaxTypeRate;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,7 @@ public class Agast  {
 @XmlEnum(String.class)
 public enum CstIPIEnum {
 
-    @XmlEnumValue("50") _50(String.valueOf("50")), @XmlEnumValue("51") _51(String.valueOf("51")), @XmlEnumValue("52") _52(String.valueOf("52")), @XmlEnumValue("53") _53(String.valueOf("53")), @XmlEnumValue("54") _54(String.valueOf("54"));
+    @XmlEnumValue("T") T(String.valueOf("T")), @XmlEnumValue("Z") Z(String.valueOf("Z")), @XmlEnumValue("E") E(String.valueOf("E")), @XmlEnumValue("N") N(String.valueOf("N")), @XmlEnumValue("I") I(String.valueOf("I"));
 
 
     private String value;
@@ -64,7 +65,7 @@ public enum CstIPIEnum {
     }
 }
 
-  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune ")
+  @ApiModelProperty(example = "null", value = "Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE ")
   private CstIPIEnum cstIPI = null;
   @ApiModelProperty(example = "null", value = "Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU= ")
   private String ipiLegalTaxClass = null;
@@ -138,6 +139,10 @@ public enum AccruablePISTaxationEnum {
 
   @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
   private AccruablePISTaxationEnum accruablePISTaxation = null;
+  @ApiModelProperty(example = "null", value = "When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption")
+  private String pisExemptLegalReasonCode = null;
+  @ApiModelProperty(example = "null", value = "When specified a reason, this field holds the reason's description")
+  private String pisExemptLegalReason = null;
 
 @XmlType(name="AccruableCOFINSTaxationEnum")
 @XmlEnum(String.class)
@@ -173,6 +178,10 @@ public enum AccruableCOFINSTaxationEnum {
 
   @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE ")
   private AccruableCOFINSTaxationEnum accruableCOFINSTaxation = null;
+  @ApiModelProperty(example = "null", value = "When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption")
+  private String cofinsExemptLegalReasonCode = null;
+  @ApiModelProperty(example = "null", value = "When specified a reason, this field holds the reason's description")
+  private String cofinsExemptLegalReason = null;
 
 @XmlType(name="AccruableCSLLTaxationEnum")
 @XmlEnum(String.class)
@@ -208,6 +217,12 @@ public enum AccruableCSLLTaxationEnum {
 
   @ApiModelProperty(example = "null", value = "Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT ")
   private AccruableCSLLTaxationEnum accruableCSLLTaxation = null;
+  @ApiModelProperty(example = "null", value = "")
+  private String csllExemptLegalReason = null;
+  @ApiModelProperty(example = "null", value = "")
+  private String csllExemptLegalReasonCode = null;
+  @ApiModelProperty(example = "null", value = "")
+  private AgastWithholding withholding = null;
   @ApiModelProperty(example = "null", value = "for service items with City Jurisdiction, inform where the ISS tax is due")
   private Boolean issDueatDestination = null;
   @ApiModelProperty(example = "null", value = "on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative")
@@ -358,7 +373,7 @@ public enum SpecialProductClassEnum {
     this.codeType = codeType;
   }
  /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
    * @return cstIPI
   **/
   public CstIPIEnum getCstIPI() {
@@ -398,6 +413,26 @@ public enum SpecialProductClassEnum {
     this.accruablePISTaxation = accruablePISTaxation;
   }
  /**
+   * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+   * @return pisExemptLegalReasonCode
+  **/
+  public String getPisExemptLegalReasonCode() {
+    return pisExemptLegalReasonCode;
+  }
+  public void setPisExemptLegalReasonCode(String pisExemptLegalReasonCode) {
+    this.pisExemptLegalReasonCode = pisExemptLegalReasonCode;
+  }
+ /**
+   * When specified a reason, this field holds the reason's description
+   * @return pisExemptLegalReason
+  **/
+  public String getPisExemptLegalReason() {
+    return pisExemptLegalReason;
+  }
+  public void setPisExemptLegalReason(String pisExemptLegalReason) {
+    this.pisExemptLegalReason = pisExemptLegalReason;
+  }
+ /**
    * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
    * @return accruableCOFINSTaxation
   **/
@@ -408,6 +443,26 @@ public enum SpecialProductClassEnum {
     this.accruableCOFINSTaxation = accruableCOFINSTaxation;
   }
  /**
+   * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+   * @return cofinsExemptLegalReasonCode
+  **/
+  public String getCofinsExemptLegalReasonCode() {
+    return cofinsExemptLegalReasonCode;
+  }
+  public void setCofinsExemptLegalReasonCode(String cofinsExemptLegalReasonCode) {
+    this.cofinsExemptLegalReasonCode = cofinsExemptLegalReasonCode;
+  }
+ /**
+   * When specified a reason, this field holds the reason's description
+   * @return cofinsExemptLegalReason
+  **/
+  public String getCofinsExemptLegalReason() {
+    return cofinsExemptLegalReason;
+  }
+  public void setCofinsExemptLegalReason(String cofinsExemptLegalReason) {
+    this.cofinsExemptLegalReason = cofinsExemptLegalReason;
+  }
+ /**
    * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
    * @return accruableCSLLTaxation
   **/
@@ -416,6 +471,36 @@ public enum SpecialProductClassEnum {
   }
   public void setAccruableCSLLTaxation(AccruableCSLLTaxationEnum accruableCSLLTaxation) {
     this.accruableCSLLTaxation = accruableCSLLTaxation;
+  }
+ /**
+   * Get csllExemptLegalReason
+   * @return csllExemptLegalReason
+  **/
+  public String getCsllExemptLegalReason() {
+    return csllExemptLegalReason;
+  }
+  public void setCsllExemptLegalReason(String csllExemptLegalReason) {
+    this.csllExemptLegalReason = csllExemptLegalReason;
+  }
+ /**
+   * Get csllExemptLegalReasonCode
+   * @return csllExemptLegalReasonCode
+  **/
+  public String getCsllExemptLegalReasonCode() {
+    return csllExemptLegalReasonCode;
+  }
+  public void setCsllExemptLegalReasonCode(String csllExemptLegalReasonCode) {
+    this.csllExemptLegalReasonCode = csllExemptLegalReasonCode;
+  }
+ /**
+   * Get withholding
+   * @return withholding
+  **/
+  public AgastWithholding getWithholding() {
+    return withholding;
+  }
+  public void setWithholding(AgastWithholding withholding) {
+    this.withholding = withholding;
   }
  /**
    * for service items with City Jurisdiction, inform where the ISS tax is due
@@ -494,8 +579,15 @@ public enum SpecialProductClassEnum {
     sb.append("    ipiLegalTaxClass: ").append(toIndentedString(ipiLegalTaxClass)).append("\n");
     sb.append("    pisCofinsTaxReporting: ").append(toIndentedString(pisCofinsTaxReporting)).append("\n");
     sb.append("    accruablePISTaxation: ").append(toIndentedString(accruablePISTaxation)).append("\n");
+    sb.append("    pisExemptLegalReasonCode: ").append(toIndentedString(pisExemptLegalReasonCode)).append("\n");
+    sb.append("    pisExemptLegalReason: ").append(toIndentedString(pisExemptLegalReason)).append("\n");
     sb.append("    accruableCOFINSTaxation: ").append(toIndentedString(accruableCOFINSTaxation)).append("\n");
+    sb.append("    cofinsExemptLegalReasonCode: ").append(toIndentedString(cofinsExemptLegalReasonCode)).append("\n");
+    sb.append("    cofinsExemptLegalReason: ").append(toIndentedString(cofinsExemptLegalReason)).append("\n");
     sb.append("    accruableCSLLTaxation: ").append(toIndentedString(accruableCSLLTaxation)).append("\n");
+    sb.append("    csllExemptLegalReason: ").append(toIndentedString(csllExemptLegalReason)).append("\n");
+    sb.append("    csllExemptLegalReasonCode: ").append(toIndentedString(csllExemptLegalReasonCode)).append("\n");
+    sb.append("    withholding: ").append(toIndentedString(withholding)).append("\n");
     sb.append("    issDueatDestination: ").append(toIndentedString(issDueatDestination)).append("\n");
     sb.append("    pisCofinsCreditNotAllowed: ").append(toIndentedString(pisCofinsCreditNotAllowed)).append("\n");
     sb.append("    issTaxation: ").append(toIndentedString(issTaxation)).append("\n");

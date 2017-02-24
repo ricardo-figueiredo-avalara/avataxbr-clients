@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.LineForGoodsIcmsTaxRelief = factory(root.Br16Api.ApiClient);
+    root.AvaTaxBrazil.LineForGoodsIcmsTaxRelief = factory(root.AvaTaxBrazil.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -41,12 +41,12 @@
    * Constructs a new <code>LineForGoodsIcmsTaxRelief</code>.
    * @alias module:model/LineForGoodsIcmsTaxRelief
    * @class
-   * @param icmsTaxReliefReasonCode {Number} When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
+   * @param reasonCode {module:model/LineForGoodsIcmsTaxRelief.ReasonCodeEnum} When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
    */
-  var exports = function(icmsTaxReliefReasonCode) {
+  var exports = function(reasonCode) {
     var _this = this;
 
-    _this['icmsTaxReliefReasonCode'] = icmsTaxReliefReasonCode;
+    _this['reasonCode'] = reasonCode;
 
 
   };
@@ -62,35 +62,102 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('icmsTaxReliefReasonCode')) {
-        obj['icmsTaxReliefReasonCode'] = ApiClient.convertToType(data['icmsTaxReliefReasonCode'], 'Number');
+      if (data.hasOwnProperty('reasonCode')) {
+        obj['reasonCode'] = ApiClient.convertToType(data['reasonCode'], 'String');
       }
-      if (data.hasOwnProperty('icmsReliefTaxRate')) {
-        obj['icmsReliefTaxRate'] = ApiClient.convertToType(data['icmsReliefTaxRate'], 'Number');
+      if (data.hasOwnProperty('taxBaseDiscount')) {
+        obj['taxBaseDiscount'] = ApiClient.convertToType(data['taxBaseDiscount'], 'Number');
       }
-      if (data.hasOwnProperty('icmsReliefTaxAmount')) {
-        obj['icmsReliefTaxAmount'] = ApiClient.convertToType(data['icmsReliefTaxAmount'], 'Number');
+      if (data.hasOwnProperty('taxAmount')) {
+        obj['taxAmount'] = ApiClient.convertToType(data['taxAmount'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
-   * @member {Number} icmsTaxReliefReasonCode
+   * When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
+   * @member {module:model/LineForGoodsIcmsTaxRelief.ReasonCodeEnum} reasonCode
    */
-  exports.prototype['icmsTaxReliefReasonCode'] = undefined;
+  exports.prototype['reasonCode'] = undefined;
   /**
    * ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
-   * @member {Number} icmsReliefTaxRate
+   * @member {Number} taxBaseDiscount
    */
-  exports.prototype['icmsReliefTaxRate'] = undefined;
+  exports.prototype['taxBaseDiscount'] = undefined;
   /**
    * Amount for Icms Relief (desoneração)
-   * @member {Number} icmsReliefTaxAmount
+   * @member {Number} taxAmount
    */
-  exports.prototype['icmsReliefTaxAmount'] = undefined;
+  exports.prototype['taxAmount'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>reasonCode</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.ReasonCodeEnum = {
+    /**
+     * value: "1"
+     * @const
+     */
+    "1": "1",
+    /**
+     * value: "3"
+     * @const
+     */
+    "3": "3",
+    /**
+     * value: "4"
+     * @const
+     */
+    "4": "4",
+    /**
+     * value: "5"
+     * @const
+     */
+    "5": "5",
+    /**
+     * value: "6"
+     * @const
+     */
+    "6": "6",
+    /**
+     * value: "7"
+     * @const
+     */
+    "7": "7",
+    /**
+     * value: "8"
+     * @const
+     */
+    "8": "8",
+    /**
+     * value: "9"
+     * @const
+     */
+    "9": "9",
+    /**
+     * value: "10"
+     * @const
+     */
+    "10": "10",
+    /**
+     * value: "11"
+     * @const
+     */
+    "11": "11",
+    /**
+     * value: "12"
+     * @const
+     */
+    "12": "12",
+    /**
+     * value: "16"
+     * @const
+     */
+    "16": "16"  };
 
 
   return exports;

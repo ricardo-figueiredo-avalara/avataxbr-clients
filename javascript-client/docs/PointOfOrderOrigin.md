@@ -1,4 +1,4 @@
-# Br16Api.PointOfOrderOrigin
+# AvaTaxBrazil.PointOfOrderOrigin
 
 ## Properties
 Name | Type | Description | Notes

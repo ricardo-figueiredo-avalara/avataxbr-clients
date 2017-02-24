@@ -1,4 +1,4 @@
-# Br16Api.PurchaseHeaderInPayment
+# AvaTaxBrazil.PurchaseHeaderInPayment
 
 ## Properties
 Name | Type | Description | Notes

@@ -15,7 +15,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class TaxConfIBPTApi {
-    String basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     String versionPath = "/api/v1"
 
     def createIbptConf ( IbptConf taxconfprocess, Closure onSuccess, Closure onFailure)  {

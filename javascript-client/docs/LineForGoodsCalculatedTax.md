@@ -1,4 +1,4 @@
-# Br16Api.LineForGoodsCalculatedTax
+# AvaTaxBrazil.LineForGoodsCalculatedTax
 
 ## Properties
 Name | Type | Description | Notes

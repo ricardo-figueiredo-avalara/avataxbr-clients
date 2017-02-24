@@ -10,9 +10,9 @@ import Foundation
 
 open class SalesTaxByTypeDetail: JSONEncodable {
     public enum JurisdictionType: String { 
-        case city = "city"
-        case state = "state"
-        case country = "country"
+        case city = "City"
+        case state = "State"
+        case country = "Country"
     }
     public enum TaxType: String { 
         case aproxtribcity = "aproxtribCity"
@@ -41,7 +41,7 @@ open class SalesTaxByTypeDetail: JSONEncodable {
     public var locationType: String?
     /** Jurisdiction used for calctax amount */
     public var jurisdictionName: String?
-    /** Type of jurisdiction - &#39;city&#39; - &#39;state&#39; - &#39;country&#39;  */
+    /** Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  */
     public var jurisdictionType: JurisdictionType?
     /** Tax identificator - &#39;aproxtribCity&#39; - &#39;aproxtribFed&#39; - &#39;pis&#39; - &#39;pisRf&#39; - &#39;cofins&#39; - &#39;cofinsRf&#39; - &#39;csll&#39; - &#39;csllRf&#39; - &#39;irrf&#39; - &#39;inss&#39; - &#39;inssRf&#39; - &#39;iss&#39; - &#39;issRf&#39; - &#39;irpj&#39;  */
     public var taxType: TaxType?

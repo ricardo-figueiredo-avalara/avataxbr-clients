@@ -14,9 +14,15 @@ namespace IO.Swagger.Api
         /// <summary>
         /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </summary>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
         /// <returns>InlineResponse200</returns>
         InlineResponse200 AuthPost (string authorization);
+        /// <summary>
+        /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </summary>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param>
+        /// <returns>InlineResponse200</returns>
+        InlineResponse200 V2AuthPost (string authorization);
     }
   
     /// <summary>
@@ -75,7 +81,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
         /// </summary>
-        /// <param name="authorization">Authorization: Basic VGVzdDoxMjM&#x3D; </param> 
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param> 
         /// <returns>InlineResponse200</returns>            
         public InlineResponse200 AuthPost (string authorization)
         {
@@ -105,6 +111,43 @@ namespace IO.Swagger.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling AuthPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AuthPost: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (InlineResponse200) ApiClient.Deserialize(response.Content, typeof(InlineResponse200), response.Headers);
+        }
+    
+        /// <summary>
+        /// authorization Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+        /// </summary>
+        /// <param name="authorization">Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. </param> 
+        /// <returns>InlineResponse200</returns>            
+        public InlineResponse200 V2AuthPost (string authorization)
+        {
+            
+            // verify the required parameter 'authorization' is set
+            if (authorization == null) throw new ApiException(400, "Missing required parameter 'authorization' when calling V2AuthPost");
+            
+    
+            var path = "/v2/auth";
+            path = path.Replace("{format}", "json");
+                
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+                         if (authorization != null) headerParams.Add("Authorization", ApiClient.ParameterToString(authorization)); // header parameter
+                            
+            // authentication setting, if any
+            String[] authSettings = new String[] {  };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V2AuthPost: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling V2AuthPost: " + response.ErrorMessage, response.ErrorMessage);
     
             return (InlineResponse200) ApiClient.Deserialize(response.Content, typeof(InlineResponse200), response.Headers);
         }

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -34,15 +34,19 @@ HeaderForGoods::HeaderForGoods()
     m_NfceQrCodeIsSet = false;
     m_TransactionType = U("");
     m_TransactionModel = U("");
+    m_TransactionModelIsSet = false;
     m_TransactionClass = U("");
     m_TransactionClassIsSet = false;
     m_EDocCreatorType = U("");
     m_EDocCreatorPerspective = false;
     m_EDocCreatorPerspectiveIsSet = false;
     m_EntityCode = U("");
+    m_EntityCodeIsSet = false;
     m_Currency = U("");
+    m_CurrencyIsSet = false;
     m_CompanyLocation = U("");
     m_TransactionDate = U("");
+    m_TransactionDateIsSet = false;
     m_ShippingDate = U("");
     m_ShippingDateIsSet = false;
     m_AdditionalInfoIsSet = false;
@@ -53,10 +57,13 @@ HeaderForGoods::HeaderForGoods()
     m_IndPres = U("");
     m_IndPresIsSet = false;
     m_InvoiceNumber = 0;
+    m_InvoiceNumberIsSet = false;
     m_InvoiceSerial = 0;
+    m_InvoiceSerialIsSet = false;
     m_DefaultLocationsIsSet = false;
     m_TransportIsSet = false;
     m_NfRefIsSet = false;
+    m_PaymentIsSet = false;
     m_PurchaseInfoIsSet = false;
     m_ExportIsSet = false;
     
@@ -98,7 +105,10 @@ web::json::value HeaderForGoods::toJson() const
         val[U("nfceQrCode")] = ModelBase::toJson(m_NfceQrCode);
     }
     val[U("transactionType")] = ModelBase::toJson(m_TransactionType);
-    val[U("transactionModel")] = ModelBase::toJson(m_TransactionModel);
+    if(m_TransactionModelIsSet)
+    {
+        val[U("transactionModel")] = ModelBase::toJson(m_TransactionModel);
+    }
     if(m_TransactionClassIsSet)
     {
         val[U("transactionClass")] = ModelBase::toJson(m_TransactionClass);
@@ -108,10 +118,19 @@ web::json::value HeaderForGoods::toJson() const
     {
         val[U("eDocCreatorPerspective")] = ModelBase::toJson(m_EDocCreatorPerspective);
     }
-    val[U("entityCode")] = ModelBase::toJson(m_EntityCode);
-    val[U("currency")] = ModelBase::toJson(m_Currency);
+    if(m_EntityCodeIsSet)
+    {
+        val[U("entityCode")] = ModelBase::toJson(m_EntityCode);
+    }
+    if(m_CurrencyIsSet)
+    {
+        val[U("currency")] = ModelBase::toJson(m_Currency);
+    }
     val[U("companyLocation")] = ModelBase::toJson(m_CompanyLocation);
-    val[U("transactionDate")] = ModelBase::toJson(m_TransactionDate);
+    if(m_TransactionDateIsSet)
+    {
+        val[U("transactionDate")] = ModelBase::toJson(m_TransactionDate);
+    }
     if(m_ShippingDateIsSet)
     {
         val[U("shippingDate")] = ModelBase::toJson(m_ShippingDate);
@@ -132,8 +151,14 @@ web::json::value HeaderForGoods::toJson() const
     {
         val[U("indPres")] = ModelBase::toJson(m_IndPres);
     }
-    val[U("invoiceNumber")] = ModelBase::toJson(m_InvoiceNumber);
-    val[U("invoiceSerial")] = ModelBase::toJson(m_InvoiceSerial);
+    if(m_InvoiceNumberIsSet)
+    {
+        val[U("invoiceNumber")] = ModelBase::toJson(m_InvoiceNumber);
+    }
+    if(m_InvoiceSerialIsSet)
+    {
+        val[U("invoiceSerial")] = ModelBase::toJson(m_InvoiceSerial);
+    }
     if(m_DefaultLocationsIsSet)
     {
         val[U("defaultLocations")] = ModelBase::toJson(m_DefaultLocations);
@@ -154,7 +179,10 @@ web::json::value HeaderForGoods::toJson() const
             val[U("nfRef")] = web::json::value::array(jsonArray);
         }
     }
-    val[U("payment")] = ModelBase::toJson(m_Payment);
+    if(m_PaymentIsSet)
+    {
+        val[U("payment")] = ModelBase::toJson(m_Payment);
+    }
     if(m_PurchaseInfoIsSet)
     {
         val[U("purchaseInfo")] = ModelBase::toJson(m_PurchaseInfo);
@@ -203,7 +231,11 @@ void HeaderForGoods::fromJson(web::json::value& val)
         
     }
     setTransactionType(ModelBase::stringFromJson(val[U("transactionType")]));
-    setTransactionModel(ModelBase::stringFromJson(val[U("transactionModel")]));
+    if(val.has_field(U("transactionModel")))
+    {
+        setTransactionModel(ModelBase::stringFromJson(val[U("transactionModel")]));
+        
+    }
     if(val.has_field(U("transactionClass")))
     {
         setTransactionClass(ModelBase::stringFromJson(val[U("transactionClass")]));
@@ -214,10 +246,22 @@ void HeaderForGoods::fromJson(web::json::value& val)
     {
         setEDocCreatorPerspective(ModelBase::boolFromJson(val[U("eDocCreatorPerspective")]));
     }
-    setEntityCode(ModelBase::stringFromJson(val[U("entityCode")]));
-    setCurrency(ModelBase::stringFromJson(val[U("currency")]));
+    if(val.has_field(U("entityCode")))
+    {
+        setEntityCode(ModelBase::stringFromJson(val[U("entityCode")]));
+        
+    }
+    if(val.has_field(U("currency")))
+    {
+        setCurrency(ModelBase::stringFromJson(val[U("currency")]));
+        
+    }
     setCompanyLocation(ModelBase::stringFromJson(val[U("companyLocation")]));
-    setTransactionDate(ModelBase::stringFromJson(val[U("transactionDate")]));
+    if(val.has_field(U("transactionDate")))
+    {
+        setTransactionDate(ModelBase::stringFromJson(val[U("transactionDate")]));
+        
+    }
     if(val.has_field(U("shippingDate")))
     {
         setShippingDate(ModelBase::stringFromJson(val[U("shippingDate")]));
@@ -247,8 +291,14 @@ void HeaderForGoods::fromJson(web::json::value& val)
         setIndPres(ModelBase::stringFromJson(val[U("indPres")]));
         
     }
-    setInvoiceNumber(ModelBase::int32_tFromJson(val[U("invoiceNumber")]));
-    setInvoiceSerial(ModelBase::int32_tFromJson(val[U("invoiceSerial")]));
+    if(val.has_field(U("invoiceNumber")))
+    {
+        setInvoiceNumber(ModelBase::int32_tFromJson(val[U("invoiceNumber")]));
+    }
+    if(val.has_field(U("invoiceSerial")))
+    {
+        setInvoiceSerial(ModelBase::int32_tFromJson(val[U("invoiceSerial")]));
+    }
     if(val.has_field(U("defaultLocations")))
     {
         if(!val[U("defaultLocations")].is_null())
@@ -291,9 +341,16 @@ void HeaderForGoods::fromJson(web::json::value& val)
         }
         }
     }
-    std::shared_ptr<Payment> newPayment(new Payment());
-    newPayment->fromJson(val[U("payment")]);
-    setPayment( newItem );
+    if(val.has_field(U("payment")))
+    {
+        if(!val[U("payment")].is_null())
+        {
+            std::shared_ptr<Payment> newItem(new Payment());
+            newItem->fromJson(val[U("payment")]);
+            setPayment( newItem );
+        }
+        
+    }
     if(val.has_field(U("purchaseInfo")))
     {
         if(!val[U("purchaseInfo")].is_null())
@@ -356,7 +413,11 @@ void HeaderForGoods::toMultipart(std::shared_ptr<MultipartFormData> multipart, c
         
     }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("transactionType"), m_TransactionType));
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("transactionModel"), m_TransactionModel));
+    if(m_TransactionModelIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("transactionModel"), m_TransactionModel));
+        
+    }
     if(m_TransactionClassIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("transactionClass"), m_TransactionClass));
@@ -367,10 +428,22 @@ void HeaderForGoods::toMultipart(std::shared_ptr<MultipartFormData> multipart, c
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("eDocCreatorPerspective"), m_EDocCreatorPerspective));
     }
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("entityCode"), m_EntityCode));
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("currency"), m_Currency));
+    if(m_EntityCodeIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("entityCode"), m_EntityCode));
+        
+    }
+    if(m_CurrencyIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("currency"), m_Currency));
+        
+    }
     multipart->add(ModelBase::toHttpContent(namePrefix + U("companyLocation"), m_CompanyLocation));
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("transactionDate"), m_TransactionDate));
+    if(m_TransactionDateIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("transactionDate"), m_TransactionDate));
+        
+    }
     if(m_ShippingDateIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + U("shippingDate"), m_ShippingDate));
@@ -398,8 +471,14 @@ void HeaderForGoods::toMultipart(std::shared_ptr<MultipartFormData> multipart, c
         multipart->add(ModelBase::toHttpContent(namePrefix + U("indPres"), m_IndPres));
         
     }
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("invoiceNumber"), m_InvoiceNumber));
-    multipart->add(ModelBase::toHttpContent(namePrefix + U("invoiceSerial"), m_InvoiceSerial));
+    if(m_InvoiceNumberIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("invoiceNumber"), m_InvoiceNumber));
+    }
+    if(m_InvoiceSerialIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + U("invoiceSerial"), m_InvoiceSerial));
+    }
     if(m_DefaultLocationsIsSet)
     {
         if (m_DefaultLocations.get())
@@ -428,7 +507,14 @@ void HeaderForGoods::toMultipart(std::shared_ptr<MultipartFormData> multipart, c
             multipart->add(ModelBase::toHttpContent(namePrefix + U("nfRef"), web::json::value::array(jsonArray), U("application/json")));
         }
     }
-    m_Payment->toMultipart(multipart, U("payment."));
+    if(m_PaymentIsSet)
+    {
+        if (m_Payment.get())
+        {
+            m_Payment->toMultipart(multipart, U("payment."));
+        }
+        
+    }
     if(m_PurchaseInfoIsSet)
     {
         if (m_PurchaseInfo.get())
@@ -489,7 +575,11 @@ void HeaderForGoods::fromMultiPart(std::shared_ptr<MultipartFormData> multipart,
         
     }
     setTransactionType(ModelBase::stringFromHttpContent(multipart->getContent(U("transactionType"))));
-    setTransactionModel(ModelBase::stringFromHttpContent(multipart->getContent(U("transactionModel"))));
+    if(multipart->hasContent(U("transactionModel")))
+    {
+        setTransactionModel(ModelBase::stringFromHttpContent(multipart->getContent(U("transactionModel"))));
+        
+    }
     if(multipart->hasContent(U("transactionClass")))
     {
         setTransactionClass(ModelBase::stringFromHttpContent(multipart->getContent(U("transactionClass"))));
@@ -500,10 +590,22 @@ void HeaderForGoods::fromMultiPart(std::shared_ptr<MultipartFormData> multipart,
     {
         setEDocCreatorPerspective(ModelBase::boolFromHttpContent(multipart->getContent(U("eDocCreatorPerspective"))));
     }
-    setEntityCode(ModelBase::stringFromHttpContent(multipart->getContent(U("entityCode"))));
-    setCurrency(ModelBase::stringFromHttpContent(multipart->getContent(U("currency"))));
+    if(multipart->hasContent(U("entityCode")))
+    {
+        setEntityCode(ModelBase::stringFromHttpContent(multipart->getContent(U("entityCode"))));
+        
+    }
+    if(multipart->hasContent(U("currency")))
+    {
+        setCurrency(ModelBase::stringFromHttpContent(multipart->getContent(U("currency"))));
+        
+    }
     setCompanyLocation(ModelBase::stringFromHttpContent(multipart->getContent(U("companyLocation"))));
-    setTransactionDate(ModelBase::stringFromHttpContent(multipart->getContent(U("transactionDate"))));
+    if(multipart->hasContent(U("transactionDate")))
+    {
+        setTransactionDate(ModelBase::stringFromHttpContent(multipart->getContent(U("transactionDate"))));
+        
+    }
     if(multipart->hasContent(U("shippingDate")))
     {
         setShippingDate(ModelBase::stringFromHttpContent(multipart->getContent(U("shippingDate"))));
@@ -533,8 +635,14 @@ void HeaderForGoods::fromMultiPart(std::shared_ptr<MultipartFormData> multipart,
         setIndPres(ModelBase::stringFromHttpContent(multipart->getContent(U("indPres"))));
         
     }
-    setInvoiceNumber(ModelBase::int32_tFromHttpContent(multipart->getContent(U("invoiceNumber"))));
-    setInvoiceSerial(ModelBase::int32_tFromHttpContent(multipart->getContent(U("invoiceSerial"))));
+    if(multipart->hasContent(U("invoiceNumber")))
+    {
+        setInvoiceNumber(ModelBase::int32_tFromHttpContent(multipart->getContent(U("invoiceNumber"))));
+    }
+    if(multipart->hasContent(U("invoiceSerial")))
+    {
+        setInvoiceSerial(ModelBase::int32_tFromHttpContent(multipart->getContent(U("invoiceSerial"))));
+    }
     if(multipart->hasContent(U("defaultLocations")))
     {
         if(multipart->hasContent(U("defaultLocations")))
@@ -578,9 +686,16 @@ void HeaderForGoods::fromMultiPart(std::shared_ptr<MultipartFormData> multipart,
         }
         }
     }
-    std::shared_ptr<Payment> newPayment(new Payment());
-    newPayment->fromMultiPart(multipart, U("payment."));
-    setPayment( newPayment );
+    if(multipart->hasContent(U("payment")))
+    {
+        if(multipart->hasContent(U("payment")))
+        {
+            std::shared_ptr<Payment> newItem(new Payment());
+            newItem->fromMultiPart(multipart, U("payment."));
+            setPayment( newItem );
+        }
+        
+    }
     if(multipart->hasContent(U("purchaseInfo")))
     {
         if(multipart->hasContent(U("purchaseInfo")))
@@ -724,7 +839,15 @@ utility::string_t HeaderForGoods::getTransactionModel() const
 void HeaderForGoods::setTransactionModel(utility::string_t value)
 {
     m_TransactionModel = value;
-    
+    m_TransactionModelIsSet = true;
+}
+bool HeaderForGoods::transactionModelIsSet() const
+{
+    return m_TransactionModelIsSet;
+}
+void HeaderForGoods::unsetTransactionModel()
+{
+    m_TransactionModelIsSet = false;
 }
 utility::string_t HeaderForGoods::getTransactionClass() const
 {
@@ -776,7 +899,15 @@ utility::string_t HeaderForGoods::getEntityCode() const
 void HeaderForGoods::setEntityCode(utility::string_t value)
 {
     m_EntityCode = value;
-    
+    m_EntityCodeIsSet = true;
+}
+bool HeaderForGoods::entityCodeIsSet() const
+{
+    return m_EntityCodeIsSet;
+}
+void HeaderForGoods::unsetEntityCode()
+{
+    m_EntityCodeIsSet = false;
 }
 utility::string_t HeaderForGoods::getCurrency() const
 {
@@ -785,7 +916,15 @@ utility::string_t HeaderForGoods::getCurrency() const
 void HeaderForGoods::setCurrency(utility::string_t value)
 {
     m_Currency = value;
-    
+    m_CurrencyIsSet = true;
+}
+bool HeaderForGoods::currencyIsSet() const
+{
+    return m_CurrencyIsSet;
+}
+void HeaderForGoods::unsetCurrency()
+{
+    m_CurrencyIsSet = false;
 }
 utility::string_t HeaderForGoods::getCompanyLocation() const
 {
@@ -803,7 +942,15 @@ utility::string_t HeaderForGoods::getTransactionDate() const
 void HeaderForGoods::setTransactionDate(utility::string_t value)
 {
     m_TransactionDate = value;
-    
+    m_TransactionDateIsSet = true;
+}
+bool HeaderForGoods::transactionDateIsSet() const
+{
+    return m_TransactionDateIsSet;
+}
+void HeaderForGoods::unsetTransactionDate()
+{
+    m_TransactionDateIsSet = false;
 }
 utility::string_t HeaderForGoods::getShippingDate() const
 {
@@ -897,7 +1044,15 @@ int32_t HeaderForGoods::getInvoiceNumber() const
 void HeaderForGoods::setInvoiceNumber(int32_t value)
 {
     m_InvoiceNumber = value;
-    
+    m_InvoiceNumberIsSet = true;
+}
+bool HeaderForGoods::invoiceNumberIsSet() const
+{
+    return m_InvoiceNumberIsSet;
+}
+void HeaderForGoods::unsetInvoiceNumber()
+{
+    m_InvoiceNumberIsSet = false;
 }
 int32_t HeaderForGoods::getInvoiceSerial() const
 {
@@ -906,7 +1061,15 @@ int32_t HeaderForGoods::getInvoiceSerial() const
 void HeaderForGoods::setInvoiceSerial(int32_t value)
 {
     m_InvoiceSerial = value;
-    
+    m_InvoiceSerialIsSet = true;
+}
+bool HeaderForGoods::invoiceSerialIsSet() const
+{
+    return m_InvoiceSerialIsSet;
+}
+void HeaderForGoods::unsetInvoiceSerial()
+{
+    m_InvoiceSerialIsSet = false;
 }
 std::shared_ptr<DefaultLocations> HeaderForGoods::getDefaultLocations() const
 {
@@ -961,7 +1124,15 @@ std::shared_ptr<Payment> HeaderForGoods::getPayment() const
 void HeaderForGoods::setPayment(std::shared_ptr<Payment> value)
 {
     m_Payment = value;
-    
+    m_PaymentIsSet = true;
+}
+bool HeaderForGoods::paymentIsSet() const
+{
+    return m_PaymentIsSet;
+}
+void HeaderForGoods::unsetPayment()
+{
+    m_PaymentIsSet = false;
 }
 std::shared_ptr<PurchaseInfo> HeaderForGoods::getPurchaseInfo() const
 {

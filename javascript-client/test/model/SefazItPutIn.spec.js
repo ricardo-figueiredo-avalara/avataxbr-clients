@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.SefazItPutIn();
+    instance = new AvaTaxBrazil.SefazItPutIn();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SefazItPutIn', function() {
     it('should create an instance of SefazItPutIn', function() {
       // uncomment below and update the code to test SefazItPutIn
-      //var instane = new Br16Api.SefazItPutIn();
-      //expect(instance).to.be.a(Br16Api.SefazItPutIn);
+      //var instane = new AvaTaxBrazil.SefazItPutIn();
+      //expect(instance).to.be.a(AvaTaxBrazil.SefazItPutIn);
     });
 
     it('should have the property code (base name: "code")', function() {
       // uncomment below and update the code to test the property code
-      //var instane = new Br16Api.SefazItPutIn();
+      //var instane = new AvaTaxBrazil.SefazItPutIn();
       //expect(instance).to.be();
     });
 
     it('should have the property text (base name: "text")', function() {
       // uncomment below and update the code to test the property text
-      //var instane = new Br16Api.SefazItPutIn();
+      //var instane = new AvaTaxBrazil.SefazItPutIn();
       //expect(instance).to.be();
     });
 

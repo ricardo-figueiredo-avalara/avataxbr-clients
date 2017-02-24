@@ -14,7 +14,7 @@ class PurchaseTaxByTypeDetail {
   /* Jurisdiction used for calctax amount */
   String jurisdictionName = null
 
-  /* Type of jurisdiction - 'city' - 'state' - 'country'  */
+  /* Type of jurisdiction - 'City' - 'State' - 'Country'  */
   String jurisdictionType = null
 
   /* Tax identificator - 'pis' - 'pisRf' - 'cofins' - 'cofinsRf' - 'csll' - 'csllRf' - 'irrf' - 'inssAr' - 'inssRf' - 'issRf'  */

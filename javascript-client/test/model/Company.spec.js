@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.Company();
+    instance = new AvaTaxBrazil.Company();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,115 +50,115 @@
   describe('Company', function() {
     it('should create an instance of Company', function() {
       // uncomment below and update the code to test Company
-      //var instane = new Br16Api.Company();
-      //expect(instance).to.be.a(Br16Api.Company);
+      //var instane = new AvaTaxBrazil.Company();
+      //expect(instance).to.be.a(AvaTaxBrazil.Company);
     });
 
     it('should have the property code (base name: "code")', function() {
       // uncomment below and update the code to test the property code
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property officialName (base name: "officialName")', function() {
       // uncomment below and update the code to test the property officialName
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property entityType (base name: "entityType")', function() {
       // uncomment below and update the code to test the property entityType
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property subjectToSRF1234 (base name: "subjectToSRF1234")', function() {
       // uncomment below and update the code to test the property subjectToSRF1234
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property federalTaxRegime (base name: "federalTaxRegime")', function() {
       // uncomment below and update the code to test the property federalTaxRegime
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property pisSubjectTo (base name: "pisSubjectTo")', function() {
       // uncomment below and update the code to test the property pisSubjectTo
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property cofinsSubjectTo (base name: "cofinsSubjectTo")', function() {
       // uncomment below and update the code to test the property cofinsSubjectTo
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property csllSubjectTo (base name: "csllSubjectTo")', function() {
       // uncomment below and update the code to test the property csllSubjectTo
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property receiptsAreFullNoCumulativePisCofins (base name: "receiptsAreFullNoCumulativePisCofins")', function() {
       // uncomment below and update the code to test the property receiptsAreFullNoCumulativePisCofins
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property inssWithholdSubjectTo (base name: "inssWithholdSubjectTo")', function() {
       // uncomment below and update the code to test the property inssWithholdSubjectTo
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property issWithholdSubjectTo (base name: "issWithholdSubjectTo")', function() {
       // uncomment below and update the code to test the property issWithholdSubjectTo
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property irrfWithholdSubjectTo (base name: "irrfWithholdSubjectTo")', function() {
       // uncomment below and update the code to test the property irrfWithholdSubjectTo
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property icmsRateForSimplestaxregime (base name: "icmsRateForSimplestaxregime")', function() {
       // uncomment below and update the code to test the property icmsRateForSimplestaxregime
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property isExemptByGrossRevenueForSimplestaxregime (base name: "isExemptByGrossRevenueForSimplestaxregime")', function() {
       // uncomment below and update the code to test the property isExemptByGrossRevenueForSimplestaxregime
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property configuration (base name: "configuration")', function() {
       // uncomment below and update the code to test the property configuration
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property mailServer (base name: "mailServer")', function() {
       // uncomment below and update the code to test the property mailServer
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 
     it('should have the property authorizedToDownloadNFe (base name: "authorizedToDownloadNFe")', function() {
       // uncomment below and update the code to test the property authorizedToDownloadNFe
-      //var instane = new Br16Api.Company();
+      //var instane = new AvaTaxBrazil.Company();
       //expect(instance).to.be();
     });
 

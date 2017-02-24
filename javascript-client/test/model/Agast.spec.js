@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.Agast();
+    instance = new AvaTaxBrazil.Agast();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,121 +50,163 @@
   describe('Agast', function() {
     it('should create an instance of Agast', function() {
       // uncomment below and update the code to test Agast
-      //var instane = new Br16Api.Agast();
-      //expect(instance).to.be.a(Br16Api.Agast);
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be.a(AvaTaxBrazil.Agast);
     });
 
     it('should have the property code (base name: "code")', function() {
       // uncomment below and update the code to test the property code
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property hsCode (base name: "hsCode")', function() {
       // uncomment below and update the code to test the property hsCode
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property ex (base name: "ex")', function() {
       // uncomment below and update the code to test the property ex
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property cest (base name: "cest")', function() {
       // uncomment below and update the code to test the property cest
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property cean (base name: "cean")', function() {
       // uncomment below and update the code to test the property cean
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property codeType (base name: "codeType")', function() {
       // uncomment below and update the code to test the property codeType
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property cstIPI (base name: "cstIPI")', function() {
       // uncomment below and update the code to test the property cstIPI
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property ipiLegalTaxClass (base name: "ipiLegalTaxClass")', function() {
       // uncomment below and update the code to test the property ipiLegalTaxClass
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property pisCofinsTaxReporting (base name: "pisCofinsTaxReporting")', function() {
       // uncomment below and update the code to test the property pisCofinsTaxReporting
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property accruablePISTaxation (base name: "accruablePISTaxation")', function() {
       // uncomment below and update the code to test the property accruablePISTaxation
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pisExemptLegalReasonCode (base name: "pisExemptLegalReasonCode")', function() {
+      // uncomment below and update the code to test the property pisExemptLegalReasonCode
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pisExemptLegalReason (base name: "pisExemptLegalReason")', function() {
+      // uncomment below and update the code to test the property pisExemptLegalReason
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property accruableCOFINSTaxation (base name: "accruableCOFINSTaxation")', function() {
       // uncomment below and update the code to test the property accruableCOFINSTaxation
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cofinsExemptLegalReasonCode (base name: "cofinsExemptLegalReasonCode")', function() {
+      // uncomment below and update the code to test the property cofinsExemptLegalReasonCode
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cofinsExemptLegalReason (base name: "cofinsExemptLegalReason")', function() {
+      // uncomment below and update the code to test the property cofinsExemptLegalReason
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property accruableCSLLTaxation (base name: "accruableCSLLTaxation")', function() {
       // uncomment below and update the code to test the property accruableCSLLTaxation
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property csllExemptLegalReason (base name: "csllExemptLegalReason")', function() {
+      // uncomment below and update the code to test the property csllExemptLegalReason
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property csllExemptLegalReasonCode (base name: "csllExemptLegalReasonCode")', function() {
+      // uncomment below and update the code to test the property csllExemptLegalReasonCode
+      //var instane = new AvaTaxBrazil.Agast();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property withholding (base name: "withholding")', function() {
+      // uncomment below and update the code to test the property withholding
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property issDueatDestination (base name: "issDueatDestination")', function() {
       // uncomment below and update the code to test the property issDueatDestination
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property pisCofinsCreditNotAllowed (base name: "pisCofinsCreditNotAllowed")', function() {
       // uncomment below and update the code to test the property pisCofinsCreditNotAllowed
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property issTaxation (base name: "issTaxation")', function() {
       // uncomment below and update the code to test the property issTaxation
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property federalTaxRate (base name: "federalTaxRate")', function() {
       // uncomment below and update the code to test the property federalTaxRate
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property specialProductClass (base name: "specialProductClass")', function() {
       // uncomment below and update the code to test the property specialProductClass
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 
     it('should have the property icmsConf (base name: "icmsConf")', function() {
       // uncomment below and update the code to test the property icmsConf
-      //var instane = new Br16Api.Agast();
+      //var instane = new AvaTaxBrazil.Agast();
       //expect(instance).to.be();
     });
 

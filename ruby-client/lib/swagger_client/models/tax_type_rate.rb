@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -28,14 +28,6 @@ module SwaggerClient
     attr_accessor :quantity_unid_base
 
     attr_accessor :specialization_type
-
-    # UUID Reference to an item in the LegalReason store. 
-    attr_accessor :exemption_reason_code
-
-    # Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-    attr_accessor :custom_exemption_reason_description
-
-    attr_accessor :withholding
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -67,10 +59,7 @@ module SwaggerClient
         :'rate' => :'rate',
         :'srv_amount' => :'srvAmount',
         :'quantity_unid_base' => :'quantityUnidBase',
-        :'specialization_type' => :'specializationType',
-        :'exemption_reason_code' => :'exemptionReasonCode',
-        :'custom_exemption_reason_description' => :'customExemptionReasonDescription',
-        :'withholding' => :'withholding'
+        :'specialization_type' => :'specializationType'
       }
     end
 
@@ -82,10 +71,7 @@ module SwaggerClient
         :'rate' => :'Float',
         :'srv_amount' => :'Float',
         :'quantity_unid_base' => :'String',
-        :'specialization_type' => :'String',
-        :'exemption_reason_code' => :'String',
-        :'custom_exemption_reason_description' => :'String',
-        :'withholding' => :'TaxTypeRateWithholding'
+        :'specialization_type' => :'String'
       }
     end
 
@@ -119,18 +105,6 @@ module SwaggerClient
 
       if attributes.has_key?(:'specializationType')
         self.specialization_type = attributes[:'specializationType']
-      end
-
-      if attributes.has_key?(:'exemptionReasonCode')
-        self.exemption_reason_code = attributes[:'exemptionReasonCode']
-      end
-
-      if attributes.has_key?(:'customExemptionReasonDescription')
-        self.custom_exemption_reason_description = attributes[:'customExemptionReasonDescription']
-      end
-
-      if attributes.has_key?(:'withholding')
-        self.withholding = attributes[:'withholding']
       end
 
     end
@@ -208,10 +182,7 @@ module SwaggerClient
           rate == o.rate &&
           srv_amount == o.srv_amount &&
           quantity_unid_base == o.quantity_unid_base &&
-          specialization_type == o.specialization_type &&
-          exemption_reason_code == o.exemption_reason_code &&
-          custom_exemption_reason_description == o.custom_exemption_reason_description &&
-          withholding == o.withholding
+          specialization_type == o.specialization_type
     end
 
     # @see the `==` method
@@ -223,7 +194,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tax_type, tax_model, rate, srv_amount, quantity_unid_base, specialization_type, exemption_reason_code, custom_exemption_reason_description, withholding].hash
+      [tax_type, tax_model, rate, srv_amount, quantity_unid_base, specialization_type].hash
     end
 
     # Builds the object from hash

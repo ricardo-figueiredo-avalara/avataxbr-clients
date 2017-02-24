@@ -1,4 +1,4 @@
-# Br16Api.Medicine
+# AvaTaxBrazil.Medicine
 
 ## Properties
 Name | Type | Description | Notes

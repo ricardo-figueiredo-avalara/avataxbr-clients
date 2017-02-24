@@ -1,4 +1,4 @@
-# Br16Api.FederalTaxRegime
+# AvaTaxBrazil.FederalTaxRegime
 
 ## Enum
 

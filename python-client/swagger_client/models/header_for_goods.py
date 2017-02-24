@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    BR16 - API
+    AvaTax Brazil
 
-    This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+    The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
     OpenAPI spec version: 1.0
     
@@ -448,8 +448,6 @@ class HeaderForGoods(object):
         :param entity_code: The entity_code of this HeaderForGoods.
         :type: str
         """
-        if entity_code is None:
-            raise ValueError("Invalid value for `entity_code`, must not be `None`")
 
         self._entity_code = entity_code
 
@@ -527,8 +525,6 @@ class HeaderForGoods(object):
         :param transaction_date: The transaction_date of this HeaderForGoods.
         :type: str
         """
-        if transaction_date is None:
-            raise ValueError("Invalid value for `transaction_date`, must not be `None`")
 
         self._transaction_date = transaction_date
 
@@ -677,8 +673,6 @@ class HeaderForGoods(object):
         :param invoice_number: The invoice_number of this HeaderForGoods.
         :type: int
         """
-        if invoice_number is None:
-            raise ValueError("Invalid value for `invoice_number`, must not be `None`")
 
         self._invoice_number = invoice_number
 
@@ -702,8 +696,6 @@ class HeaderForGoods(object):
         :param invoice_serial: The invoice_serial of this HeaderForGoods.
         :type: int
         """
-        if invoice_serial is None:
-            raise ValueError("Invalid value for `invoice_serial`, must not be `None`")
 
         self._invoice_serial = invoice_serial
 
@@ -792,8 +784,6 @@ class HeaderForGoods(object):
         :param payment: The payment of this HeaderForGoods.
         :type: Payment
         """
-        if payment is None:
-            raise ValueError("Invalid value for `payment`, must not be `None`")
 
         self._payment = payment
 

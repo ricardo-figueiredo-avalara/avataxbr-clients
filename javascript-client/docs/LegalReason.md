@@ -1,4 +1,4 @@
-# Br16Api.LegalReason
+# AvaTaxBrazil.LegalReason
 
 ## Properties
 Name | Type | Description | Notes

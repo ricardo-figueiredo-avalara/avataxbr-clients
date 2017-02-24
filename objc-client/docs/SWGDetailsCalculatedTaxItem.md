@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locationType** | **NSString*** | This string captures the applicable location type. Location used for calc. Buyer or Seller | [optional] 
 **jurisdictionName** | **NSString*** | Jurisdiction used for calctax amount | [optional] 
-**jurisdictionType** | **NSString*** | Type of jurisdiction | [optional] 
+**jurisdictionType** | **NSString*** | Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  | [optional] 
 **taxType** | **NSString*** | Tax identificator | [optional] 
 **rateType** | **NSString*** | Name of configuration rate | [optional] 
 **scenario** | **NSString*** | This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in. | [optional] 

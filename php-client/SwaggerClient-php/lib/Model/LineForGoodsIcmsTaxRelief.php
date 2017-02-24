@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -55,9 +55,9 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'icms_tax_relief_reason_code' => 'int',
-        'icms_relief_tax_rate' => 'double',
-        'icms_relief_tax_amount' => 'double'
+        'reason_code' => 'string',
+        'tax_base_discount' => 'double',
+        'tax_amount' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -70,9 +70,9 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'icms_tax_relief_reason_code' => 'icmsTaxReliefReasonCode',
-        'icms_relief_tax_rate' => 'icmsReliefTaxRate',
-        'icms_relief_tax_amount' => 'icmsReliefTaxAmount'
+        'reason_code' => 'reasonCode',
+        'tax_base_discount' => 'taxBaseDiscount',
+        'tax_amount' => 'taxAmount'
     ];
 
 
@@ -81,9 +81,9 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'icms_tax_relief_reason_code' => 'setIcmsTaxReliefReasonCode',
-        'icms_relief_tax_rate' => 'setIcmsReliefTaxRate',
-        'icms_relief_tax_amount' => 'setIcmsReliefTaxAmount'
+        'reason_code' => 'setReasonCode',
+        'tax_base_discount' => 'setTaxBaseDiscount',
+        'tax_amount' => 'setTaxAmount'
     ];
 
 
@@ -92,9 +92,9 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'icms_tax_relief_reason_code' => 'getIcmsTaxReliefReasonCode',
-        'icms_relief_tax_rate' => 'getIcmsReliefTaxRate',
-        'icms_relief_tax_amount' => 'getIcmsReliefTaxAmount'
+        'reason_code' => 'getReasonCode',
+        'tax_base_discount' => 'getTaxBaseDiscount',
+        'tax_amount' => 'getTaxAmount'
     ];
 
     public static function attributeMap()
@@ -112,8 +112,42 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
         return self::$getters;
     }
 
+    const REASON_CODE__1 = '1';
+    const REASON_CODE__3 = '3';
+    const REASON_CODE__4 = '4';
+    const REASON_CODE__5 = '5';
+    const REASON_CODE__6 = '6';
+    const REASON_CODE__7 = '7';
+    const REASON_CODE__8 = '8';
+    const REASON_CODE__9 = '9';
+    const REASON_CODE__10 = '10';
+    const REASON_CODE__11 = '11';
+    const REASON_CODE__12 = '12';
+    const REASON_CODE__16 = '16';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getReasonCodeAllowableValues()
+    {
+        return [
+            self::REASON_CODE__1,
+            self::REASON_CODE__3,
+            self::REASON_CODE__4,
+            self::REASON_CODE__5,
+            self::REASON_CODE__6,
+            self::REASON_CODE__7,
+            self::REASON_CODE__8,
+            self::REASON_CODE__9,
+            self::REASON_CODE__10,
+            self::REASON_CODE__11,
+            self::REASON_CODE__12,
+            self::REASON_CODE__16,
+        ];
+    }
     
 
     /**
@@ -128,9 +162,9 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['icms_tax_relief_reason_code'] = isset($data['icms_tax_relief_reason_code']) ? $data['icms_tax_relief_reason_code'] : null;
-        $this->container['icms_relief_tax_rate'] = isset($data['icms_relief_tax_rate']) ? $data['icms_relief_tax_rate'] : null;
-        $this->container['icms_relief_tax_amount'] = isset($data['icms_relief_tax_amount']) ? $data['icms_relief_tax_amount'] : null;
+        $this->container['reason_code'] = isset($data['reason_code']) ? $data['reason_code'] : null;
+        $this->container['tax_base_discount'] = isset($data['tax_base_discount']) ? $data['tax_base_discount'] : null;
+        $this->container['tax_amount'] = isset($data['tax_amount']) ? $data['tax_amount'] : null;
     }
 
     /**
@@ -141,9 +175,14 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-        if ($this->container['icms_tax_relief_reason_code'] === null) {
-            $invalid_properties[] = "'icms_tax_relief_reason_code' can't be null";
+        if ($this->container['reason_code'] === null) {
+            $invalid_properties[] = "'reason_code' can't be null";
         }
+        $allowed_values = ["1", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "16"];
+        if (!in_array($this->container['reason_code'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'reason_code', must be one of #{allowed_values}.";
+        }
+
         return $invalid_properties;
     }
 
@@ -155,7 +194,11 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['icms_tax_relief_reason_code'] === null) {
+        if ($this->container['reason_code'] === null) {
+            return false;
+        }
+        $allowed_values = ["1", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "16"];
+        if (!in_array($this->container['reason_code'], $allowed_values)) {
             return false;
         }
         return true;
@@ -163,64 +206,68 @@ class LineForGoodsIcmsTaxRelief implements ArrayAccess
 
 
     /**
-     * Gets icms_tax_relief_reason_code
-     * @return int
+     * Gets reason_code
+     * @return string
      */
-    public function getIcmsTaxReliefReasonCode()
+    public function getReasonCode()
     {
-        return $this->container['icms_tax_relief_reason_code'];
+        return $this->container['reason_code'];
     }
 
     /**
-     * Sets icms_tax_relief_reason_code
-     * @param int $icms_tax_relief_reason_code When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016
+     * Sets reason_code
+     * @param string $reason_code When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016
      * @return $this
      */
-    public function setIcmsTaxReliefReasonCode($icms_tax_relief_reason_code)
+    public function setReasonCode($reason_code)
     {
-        $this->container['icms_tax_relief_reason_code'] = $icms_tax_relief_reason_code;
+        $allowed_values = array('1', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '16');
+        if ((!in_array($reason_code, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'reason_code', must be one of '1', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '16'");
+        }
+        $this->container['reason_code'] = $reason_code;
 
         return $this;
     }
 
     /**
-     * Gets icms_relief_tax_rate
+     * Gets tax_base_discount
      * @return double
      */
-    public function getIcmsReliefTaxRate()
+    public function getTaxBaseDiscount()
     {
-        return $this->container['icms_relief_tax_rate'];
+        return $this->container['tax_base_discount'];
     }
 
     /**
-     * Sets icms_relief_tax_rate
-     * @param double $icms_relief_tax_rate ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
+     * Sets tax_base_discount
+     * @param double $tax_base_discount ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
      * @return $this
      */
-    public function setIcmsReliefTaxRate($icms_relief_tax_rate)
+    public function setTaxBaseDiscount($tax_base_discount)
     {
-        $this->container['icms_relief_tax_rate'] = $icms_relief_tax_rate;
+        $this->container['tax_base_discount'] = $tax_base_discount;
 
         return $this;
     }
 
     /**
-     * Gets icms_relief_tax_amount
+     * Gets tax_amount
      * @return double
      */
-    public function getIcmsReliefTaxAmount()
+    public function getTaxAmount()
     {
-        return $this->container['icms_relief_tax_amount'];
+        return $this->container['tax_amount'];
     }
 
     /**
-     * Sets icms_relief_tax_amount
-     * @param double $icms_relief_tax_amount Amount for Icms Relief (desoneração)
+     * Sets tax_amount
+     * @param double $tax_amount Amount for Icms Relief (desoneração)
      * @return $this
      */
-    public function setIcmsReliefTaxAmount($icms_relief_tax_amount)
+    public function setTaxAmount($tax_amount)
     {
-        $this->container['icms_relief_tax_amount'] = $icms_relief_tax_amount;
+        $this->container['tax_amount'] = $tax_amount;
 
         return $this;
     }

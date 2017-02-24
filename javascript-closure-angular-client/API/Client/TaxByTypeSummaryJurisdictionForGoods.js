@@ -13,7 +13,7 @@ API.Client.TaxByTypeSummaryJurisdictionForGoods = function() {}
 API.Client.TaxByTypeSummaryJurisdictionForGoods.prototype.jurisdictionName;
 
 /**
- * Type of jurisdiction
+ * Type of jurisdiction - 'City' - 'State' - 'Country' 
  * @type {!string}
  * @export
  */

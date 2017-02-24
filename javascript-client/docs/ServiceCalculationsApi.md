@@ -1,6 +1,6 @@
-# Br16Api.ServiceCalculationsApi
+# AvaTaxBrazil.ServiceCalculationsApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,9 +23,9 @@ Retrieve a single transaction
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
@@ -81,9 +81,9 @@ Promote a calculation to transaction
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
@@ -139,9 +139,9 @@ Retrieve a list of transactions
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
@@ -194,13 +194,13 @@ Refer to the business rules below, for an outline view of Tax Determination Proc
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.PaymentTransactionIn(); // PaymentTransactionIn | Transaction Message
+var body = new AvaTaxBrazil.PaymentTransactionIn(); // PaymentTransactionIn | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -243,13 +243,13 @@ Refer to the business rules below, for an outline view of Tax Determination Proc
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.PurchaseTransactionIn(); // PurchaseTransactionIn | Transaction Message
+var body = new AvaTaxBrazil.PurchaseTransactionIn(); // PurchaseTransactionIn | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -292,13 +292,13 @@ Refer to the business rules below, for an outline view of Tax Determination Proc
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.ReceiptTransactionIn(); // ReceiptTransactionIn | Transaction Message
+var body = new AvaTaxBrazil.ReceiptTransactionIn(); // ReceiptTransactionIn | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -341,13 +341,13 @@ Refer to the business rules below, for an outline view of Tax Determination Proc
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.ServiceCalculationsApi();
+var apiInstance = new AvaTaxBrazil.ServiceCalculationsApi();
 
 var authorization = "authorization_example"; // String | Bearer {auth}
 
-var body = new Br16Api.SalesTransactionIn(); // SalesTransactionIn | Transaction Message
+var body = new AvaTaxBrazil.SalesTransactionIn(); // SalesTransactionIn | Transaction Message
 
 
 var callback = function(error, data, response) {

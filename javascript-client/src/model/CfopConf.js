@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('./CstIcmsEnum'), require('./IcmsTaxConf'), require('./TaxConf'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.CfopConf = factory(root.Br16Api.ApiClient, root.Br16Api.CstIcmsEnum, root.Br16Api.IcmsTaxConf, root.Br16Api.TaxConf);
+    root.AvaTaxBrazil.CfopConf = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.CstIcmsEnum, root.AvaTaxBrazil.IcmsTaxConf, root.AvaTaxBrazil.TaxConf);
   }
 }(this, function(ApiClient, CstIcmsEnum, IcmsTaxConf, TaxConf) {
   'use strict';
@@ -209,7 +209,7 @@ exports.prototype['stockImpact'] = undefined;
 exports.prototype['financialImpact'] = undefined;
 
   /**
-   * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+   * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    * @member {module:model/TaxConf.CstIPIEnum} cstIPI
    */
 exports.prototype['cstIPI'] = undefined;
@@ -221,7 +221,7 @@ exports.prototype['cstIPI'] = undefined;
 exports.prototype['ipiLegalTaxClass'] = undefined;
 
   /**
-   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
    * @member {module:model/TaxConf.AccruablePISTaxationEnum} accruablePISTaxation
    */
 exports.prototype['accruablePISTaxation'] = undefined;
@@ -239,7 +239,7 @@ exports.prototype['pisExemptLegalReasonCode'] = undefined;
 exports.prototype['pisExemptLegalReason'] = undefined;
 
   /**
-   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+   * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
    * @member {module:model/TaxConf.AccruableCOFINSTaxationEnum} accruableCOFINSTaxation
    */
 exports.prototype['accruableCOFINSTaxation'] = undefined;

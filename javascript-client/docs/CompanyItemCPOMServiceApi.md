@@ -1,6 +1,6 @@
-# Br16Api.CompanyItemCPOMServiceApi
+# AvaTaxBrazil.CompanyItemCPOMServiceApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,9 +21,9 @@ This operation return custom agast configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemCPOMServiceApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemCPOMServiceApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -73,9 +73,9 @@ This operation return custom agast configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemCPOMServiceApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemCPOMServiceApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -130,15 +130,15 @@ This method operation create a custom agast for one company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemCPOMServiceApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemCPOMServiceApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
 var code = "code_example"; // String | Item Code
 
-var body = new Br16Api.ItemCpom(); // ItemCpom | Transaction Message
+var body = new AvaTaxBrazil.ItemCpom(); // ItemCpom | Transaction Message
 
 
 var callback = function(error, data, response) {
@@ -180,9 +180,9 @@ No authorization required
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemCPOMServiceApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemCPOMServiceApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -232,9 +232,9 @@ This method operation create a custom agast for one company
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.CompanyItemCPOMServiceApi();
+var apiInstance = new AvaTaxBrazil.CompanyItemCPOMServiceApi();
 
 var companyId = "companyId_example"; // String | Company ID
 
@@ -242,7 +242,7 @@ var code = "code_example"; // String | Item Code
 
 var cityCode = 3.4; // Number | City Code
 
-var body = new Br16Api.ItemCpom(); // ItemCpom | Transaction Message
+var body = new AvaTaxBrazil.ItemCpom(); // ItemCpom | Transaction Message
 
 
 var callback = function(error, data, response) {

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -18,7 +18,7 @@ namespace API.Client {
     'use strict';
 
     export class AuthApi {
-        protected basePath = 'https://br16-dev-app03.br.avalara.com/v2';
+        protected basePath = 'http://avataxbr-sandbox.avalarabrasil.com.br/v2';
         public defaultHeaders : any = {};
 
         static $inject: string[] = ['$http', '$httpParamSerializer', 'basePath'];
@@ -41,7 +41,7 @@ namespace API.Client {
         /**
          * authorization
          * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
-         * @param authorization Authorization: Basic VGVzdDoxMjM&#x3D; 
+         * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
          */
         public authPost (authorization: string, extraHttpRequestParams?: any ) : ng.IHttpPromise<InlineResponse200> {
             const localVarPath = this.basePath + '/auth';
@@ -51,6 +51,36 @@ namespace API.Client {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new Error('Required parameter authorization was null or undefined when calling authPost.');
+            }
+            headerParams['Authorization'] = authorization;
+
+            let httpRequestParams: any = {
+                method: 'POST',
+                url: localVarPath,
+                json: true,
+                                                params: queryParameters,
+                headers: headerParams
+            };
+
+            if (extraHttpRequestParams) {
+                httpRequestParams = this.extendObj(httpRequestParams, extraHttpRequestParams);
+            }
+
+            return this.$http(httpRequestParams);
+        }
+        /**
+         * authorization
+         * Authorization: Basic VGVzdDoxMjM&#x3D;  Generate Base64:  - auth &#x3D; \&quot;{user}:{password}\&quot;  - base &#x3D; base64(auth)  - header[\&quot;Authorization\&quot;] &#x3D; \&quot;Basic \&quot; + base 
+         * @param authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. 
+         */
+        public v2AuthPost (authorization: string, extraHttpRequestParams?: any ) : ng.IHttpPromise<InlineResponse200> {
+            const localVarPath = this.basePath + '/v2/auth';
+
+            let queryParameters: any = {};
+            let headerParams: any = this.extendObj({}, this.defaultHeaders);
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new Error('Required parameter authorization was null or undefined when calling v2AuthPost.');
             }
             headerParams['Authorization'] = authorization;
 

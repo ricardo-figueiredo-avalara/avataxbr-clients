@@ -29,7 +29,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"messageType", @"documentCode", @"participants", @"nfAccessKey", @"nfceQrCode", @"transactionClass", @"eDocCreatorPerspective", @"shippingDate", @"additionalInfo", @"tpImp", @"idDest", @"indPres", @"defaultLocations", @"transport", @"nfRef", @"purchaseInfo", @"export"];
+  NSArray *optionalProperties = @[@"messageType", @"documentCode", @"participants", @"nfAccessKey", @"nfceQrCode", @"transactionModel", @"transactionClass", @"eDocCreatorPerspective", @"entityCode", @"currency", @"transactionDate", @"shippingDate", @"additionalInfo", @"tpImp", @"idDest", @"indPres", @"invoiceNumber", @"invoiceSerial", @"defaultLocations", @"transport", @"nfRef", @"payment", @"purchaseInfo", @"export"];
   return [optionalProperties containsObject:propertyName];
 }
 

@@ -234,9 +234,9 @@ public class GoodsCalculationsAPI: APIBase {
     "lineTaxedDiscount" : 1.3579000000000001069366817318950779736042022705078125,
     "useType" : "aeiou",
     "icmsTaxRelief" : {
-      "icmsTaxReliefReasonCode" : 123,
-      "icmsReliefTaxAmount" : 1.3579000000000001069366817318950779736042022705078125,
-      "icmsReliefTaxRate" : 1.3579000000000001069366817318950779736042022705078125
+      "taxBaseDiscount" : 1.3579000000000001069366817318950779736042022705078125,
+      "reasonCode" : "aeiou",
+      "taxAmount" : 1.3579000000000001069366817318950779736042022705078125
     },
     "vehicle" : {
       "colorName" : "aeiou",
@@ -586,9 +586,9 @@ public class GoodsCalculationsAPI: APIBase {
     "lineTaxedDiscount" : 1.3579000000000001069366817318950779736042022705078125,
     "useType" : "aeiou",
     "icmsTaxRelief" : {
-      "icmsTaxReliefReasonCode" : 123,
-      "icmsReliefTaxAmount" : 1.3579000000000001069366817318950779736042022705078125,
-      "icmsReliefTaxRate" : 1.3579000000000001069366817318950779736042022705078125
+      "taxBaseDiscount" : 1.3579000000000001069366817318950779736042022705078125,
+      "reasonCode" : "aeiou",
+      "taxAmount" : 1.3579000000000001069366817318950779736042022705078125
     },
     "vehicle" : {
       "colorName" : "aeiou",

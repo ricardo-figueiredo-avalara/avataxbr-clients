@@ -1,4 +1,4 @@
-# Br16Api.EntityInformerForGoodsFederalTaxRegime
+# AvaTaxBrazil.EntityInformerForGoodsFederalTaxRegime
 
 ## Properties
 Name | Type | Description | Notes

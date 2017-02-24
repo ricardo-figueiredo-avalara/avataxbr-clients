@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -23,13 +23,13 @@ module SwaggerClient
     # Inform that the process has financial impact.
     attr_accessor :financial_impact
 
-    # Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+    # Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
     attr_accessor :cst_ipi
 
     # Legal tax classificação for IPI (enquadramento) When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU= 
     attr_accessor :ipi_legal_tax_class
 
-    # Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+    # Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
     attr_accessor :accruable_pis_taxation
 
     # When exempt, taxable with zero, suspended, not taxable, this field holds the official code number
@@ -38,7 +38,7 @@ module SwaggerClient
     # When specifi reason, this field has the description
     attr_accessor :pis_exempt_legal_reason
 
-    # Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+    # Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
     attr_accessor :accruable_cofins_taxation
 
     # When exempt, taxable with zero, suspended, not taxable, this field holds the official code number
@@ -346,13 +346,13 @@ module SwaggerClient
     def valid?
       return false if @code.nil?
       return false if @code.to_s.length > 40
-      cst_ipi_validator = EnumAttributeValidator.new('String', ["50", "51", "52", "53", "54"])
+      cst_ipi_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N", "I", "O", "OZ"])
       return false unless cst_ipi_validator.valid?(@cst_ipi)
-      accruable_pis_taxation_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N"])
+      accruable_pis_taxation_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N", "O", "OZ"])
       return false unless accruable_pis_taxation_validator.valid?(@accruable_pis_taxation)
       return false if !@pis_exempt_legal_reason_code.nil? && @pis_exempt_legal_reason_code.to_s.length > 3
       return false if !@pis_exempt_legal_reason.nil? && @pis_exempt_legal_reason.to_s.length > 1024
-      accruable_cofins_taxation_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N"])
+      accruable_cofins_taxation_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N", "O", "OZ"])
       return false unless accruable_cofins_taxation_validator.valid?(@accruable_cofins_taxation)
       return false if !@cofins_exempt_legal_reason_code.nil? && @cofins_exempt_legal_reason_code.to_s.length > 3
       return false if !@cofins_exempt_legal_reason.nil? && @cofins_exempt_legal_reason.to_s.length > 1024
@@ -385,7 +385,7 @@ module SwaggerClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] cst_ipi Object to be assigned
     def cst_ipi=(cst_ipi)
-      validator = EnumAttributeValidator.new('String', ["50", "51", "52", "53", "54"])
+      validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N", "I", "O", "OZ"])
       unless validator.valid?(cst_ipi)
         fail ArgumentError, "invalid value for 'cst_ipi', must be one of #{validator.allowable_values}."
       end
@@ -395,7 +395,7 @@ module SwaggerClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] accruable_pis_taxation Object to be assigned
     def accruable_pis_taxation=(accruable_pis_taxation)
-      validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N"])
+      validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N", "O", "OZ"])
       unless validator.valid?(accruable_pis_taxation)
         fail ArgumentError, "invalid value for 'accruable_pis_taxation', must be one of #{validator.allowable_values}."
       end
@@ -427,7 +427,7 @@ module SwaggerClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] accruable_cofins_taxation Object to be assigned
     def accruable_cofins_taxation=(accruable_cofins_taxation)
-      validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N"])
+      validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N", "O", "OZ"])
       unless validator.valid?(accruable_cofins_taxation)
         fail ArgumentError, "invalid value for 'accruable_cofins_taxation', must be one of #{validator.allowable_values}."
       end

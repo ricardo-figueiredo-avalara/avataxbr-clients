@@ -1,7 +1,7 @@
 {
-  "name": "br16___api",
+  "name": "ava_tax_brazil",
   "version": "1.0",
-  "description": "This_documentation_is_about_service_accessories_that_will_compose_the_product_BR16_this_services_are_essencial_to_maintenance_and_configuration_of_accounts",
+  "description": "The_Avatax_Brazil_API_exposes_the_most_commonly_services_available_for_interacting_with_the_AvaTax_Brazil_services_allowing_calculation_of_taxes_issuing_electronic_invoice_documents_and_modifying_existing_transactions_when_allowed_by_tax_authorities___This_API_is_exclusively_for_use_by_business_with_a_physical_presence_in_Brazil_",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

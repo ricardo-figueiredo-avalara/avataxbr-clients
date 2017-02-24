@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -227,7 +227,6 @@ namespace IO.Swagger.Model
         /// <param name="IsPisCofinsEstimatedCredit">The credit PIS/COFINS is subject to purchase form companies, but exist some exceptions, when the credit will be a estimated amount.</param>
         /// <param name="PiscofinsRevenueType">- &#39;01&#39; # Vinculada Exclusivamente a Receita Tributada no Mercado Interno - &#39;02&#39; # Exclusivamente a Receita Não Tributada no Mercado Interno - &#39;03&#39; # Exclusivamente a Receita de Exportação - &#39;04&#39; # Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno - &#39;05&#39; # Vinculada a Receitas Tributadas no Mercado Interno e de Exportação - &#39;06&#39; # Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação - &#39;07&#39; # Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação .</param>
         /// <param name="IcmsBaseDiscountForMonoPhaseSocialContr">Discount allowed on icms base when PIS/COFINS are Monophase.</param>
-        /// <param name="Cest">tax substitution code - Codigo especificador da Substuicao Tributaria.</param>
         /// <param name="Cean">GTIN NUMBER.</param>
         /// <param name="Nve">Nomenclatura de Valor aduaneio e Estatístico - NCM extension code.</param>
         /// <param name="SalesUnit">SalesUnit.</param>
@@ -241,7 +240,7 @@ namespace IO.Swagger.Model
         /// <param name="PurchaseUnitIcmsStfactor">factor to convert purchase quantity to ICMS-ST taxable quantity when it is by SRF Statutory Retail Price (Pauta).</param>
         /// <param name="PurchaseUnitPisCofinsfactor">factor to convert purchase quantity to PIS/COFINS taxable quantity when it is by SRF Statutory Retail Price (Pauta).</param>
         /// <param name="FirstUse">When the product is new, and will be retail, firt time that it exit it is subject to IPI.</param>
-        public ItemGoods(Guid? CompanyId = default(Guid?), string Code = default(string), string Agast = default(string), string Description = default(string), string SealCode = default(string), string NFCI = default(string), bool? IsIcmsStSubstitute = default(bool?), SourceEnum? Source = default(SourceEnum?), ProductTypeEnum? ProductType = default(ProductTypeEnum?), bool? ManufacturerEquivalent = default(bool?), bool? AppropriateIPIcreditWhenInGoing = default(bool?), bool? UsuallyAppropriatePISCOFINSCredit = default(bool?), bool? IsPisCofinsEstimatedCredit = default(bool?), PiscofinsRevenueTypeEnum? PiscofinsRevenueType = default(PiscofinsRevenueTypeEnum?), double? IcmsBaseDiscountForMonoPhaseSocialContr = default(double?), string Cest = default(string), string Cean = default(string), string Nve = default(string), string SalesUnit = default(string), double? SalesUnitIPIfactor = default(double?), double? SalesUnitIcmsfactor = default(double?), double? SalesUnitIcmsStfactor = default(double?), double? SalesUnitPisCofinsfactor = default(double?), string PurchaseUnit = default(string), double? PurchaseUnitIPIfactor = default(double?), double? PurchaseUnitIcmsfactor = default(double?), double? PurchaseUnitIcmsStfactor = default(double?), double? PurchaseUnitPisCofinsfactor = default(double?), bool? FirstUse = default(bool?))
+        public ItemGoods(Guid? CompanyId = default(Guid?), string Code = default(string), string Agast = default(string), string Description = default(string), string SealCode = default(string), string NFCI = default(string), bool? IsIcmsStSubstitute = default(bool?), SourceEnum? Source = default(SourceEnum?), ProductTypeEnum? ProductType = default(ProductTypeEnum?), bool? ManufacturerEquivalent = default(bool?), bool? AppropriateIPIcreditWhenInGoing = default(bool?), bool? UsuallyAppropriatePISCOFINSCredit = default(bool?), bool? IsPisCofinsEstimatedCredit = default(bool?), PiscofinsRevenueTypeEnum? PiscofinsRevenueType = default(PiscofinsRevenueTypeEnum?), double? IcmsBaseDiscountForMonoPhaseSocialContr = default(double?), string Cean = default(string), string Nve = default(string), string SalesUnit = default(string), double? SalesUnitIPIfactor = default(double?), double? SalesUnitIcmsfactor = default(double?), double? SalesUnitIcmsStfactor = default(double?), double? SalesUnitPisCofinsfactor = default(double?), string PurchaseUnit = default(string), double? PurchaseUnitIPIfactor = default(double?), double? PurchaseUnitIcmsfactor = default(double?), double? PurchaseUnitIcmsStfactor = default(double?), double? PurchaseUnitPisCofinsfactor = default(double?), bool? FirstUse = default(bool?))
         {
             // to ensure "CompanyId" is required (not null)
             if (CompanyId == null)
@@ -290,7 +289,6 @@ namespace IO.Swagger.Model
             this.IsPisCofinsEstimatedCredit = IsPisCofinsEstimatedCredit;
             this.PiscofinsRevenueType = PiscofinsRevenueType;
             this.IcmsBaseDiscountForMonoPhaseSocialContr = IcmsBaseDiscountForMonoPhaseSocialContr;
-            this.Cest = Cest;
             this.Cean = Cean;
             this.Nve = Nve;
             this.SalesUnit = SalesUnit;
@@ -378,12 +376,6 @@ namespace IO.Swagger.Model
         /// <value>Discount allowed on icms base when PIS/COFINS are Monophase</value>
         [DataMember(Name="icmsBaseDiscountForMonoPhaseSocialContr", EmitDefaultValue=false)]
         public double? IcmsBaseDiscountForMonoPhaseSocialContr { get; set; }
-        /// <summary>
-        /// tax substitution code - Codigo especificador da Substuicao Tributaria
-        /// </summary>
-        /// <value>tax substitution code - Codigo especificador da Substuicao Tributaria</value>
-        [DataMember(Name="cest", EmitDefaultValue=false)]
-        public string Cest { get; set; }
         /// <summary>
         /// GTIN NUMBER
         /// </summary>
@@ -483,7 +475,6 @@ namespace IO.Swagger.Model
             sb.Append("  IsPisCofinsEstimatedCredit: ").Append(IsPisCofinsEstimatedCredit).Append("\n");
             sb.Append("  PiscofinsRevenueType: ").Append(PiscofinsRevenueType).Append("\n");
             sb.Append("  IcmsBaseDiscountForMonoPhaseSocialContr: ").Append(IcmsBaseDiscountForMonoPhaseSocialContr).Append("\n");
-            sb.Append("  Cest: ").Append(Cest).Append("\n");
             sb.Append("  Cean: ").Append(Cean).Append("\n");
             sb.Append("  Nve: ").Append(Nve).Append("\n");
             sb.Append("  SalesUnit: ").Append(SalesUnit).Append("\n");
@@ -609,11 +600,6 @@ namespace IO.Swagger.Model
                     this.IcmsBaseDiscountForMonoPhaseSocialContr.Equals(other.IcmsBaseDiscountForMonoPhaseSocialContr)
                 ) && 
                 (
-                    this.Cest == other.Cest ||
-                    this.Cest != null &&
-                    this.Cest.Equals(other.Cest)
-                ) && 
-                (
                     this.Cean == other.Cean ||
                     this.Cean != null &&
                     this.Cean.Equals(other.Cean)
@@ -721,8 +707,6 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.PiscofinsRevenueType.GetHashCode();
                 if (this.IcmsBaseDiscountForMonoPhaseSocialContr != null)
                     hash = hash * 59 + this.IcmsBaseDiscountForMonoPhaseSocialContr.GetHashCode();
-                if (this.Cest != null)
-                    hash = hash * 59 + this.Cest.GetHashCode();
                 if (this.Cean != null)
                     hash = hash * 59 + this.Cean.GetHashCode();
                 if (this.Nve != null)
@@ -784,13 +768,6 @@ namespace IO.Swagger.Model
             if (false == regexNFCI.Match(this.NFCI).Success)
             {
                 yield return new ValidationResult("Invalid value for NFCI, must match a pattern of /[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}/.", new [] { "NFCI" });
-            }
-
-            // Cest (string) pattern
-            Regex regexCest = new Regex(@"[0-9]{7}", RegexOptions.CultureInvariant);
-            if (false == regexCest.Match(this.Cest).Success)
-            {
-                yield return new ValidationResult("Invalid value for Cest, must match a pattern of /[0-9]{7}/.", new [] { "Cest" });
             }
 
             // Cean (string) pattern

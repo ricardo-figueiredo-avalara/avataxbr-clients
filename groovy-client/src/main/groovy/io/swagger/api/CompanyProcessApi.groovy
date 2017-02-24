@@ -14,7 +14,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class CompanyProcessApi {
-    String basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     String versionPath = "/api/v1"
 
     def companiesCompanyIdProcessCodeGet ( String companyId, String code, Closure onSuccess, Closure onFailure)  {

@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -25,7 +25,7 @@ import io.swagger.client.model.NRefRefNF;
  * Referenced Invoices The invoice can be one of this types, - &#39;refNFe - Eletronic Invoice&#39; - &#39;refCTE - Transport Invoice&#39; - &#39;refECF - Reatail Cupom&#39; - &#39;refNF  - Invoice model 1 or 1A&#39; - &#39;refFarmerNF - farmer invoice&#39; 
  */
 @ApiModel(description = "Referenced Invoices The invoice can be one of this types, - 'refNFe - Eletronic Invoice' - 'refCTE - Transport Invoice' - 'refECF - Reatail Cupom' - 'refNF  - Invoice model 1 or 1A' - 'refFarmerNF - farmer invoice' ")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class NRef {
   /**
    * Gets or Sets type

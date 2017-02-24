@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,11 +30,6 @@ TaxTypeRate::TaxTypeRate()
     m_QuantityUnidBaseIsSet = false;
     m_SpecializationType = U("");
     m_SpecializationTypeIsSet = false;
-    m_ExemptionReasonCode = U("");
-    m_ExemptionReasonCodeIsSet = false;
-    m_CustomExemptionReasonDescription = U("");
-    m_CustomExemptionReasonDescriptionIsSet = false;
-    m_WithholdingIsSet = false;
     
 }
 
@@ -69,18 +64,6 @@ web::json::value TaxTypeRate::toJson() const
     {
         val[U("specializationType")] = ModelBase::toJson(m_SpecializationType);
     }
-    if(m_ExemptionReasonCodeIsSet)
-    {
-        val[U("exemptionReasonCode")] = ModelBase::toJson(m_ExemptionReasonCode);
-    }
-    if(m_CustomExemptionReasonDescriptionIsSet)
-    {
-        val[U("customExemptionReasonDescription")] = ModelBase::toJson(m_CustomExemptionReasonDescription);
-    }
-    if(m_WithholdingIsSet)
-    {
-        val[U("withholding")] = ModelBase::toJson(m_Withholding);
-    }
     
 
     return val;
@@ -108,26 +91,6 @@ void TaxTypeRate::fromJson(web::json::value& val)
     if(val.has_field(U("specializationType")))
     {
         setSpecializationType(ModelBase::stringFromJson(val[U("specializationType")]));
-        
-    }
-    if(val.has_field(U("exemptionReasonCode")))
-    {
-        setExemptionReasonCode(ModelBase::stringFromJson(val[U("exemptionReasonCode")]));
-        
-    }
-    if(val.has_field(U("customExemptionReasonDescription")))
-    {
-        setCustomExemptionReasonDescription(ModelBase::stringFromJson(val[U("customExemptionReasonDescription")]));
-        
-    }
-    if(val.has_field(U("withholding")))
-    {
-        if(!val[U("withholding")].is_null())
-        {
-            std::shared_ptr<TaxTypeRate_withholding> newItem(new TaxTypeRate_withholding());
-            newItem->fromJson(val[U("withholding")]);
-            setWithholding( newItem );
-        }
         
     }
     
@@ -161,24 +124,6 @@ void TaxTypeRate::toMultipart(std::shared_ptr<MultipartFormData> multipart, cons
         multipart->add(ModelBase::toHttpContent(namePrefix + U("specializationType"), m_SpecializationType));
         
     }
-    if(m_ExemptionReasonCodeIsSet)
-    {
-        multipart->add(ModelBase::toHttpContent(namePrefix + U("exemptionReasonCode"), m_ExemptionReasonCode));
-        
-    }
-    if(m_CustomExemptionReasonDescriptionIsSet)
-    {
-        multipart->add(ModelBase::toHttpContent(namePrefix + U("customExemptionReasonDescription"), m_CustomExemptionReasonDescription));
-        
-    }
-    if(m_WithholdingIsSet)
-    {
-        if (m_Withholding.get())
-        {
-            m_Withholding->toMultipart(multipart, U("withholding."));
-        }
-        
-    }
     
 }
 
@@ -210,26 +155,6 @@ void TaxTypeRate::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, co
     if(multipart->hasContent(U("specializationType")))
     {
         setSpecializationType(ModelBase::stringFromHttpContent(multipart->getContent(U("specializationType"))));
-        
-    }
-    if(multipart->hasContent(U("exemptionReasonCode")))
-    {
-        setExemptionReasonCode(ModelBase::stringFromHttpContent(multipart->getContent(U("exemptionReasonCode"))));
-        
-    }
-    if(multipart->hasContent(U("customExemptionReasonDescription")))
-    {
-        setCustomExemptionReasonDescription(ModelBase::stringFromHttpContent(multipart->getContent(U("customExemptionReasonDescription"))));
-        
-    }
-    if(multipart->hasContent(U("withholding")))
-    {
-        if(multipart->hasContent(U("withholding")))
-        {
-            std::shared_ptr<TaxTypeRate_withholding> newItem(new TaxTypeRate_withholding());
-            newItem->fromMultiPart(multipart, U("withholding."));
-            setWithholding( newItem );
-        }
         
     }
     
@@ -321,57 +246,6 @@ bool TaxTypeRate::specializationTypeIsSet() const
 void TaxTypeRate::unsetSpecializationType()
 {
     m_SpecializationTypeIsSet = false;
-}
-utility::string_t TaxTypeRate::getExemptionReasonCode() const
-{
-    return m_ExemptionReasonCode;
-}
-void TaxTypeRate::setExemptionReasonCode(utility::string_t value)
-{
-    m_ExemptionReasonCode = value;
-    m_ExemptionReasonCodeIsSet = true;
-}
-bool TaxTypeRate::exemptionReasonCodeIsSet() const
-{
-    return m_ExemptionReasonCodeIsSet;
-}
-void TaxTypeRate::unsetExemptionReasonCode()
-{
-    m_ExemptionReasonCodeIsSet = false;
-}
-utility::string_t TaxTypeRate::getCustomExemptionReasonDescription() const
-{
-    return m_CustomExemptionReasonDescription;
-}
-void TaxTypeRate::setCustomExemptionReasonDescription(utility::string_t value)
-{
-    m_CustomExemptionReasonDescription = value;
-    m_CustomExemptionReasonDescriptionIsSet = true;
-}
-bool TaxTypeRate::customExemptionReasonDescriptionIsSet() const
-{
-    return m_CustomExemptionReasonDescriptionIsSet;
-}
-void TaxTypeRate::unsetCustomExemptionReasonDescription()
-{
-    m_CustomExemptionReasonDescriptionIsSet = false;
-}
-std::shared_ptr<TaxTypeRate_withholding> TaxTypeRate::getWithholding() const
-{
-    return m_Withholding;
-}
-void TaxTypeRate::setWithholding(std::shared_ptr<TaxTypeRate_withholding> value)
-{
-    m_Withholding = value;
-    m_WithholdingIsSet = true;
-}
-bool TaxTypeRate::withholdingIsSet() const
-{
-    return m_WithholdingIsSet;
-}
-void TaxTypeRate::unsetWithholding()
-{
-    m_WithholdingIsSet = false;
 }
 
 }

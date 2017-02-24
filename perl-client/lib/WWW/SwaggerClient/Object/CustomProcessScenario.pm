@@ -1,8 +1,8 @@
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -42,9 +42,9 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -166,7 +166,7 @@ __PACKAGE__->method_documentation({
     'cst_ipi' => {
     	datatype => 'string',
     	base_name => 'cstIPI',
-    	description => 'Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune ',
+    	description => 'Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES ',
     	format => '',
     	read_only => '',
     		},
@@ -180,7 +180,7 @@ __PACKAGE__->method_documentation({
     'accruable_pis_taxation' => {
     	datatype => 'string',
     	base_name => 'accruablePISTaxation',
-    	description => 'Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE ',
+    	description => 'Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE - &#39;O&#39; # OTHER - &#39;OZ&#39;# OTHER AND ZERO VALUES ',
     	format => '',
     	read_only => '',
     		},
@@ -201,7 +201,7 @@ __PACKAGE__->method_documentation({
     'accruable_cofins_taxation' => {
     	datatype => 'string',
     	base_name => 'accruableCOFINSTaxation',
-    	description => 'Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE ',
+    	description => 'Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES ',
     	format => '',
     	read_only => '',
     		},

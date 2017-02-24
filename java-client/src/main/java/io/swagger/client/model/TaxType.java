@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -19,7 +19,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * Tax Rate
+ * Tax Rate Obs: AR - \"a recolher\" (serviço). RP e PP - filtrado para alvos de lucro real ou lucro presumido (serviço) 
  */
 public enum TaxType {
   
@@ -28,6 +28,9 @@ public enum TaxType {
   
   @SerializedName("INSS_RF")
   INSS_RF("INSS_RF"),
+  
+  @SerializedName("INSS_AR")
+  INSS_AR("INSS_AR"),
   
   @SerializedName("IRRF")
   IRRF("IRRF"),
@@ -38,17 +41,35 @@ public enum TaxType {
   @SerializedName("PIS_RF")
   PIS_RF("PIS_RF"),
   
+  @SerializedName("PIS_RP")
+  PIS_RP("PIS_RP"),
+  
+  @SerializedName("PIS_PP")
+  PIS_PP("PIS_PP"),
+  
   @SerializedName("COFINS")
   COFINS("COFINS"),
   
   @SerializedName("COFINS_RF")
   COFINS_RF("COFINS_RF"),
   
+  @SerializedName("COFINS_RP")
+  COFINS_RP("COFINS_RP"),
+  
+  @SerializedName("COFINS_PP")
+  COFINS_PP("COFINS_PP"),
+  
   @SerializedName("CSLL")
   CSLL("CSLL"),
   
   @SerializedName("CSLL_RF")
   CSLL_RF("CSLL_RF"),
+  
+  @SerializedName("CSLL_PP")
+  CSLL_PP("CSLL_PP"),
+  
+  @SerializedName("CSLL_RP")
+  CSLL_RP("CSLL_RP"),
   
   @SerializedName("IRPJ")
   IRPJ("IRPJ"),

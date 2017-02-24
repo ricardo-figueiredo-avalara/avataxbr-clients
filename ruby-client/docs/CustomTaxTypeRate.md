@@ -9,9 +9,6 @@ Name | Type | Description | Notes
 **srv_amount** | **Float** | Specific tax rate ex 3.5 (3.5%) | [optional] 
 **quantity_unid_base** | **String** |  | [optional] 
 **specialization_type** | **String** |  | [optional] 
-**exemption_reason_code** | **String** | UUID Reference to an item in the LegalReason store.  | [optional] 
-**custom_exemption_reason_description** | **String** | Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other).  | [optional] 
-**withholding** | [**TaxTypeRateWithholding**](TaxTypeRateWithholding.md) |  | [optional] 
 **company_id** | **String** | Company ID | 
 
 

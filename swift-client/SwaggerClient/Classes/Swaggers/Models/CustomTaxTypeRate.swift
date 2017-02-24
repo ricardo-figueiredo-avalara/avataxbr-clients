@@ -27,11 +27,6 @@ public class CustomTaxTypeRate: JSONEncodable {
     public var srvAmount: Double?
     public var quantityUnidBase: String?
     public var specializationType: SpecializationType?
-    /** UUID Reference to an item in the LegalReason store.  */
-    public var exemptionReasonCode: String?
-    /** Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other).  */
-    public var customExemptionReasonDescription: String?
-    public var withholding: TaxTypeRateWithholding?
     /** Company ID */
     public var companyId: NSUUID?
 
@@ -46,9 +41,6 @@ public class CustomTaxTypeRate: JSONEncodable {
         nillableDictionary["srvAmount"] = self.srvAmount
         nillableDictionary["quantityUnidBase"] = self.quantityUnidBase
         nillableDictionary["specializationType"] = self.specializationType?.rawValue
-        nillableDictionary["exemptionReasonCode"] = self.exemptionReasonCode
-        nillableDictionary["customExemptionReasonDescription"] = self.customExemptionReasonDescription
-        nillableDictionary["withholding"] = self.withholding?.encodeToJSON()
         nillableDictionary["companyId"] = self.companyId?.encodeToJSON()
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary

@@ -1,6 +1,6 @@
-# Br16Api.TaxConfIBPTApi
+# AvaTaxBrazil.TaxConfIBPTApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,11 +19,11 @@ create a new Process Type configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfIBPTApi();
+var apiInstance = new AvaTaxBrazil.TaxConfIBPTApi();
 
-var taxconfprocess = new Br16Api.IbptConf(); // IbptConf | The pet JSON you want to post
+var taxconfprocess = new AvaTaxBrazil.IbptConf(); // IbptConf | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {
@@ -63,9 +63,9 @@ disable a IBPT.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfIBPTApi();
+var apiInstance = new AvaTaxBrazil.TaxConfIBPTApi();
 
 var code = "code_example"; // String | IBPT Code
 
@@ -109,9 +109,9 @@ This operation return Process Type configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfIBPTApi();
+var apiInstance = new AvaTaxBrazil.TaxConfIBPTApi();
 
 var code = "code_example"; // String | IBPT Code
 
@@ -155,9 +155,9 @@ This operation return Process Type configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfIBPTApi();
+var apiInstance = new AvaTaxBrazil.TaxConfIBPTApi();
 
 var opts = { 
   'accountId': "accountId_example", // String | filter the configuration by accountID, if not informed, only the standard configuration will be returned 
@@ -204,13 +204,13 @@ update a Process Type configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfIBPTApi();
+var apiInstance = new AvaTaxBrazil.TaxConfIBPTApi();
 
 var code = "code_example"; // String | IBPT Code
 
-var taxconfprocess = new Br16Api.IbptConf(); // IbptConf | The pet JSON you want to post
+var taxconfprocess = new AvaTaxBrazil.IbptConf(); // IbptConf | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.DefaultLocations();
+    instance = new AvaTaxBrazil.DefaultLocations();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('DefaultLocations', function() {
     it('should create an instance of DefaultLocations', function() {
       // uncomment below and update the code to test DefaultLocations
-      //var instane = new Br16Api.DefaultLocations();
-      //expect(instance).to.be.a(Br16Api.DefaultLocations);
+      //var instane = new AvaTaxBrazil.DefaultLocations();
+      //expect(instance).to.be.a(AvaTaxBrazil.DefaultLocations);
     });
 
     it('should have the property entity (base name: "entity")', function() {
       // uncomment below and update the code to test the property entity
-      //var instane = new Br16Api.DefaultLocations();
+      //var instane = new AvaTaxBrazil.DefaultLocations();
       //expect(instance).to.be();
     });
 
     it('should have the property company (base name: "company")', function() {
       // uncomment below and update the code to test the property company
-      //var instane = new Br16Api.DefaultLocations();
+      //var instane = new AvaTaxBrazil.DefaultLocations();
       //expect(instance).to.be();
     });
 
     it('should have the property transporter (base name: "transporter")', function() {
       // uncomment below and update the code to test the property transporter
-      //var instane = new Br16Api.DefaultLocations();
+      //var instane = new AvaTaxBrazil.DefaultLocations();
       //expect(instance).to.be();
     });
 
     it('should have the property deliveryLocation (base name: "deliveryLocation")', function() {
       // uncomment below and update the code to test the property deliveryLocation
-      //var instane = new Br16Api.DefaultLocations();
+      //var instane = new AvaTaxBrazil.DefaultLocations();
       //expect(instance).to.be();
     });
 
     it('should have the property pickupLocation (base name: "pickupLocation")', function() {
       // uncomment below and update the code to test the property pickupLocation
-      //var instane = new Br16Api.DefaultLocations();
+      //var instane = new AvaTaxBrazil.DefaultLocations();
       //expect(instance).to.be();
     });
 

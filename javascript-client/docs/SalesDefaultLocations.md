@@ -1,4 +1,4 @@
-# Br16Api.SalesDefaultLocations
+# AvaTaxBrazil.SalesDefaultLocations
 
 ## Properties
 Name | Type | Description | Notes

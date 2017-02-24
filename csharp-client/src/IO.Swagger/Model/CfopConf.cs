@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -30,48 +30,66 @@ namespace IO.Swagger.Model
     public partial class CfopConf :  IEquatable<CfopConf>, IValidatableObject
     {
         /// <summary>
-        /// Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+        /// Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
         /// </summary>
-        /// <value>Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune </value>
+        /// <value>Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CstIPIEnum
         {
             
             /// <summary>
-            /// Enum _50 for "50"
+            /// Enum T for "T"
             /// </summary>
-            [EnumMember(Value = "50")]
-            _50,
+            [EnumMember(Value = "T")]
+            T,
             
             /// <summary>
-            /// Enum _51 for "51"
+            /// Enum Z for "Z"
             /// </summary>
-            [EnumMember(Value = "51")]
-            _51,
+            [EnumMember(Value = "Z")]
+            Z,
             
             /// <summary>
-            /// Enum _52 for "52"
+            /// Enum E for "E"
             /// </summary>
-            [EnumMember(Value = "52")]
-            _52,
+            [EnumMember(Value = "E")]
+            E,
             
             /// <summary>
-            /// Enum _53 for "53"
+            /// Enum H for "H"
             /// </summary>
-            [EnumMember(Value = "53")]
-            _53,
+            [EnumMember(Value = "H")]
+            H,
             
             /// <summary>
-            /// Enum _54 for "54"
+            /// Enum N for "N"
             /// </summary>
-            [EnumMember(Value = "54")]
-            _54
+            [EnumMember(Value = "N")]
+            N,
+            
+            /// <summary>
+            /// Enum I for "I"
+            /// </summary>
+            [EnumMember(Value = "I")]
+            I,
+            
+            /// <summary>
+            /// Enum O for "O"
+            /// </summary>
+            [EnumMember(Value = "O")]
+            O,
+            
+            /// <summary>
+            /// Enum OZ for "OZ"
+            /// </summary>
+            [EnumMember(Value = "OZ")]
+            OZ
         }
 
         /// <summary>
-        /// Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        /// Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
         /// </summary>
-        /// <value>Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE </value>
+        /// <value>Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AccruablePISTaxationEnum
         {
@@ -104,13 +122,25 @@ namespace IO.Swagger.Model
             /// Enum N for "N"
             /// </summary>
             [EnumMember(Value = "N")]
-            N
+            N,
+            
+            /// <summary>
+            /// Enum O for "O"
+            /// </summary>
+            [EnumMember(Value = "O")]
+            O,
+            
+            /// <summary>
+            /// Enum OZ for "OZ"
+            /// </summary>
+            [EnumMember(Value = "OZ")]
+            OZ
         }
 
         /// <summary>
-        /// Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        /// Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
         /// </summary>
-        /// <value>Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE </value>
+        /// <value>Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AccruableCOFINSTaxationEnum
         {
@@ -143,7 +173,19 @@ namespace IO.Swagger.Model
             /// Enum N for "N"
             /// </summary>
             [EnumMember(Value = "N")]
-            N
+            N,
+            
+            /// <summary>
+            /// Enum O for "O"
+            /// </summary>
+            [EnumMember(Value = "O")]
+            O,
+            
+            /// <summary>
+            /// Enum OZ for "OZ"
+            /// </summary>
+            [EnumMember(Value = "OZ")]
+            OZ
         }
 
         /// <summary>
@@ -270,21 +312,21 @@ namespace IO.Swagger.Model
         }
 
         /// <summary>
-        /// Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+        /// Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
         /// </summary>
-        /// <value>Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune </value>
+        /// <value>Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES </value>
         [DataMember(Name="cstIPI", EmitDefaultValue=false)]
         public CstIPIEnum? CstIPI { get; set; }
         /// <summary>
-        /// Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        /// Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
         /// </summary>
-        /// <value>Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE </value>
+        /// <value>Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES </value>
         [DataMember(Name="accruablePISTaxation", EmitDefaultValue=false)]
         public AccruablePISTaxationEnum? AccruablePISTaxation { get; set; }
         /// <summary>
-        /// Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+        /// Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
         /// </summary>
-        /// <value>Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE </value>
+        /// <value>Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES </value>
         [DataMember(Name="accruableCOFINSTaxation", EmitDefaultValue=false)]
         public AccruableCOFINSTaxationEnum? AccruableCOFINSTaxation { get; set; }
         /// <summary>
@@ -316,12 +358,12 @@ namespace IO.Swagger.Model
         /// <param name="Code">main unique identificator (required).</param>
         /// <param name="StockImpact">Inform that the process has inventory impact..</param>
         /// <param name="FinancialImpact">Inform that the process has financial impact..</param>
-        /// <param name="CstIPI">Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune .</param>
+        /// <param name="CstIPI">Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES .</param>
         /// <param name="IpiLegalTaxClass">Legal tax classificação for IPI (enquadramento) When the processo has CST IPI 52 or 54, is mandatory inform Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D; .</param>
-        /// <param name="AccruablePISTaxation">Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE .</param>
+        /// <param name="AccruablePISTaxation">Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE - &#39;O&#39; # OTHER - &#39;OZ&#39;# OTHER AND ZERO VALUES .</param>
         /// <param name="PisExemptLegalReasonCode">When exempt, taxable with zero, suspended, not taxable, this field holds the official code number.</param>
         /// <param name="PisExemptLegalReason">When specifi reason, this field has the description.</param>
-        /// <param name="AccruableCOFINSTaxation">Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE .</param>
+        /// <param name="AccruableCOFINSTaxation">Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;H&#39;  # SUSPENDED - &#39;N&#39;  # NO TAXABLE     - &#39;O&#39;  # OTHER - &#39;OZ&#39; # OTHER AND ZERO VALUES .</param>
         /// <param name="CofinsExemptLegalReasonCode">When exempt, taxable with zero, suspended, not taxable, this field holds the official code number.</param>
         /// <param name="CofinsExemptLegalReason">When specifi reason, this field has the description.</param>
         /// <param name="AllowIPIcreditWhenInGoing">Inform that the process allow IPI credit to Input process.</param>

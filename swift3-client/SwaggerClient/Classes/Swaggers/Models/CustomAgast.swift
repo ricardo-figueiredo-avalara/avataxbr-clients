@@ -10,11 +10,11 @@ import Foundation
 
 open class CustomAgast: JSONEncodable {
     public enum CstIPI: String { 
-        case 50 = "50"
-        case 51 = "51"
-        case 52 = "52"
-        case 53 = "53"
-        case 54 = "54"
+        case t = "T"
+        case z = "Z"
+        case e = "E"
+        case n = "N"
+        case i = "I"
     }
     public enum PisCofinsTaxReporting: String { 
         case cumulative = "cumulative"
@@ -72,7 +72,7 @@ open class CustomAgast: JSONEncodable {
     /** GTIN NUMBER */
     public var cean: String?
     public var codeType: AgastCodeType?
-    /** Inform if this process is subject to IPI taxation on output process - &#39;50&#39; # Saída Tributada - &#39;51&#39; # Saída Tributável com Alíquota Zero - &#39;52&#39; # Saída Isenta - &#39;53&#39; # Saída Não-Tributada - &#39;54&#39; # Saída Imune  */
+    /** Inform if this process is subject to IPI taxation on output process - &#39;T&#39;  # TAXABLE - &#39;Z&#39;  # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39;  # EXEMPT - &#39;N&#39;  # NO TAXABLE     - &#39;I&#39;  # IMMUNE  */
     public var cstIPI: CstIPI?
     /** Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo&#x3D;mCnJajU4BKU&#x3D;  */
     public var ipiLegalTaxClass: String?
@@ -80,10 +80,21 @@ open class CustomAgast: JSONEncodable {
     public var pisCofinsTaxReporting: PisCofinsTaxReporting?
     /** Inform if this item by nature is subject to PIS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE  */
     public var accruablePISTaxation: AccruablePISTaxation?
+    /** When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption */
+    public var pisExemptLegalReasonCode: String?
+    /** When specified a reason, this field holds the reason&#39;s description */
+    public var pisExemptLegalReason: String?
     /** Inform if this item by nature is subject to COFINS taxation or exempt - &#39;T&#39; # TAXABLE - &#39;Z&#39; # TAXABLE WITH RATE&#x3D;0.00 - &#39;E&#39; # EXEMPT - &#39;H&#39; # SUSPENDED - &#39;N&#39; # NO TAXABLE  */
     public var accruableCOFINSTaxation: AccruableCOFINSTaxation?
+    /** When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption */
+    public var cofinsExemptLegalReasonCode: String?
+    /** When specified a reason, this field holds the reason&#39;s description */
+    public var cofinsExemptLegalReason: String?
     /** Inform if this item by nature is subject to CSLL taxation or exempt - &#39;T&#39; # TAXABLE - &#39;E&#39; # EXEMPT  */
     public var accruableCSLLTaxation: AccruableCSLLTaxation?
+    public var csllExemptLegalReason: String?
+    public var csllExemptLegalReasonCode: String?
+    public var withholding: AgastWithholding?
     /** for service items with City Jurisdiction, inform where the ISS tax is due */
     public var issDueatDestination: Bool?
     /** on Real Profit Purchase transaction, inform if this item allows tax credits when it is non-cumulative */
@@ -114,8 +125,15 @@ open class CustomAgast: JSONEncodable {
         nillableDictionary["ipiLegalTaxClass"] = self.ipiLegalTaxClass
         nillableDictionary["pisCofinsTaxReporting"] = self.pisCofinsTaxReporting?.rawValue
         nillableDictionary["accruablePISTaxation"] = self.accruablePISTaxation?.rawValue
+        nillableDictionary["pisExemptLegalReasonCode"] = self.pisExemptLegalReasonCode
+        nillableDictionary["pisExemptLegalReason"] = self.pisExemptLegalReason
         nillableDictionary["accruableCOFINSTaxation"] = self.accruableCOFINSTaxation?.rawValue
+        nillableDictionary["cofinsExemptLegalReasonCode"] = self.cofinsExemptLegalReasonCode
+        nillableDictionary["cofinsExemptLegalReason"] = self.cofinsExemptLegalReason
         nillableDictionary["accruableCSLLTaxation"] = self.accruableCSLLTaxation?.rawValue
+        nillableDictionary["csllExemptLegalReason"] = self.csllExemptLegalReason
+        nillableDictionary["csllExemptLegalReasonCode"] = self.csllExemptLegalReasonCode
+        nillableDictionary["withholding"] = self.withholding?.encodeToJSON()
         nillableDictionary["issDueatDestination"] = self.issDueatDestination
         nillableDictionary["pisCofinsCreditNotAllowed"] = self.pisCofinsCreditNotAllowed
         nillableDictionary["issTaxation"] = self.issTaxation?.rawValue

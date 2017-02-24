@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.SalesCalculatedTaxSummaryForService();
+    instance = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('SalesCalculatedTaxSummaryForService', function() {
     it('should create an instance of SalesCalculatedTaxSummaryForService', function() {
       // uncomment below and update the code to test SalesCalculatedTaxSummaryForService
-      //var instane = new Br16Api.SalesCalculatedTaxSummaryForService();
-      //expect(instance).to.be.a(Br16Api.SalesCalculatedTaxSummaryForService);
+      //var instane = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
+      //expect(instance).to.be.a(AvaTaxBrazil.SalesCalculatedTaxSummaryForService);
     });
 
     it('should have the property numberOfLines (base name: "numberOfLines")', function() {
       // uncomment below and update the code to test the property numberOfLines
-      //var instane = new Br16Api.SalesCalculatedTaxSummaryForService();
+      //var instane = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
       //expect(instance).to.be();
     });
 
     it('should have the property subtotal (base name: "subtotal")', function() {
       // uncomment below and update the code to test the property subtotal
-      //var instane = new Br16Api.SalesCalculatedTaxSummaryForService();
+      //var instane = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
       //expect(instance).to.be();
     });
 
     it('should have the property totalTax (base name: "totalTax")', function() {
       // uncomment below and update the code to test the property totalTax
-      //var instane = new Br16Api.SalesCalculatedTaxSummaryForService();
+      //var instane = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
       //expect(instance).to.be();
     });
 
     it('should have the property grandTotal (base name: "grandTotal")', function() {
       // uncomment below and update the code to test the property grandTotal
-      //var instane = new Br16Api.SalesCalculatedTaxSummaryForService();
+      //var instane = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
       //expect(instance).to.be();
     });
 
     it('should have the property taxByType (base name: "taxByType")', function() {
       // uncomment below and update the code to test the property taxByType
-      //var instane = new Br16Api.SalesCalculatedTaxSummaryForService();
+      //var instane = new AvaTaxBrazil.SalesCalculatedTaxSummaryForService();
       //expect(instance).to.be();
     });
 

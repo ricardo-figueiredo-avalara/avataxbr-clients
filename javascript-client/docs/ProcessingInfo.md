@@ -1,4 +1,4 @@
-# Br16Api.ProcessingInfo
+# AvaTaxBrazil.ProcessingInfo
 
 ## Properties
 Name | Type | Description | Notes

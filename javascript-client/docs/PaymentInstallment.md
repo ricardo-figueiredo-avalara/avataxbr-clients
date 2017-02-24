@@ -1,4 +1,4 @@
-# Br16Api.PaymentInstallment
+# AvaTaxBrazil.PaymentInstallment
 
 ## Properties
 Name | Type | Description | Notes

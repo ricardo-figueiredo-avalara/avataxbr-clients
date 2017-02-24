@@ -1,4 +1,4 @@
-# Br16Api.SalesTransactionOut
+# AvaTaxBrazil.SalesTransactionOut
 
 ## Properties
 Name | Type | Description | Notes

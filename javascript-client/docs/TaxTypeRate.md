@@ -1,4 +1,4 @@
-# Br16Api.TaxTypeRate
+# AvaTaxBrazil.TaxTypeRate
 
 ## Properties
 Name | Type | Description | Notes
@@ -9,9 +9,6 @@ Name | Type | Description | Notes
 **srvAmount** | **Number** | Specific tax rate ex 3.5 (3.5%) | [optional] 
 **quantityUnidBase** | **String** |  | [optional] 
 **specializationType** | **String** |  | [optional] 
-**exemptionReasonCode** | **String** | UUID Reference to an item in the LegalReason store.  | [optional] 
-**customExemptionReasonDescription** | **String** | Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other).  | [optional] 
-**withholding** | [**TaxTypeRateWithholding**](TaxTypeRateWithholding.md) |  | [optional] 
 
 
 <a name="TaxModelEnum"></a>

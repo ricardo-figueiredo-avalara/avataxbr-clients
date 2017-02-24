@@ -66,8 +66,6 @@ open class ItemGoods: JSONEncodable {
     public var piscofinsRevenueType: PiscofinsRevenueType?
     /** Discount allowed on icms base when PIS/COFINS are Monophase */
     public var icmsBaseDiscountForMonoPhaseSocialContr: Double?
-    /** tax substitution code - Codigo especificador da Substuicao Tributaria */
-    public var cest: String?
     /** GTIN NUMBER */
     public var cean: String?
     /** Nomenclatura de Valor aduaneio e Estatístico - NCM extension code */
@@ -113,7 +111,6 @@ open class ItemGoods: JSONEncodable {
         nillableDictionary["isPisCofinsEstimatedCredit"] = self.isPisCofinsEstimatedCredit
         nillableDictionary["piscofinsRevenueType"] = self.piscofinsRevenueType?.rawValue
         nillableDictionary["icmsBaseDiscountForMonoPhaseSocialContr"] = self.icmsBaseDiscountForMonoPhaseSocialContr
-        nillableDictionary["cest"] = self.cest
         nillableDictionary["cean"] = self.cean
         nillableDictionary["nve"] = self.nve
         nillableDictionary["salesUnit"] = self.salesUnit

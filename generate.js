@@ -2,7 +2,7 @@
 
 const request = require('request-promise'),
     download = require('download'),
-    avataxApi = 'http://br16-dev-app03.br.avalara.com:8000/docs/index/api',
+    avataxApi = 'http://avataxbr-sandbox.avalarabrasil.com.br:8000/docs/index/api',
     swaggerCodegen = 'https://generator.swagger.io/api/gen/clients',
     langs = [
         'android',

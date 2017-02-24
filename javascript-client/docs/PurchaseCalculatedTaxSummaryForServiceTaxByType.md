@@ -1,4 +1,4 @@
-# Br16Api.PurchaseCalculatedTaxSummaryForServiceTaxByType
+# AvaTaxBrazil.PurchaseCalculatedTaxSummaryForServiceTaxByType
 
 ## Properties
 Name | Type | Description | Notes

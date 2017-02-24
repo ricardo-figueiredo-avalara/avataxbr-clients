@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.NRefRefNF();
+    instance = new AvaTaxBrazil.NRefRefNF();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('NRefRefNF', function() {
     it('should create an instance of NRefRefNF', function() {
       // uncomment below and update the code to test NRefRefNF
-      //var instane = new Br16Api.NRefRefNF();
-      //expect(instance).to.be.a(Br16Api.NRefRefNF);
+      //var instane = new AvaTaxBrazil.NRefRefNF();
+      //expect(instance).to.be.a(AvaTaxBrazil.NRefRefNF);
     });
 
     it('should have the property stateCd (base name: "stateCd")', function() {
       // uncomment below and update the code to test the property stateCd
-      //var instane = new Br16Api.NRefRefNF();
+      //var instane = new AvaTaxBrazil.NRefRefNF();
       //expect(instance).to.be();
     });
 
     it('should have the property yymm (base name: "yymm")', function() {
       // uncomment below and update the code to test the property yymm
-      //var instane = new Br16Api.NRefRefNF();
+      //var instane = new AvaTaxBrazil.NRefRefNF();
       //expect(instance).to.be();
     });
 
     it('should have the property federalTaxId (base name: "federalTaxId")', function() {
       // uncomment below and update the code to test the property federalTaxId
-      //var instane = new Br16Api.NRefRefNF();
+      //var instane = new AvaTaxBrazil.NRefRefNF();
       //expect(instance).to.be();
     });
 
     it('should have the property serie (base name: "serie")', function() {
       // uncomment below and update the code to test the property serie
-      //var instane = new Br16Api.NRefRefNF();
+      //var instane = new AvaTaxBrazil.NRefRefNF();
       //expect(instance).to.be();
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instane = new Br16Api.NRefRefNF();
+      //var instane = new AvaTaxBrazil.NRefRefNF();
       //expect(instance).to.be();
     });
 

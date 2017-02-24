@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -34,7 +34,7 @@ module SwaggerClient
 
     attr_accessor :code_type
 
-    # Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+    # Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
     attr_accessor :cst_ipi
 
     # Legal tax classificação for IPI (enquadramento tributário) When the process has CST IPI 52 or 54, it is mandatory to inform a Reason Code, see Anexo XIV - Código de Enquadramento Legal do IPI from  http://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=mCnJajU4BKU= 
@@ -46,11 +46,29 @@ module SwaggerClient
     # Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
     attr_accessor :accruable_pis_taxation
 
+    # When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+    attr_accessor :pis_exempt_legal_reason_code
+
+    # When specified a reason, this field holds the reason's description
+    attr_accessor :pis_exempt_legal_reason
+
     # Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
     attr_accessor :accruable_cofins_taxation
 
+    # When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+    attr_accessor :cofins_exempt_legal_reason_code
+
+    # When specified a reason, this field holds the reason's description
+    attr_accessor :cofins_exempt_legal_reason
+
     # Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
     attr_accessor :accruable_csll_taxation
+
+    attr_accessor :csll_exempt_legal_reason
+
+    attr_accessor :csll_exempt_legal_reason_code
+
+    attr_accessor :withholding
 
     # for service items with City Jurisdiction, inform where the ISS tax is due
     attr_accessor :iss_dueat_destination
@@ -108,8 +126,15 @@ module SwaggerClient
         :'ipi_legal_tax_class' => :'ipiLegalTaxClass',
         :'pis_cofins_tax_reporting' => :'pisCofinsTaxReporting',
         :'accruable_pis_taxation' => :'accruablePISTaxation',
+        :'pis_exempt_legal_reason_code' => :'pisExemptLegalReasonCode',
+        :'pis_exempt_legal_reason' => :'pisExemptLegalReason',
         :'accruable_cofins_taxation' => :'accruableCOFINSTaxation',
+        :'cofins_exempt_legal_reason_code' => :'cofinsExemptLegalReasonCode',
+        :'cofins_exempt_legal_reason' => :'cofinsExemptLegalReason',
         :'accruable_csll_taxation' => :'accruableCSLLTaxation',
+        :'csll_exempt_legal_reason' => :'csllExemptLegalReason',
+        :'csll_exempt_legal_reason_code' => :'csllExemptLegalReasonCode',
+        :'withholding' => :'withholding',
         :'iss_dueat_destination' => :'issDueatDestination',
         :'pis_cofins_credit_not_allowed' => :'pisCofinsCreditNotAllowed',
         :'iss_taxation' => :'issTaxation',
@@ -134,8 +159,15 @@ module SwaggerClient
         :'ipi_legal_tax_class' => :'String',
         :'pis_cofins_tax_reporting' => :'String',
         :'accruable_pis_taxation' => :'String',
+        :'pis_exempt_legal_reason_code' => :'String',
+        :'pis_exempt_legal_reason' => :'String',
         :'accruable_cofins_taxation' => :'String',
+        :'cofins_exempt_legal_reason_code' => :'String',
+        :'cofins_exempt_legal_reason' => :'String',
         :'accruable_csll_taxation' => :'String',
+        :'csll_exempt_legal_reason' => :'String',
+        :'csll_exempt_legal_reason_code' => :'String',
+        :'withholding' => :'AgastWithholding',
         :'iss_dueat_destination' => :'BOOLEAN',
         :'pis_cofins_credit_not_allowed' => :'BOOLEAN',
         :'iss_taxation' => :'String',
@@ -198,12 +230,40 @@ module SwaggerClient
         self.accruable_pis_taxation = attributes[:'accruablePISTaxation']
       end
 
+      if attributes.has_key?(:'pisExemptLegalReasonCode')
+        self.pis_exempt_legal_reason_code = attributes[:'pisExemptLegalReasonCode']
+      end
+
+      if attributes.has_key?(:'pisExemptLegalReason')
+        self.pis_exempt_legal_reason = attributes[:'pisExemptLegalReason']
+      end
+
       if attributes.has_key?(:'accruableCOFINSTaxation')
         self.accruable_cofins_taxation = attributes[:'accruableCOFINSTaxation']
       end
 
+      if attributes.has_key?(:'cofinsExemptLegalReasonCode')
+        self.cofins_exempt_legal_reason_code = attributes[:'cofinsExemptLegalReasonCode']
+      end
+
+      if attributes.has_key?(:'cofinsExemptLegalReason')
+        self.cofins_exempt_legal_reason = attributes[:'cofinsExemptLegalReason']
+      end
+
       if attributes.has_key?(:'accruableCSLLTaxation')
         self.accruable_csll_taxation = attributes[:'accruableCSLLTaxation']
+      end
+
+      if attributes.has_key?(:'csllExemptLegalReason')
+        self.csll_exempt_legal_reason = attributes[:'csllExemptLegalReason']
+      end
+
+      if attributes.has_key?(:'csllExemptLegalReasonCode')
+        self.csll_exempt_legal_reason_code = attributes[:'csllExemptLegalReasonCode']
+      end
+
+      if attributes.has_key?(:'withholding')
+        self.withholding = attributes[:'withholding']
       end
 
       if attributes.has_key?(:'issDueatDestination')
@@ -264,6 +324,18 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'cean', must conform to the pattern /[0-9]{0}|[0-9]{8}|[0-9]{12,14}/.")
       end
 
+      if !@pis_exempt_legal_reason.nil? && @pis_exempt_legal_reason.to_s.length > 1024
+        invalid_properties.push("invalid value for 'pis_exempt_legal_reason', the character length must be smaller than or equal to 1024.")
+      end
+
+      if !@cofins_exempt_legal_reason.nil? && @cofins_exempt_legal_reason.to_s.length > 1024
+        invalid_properties.push("invalid value for 'cofins_exempt_legal_reason', the character length must be smaller than or equal to 1024.")
+      end
+
+      if !@csll_exempt_legal_reason.nil? && @csll_exempt_legal_reason.to_s.length > 1024
+        invalid_properties.push("invalid value for 'csll_exempt_legal_reason', the character length must be smaller than or equal to 1024.")
+      end
+
       if @company_id.nil?
         invalid_properties.push("invalid value for 'company_id', company_id cannot be nil.")
       end
@@ -279,16 +351,19 @@ module SwaggerClient
       return false if !@hs_code.nil? && @hs_code.to_s.length > 8
       return false if !@cest.nil? && @cest !~ Regexp.new(/[0-9]{7}/)
       return false if !@cean.nil? && @cean !~ Regexp.new(/[0-9]{0}|[0-9]{8}|[0-9]{12,14}/)
-      cst_ipi_validator = EnumAttributeValidator.new('String', ["50", "51", "52", "53", "54"])
+      cst_ipi_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "N", "I"])
       return false unless cst_ipi_validator.valid?(@cst_ipi)
       pis_cofins_tax_reporting_validator = EnumAttributeValidator.new('String', ["cumulative", "noCumulative"])
       return false unless pis_cofins_tax_reporting_validator.valid?(@pis_cofins_tax_reporting)
       accruable_pis_taxation_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N"])
       return false unless accruable_pis_taxation_validator.valid?(@accruable_pis_taxation)
+      return false if !@pis_exempt_legal_reason.nil? && @pis_exempt_legal_reason.to_s.length > 1024
       accruable_cofins_taxation_validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "H", "N"])
       return false unless accruable_cofins_taxation_validator.valid?(@accruable_cofins_taxation)
+      return false if !@cofins_exempt_legal_reason.nil? && @cofins_exempt_legal_reason.to_s.length > 1024
       accruable_csll_taxation_validator = EnumAttributeValidator.new('String', ["T", "E"])
       return false unless accruable_csll_taxation_validator.valid?(@accruable_csll_taxation)
+      return false if !@csll_exempt_legal_reason.nil? && @csll_exempt_legal_reason.to_s.length > 1024
       iss_taxation_validator = EnumAttributeValidator.new('String', ["T", "E", "F", "A", "L", "I"])
       return false unless iss_taxation_validator.valid?(@iss_taxation)
       special_product_class_validator = EnumAttributeValidator.new('String', ["OTHERS", "COMMUNICATION", "ENERGY", "TRANSPORT", "FUEL AND LUBRIFICANT", "VEHICLE", "ALCOHOLIC BEVERAGES", "WEAPONS", "AMMO", "PERFUME", "TOBACCO"])
@@ -344,7 +419,7 @@ module SwaggerClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] cst_ipi Object to be assigned
     def cst_ipi=(cst_ipi)
-      validator = EnumAttributeValidator.new('String', ["50", "51", "52", "53", "54"])
+      validator = EnumAttributeValidator.new('String', ["T", "Z", "E", "N", "I"])
       unless validator.valid?(cst_ipi)
         fail ArgumentError, "invalid value for 'cst_ipi', must be one of #{validator.allowable_values}."
       end
@@ -371,6 +446,17 @@ module SwaggerClient
       @accruable_pis_taxation = accruable_pis_taxation
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] pis_exempt_legal_reason Value to be assigned
+    def pis_exempt_legal_reason=(pis_exempt_legal_reason)
+
+      if !pis_exempt_legal_reason.nil? && pis_exempt_legal_reason.to_s.length > 1024
+        fail ArgumentError, "invalid value for 'pis_exempt_legal_reason', the character length must be smaller than or equal to 1024."
+      end
+
+      @pis_exempt_legal_reason = pis_exempt_legal_reason
+    end
+
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] accruable_cofins_taxation Object to be assigned
     def accruable_cofins_taxation=(accruable_cofins_taxation)
@@ -381,6 +467,17 @@ module SwaggerClient
       @accruable_cofins_taxation = accruable_cofins_taxation
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] cofins_exempt_legal_reason Value to be assigned
+    def cofins_exempt_legal_reason=(cofins_exempt_legal_reason)
+
+      if !cofins_exempt_legal_reason.nil? && cofins_exempt_legal_reason.to_s.length > 1024
+        fail ArgumentError, "invalid value for 'cofins_exempt_legal_reason', the character length must be smaller than or equal to 1024."
+      end
+
+      @cofins_exempt_legal_reason = cofins_exempt_legal_reason
+    end
+
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] accruable_csll_taxation Object to be assigned
     def accruable_csll_taxation=(accruable_csll_taxation)
@@ -389,6 +486,17 @@ module SwaggerClient
         fail ArgumentError, "invalid value for 'accruable_csll_taxation', must be one of #{validator.allowable_values}."
       end
       @accruable_csll_taxation = accruable_csll_taxation
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] csll_exempt_legal_reason Value to be assigned
+    def csll_exempt_legal_reason=(csll_exempt_legal_reason)
+
+      if !csll_exempt_legal_reason.nil? && csll_exempt_legal_reason.to_s.length > 1024
+        fail ArgumentError, "invalid value for 'csll_exempt_legal_reason', the character length must be smaller than or equal to 1024."
+      end
+
+      @csll_exempt_legal_reason = csll_exempt_legal_reason
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -427,8 +535,15 @@ module SwaggerClient
           ipi_legal_tax_class == o.ipi_legal_tax_class &&
           pis_cofins_tax_reporting == o.pis_cofins_tax_reporting &&
           accruable_pis_taxation == o.accruable_pis_taxation &&
+          pis_exempt_legal_reason_code == o.pis_exempt_legal_reason_code &&
+          pis_exempt_legal_reason == o.pis_exempt_legal_reason &&
           accruable_cofins_taxation == o.accruable_cofins_taxation &&
+          cofins_exempt_legal_reason_code == o.cofins_exempt_legal_reason_code &&
+          cofins_exempt_legal_reason == o.cofins_exempt_legal_reason &&
           accruable_csll_taxation == o.accruable_csll_taxation &&
+          csll_exempt_legal_reason == o.csll_exempt_legal_reason &&
+          csll_exempt_legal_reason_code == o.csll_exempt_legal_reason_code &&
+          withholding == o.withholding &&
           iss_dueat_destination == o.iss_dueat_destination &&
           pis_cofins_credit_not_allowed == o.pis_cofins_credit_not_allowed &&
           iss_taxation == o.iss_taxation &&
@@ -447,7 +562,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, description, hs_code, ex, cest, cean, code_type, cst_ipi, ipi_legal_tax_class, pis_cofins_tax_reporting, accruable_pis_taxation, accruable_cofins_taxation, accruable_csll_taxation, iss_dueat_destination, pis_cofins_credit_not_allowed, iss_taxation, federal_tax_rate, special_product_class, icms_conf, company_id].hash
+      [code, description, hs_code, ex, cest, cean, code_type, cst_ipi, ipi_legal_tax_class, pis_cofins_tax_reporting, accruable_pis_taxation, pis_exempt_legal_reason_code, pis_exempt_legal_reason, accruable_cofins_taxation, cofins_exempt_legal_reason_code, cofins_exempt_legal_reason, accruable_csll_taxation, csll_exempt_legal_reason, csll_exempt_legal_reason_code, withholding, iss_dueat_destination, pis_cofins_credit_not_allowed, iss_taxation, federal_tax_rate, special_product_class, icms_conf, company_id].hash
     end
 
     # Builds the object from hash

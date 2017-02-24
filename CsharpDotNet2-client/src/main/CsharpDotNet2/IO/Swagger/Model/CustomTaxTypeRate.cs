@@ -58,29 +58,6 @@ namespace IO.Swagger.Model {
     public string SpecializationType { get; set; }
 
     /// <summary>
-    /// UUID Reference to an item in the LegalReason store. 
-    /// </summary>
-    /// <value>UUID Reference to an item in the LegalReason store. </value>
-    [DataMember(Name="exemptionReasonCode", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "exemptionReasonCode")]
-    public string ExemptionReasonCode { get; set; }
-
-    /// <summary>
-    /// Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). 
-    /// </summary>
-    /// <value>Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other). </value>
-    [DataMember(Name="customExemptionReasonDescription", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "customExemptionReasonDescription")]
-    public string CustomExemptionReasonDescription { get; set; }
-
-    /// <summary>
-    /// Gets or Sets Withholding
-    /// </summary>
-    [DataMember(Name="withholding", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "withholding")]
-    public TaxTypeRateWithholding Withholding { get; set; }
-
-    /// <summary>
     /// Company ID
     /// </summary>
     /// <value>Company ID</value>
@@ -102,9 +79,6 @@ namespace IO.Swagger.Model {
       sb.Append("  SrvAmount: ").Append(SrvAmount).Append("\n");
       sb.Append("  QuantityUnidBase: ").Append(QuantityUnidBase).Append("\n");
       sb.Append("  SpecializationType: ").Append(SpecializationType).Append("\n");
-      sb.Append("  ExemptionReasonCode: ").Append(ExemptionReasonCode).Append("\n");
-      sb.Append("  CustomExemptionReasonDescription: ").Append(CustomExemptionReasonDescription).Append("\n");
-      sb.Append("  Withholding: ").Append(Withholding).Append("\n");
       sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
       sb.Append("}\n");
       return sb.ToString();

@@ -1,4 +1,4 @@
-# Br16Api.SefazDisableRangeIn
+# AvaTaxBrazil.SefazDisableRangeIn
 
 ## Properties
 Name | Type | Description | Notes

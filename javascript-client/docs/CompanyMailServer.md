@@ -1,4 +1,4 @@
-# Br16Api.CompanyMailServer
+# AvaTaxBrazil.CompanyMailServer
 
 ## Properties
 Name | Type | Description | Notes

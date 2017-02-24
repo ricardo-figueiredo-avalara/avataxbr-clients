@@ -1,4 +1,4 @@
-# Br16Api.StateTransition
+# AvaTaxBrazil.StateTransition
 
 ## Properties
 Name | Type | Description | Notes

@@ -15,7 +15,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class CompanyItemGoodsApi {
-    String basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     String versionPath = "/api/v1"
 
     def companiesCompanyIdItemsCodeChangeCodePut ( String companyId, String code, Body1 body, String goods, String service, Closure onSuccess, Closure onFailure)  {

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -49,7 +49,7 @@ namespace API.Client {
         "codeType"?: AgastCodeType;
 
         /**
-         * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+         * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
          */
         "cstIPI"?: CustomAgast.CstIPIEnum;
 
@@ -69,14 +69,40 @@ namespace API.Client {
         "accruablePISTaxation"?: CustomAgast.AccruablePISTaxationEnum;
 
         /**
+         * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+         */
+        "pisExemptLegalReasonCode"?: string;
+
+        /**
+         * When specified a reason, this field holds the reason's description
+         */
+        "pisExemptLegalReason"?: string;
+
+        /**
          * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
          */
         "accruableCOFINSTaxation"?: CustomAgast.AccruableCOFINSTaxationEnum;
 
         /**
+         * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+         */
+        "cofinsExemptLegalReasonCode"?: string;
+
+        /**
+         * When specified a reason, this field holds the reason's description
+         */
+        "cofinsExemptLegalReason"?: string;
+
+        /**
          * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
          */
         "accruableCSLLTaxation"?: CustomAgast.AccruableCSLLTaxationEnum;
+
+        "csllExemptLegalReason"?: string;
+
+        "csllExemptLegalReasonCode"?: string;
+
+        "withholding"?: AgastWithholding;
 
         /**
          * for service items with City Jurisdiction, inform where the ISS tax is due
@@ -114,11 +140,11 @@ namespace API.Client {
 
     export namespace CustomAgast {
         export enum CstIPIEnum {
-            _50 = <any> '50',
-            _51 = <any> '51',
-            _52 = <any> '52',
-            _53 = <any> '53',
-            _54 = <any> '54'
+            T = <any> 'T',
+            Z = <any> 'Z',
+            E = <any> 'E',
+            N = <any> 'N',
+            I = <any> 'I'
         }
         export enum PisCofinsTaxReportingEnum {
             Cumulative = <any> 'cumulative',

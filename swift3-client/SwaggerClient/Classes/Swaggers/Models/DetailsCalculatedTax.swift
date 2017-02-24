@@ -10,9 +10,9 @@ import Foundation
 
 open class DetailsCalculatedTax: JSONEncodable {
     public enum JurisdictionType: String { 
-        case city = "city"
-        case state = "state"
-        case country = "country"
+        case city = "City"
+        case state = "State"
+        case country = "Country"
     }
     public enum TaxType: String { 
         case icms = "icms"
@@ -49,7 +49,7 @@ open class DetailsCalculatedTax: JSONEncodable {
     public var locationType: String?
     /** Jurisdiction used for calctax amount */
     public var jurisdictionName: String?
-    /** Type of jurisdiction */
+    /** Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  */
     public var jurisdictionType: JurisdictionType?
     /** Tax identificator */
     public var taxType: TaxType?

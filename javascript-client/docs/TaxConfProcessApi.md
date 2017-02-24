@@ -1,6 +1,6 @@
-# Br16Api.TaxConfProcessApi
+# AvaTaxBrazil.TaxConfProcessApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,11 +19,11 @@ create a new Process Type configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfProcessApi();
+var apiInstance = new AvaTaxBrazil.TaxConfProcessApi();
 
-var taxconfprocess = new Br16Api.ProcessScenario(); // ProcessScenario | The pet JSON you want to post
+var taxconfprocess = new AvaTaxBrazil.ProcessScenario(); // ProcessScenario | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {
@@ -63,9 +63,9 @@ disable a Process.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfProcessApi();
+var apiInstance = new AvaTaxBrazil.TaxConfProcessApi();
 
 var code = "code_example"; // String | Process Code
 
@@ -109,9 +109,9 @@ This operation return Process Type configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfProcessApi();
+var apiInstance = new AvaTaxBrazil.TaxConfProcessApi();
 
 var code = "code_example"; // String | Process Code
 
@@ -155,9 +155,9 @@ This operation return Process Type configurations that match with parameters que
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfProcessApi();
+var apiInstance = new AvaTaxBrazil.TaxConfProcessApi();
 
 var opts = { 
   'accountId': "accountId_example", // String | filter the configuration by accountID, if not informed, only the standard configuration will be returned 
@@ -204,13 +204,13 @@ update a Process Type configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfProcessApi();
+var apiInstance = new AvaTaxBrazil.TaxConfProcessApi();
 
 var code = "code_example"; // String | Process Code
 
-var taxconfprocess = new Br16Api.ProcessScenario(); // ProcessScenario | The pet JSON you want to post
+var taxconfprocess = new AvaTaxBrazil.ProcessScenario(); // ProcessScenario | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {

@@ -1,4 +1,4 @@
-# Br16Api.SalesEntity
+# AvaTaxBrazil.SalesEntity
 
 ## Properties
 Name | Type | Description | Notes

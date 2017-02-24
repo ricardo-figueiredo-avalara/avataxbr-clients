@@ -1,4 +1,4 @@
-# Br16Api.ExportInfo
+# AvaTaxBrazil.ExportInfo
 
 ## Properties
 Name | Type | Description | Notes

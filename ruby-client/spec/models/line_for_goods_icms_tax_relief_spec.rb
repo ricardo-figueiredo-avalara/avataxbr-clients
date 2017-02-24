@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -31,19 +31,23 @@ describe 'LineForGoodsIcmsTaxRelief' do
       expect(@instance).to be_instance_of(SwaggerClient::LineForGoodsIcmsTaxRelief)
     end
   end
-  describe 'test attribute "icms_tax_relief_reason_code"' do
+  describe 'test attribute "reason_code"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["1", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "16"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.reason_code = value }.not_to raise_error
+       #end
+    end
+  end
+
+  describe 'test attribute "tax_base_discount"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "icms_relief_tax_rate"' do
-    it 'should work' do
-       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  describe 'test attribute "icms_relief_tax_amount"' do
+  describe 'test attribute "tax_amount"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

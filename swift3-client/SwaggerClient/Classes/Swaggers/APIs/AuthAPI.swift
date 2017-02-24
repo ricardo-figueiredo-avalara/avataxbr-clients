@@ -57,4 +57,42 @@ open class AuthAPI: APIBase {
         return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: false)
     }
 
+    /**
+     authorization
+     
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func v2AuthPost(completion: @escaping ((_ data: InlineResponse200?,_ error: Error?) -> Void)) {
+        v2AuthPostWithRequestBuilder().execute { (response, error) -> Void in
+            completion(response?.body, error);
+        }
+    }
+
+
+    /**
+     authorization
+     - POST /v2/auth
+     - Authorization: Basic VGVzdDoxMjM=  Generate Base64:  - auth = \"{user}:{password}\"  - base = base64(auth)  - header[\"Authorization\"] = \"Basic \" + base 
+     - examples: [{contentType=application/json, example={
+  "expired" : "2000-01-23T04:56:07.000+00:00",
+  "token" : "aeiou"
+}}]
+
+     - returns: RequestBuilder<InlineResponse200> 
+     */
+    open class func v2AuthPostWithRequestBuilder() -> RequestBuilder<InlineResponse200> {
+        let path = "/v2/auth"
+        let URLString = SwaggerClientAPI.basePath + path
+
+        let nillableParameters: [String:Any?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
+
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+
+        let requestBuilder: RequestBuilder<InlineResponse200>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: false)
+    }
+
 }

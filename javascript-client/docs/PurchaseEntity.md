@@ -1,4 +1,4 @@
-# Br16Api.PurchaseEntity
+# AvaTaxBrazil.PurchaseEntity
 
 ## Properties
 Name | Type | Description | Notes

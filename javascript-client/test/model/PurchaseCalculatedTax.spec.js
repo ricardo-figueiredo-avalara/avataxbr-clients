@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.PurchaseCalculatedTax();
+    instance = new AvaTaxBrazil.PurchaseCalculatedTax();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('PurchaseCalculatedTax', function() {
     it('should create an instance of PurchaseCalculatedTax', function() {
       // uncomment below and update the code to test PurchaseCalculatedTax
-      //var instane = new Br16Api.PurchaseCalculatedTax();
-      //expect(instance).to.be.a(Br16Api.PurchaseCalculatedTax);
+      //var instane = new AvaTaxBrazil.PurchaseCalculatedTax();
+      //expect(instance).to.be.a(AvaTaxBrazil.PurchaseCalculatedTax);
     });
 
     it('should have the property taxByType (base name: "taxByType")', function() {
       // uncomment below and update the code to test the property taxByType
-      //var instane = new Br16Api.PurchaseCalculatedTax();
+      //var instane = new AvaTaxBrazil.PurchaseCalculatedTax();
       //expect(instance).to.be();
     });
 
     it('should have the property tax (base name: "tax")', function() {
       // uncomment below and update the code to test the property tax
-      //var instane = new Br16Api.PurchaseCalculatedTax();
+      //var instane = new AvaTaxBrazil.PurchaseCalculatedTax();
       //expect(instance).to.be();
     });
 
     it('should have the property details (base name: "details")', function() {
       // uncomment below and update the code to test the property details
-      //var instane = new Br16Api.PurchaseCalculatedTax();
+      //var instane = new AvaTaxBrazil.PurchaseCalculatedTax();
       //expect(instance).to.be();
     });
 

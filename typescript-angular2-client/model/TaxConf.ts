@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -29,7 +29,7 @@ export interface TaxConf {
     financialImpact?: boolean;
 
     /**
-     * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+     * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'I'  # IMMUNE - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     cstIPI?: TaxConf.CstIPIEnum;
 
@@ -39,7 +39,7 @@ export interface TaxConf {
     ipiLegalTaxClass?: string;
 
     /**
-     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to PIS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE - 'O' # OTHER - 'OZ'# OTHER AND ZERO VALUES 
      */
     accruablePISTaxation?: TaxConf.AccruablePISTaxationEnum;
 
@@ -54,7 +54,7 @@ export interface TaxConf {
     pisExemptLegalReason?: string;
 
     /**
-     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
+     * Inform if this item by nature is subject to COFINS taxation or exempt - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'H'  # SUSPENDED - 'N'  # NO TAXABLE     - 'O'  # OTHER - 'OZ' # OTHER AND ZERO VALUES 
      */
     accruableCOFINSTaxation?: TaxConf.AccruableCOFINSTaxationEnum;
 
@@ -81,24 +81,31 @@ export interface TaxConf {
 }
 export namespace TaxConf {
     export enum CstIPIEnum {
-        _50 = <any> '50',
-        _51 = <any> '51',
-        _52 = <any> '52',
-        _53 = <any> '53',
-        _54 = <any> '54'
+        T = <any> 'T',
+        Z = <any> 'Z',
+        E = <any> 'E',
+        H = <any> 'H',
+        N = <any> 'N',
+        I = <any> 'I',
+        O = <any> 'O',
+        OZ = <any> 'OZ'
     }
     export enum AccruablePISTaxationEnum {
         T = <any> 'T',
         Z = <any> 'Z',
         E = <any> 'E',
         H = <any> 'H',
-        N = <any> 'N'
+        N = <any> 'N',
+        O = <any> 'O',
+        OZ = <any> 'OZ'
     }
     export enum AccruableCOFINSTaxationEnum {
         T = <any> 'T',
         Z = <any> 'Z',
         E = <any> 'E',
         H = <any> 'H',
-        N = <any> 'N'
+        N = <any> 'N',
+        O = <any> 'O',
+        OZ = <any> 'OZ'
     }
 }

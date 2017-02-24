@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.AdditionalInformation();
+    instance = new AvaTaxBrazil.AdditionalInformation();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('AdditionalInformation', function() {
     it('should create an instance of AdditionalInformation', function() {
       // uncomment below and update the code to test AdditionalInformation
-      //var instane = new Br16Api.AdditionalInformation();
-      //expect(instance).to.be.a(Br16Api.AdditionalInformation);
+      //var instane = new AvaTaxBrazil.AdditionalInformation();
+      //expect(instance).to.be.a(AvaTaxBrazil.AdditionalInformation);
     });
 
     it('should have the property fiscalInfo (base name: "fiscalInfo")', function() {
       // uncomment below and update the code to test the property fiscalInfo
-      //var instane = new Br16Api.AdditionalInformation();
+      //var instane = new AvaTaxBrazil.AdditionalInformation();
       //expect(instance).to.be();
     });
 
     it('should have the property complementaryInfo (base name: "complementaryInfo")', function() {
       // uncomment below and update the code to test the property complementaryInfo
-      //var instane = new Br16Api.AdditionalInformation();
+      //var instane = new AvaTaxBrazil.AdditionalInformation();
       //expect(instance).to.be();
     });
 
     it('should have the property procRef (base name: "procRef")', function() {
       // uncomment below and update the code to test the property procRef
-      //var instane = new Br16Api.AdditionalInformation();
+      //var instane = new AvaTaxBrazil.AdditionalInformation();
       //expect(instance).to.be();
     });
 

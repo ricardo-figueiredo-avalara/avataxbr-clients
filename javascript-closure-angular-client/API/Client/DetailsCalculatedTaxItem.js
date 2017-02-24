@@ -20,7 +20,7 @@ API.Client.DetailsCalculatedTaxItem.prototype.locationType;
 API.Client.DetailsCalculatedTaxItem.prototype.jurisdictionName;
 
 /**
- * Type of jurisdiction
+ * Type of jurisdiction - 'City' - 'State' - 'Country' 
  * @type {!string}
  * @export
  */
@@ -115,9 +115,9 @@ API.Client.DetailsCalculatedTaxItem.prototype.cst;
 
 /** @enum {string} */
 API.Client.DetailsCalculatedTaxItem.JurisdictionTypeEnum = { 
-  city: 'city',
-  state: 'state',
-  country: 'country',
+  City: 'City',
+  State: 'State',
+  Country: 'Country',
 }
 /** @enum {string} */
 API.Client.DetailsCalculatedTaxItem.TaxTypeEnum = { 

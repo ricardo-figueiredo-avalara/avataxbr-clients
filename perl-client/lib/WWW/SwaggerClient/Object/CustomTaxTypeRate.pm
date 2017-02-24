@@ -1,8 +1,8 @@
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -42,9 +42,9 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -184,27 +184,6 @@ __PACKAGE__->method_documentation({
     	format => '',
     	read_only => '',
     		},
-    'exemption_reason_code' => {
-    	datatype => 'string',
-    	base_name => 'exemptionReasonCode',
-    	description => 'UUID Reference to an item in the LegalReason store. ',
-    	format => '',
-    	read_only => '',
-    		},
-    'custom_exemption_reason_description' => {
-    	datatype => 'string',
-    	base_name => 'customExemptionReasonDescription',
-    	description => 'Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other). ',
-    	format => '',
-    	read_only => '',
-    		},
-    'withholding' => {
-    	datatype => 'TaxTypeRateWithholding',
-    	base_name => 'withholding',
-    	description => '',
-    	format => '',
-    	read_only => '',
-    		},
     'company_id' => {
     	datatype => 'UUID',
     	base_name => 'companyId',
@@ -221,9 +200,6 @@ __PACKAGE__->swagger_types( {
     'srv_amount' => 'double',
     'quantity_unid_base' => 'string',
     'specialization_type' => 'string',
-    'exemption_reason_code' => 'string',
-    'custom_exemption_reason_description' => 'string',
-    'withholding' => 'TaxTypeRateWithholding',
     'company_id' => 'UUID'
 } );
 
@@ -234,9 +210,6 @@ __PACKAGE__->attribute_map( {
     'srv_amount' => 'srvAmount',
     'quantity_unid_base' => 'quantityUnidBase',
     'specialization_type' => 'specializationType',
-    'exemption_reason_code' => 'exemptionReasonCode',
-    'custom_exemption_reason_description' => 'customExemptionReasonDescription',
-    'withholding' => 'withholding',
     'company_id' => 'companyId'
 } );
 

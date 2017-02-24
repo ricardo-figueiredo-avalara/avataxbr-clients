@@ -1,4 +1,4 @@
-# Br16Api.AgastExtendForSefaz
+# AvaTaxBrazil.AgastExtendForSefaz
 
 ## Properties
 Name | Type | Description | Notes

@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -66,8 +66,15 @@ class Agast implements ArrayAccess
         'ipi_legal_tax_class' => 'string',
         'pis_cofins_tax_reporting' => 'string',
         'accruable_pis_taxation' => 'string',
+        'pis_exempt_legal_reason_code' => 'string',
+        'pis_exempt_legal_reason' => 'string',
         'accruable_cofins_taxation' => 'string',
+        'cofins_exempt_legal_reason_code' => 'string',
+        'cofins_exempt_legal_reason' => 'string',
         'accruable_csll_taxation' => 'string',
+        'csll_exempt_legal_reason' => 'string',
+        'csll_exempt_legal_reason_code' => 'string',
+        'withholding' => '\Swagger\Client\Model\AgastWithholding',
         'iss_dueat_destination' => 'bool',
         'pis_cofins_credit_not_allowed' => 'bool',
         'iss_taxation' => 'string',
@@ -97,8 +104,15 @@ class Agast implements ArrayAccess
         'ipi_legal_tax_class' => 'ipiLegalTaxClass',
         'pis_cofins_tax_reporting' => 'pisCofinsTaxReporting',
         'accruable_pis_taxation' => 'accruablePISTaxation',
+        'pis_exempt_legal_reason_code' => 'pisExemptLegalReasonCode',
+        'pis_exempt_legal_reason' => 'pisExemptLegalReason',
         'accruable_cofins_taxation' => 'accruableCOFINSTaxation',
+        'cofins_exempt_legal_reason_code' => 'cofinsExemptLegalReasonCode',
+        'cofins_exempt_legal_reason' => 'cofinsExemptLegalReason',
         'accruable_csll_taxation' => 'accruableCSLLTaxation',
+        'csll_exempt_legal_reason' => 'csllExemptLegalReason',
+        'csll_exempt_legal_reason_code' => 'csllExemptLegalReasonCode',
+        'withholding' => 'withholding',
         'iss_dueat_destination' => 'issDueatDestination',
         'pis_cofins_credit_not_allowed' => 'pisCofinsCreditNotAllowed',
         'iss_taxation' => 'issTaxation',
@@ -124,8 +138,15 @@ class Agast implements ArrayAccess
         'ipi_legal_tax_class' => 'setIpiLegalTaxClass',
         'pis_cofins_tax_reporting' => 'setPisCofinsTaxReporting',
         'accruable_pis_taxation' => 'setAccruablePisTaxation',
+        'pis_exempt_legal_reason_code' => 'setPisExemptLegalReasonCode',
+        'pis_exempt_legal_reason' => 'setPisExemptLegalReason',
         'accruable_cofins_taxation' => 'setAccruableCofinsTaxation',
+        'cofins_exempt_legal_reason_code' => 'setCofinsExemptLegalReasonCode',
+        'cofins_exempt_legal_reason' => 'setCofinsExemptLegalReason',
         'accruable_csll_taxation' => 'setAccruableCsllTaxation',
+        'csll_exempt_legal_reason' => 'setCsllExemptLegalReason',
+        'csll_exempt_legal_reason_code' => 'setCsllExemptLegalReasonCode',
+        'withholding' => 'setWithholding',
         'iss_dueat_destination' => 'setIssDueatDestination',
         'pis_cofins_credit_not_allowed' => 'setPisCofinsCreditNotAllowed',
         'iss_taxation' => 'setIssTaxation',
@@ -151,8 +172,15 @@ class Agast implements ArrayAccess
         'ipi_legal_tax_class' => 'getIpiLegalTaxClass',
         'pis_cofins_tax_reporting' => 'getPisCofinsTaxReporting',
         'accruable_pis_taxation' => 'getAccruablePisTaxation',
+        'pis_exempt_legal_reason_code' => 'getPisExemptLegalReasonCode',
+        'pis_exempt_legal_reason' => 'getPisExemptLegalReason',
         'accruable_cofins_taxation' => 'getAccruableCofinsTaxation',
+        'cofins_exempt_legal_reason_code' => 'getCofinsExemptLegalReasonCode',
+        'cofins_exempt_legal_reason' => 'getCofinsExemptLegalReason',
         'accruable_csll_taxation' => 'getAccruableCsllTaxation',
+        'csll_exempt_legal_reason' => 'getCsllExemptLegalReason',
+        'csll_exempt_legal_reason_code' => 'getCsllExemptLegalReasonCode',
+        'withholding' => 'getWithholding',
         'iss_dueat_destination' => 'getIssDueatDestination',
         'pis_cofins_credit_not_allowed' => 'getPisCofinsCreditNotAllowed',
         'iss_taxation' => 'getIssTaxation',
@@ -176,11 +204,11 @@ class Agast implements ArrayAccess
         return self::$getters;
     }
 
-    const CST_IPI__50 = '50';
-    const CST_IPI__51 = '51';
-    const CST_IPI__52 = '52';
-    const CST_IPI__53 = '53';
-    const CST_IPI__54 = '54';
+    const CST_IPI_T = 'T';
+    const CST_IPI_Z = 'Z';
+    const CST_IPI_E = 'E';
+    const CST_IPI_N = 'N';
+    const CST_IPI_I = 'I';
     const PIS_COFINS_TAX_REPORTING_CUMULATIVE = 'cumulative';
     const PIS_COFINS_TAX_REPORTING_NO_CUMULATIVE = 'noCumulative';
     const ACCRUABLE_PIS_TAXATION_T = 'T';
@@ -222,11 +250,11 @@ class Agast implements ArrayAccess
     public function getCstIpiAllowableValues()
     {
         return [
-            self::CST_IPI__50,
-            self::CST_IPI__51,
-            self::CST_IPI__52,
-            self::CST_IPI__53,
-            self::CST_IPI__54,
+            self::CST_IPI_T,
+            self::CST_IPI_Z,
+            self::CST_IPI_E,
+            self::CST_IPI_N,
+            self::CST_IPI_I,
         ];
     }
     
@@ -345,8 +373,15 @@ class Agast implements ArrayAccess
         $this->container['ipi_legal_tax_class'] = isset($data['ipi_legal_tax_class']) ? $data['ipi_legal_tax_class'] : null;
         $this->container['pis_cofins_tax_reporting'] = isset($data['pis_cofins_tax_reporting']) ? $data['pis_cofins_tax_reporting'] : null;
         $this->container['accruable_pis_taxation'] = isset($data['accruable_pis_taxation']) ? $data['accruable_pis_taxation'] : null;
+        $this->container['pis_exempt_legal_reason_code'] = isset($data['pis_exempt_legal_reason_code']) ? $data['pis_exempt_legal_reason_code'] : null;
+        $this->container['pis_exempt_legal_reason'] = isset($data['pis_exempt_legal_reason']) ? $data['pis_exempt_legal_reason'] : null;
         $this->container['accruable_cofins_taxation'] = isset($data['accruable_cofins_taxation']) ? $data['accruable_cofins_taxation'] : null;
+        $this->container['cofins_exempt_legal_reason_code'] = isset($data['cofins_exempt_legal_reason_code']) ? $data['cofins_exempt_legal_reason_code'] : null;
+        $this->container['cofins_exempt_legal_reason'] = isset($data['cofins_exempt_legal_reason']) ? $data['cofins_exempt_legal_reason'] : null;
         $this->container['accruable_csll_taxation'] = isset($data['accruable_csll_taxation']) ? $data['accruable_csll_taxation'] : null;
+        $this->container['csll_exempt_legal_reason'] = isset($data['csll_exempt_legal_reason']) ? $data['csll_exempt_legal_reason'] : null;
+        $this->container['csll_exempt_legal_reason_code'] = isset($data['csll_exempt_legal_reason_code']) ? $data['csll_exempt_legal_reason_code'] : null;
+        $this->container['withholding'] = isset($data['withholding']) ? $data['withholding'] : null;
         $this->container['iss_dueat_destination'] = isset($data['iss_dueat_destination']) ? $data['iss_dueat_destination'] : null;
         $this->container['pis_cofins_credit_not_allowed'] = isset($data['pis_cofins_credit_not_allowed']) ? $data['pis_cofins_credit_not_allowed'] : null;
         $this->container['iss_taxation'] = isset($data['iss_taxation']) ? $data['iss_taxation'] : null;
@@ -382,7 +417,7 @@ class Agast implements ArrayAccess
             $invalid_properties[] = "invalid value for 'cean', must be conform to the pattern /[0-9]{0}|[0-9]{8}|[0-9]{12,14}/.";
         }
 
-        $allowed_values = ["50", "51", "52", "53", "54"];
+        $allowed_values = ["T", "Z", "E", "N", "I"];
         if (!in_array($this->container['cst_ipi'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'cst_ipi', must be one of #{allowed_values}.";
         }
@@ -397,14 +432,26 @@ class Agast implements ArrayAccess
             $invalid_properties[] = "invalid value for 'accruable_pis_taxation', must be one of #{allowed_values}.";
         }
 
+        if (!is_null($this->container['pis_exempt_legal_reason']) && (strlen($this->container['pis_exempt_legal_reason']) > 1024)) {
+            $invalid_properties[] = "invalid value for 'pis_exempt_legal_reason', the character length must be smaller than or equal to 1024.";
+        }
+
         $allowed_values = ["T", "Z", "E", "H", "N"];
         if (!in_array($this->container['accruable_cofins_taxation'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'accruable_cofins_taxation', must be one of #{allowed_values}.";
         }
 
+        if (!is_null($this->container['cofins_exempt_legal_reason']) && (strlen($this->container['cofins_exempt_legal_reason']) > 1024)) {
+            $invalid_properties[] = "invalid value for 'cofins_exempt_legal_reason', the character length must be smaller than or equal to 1024.";
+        }
+
         $allowed_values = ["T", "E"];
         if (!in_array($this->container['accruable_csll_taxation'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'accruable_csll_taxation', must be one of #{allowed_values}.";
+        }
+
+        if (!is_null($this->container['csll_exempt_legal_reason']) && (strlen($this->container['csll_exempt_legal_reason']) > 1024)) {
+            $invalid_properties[] = "invalid value for 'csll_exempt_legal_reason', the character length must be smaller than or equal to 1024.";
         }
 
         $allowed_values = ["T", "E", "F", "A", "L", "I"];
@@ -443,7 +490,7 @@ class Agast implements ArrayAccess
         if (!preg_match("/[0-9]{0}|[0-9]{8}|[0-9]{12,14}/", $this->container['cean'])) {
             return false;
         }
-        $allowed_values = ["50", "51", "52", "53", "54"];
+        $allowed_values = ["T", "Z", "E", "N", "I"];
         if (!in_array($this->container['cst_ipi'], $allowed_values)) {
             return false;
         }
@@ -455,12 +502,21 @@ class Agast implements ArrayAccess
         if (!in_array($this->container['accruable_pis_taxation'], $allowed_values)) {
             return false;
         }
+        if (strlen($this->container['pis_exempt_legal_reason']) > 1024) {
+            return false;
+        }
         $allowed_values = ["T", "Z", "E", "H", "N"];
         if (!in_array($this->container['accruable_cofins_taxation'], $allowed_values)) {
             return false;
         }
+        if (strlen($this->container['cofins_exempt_legal_reason']) > 1024) {
+            return false;
+        }
         $allowed_values = ["T", "E"];
         if (!in_array($this->container['accruable_csll_taxation'], $allowed_values)) {
+            return false;
+        }
+        if (strlen($this->container['csll_exempt_legal_reason']) > 1024) {
             return false;
         }
         $allowed_values = ["T", "E", "F", "A", "L", "I"];
@@ -651,14 +707,14 @@ class Agast implements ArrayAccess
 
     /**
      * Sets cst_ipi
-     * @param string $cst_ipi Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune
+     * @param string $cst_ipi Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE
      * @return $this
      */
     public function setCstIpi($cst_ipi)
     {
-        $allowed_values = array('50', '51', '52', '53', '54');
+        $allowed_values = array('T', 'Z', 'E', 'N', 'I');
         if (!is_null($cst_ipi) && (!in_array($cst_ipi, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'cst_ipi', must be one of '50', '51', '52', '53', '54'");
+            throw new \InvalidArgumentException("Invalid value for 'cst_ipi', must be one of 'T', 'Z', 'E', 'N', 'I'");
         }
         $this->container['cst_ipi'] = $cst_ipi;
 
@@ -737,6 +793,52 @@ class Agast implements ArrayAccess
     }
 
     /**
+     * Gets pis_exempt_legal_reason_code
+     * @return string
+     */
+    public function getPisExemptLegalReasonCode()
+    {
+        return $this->container['pis_exempt_legal_reason_code'];
+    }
+
+    /**
+     * Sets pis_exempt_legal_reason_code
+     * @param string $pis_exempt_legal_reason_code When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+     * @return $this
+     */
+    public function setPisExemptLegalReasonCode($pis_exempt_legal_reason_code)
+    {
+        $this->container['pis_exempt_legal_reason_code'] = $pis_exempt_legal_reason_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets pis_exempt_legal_reason
+     * @return string
+     */
+    public function getPisExemptLegalReason()
+    {
+        return $this->container['pis_exempt_legal_reason'];
+    }
+
+    /**
+     * Sets pis_exempt_legal_reason
+     * @param string $pis_exempt_legal_reason When specified a reason, this field holds the reason's description
+     * @return $this
+     */
+    public function setPisExemptLegalReason($pis_exempt_legal_reason)
+    {
+        if (!is_null($pis_exempt_legal_reason) && (strlen($pis_exempt_legal_reason) > 1024)) {
+            throw new \InvalidArgumentException('invalid length for $pis_exempt_legal_reason when calling Agast., must be smaller than or equal to 1024.');
+        }
+
+        $this->container['pis_exempt_legal_reason'] = $pis_exempt_legal_reason;
+
+        return $this;
+    }
+
+    /**
      * Gets accruable_cofins_taxation
      * @return string
      */
@@ -762,6 +864,52 @@ class Agast implements ArrayAccess
     }
 
     /**
+     * Gets cofins_exempt_legal_reason_code
+     * @return string
+     */
+    public function getCofinsExemptLegalReasonCode()
+    {
+        return $this->container['cofins_exempt_legal_reason_code'];
+    }
+
+    /**
+     * Sets cofins_exempt_legal_reason_code
+     * @param string $cofins_exempt_legal_reason_code When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+     * @return $this
+     */
+    public function setCofinsExemptLegalReasonCode($cofins_exempt_legal_reason_code)
+    {
+        $this->container['cofins_exempt_legal_reason_code'] = $cofins_exempt_legal_reason_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets cofins_exempt_legal_reason
+     * @return string
+     */
+    public function getCofinsExemptLegalReason()
+    {
+        return $this->container['cofins_exempt_legal_reason'];
+    }
+
+    /**
+     * Sets cofins_exempt_legal_reason
+     * @param string $cofins_exempt_legal_reason When specified a reason, this field holds the reason's description
+     * @return $this
+     */
+    public function setCofinsExemptLegalReason($cofins_exempt_legal_reason)
+    {
+        if (!is_null($cofins_exempt_legal_reason) && (strlen($cofins_exempt_legal_reason) > 1024)) {
+            throw new \InvalidArgumentException('invalid length for $cofins_exempt_legal_reason when calling Agast., must be smaller than or equal to 1024.');
+        }
+
+        $this->container['cofins_exempt_legal_reason'] = $cofins_exempt_legal_reason;
+
+        return $this;
+    }
+
+    /**
      * Gets accruable_csll_taxation
      * @return string
      */
@@ -782,6 +930,73 @@ class Agast implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'accruable_csll_taxation', must be one of 'T', 'E'");
         }
         $this->container['accruable_csll_taxation'] = $accruable_csll_taxation;
+
+        return $this;
+    }
+
+    /**
+     * Gets csll_exempt_legal_reason
+     * @return string
+     */
+    public function getCsllExemptLegalReason()
+    {
+        return $this->container['csll_exempt_legal_reason'];
+    }
+
+    /**
+     * Sets csll_exempt_legal_reason
+     * @param string $csll_exempt_legal_reason
+     * @return $this
+     */
+    public function setCsllExemptLegalReason($csll_exempt_legal_reason)
+    {
+        if (!is_null($csll_exempt_legal_reason) && (strlen($csll_exempt_legal_reason) > 1024)) {
+            throw new \InvalidArgumentException('invalid length for $csll_exempt_legal_reason when calling Agast., must be smaller than or equal to 1024.');
+        }
+
+        $this->container['csll_exempt_legal_reason'] = $csll_exempt_legal_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets csll_exempt_legal_reason_code
+     * @return string
+     */
+    public function getCsllExemptLegalReasonCode()
+    {
+        return $this->container['csll_exempt_legal_reason_code'];
+    }
+
+    /**
+     * Sets csll_exempt_legal_reason_code
+     * @param string $csll_exempt_legal_reason_code
+     * @return $this
+     */
+    public function setCsllExemptLegalReasonCode($csll_exempt_legal_reason_code)
+    {
+        $this->container['csll_exempt_legal_reason_code'] = $csll_exempt_legal_reason_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets withholding
+     * @return \Swagger\Client\Model\AgastWithholding
+     */
+    public function getWithholding()
+    {
+        return $this->container['withholding'];
+    }
+
+    /**
+     * Sets withholding
+     * @param \Swagger\Client\Model\AgastWithholding $withholding
+     * @return $this
+     */
+    public function setWithholding($withholding)
+    {
+        $this->container['withholding'] = $withholding;
 
         return $this;
     }

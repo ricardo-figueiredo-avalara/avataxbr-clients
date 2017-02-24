@@ -1,6 +1,6 @@
-# Br16Api.InvoiceSettingsApi
+# AvaTaxBrazil.InvoiceSettingsApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,9 +17,9 @@ Get Enviroment Settigns
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceSettingsApi();
+var apiInstance = new AvaTaxBrazil.InvoiceSettingsApi();
 
 var callback = function(error, data, response) {
   if (error) {

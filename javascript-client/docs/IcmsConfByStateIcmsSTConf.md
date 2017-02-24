@@ -1,4 +1,4 @@
-# Br16Api.IcmsConfByStateIcmsSTConf
+# AvaTaxBrazil.IcmsConfByStateIcmsSTConf
 
 ## Properties
 Name | Type | Description | Notes

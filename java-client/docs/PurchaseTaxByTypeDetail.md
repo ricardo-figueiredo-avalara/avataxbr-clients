@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locationType** | **String** | This string captures the applicable location type. Location used for calc. Buyer or Seller |  [optional]
 **jurisdictionName** | **String** | Jurisdiction used for calctax amount |  [optional]
-**jurisdictionType** | [**JurisdictionTypeEnum**](#JurisdictionTypeEnum) | Type of jurisdiction - &#39;city&#39; - &#39;state&#39; - &#39;country&#39;  |  [optional]
+**jurisdictionType** | [**JurisdictionTypeEnum**](#JurisdictionTypeEnum) | Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  |  [optional]
 **taxType** | [**TaxTypeEnum**](#TaxTypeEnum) | Tax identificator - &#39;pis&#39; - &#39;pisRf&#39; - &#39;cofins&#39; - &#39;cofinsRf&#39; - &#39;csll&#39; - &#39;csllRf&#39; - &#39;irrf&#39; - &#39;inssAr&#39; - &#39;inssRf&#39; - &#39;issRf&#39;  |  [optional]
 **rateType** | **String** | Name of configuration rate |  [optional]
 **scenario** | **String** | This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in. |  [optional]
@@ -23,9 +23,9 @@ Name | Type | Description | Notes
 ## Enum: JurisdictionTypeEnum
 Name | Value
 ---- | -----
-CITY | &quot;city&quot;
-STATE | &quot;state&quot;
-COUNTRY | &quot;country&quot;
+CITY | &quot;City&quot;
+STATE | &quot;State&quot;
+COUNTRY | &quot;Country&quot;
 
 
 <a name="TaxTypeEnum"></a>

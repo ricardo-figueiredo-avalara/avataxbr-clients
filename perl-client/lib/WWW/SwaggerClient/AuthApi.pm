@@ -1,8 +1,8 @@
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -56,12 +56,12 @@ sub new {
 #
 # authorization
 # 
-# @param string $authorization Authorization: Basic VGVzdDoxMjM&#x3D;  (required)
+# @param string $authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded.  (required)
 {
     my $params = {
     'authorization' => {
         data_type => 'string',
-        description => 'Authorization: Basic VGVzdDoxMjM&#x3D; ',
+        description => 'Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. ',
         required => '1',
     },
     };
@@ -83,6 +83,72 @@ sub auth_post {
 
     # parse inputs
     my $_resource_path = '/auth';
+    $_resource_path =~ s/{format}/json/; # default format to json
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # header params
+    if ( exists $args{'authorization'}) {
+        $header_params->{'Authorization'} = $self->{api_client}->to_header_value($args{'authorization'});
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('InlineResponse200', $response);
+    return $_response_object;
+}
+
+#
+# v2_auth_post
+#
+# authorization
+# 
+# @param string $authorization Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded.  (required)
+{
+    my $params = {
+    'authorization' => {
+        data_type => 'string',
+        description => 'Accepts \&quot;Basic + hash\&quot;, where hash is {user}:{password} base64 encoded. ',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'v2_auth_post' } = { 
+    	summary => 'authorization',
+        params => $params,
+        returns => 'InlineResponse200',
+        };
+}
+# @return InlineResponse200
+#
+sub v2_auth_post {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'authorization' is set
+    unless (exists $args{'authorization'}) {
+      croak("Missing the required parameter 'authorization' when calling v2_auth_post");
+    }
+
+    # parse inputs
+    my $_resource_path = '/v2/auth';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'POST';

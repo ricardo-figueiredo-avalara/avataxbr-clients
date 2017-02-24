@@ -1,4 +1,4 @@
-# Br16Api.WithholdingMode
+# AvaTaxBrazil.WithholdingMode
 
 ## Enum
 

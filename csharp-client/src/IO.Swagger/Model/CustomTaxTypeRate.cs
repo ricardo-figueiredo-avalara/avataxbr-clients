@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -101,11 +101,8 @@ namespace IO.Swagger.Model
         /// <param name="SrvAmount">Specific tax rate ex 3.5 (3.5%).</param>
         /// <param name="QuantityUnidBase">QuantityUnidBase.</param>
         /// <param name="SpecializationType">SpecializationType.</param>
-        /// <param name="ExemptionReasonCode">UUID Reference to an item in the LegalReason store. .</param>
-        /// <param name="CustomExemptionReasonDescription">Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other). .</param>
-        /// <param name="Withholding">Withholding.</param>
         /// <param name="CompanyId">Company ID (required).</param>
-        public CustomTaxTypeRate(TaxType TaxType = default(TaxType), TaxModelEnum? TaxModel = default(TaxModelEnum?), double? Rate = default(double?), double? SrvAmount = default(double?), string QuantityUnidBase = default(string), SpecializationTypeEnum? SpecializationType = default(SpecializationTypeEnum?), string ExemptionReasonCode = default(string), string CustomExemptionReasonDescription = default(string), TaxTypeRateWithholding Withholding = default(TaxTypeRateWithholding), Guid? CompanyId = default(Guid?))
+        public CustomTaxTypeRate(TaxType TaxType = default(TaxType), TaxModelEnum? TaxModel = default(TaxModelEnum?), double? Rate = default(double?), double? SrvAmount = default(double?), string QuantityUnidBase = default(string), SpecializationTypeEnum? SpecializationType = default(SpecializationTypeEnum?), Guid? CompanyId = default(Guid?))
         {
             // to ensure "TaxType" is required (not null)
             if (TaxType == null)
@@ -138,9 +135,6 @@ namespace IO.Swagger.Model
             this.SrvAmount = SrvAmount;
             this.QuantityUnidBase = QuantityUnidBase;
             this.SpecializationType = SpecializationType;
-            this.ExemptionReasonCode = ExemptionReasonCode;
-            this.CustomExemptionReasonDescription = CustomExemptionReasonDescription;
-            this.Withholding = Withholding;
         }
         
         /// <summary>
@@ -166,23 +160,6 @@ namespace IO.Swagger.Model
         [DataMember(Name="quantityUnidBase", EmitDefaultValue=false)]
         public string QuantityUnidBase { get; set; }
         /// <summary>
-        /// UUID Reference to an item in the LegalReason store. 
-        /// </summary>
-        /// <value>UUID Reference to an item in the LegalReason store. </value>
-        [DataMember(Name="exemptionReasonCode", EmitDefaultValue=false)]
-        public string ExemptionReasonCode { get; set; }
-        /// <summary>
-        /// Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other). 
-        /// </summary>
-        /// <value>Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other). </value>
-        [DataMember(Name="customExemptionReasonDescription", EmitDefaultValue=false)]
-        public string CustomExemptionReasonDescription { get; set; }
-        /// <summary>
-        /// Gets or Sets Withholding
-        /// </summary>
-        [DataMember(Name="withholding", EmitDefaultValue=false)]
-        public TaxTypeRateWithholding Withholding { get; set; }
-        /// <summary>
         /// Company ID
         /// </summary>
         /// <value>Company ID</value>
@@ -202,9 +179,6 @@ namespace IO.Swagger.Model
             sb.Append("  SrvAmount: ").Append(SrvAmount).Append("\n");
             sb.Append("  QuantityUnidBase: ").Append(QuantityUnidBase).Append("\n");
             sb.Append("  SpecializationType: ").Append(SpecializationType).Append("\n");
-            sb.Append("  ExemptionReasonCode: ").Append(ExemptionReasonCode).Append("\n");
-            sb.Append("  CustomExemptionReasonDescription: ").Append(CustomExemptionReasonDescription).Append("\n");
-            sb.Append("  Withholding: ").Append(Withholding).Append("\n");
             sb.Append("  CompanyId: ").Append(CompanyId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -273,21 +247,6 @@ namespace IO.Swagger.Model
                     this.SpecializationType.Equals(other.SpecializationType)
                 ) && 
                 (
-                    this.ExemptionReasonCode == other.ExemptionReasonCode ||
-                    this.ExemptionReasonCode != null &&
-                    this.ExemptionReasonCode.Equals(other.ExemptionReasonCode)
-                ) && 
-                (
-                    this.CustomExemptionReasonDescription == other.CustomExemptionReasonDescription ||
-                    this.CustomExemptionReasonDescription != null &&
-                    this.CustomExemptionReasonDescription.Equals(other.CustomExemptionReasonDescription)
-                ) && 
-                (
-                    this.Withholding == other.Withholding ||
-                    this.Withholding != null &&
-                    this.Withholding.Equals(other.Withholding)
-                ) && 
-                (
                     this.CompanyId == other.CompanyId ||
                     this.CompanyId != null &&
                     this.CompanyId.Equals(other.CompanyId)
@@ -317,12 +276,6 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.QuantityUnidBase.GetHashCode();
                 if (this.SpecializationType != null)
                     hash = hash * 59 + this.SpecializationType.GetHashCode();
-                if (this.ExemptionReasonCode != null)
-                    hash = hash * 59 + this.ExemptionReasonCode.GetHashCode();
-                if (this.CustomExemptionReasonDescription != null)
-                    hash = hash * 59 + this.CustomExemptionReasonDescription.GetHashCode();
-                if (this.Withholding != null)
-                    hash = hash * 59 + this.Withholding.GetHashCode();
                 if (this.CompanyId != null)
                     hash = hash * 59 + this.CompanyId.GetHashCode();
                 return hash;

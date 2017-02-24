@@ -54,7 +54,7 @@ API.Client.CustomAgast.prototype.cean;
 API.Client.CustomAgast.prototype.codeType;
 
 /**
- * Inform if this process is subject to IPI taxation on output process - '50' # Saída Tributada - '51' # Saída Tributável com Alíquota Zero - '52' # Saída Isenta - '53' # Saída Não-Tributada - '54' # Saída Imune 
+ * Inform if this process is subject to IPI taxation on output process - 'T'  # TAXABLE - 'Z'  # TAXABLE WITH RATE=0.00 - 'E'  # EXEMPT - 'N'  # NO TAXABLE     - 'I'  # IMMUNE 
  * @type {!string}
  * @export
  */
@@ -82,6 +82,20 @@ API.Client.CustomAgast.prototype.pisCofinsTaxReporting;
 API.Client.CustomAgast.prototype.accruablePISTaxation;
 
 /**
+ * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+ * @type {!string}
+ * @export
+ */
+API.Client.CustomAgast.prototype.pisExemptLegalReasonCode;
+
+/**
+ * When specified a reason, this field holds the reason's description
+ * @type {!string}
+ * @export
+ */
+API.Client.CustomAgast.prototype.pisExemptLegalReason;
+
+/**
  * Inform if this item by nature is subject to COFINS taxation or exempt - 'T' # TAXABLE - 'Z' # TAXABLE WITH RATE=0.00 - 'E' # EXEMPT - 'H' # SUSPENDED - 'N' # NO TAXABLE 
  * @type {!string}
  * @export
@@ -89,11 +103,43 @@ API.Client.CustomAgast.prototype.accruablePISTaxation;
 API.Client.CustomAgast.prototype.accruableCOFINSTaxation;
 
 /**
+ * When exempt, taxable with zero rate, suspended, not taxable, this field informs the official code number for the exemption
+ * @type {!string}
+ * @export
+ */
+API.Client.CustomAgast.prototype.cofinsExemptLegalReasonCode;
+
+/**
+ * When specified a reason, this field holds the reason's description
+ * @type {!string}
+ * @export
+ */
+API.Client.CustomAgast.prototype.cofinsExemptLegalReason;
+
+/**
  * Inform if this item by nature is subject to CSLL taxation or exempt - 'T' # TAXABLE - 'E' # EXEMPT 
  * @type {!string}
  * @export
  */
 API.Client.CustomAgast.prototype.accruableCSLLTaxation;
+
+/**
+ * @type {!string}
+ * @export
+ */
+API.Client.CustomAgast.prototype.csllExemptLegalReason;
+
+/**
+ * @type {!string}
+ * @export
+ */
+API.Client.CustomAgast.prototype.csllExemptLegalReasonCode;
+
+/**
+ * @type {!API.Client.Agast_withholding}
+ * @export
+ */
+API.Client.CustomAgast.prototype.withholding;
 
 /**
  * for service items with City Jurisdiction, inform where the ISS tax is due
@@ -145,11 +191,11 @@ API.Client.CustomAgast.prototype.companyId;
 
 /** @enum {string} */
 API.Client.CustomAgast.CstIPIEnum = { 
-  50: '50',
-  51: '51',
-  52: '52',
-  53: '53',
-  54: '54',
+  T: 'T',
+  Z: 'Z',
+  E: 'E',
+  N: 'N',
+  I: 'I',
 }
 /** @enum {string} */
 API.Client.CustomAgast.PisCofinsTaxReportingEnum = { 

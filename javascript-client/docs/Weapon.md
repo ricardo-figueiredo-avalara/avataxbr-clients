@@ -1,4 +1,4 @@
-# Br16Api.Weapon
+# AvaTaxBrazil.Weapon
 
 ## Properties
 Name | Type | Description | Notes

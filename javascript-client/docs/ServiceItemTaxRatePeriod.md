@@ -1,4 +1,4 @@
-# Br16Api.ServiceItemTaxRatePeriod
+# AvaTaxBrazil.ServiceItemTaxRatePeriod
 
 ## Properties
 Name | Type | Description | Notes

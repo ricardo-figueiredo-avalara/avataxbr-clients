@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"taxType": @"taxType", @"taxModel": @"taxModel", @"rate": @"rate", @"srvAmount": @"srvAmount", @"quantityUnidBase": @"quantityUnidBase", @"specializationType": @"specializationType", @"exemptionReasonCode": @"exemptionReasonCode", @"customExemptionReasonDescription": @"customExemptionReasonDescription", @"withholding": @"withholding" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"taxType": @"taxType", @"taxModel": @"taxModel", @"rate": @"rate", @"srvAmount": @"srvAmount", @"quantityUnidBase": @"quantityUnidBase", @"specializationType": @"specializationType" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"rate", @"srvAmount", @"quantityUnidBase", @"specializationType", @"exemptionReasonCode", @"customExemptionReasonDescription", @"withholding"];
+  NSArray *optionalProperties = @[@"rate", @"srvAmount", @"quantityUnidBase", @"specializationType"];
   return [optionalProperties containsObject:propertyName];
 }
 

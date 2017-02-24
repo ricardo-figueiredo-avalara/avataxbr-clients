@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.CfopConf();
+    instance = new AvaTaxBrazil.CfopConf();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,91 +50,91 @@
   describe('CfopConf', function() {
     it('should create an instance of CfopConf', function() {
       // uncomment below and update the code to test CfopConf
-      //var instane = new Br16Api.CfopConf();
-      //expect(instance).to.be.a(Br16Api.CfopConf);
+      //var instane = new AvaTaxBrazil.CfopConf();
+      //expect(instance).to.be.a(AvaTaxBrazil.CfopConf);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property wayType (base name: "wayType")', function() {
       // uncomment below and update the code to test the property wayType
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property codInState (base name: "codInState")', function() {
       // uncomment below and update the code to test the property codInState
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property codOtherState (base name: "codOtherState")', function() {
       // uncomment below and update the code to test the property codOtherState
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property codOtherCountry (base name: "codOtherCountry")', function() {
       // uncomment below and update the code to test the property codOtherCountry
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property cstICMSSameState (base name: "cstICMSSameState")', function() {
       // uncomment below and update the code to test the property cstICMSSameState
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property cstICMSOtherState (base name: "cstICMSOtherState")', function() {
       // uncomment below and update the code to test the property cstICMSOtherState
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property cstICMSOtherCountry (base name: "cstICMSOtherCountry")', function() {
       // uncomment below and update the code to test the property cstICMSOtherCountry
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property productType (base name: "productType")', function() {
       // uncomment below and update the code to test the property productType
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property operationToTaxPayerOtherState (base name: "operationToTaxPayerOtherState")', function() {
       // uncomment below and update the code to test the property operationToTaxPayerOtherState
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property operationWithST (base name: "operationWithST")', function() {
       // uncomment below and update the code to test the property operationWithST
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property operationToFreeZone (base name: "operationToFreeZone")', function() {
       // uncomment below and update the code to test the property operationToFreeZone
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 
     it('should have the property specificForProductClass (base name: "specificForProductClass")', function() {
       // uncomment below and update the code to test the property specificForProductClass
-      //var instane = new Br16Api.CfopConf();
+      //var instane = new AvaTaxBrazil.CfopConf();
       //expect(instance).to.be();
     });
 

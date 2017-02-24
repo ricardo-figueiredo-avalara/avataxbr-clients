@@ -1,7 +1,7 @@
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -57,9 +57,6 @@ module SwaggerClient
 
     # Discount allowed on icms base when PIS/COFINS are Monophase
     attr_accessor :icms_base_discount_for_mono_phase_social_contr
-
-    # tax substitution code - Codigo especificador da Substuicao Tributaria
-    attr_accessor :cest
 
     # GTIN NUMBER
     attr_accessor :cean
@@ -138,7 +135,6 @@ module SwaggerClient
         :'is_pis_cofins_estimated_credit' => :'isPisCofinsEstimatedCredit',
         :'piscofins_revenue_type' => :'piscofinsRevenueType',
         :'icms_base_discount_for_mono_phase_social_contr' => :'icmsBaseDiscountForMonoPhaseSocialContr',
-        :'cest' => :'cest',
         :'cean' => :'cean',
         :'nve' => :'nve',
         :'sales_unit' => :'salesUnit',
@@ -173,7 +169,6 @@ module SwaggerClient
         :'is_pis_cofins_estimated_credit' => :'BOOLEAN',
         :'piscofins_revenue_type' => :'String',
         :'icms_base_discount_for_mono_phase_social_contr' => :'Float',
-        :'cest' => :'String',
         :'cean' => :'String',
         :'nve' => :'String',
         :'sales_unit' => :'String',
@@ -256,10 +251,6 @@ module SwaggerClient
 
       if attributes.has_key?(:'icmsBaseDiscountForMonoPhaseSocialContr')
         self.icms_base_discount_for_mono_phase_social_contr = attributes[:'icmsBaseDiscountForMonoPhaseSocialContr']
-      end
-
-      if attributes.has_key?(:'cest')
-        self.cest = attributes[:'cest']
       end
 
       if attributes.has_key?(:'cean')
@@ -356,10 +347,6 @@ module SwaggerClient
         invalid_properties.push("invalid value for 'n_fci', must conform to the pattern /[A-F0-9]{8}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{12}/.")
       end
 
-      if !@cest.nil? && @cest !~ Regexp.new(/[0-9]{7}/)
-        invalid_properties.push("invalid value for 'cest', must conform to the pattern /[0-9]{7}/.")
-      end
-
       if !@cean.nil? && @cean !~ Regexp.new(/[0-9]{0}|[0-9]{8}|[0-9]{12,14}/)
         invalid_properties.push("invalid value for 'cean', must conform to the pattern /[0-9]{0}|[0-9]{8}|[0-9]{12,14}/.")
       end
@@ -397,7 +384,6 @@ module SwaggerClient
       return false unless product_type_validator.valid?(@product_type)
       piscofins_revenue_type_validator = EnumAttributeValidator.new('String', ["01", "02", "03", "04", "05", "06", "07"])
       return false unless piscofins_revenue_type_validator.valid?(@piscofins_revenue_type)
-      return false if !@cest.nil? && @cest !~ Regexp.new(/[0-9]{7}/)
       return false if !@cean.nil? && @cean !~ Regexp.new(/[0-9]{0}|[0-9]{8}|[0-9]{12,14}/)
       return false if !@nve.nil? && @nve !~ Regexp.new(/[A-Z]{2}[0-9]{4}/)
       return false if !@sales_unit.nil? && @sales_unit.to_s.length > 6
@@ -500,17 +486,6 @@ module SwaggerClient
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] cest Value to be assigned
-    def cest=(cest)
-
-      if !cest.nil? && cest !~ Regexp.new(/[0-9]{7}/)
-        fail ArgumentError, "invalid value for 'cest', must conform to the pattern /[0-9]{7}/."
-      end
-
-      @cest = cest
-    end
-
-    # Custom attribute writer method with validation
     # @param [Object] cean Value to be assigned
     def cean=(cean)
 
@@ -574,7 +549,6 @@ module SwaggerClient
           is_pis_cofins_estimated_credit == o.is_pis_cofins_estimated_credit &&
           piscofins_revenue_type == o.piscofins_revenue_type &&
           icms_base_discount_for_mono_phase_social_contr == o.icms_base_discount_for_mono_phase_social_contr &&
-          cest == o.cest &&
           cean == o.cean &&
           nve == o.nve &&
           sales_unit == o.sales_unit &&
@@ -599,7 +573,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [company_id, code, agast, description, seal_code, n_fci, is_icms_st_substitute, source, product_type, manufacturer_equivalent, appropriate_ip_icredit_when_in_going, usually_appropriate_piscofins_credit, is_pis_cofins_estimated_credit, piscofins_revenue_type, icms_base_discount_for_mono_phase_social_contr, cest, cean, nve, sales_unit, sales_unit_ip_ifactor, sales_unit_icmsfactor, sales_unit_icms_stfactor, sales_unit_pis_cofinsfactor, purchase_unit, purchase_unit_ip_ifactor, purchase_unit_icmsfactor, purchase_unit_icms_stfactor, purchase_unit_pis_cofinsfactor, first_use].hash
+      [company_id, code, agast, description, seal_code, n_fci, is_icms_st_substitute, source, product_type, manufacturer_equivalent, appropriate_ip_icredit_when_in_going, usually_appropriate_piscofins_credit, is_pis_cofins_estimated_credit, piscofins_revenue_type, icms_base_discount_for_mono_phase_social_contr, cean, nve, sales_unit, sales_unit_ip_ifactor, sales_unit_icmsfactor, sales_unit_icms_stfactor, sales_unit_pis_cofinsfactor, purchase_unit, purchase_unit_ip_ifactor, purchase_unit_icmsfactor, purchase_unit_icms_stfactor, purchase_unit_pis_cofinsfactor, first_use].hash
     end
 
     # Builds the object from hash

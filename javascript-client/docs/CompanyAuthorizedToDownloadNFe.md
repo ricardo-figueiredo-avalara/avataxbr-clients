@@ -1,4 +1,4 @@
-# Br16Api.CompanyAuthorizedToDownloadNFe
+# AvaTaxBrazil.CompanyAuthorizedToDownloadNFe
 
 ## Properties
 Name | Type | Description | Notes

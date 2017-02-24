@@ -1,4 +1,4 @@
-# Br16Api.SalesTaxesConfig
+# AvaTaxBrazil.SalesTaxesConfig
 
 ## Properties
 Name | Type | Description | Notes

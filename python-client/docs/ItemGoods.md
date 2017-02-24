@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **is_pis_cofins_estimated_credit** | **bool** | The credit PIS/COFINS is subject to purchase form companies, but exist some exceptions, when the credit will be a estimated amount | [optional] 
 **piscofins_revenue_type** | **str** | - &#39;01&#39; # Vinculada Exclusivamente a Receita Tributada no Mercado Interno - &#39;02&#39; # Exclusivamente a Receita Não Tributada no Mercado Interno - &#39;03&#39; # Exclusivamente a Receita de Exportação - &#39;04&#39; # Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno - &#39;05&#39; # Vinculada a Receitas Tributadas no Mercado Interno e de Exportação - &#39;06&#39; # Vinculada a Receitas Não-Tributadas no Mercado Interno e de Exportação - &#39;07&#39; # Vinculada a Receitas Tributadas e Não-Tributadas no Mercado Interno, e de Exportação  | [optional] 
 **icms_base_discount_for_mono_phase_social_contr** | **float** | Discount allowed on icms base when PIS/COFINS are Monophase | [optional] 
-**cest** | **str** | tax substitution code - Codigo especificador da Substuicao Tributaria | [optional] 
 **cean** | **str** | GTIN NUMBER | [optional] 
 **nve** | **str** | Nomenclatura de Valor aduaneio e Estatístico - NCM extension code | [optional] 
 **sales_unit** | **str** |  | [optional] 

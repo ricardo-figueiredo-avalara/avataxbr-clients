@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -22,7 +22,7 @@ import io.swagger.client.model.ItemSimple;
 /**
  * ItemGoods
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class ItemGoods {
   @SerializedName("companyId")
   private String companyId = null;
@@ -182,9 +182,6 @@ public class ItemGoods {
 
   @SerializedName("icmsBaseDiscountForMonoPhaseSocialContr")
   private Double icmsBaseDiscountForMonoPhaseSocialContr = null;
-
-  @SerializedName("cest")
-  private String cest = null;
 
   @SerializedName("cean")
   private String cean = null;
@@ -495,24 +492,6 @@ public class ItemGoods {
     this.icmsBaseDiscountForMonoPhaseSocialContr = icmsBaseDiscountForMonoPhaseSocialContr;
   }
 
-  public ItemGoods cest(String cest) {
-    this.cest = cest;
-    return this;
-  }
-
-   /**
-   * tax substitution code - Codigo especificador da Substuicao Tributaria
-   * @return cest
-  **/
-  @ApiModelProperty(example = "null", value = "tax substitution code - Codigo especificador da Substuicao Tributaria")
-  public String getCest() {
-    return cest;
-  }
-
-  public void setCest(String cest) {
-    this.cest = cest;
-  }
-
   public ItemGoods cean(String cean) {
     this.cean = cean;
     return this;
@@ -772,7 +751,6 @@ public class ItemGoods {
         Objects.equals(this.isPisCofinsEstimatedCredit, itemGoods.isPisCofinsEstimatedCredit) &&
         Objects.equals(this.piscofinsRevenueType, itemGoods.piscofinsRevenueType) &&
         Objects.equals(this.icmsBaseDiscountForMonoPhaseSocialContr, itemGoods.icmsBaseDiscountForMonoPhaseSocialContr) &&
-        Objects.equals(this.cest, itemGoods.cest) &&
         Objects.equals(this.cean, itemGoods.cean) &&
         Objects.equals(this.nve, itemGoods.nve) &&
         Objects.equals(this.salesUnit, itemGoods.salesUnit) &&
@@ -790,7 +768,7 @@ public class ItemGoods {
 
   @Override
   public int hashCode() {
-    return Objects.hash(companyId, code, agast, description, sealCode, nFCI, isIcmsStSubstitute, source, productType, manufacturerEquivalent, appropriateIPIcreditWhenInGoing, usuallyAppropriatePISCOFINSCredit, isPisCofinsEstimatedCredit, piscofinsRevenueType, icmsBaseDiscountForMonoPhaseSocialContr, cest, cean, nve, salesUnit, salesUnitIPIfactor, salesUnitIcmsfactor, salesUnitIcmsStfactor, salesUnitPisCofinsfactor, purchaseUnit, purchaseUnitIPIfactor, purchaseUnitIcmsfactor, purchaseUnitIcmsStfactor, purchaseUnitPisCofinsfactor, firstUse);
+    return Objects.hash(companyId, code, agast, description, sealCode, nFCI, isIcmsStSubstitute, source, productType, manufacturerEquivalent, appropriateIPIcreditWhenInGoing, usuallyAppropriatePISCOFINSCredit, isPisCofinsEstimatedCredit, piscofinsRevenueType, icmsBaseDiscountForMonoPhaseSocialContr, cean, nve, salesUnit, salesUnitIPIfactor, salesUnitIcmsfactor, salesUnitIcmsStfactor, salesUnitPisCofinsfactor, purchaseUnit, purchaseUnitIPIfactor, purchaseUnitIcmsfactor, purchaseUnitIcmsStfactor, purchaseUnitPisCofinsfactor, firstUse);
   }
 
 
@@ -814,7 +792,6 @@ public class ItemGoods {
     sb.append("    isPisCofinsEstimatedCredit: ").append(toIndentedString(isPisCofinsEstimatedCredit)).append("\n");
     sb.append("    piscofinsRevenueType: ").append(toIndentedString(piscofinsRevenueType)).append("\n");
     sb.append("    icmsBaseDiscountForMonoPhaseSocialContr: ").append(toIndentedString(icmsBaseDiscountForMonoPhaseSocialContr)).append("\n");
-    sb.append("    cest: ").append(toIndentedString(cest)).append("\n");
     sb.append("    cean: ").append(toIndentedString(cean)).append("\n");
     sb.append("    nve: ").append(toIndentedString(nve)).append("\n");
     sb.append("    salesUnit: ").append(toIndentedString(salesUnit)).append("\n");

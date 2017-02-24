@@ -1,4 +1,4 @@
-# Br16Api.ValidationError
+# AvaTaxBrazil.ValidationError
 
 ## Properties
 Name | Type | Description | Notes

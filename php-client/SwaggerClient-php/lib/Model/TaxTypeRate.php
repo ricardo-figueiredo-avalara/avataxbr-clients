@@ -11,9 +11,9 @@
  */
 
 /**
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -60,10 +60,7 @@ class TaxTypeRate implements ArrayAccess
         'rate' => 'double',
         'srv_amount' => 'double',
         'quantity_unid_base' => 'string',
-        'specialization_type' => 'string',
-        'exemption_reason_code' => 'string',
-        'custom_exemption_reason_description' => 'string',
-        'withholding' => '\Swagger\Client\Model\TaxTypeRateWithholding'
+        'specialization_type' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -81,10 +78,7 @@ class TaxTypeRate implements ArrayAccess
         'rate' => 'rate',
         'srv_amount' => 'srvAmount',
         'quantity_unid_base' => 'quantityUnidBase',
-        'specialization_type' => 'specializationType',
-        'exemption_reason_code' => 'exemptionReasonCode',
-        'custom_exemption_reason_description' => 'customExemptionReasonDescription',
-        'withholding' => 'withholding'
+        'specialization_type' => 'specializationType'
     ];
 
 
@@ -98,10 +92,7 @@ class TaxTypeRate implements ArrayAccess
         'rate' => 'setRate',
         'srv_amount' => 'setSrvAmount',
         'quantity_unid_base' => 'setQuantityUnidBase',
-        'specialization_type' => 'setSpecializationType',
-        'exemption_reason_code' => 'setExemptionReasonCode',
-        'custom_exemption_reason_description' => 'setCustomExemptionReasonDescription',
-        'withholding' => 'setWithholding'
+        'specialization_type' => 'setSpecializationType'
     ];
 
 
@@ -115,10 +106,7 @@ class TaxTypeRate implements ArrayAccess
         'rate' => 'getRate',
         'srv_amount' => 'getSrvAmount',
         'quantity_unid_base' => 'getQuantityUnidBase',
-        'specialization_type' => 'getSpecializationType',
-        'exemption_reason_code' => 'getExemptionReasonCode',
-        'custom_exemption_reason_description' => 'getCustomExemptionReasonDescription',
-        'withholding' => 'getWithholding'
+        'specialization_type' => 'getSpecializationType'
     ];
 
     public static function attributeMap()
@@ -188,9 +176,6 @@ class TaxTypeRate implements ArrayAccess
         $this->container['srv_amount'] = isset($data['srv_amount']) ? $data['srv_amount'] : null;
         $this->container['quantity_unid_base'] = isset($data['quantity_unid_base']) ? $data['quantity_unid_base'] : null;
         $this->container['specialization_type'] = isset($data['specialization_type']) ? $data['specialization_type'] : null;
-        $this->container['exemption_reason_code'] = isset($data['exemption_reason_code']) ? $data['exemption_reason_code'] : null;
-        $this->container['custom_exemption_reason_description'] = isset($data['custom_exemption_reason_description']) ? $data['custom_exemption_reason_description'] : null;
-        $this->container['withholding'] = isset($data['withholding']) ? $data['withholding'] : null;
     }
 
     /**
@@ -387,69 +372,6 @@ class TaxTypeRate implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'specialization_type', must be one of 'basic', 'monophase', 'taxSubstitution'");
         }
         $this->container['specialization_type'] = $specialization_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets exemption_reason_code
-     * @return string
-     */
-    public function getExemptionReasonCode()
-    {
-        return $this->container['exemption_reason_code'];
-    }
-
-    /**
-     * Sets exemption_reason_code
-     * @param string $exemption_reason_code UUID Reference to an item in the LegalReason store.
-     * @return $this
-     */
-    public function setExemptionReasonCode($exemption_reason_code)
-    {
-        $this->container['exemption_reason_code'] = $exemption_reason_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets custom_exemption_reason_description
-     * @return string
-     */
-    public function getCustomExemptionReasonDescription()
-    {
-        return $this->container['custom_exemption_reason_description'];
-    }
-
-    /**
-     * Sets custom_exemption_reason_description
-     * @param string $custom_exemption_reason_description Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 = Other).
-     * @return $this
-     */
-    public function setCustomExemptionReasonDescription($custom_exemption_reason_description)
-    {
-        $this->container['custom_exemption_reason_description'] = $custom_exemption_reason_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets withholding
-     * @return \Swagger\Client\Model\TaxTypeRateWithholding
-     */
-    public function getWithholding()
-    {
-        return $this->container['withholding'];
-    }
-
-    /**
-     * Sets withholding
-     * @param \Swagger\Client\Model\TaxTypeRateWithholding $withholding
-     * @return $this
-     */
-    public function setWithholding($withholding)
-    {
-        $this->container['withholding'] = $withholding;
 
         return $this;
     }

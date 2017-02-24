@@ -9,21 +9,35 @@ import Foundation
 
 
 public class LineForGoodsIcmsTaxRelief: JSONEncodable {
-    /** When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016  */
-    public var icmsTaxReliefReasonCode: Int32?
+    public enum ReasonCode: String { 
+        case Number1 = "1"
+        case Number3 = "3"
+        case Number4 = "4"
+        case Number5 = "5"
+        case Number6 = "6"
+        case Number7 = "7"
+        case Number8 = "8"
+        case Number9 = "9"
+        case Number10 = "10"
+        case Number11 = "11"
+        case Number12 = "12"
+        case Number16 = "16"
+    }
+    /** When item transaction subject to desoneration, this is the reason code - &#39;1&#39; # Táxi; - &#39;3&#39; # Produtor Agropecuário; - &#39;4&#39; # Frotista/Locadora; - &#39;5&#39; # Diplomático/Consular; - &#39;6&#39; # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - &#39;7&#39; # SUFRAMA; - &#39;8&#39; # Venda a órgão Público; - &#39;9&#39; # Outros - &#39;10&#39; # Deficiente Condutor - &#39;11&#39; # Deficiente não condutor - &#39;12&#39; # Fomento agropecuário - &#39;16&#39; # Olimpíadas Rio 2016  */
+    public var reasonCode: ReasonCode?
     /** ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração) */
-    public var icmsReliefTaxRate: Double?
+    public var taxBaseDiscount: Double?
     /** Amount for Icms Relief (desoneração) */
-    public var icmsReliefTaxAmount: Double?
+    public var taxAmount: Double?
 
     public init() {}
 
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["icmsTaxReliefReasonCode"] = self.icmsTaxReliefReasonCode?.encodeToJSON()
-        nillableDictionary["icmsReliefTaxRate"] = self.icmsReliefTaxRate
-        nillableDictionary["icmsReliefTaxAmount"] = self.icmsReliefTaxAmount
+        nillableDictionary["reasonCode"] = self.reasonCode?.rawValue
+        nillableDictionary["taxBaseDiscount"] = self.taxBaseDiscount
+        nillableDictionary["taxAmount"] = self.taxAmount
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

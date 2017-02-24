@@ -1,4 +1,4 @@
-# Br16Api.PurchaseInstallmentIn
+# AvaTaxBrazil.PurchaseInstallmentIn
 
 ## Properties
 Name | Type | Description | Notes

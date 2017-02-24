@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 #
 =begin
-#BR16 - API
+#AvaTax Brazil
 
-#This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+#The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Swagger-Codegen"]
   s.email       = [""]
   s.homepage    = "https://github.com/swagger-api/swagger-codegen"
-  s.summary     = "BR16 - API Ruby Gem"
-  s.description = "This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts"
+  s.summary     = "AvaTax Brazil Ruby Gem"
+  s.description = "The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil."
   # TODO uncommnet and update below with a proper license 
   #s.license     = "Apache 2.0"
   s.required_ruby_version = ">= 1.9"

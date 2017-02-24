@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,10 +20,10 @@
     module.exports = factory(require('../ApiClient'), require('../model/Message'), require('../model/SefazDisableRangeIn'), require('../model/SefazInvoiceBasicStatus'), require('../model/SefazItDeleteIn'), require('../model/SefazItGetOut'), require('../model/SefazItPutIn'), require('../model/SefazPostOut'), require('../model/TransactionForSefazGoods'), require('../model/TransactionForSefazGoodsList'), require('../model/ValidationError'));
   } else {
     // Browser globals (root is window)
-    if (!root.Br16Api) {
-      root.Br16Api = {};
+    if (!root.AvaTaxBrazil) {
+      root.AvaTaxBrazil = {};
     }
-    root.Br16Api.InvoiceSEFAZApi = factory(root.Br16Api.ApiClient, root.Br16Api.Message, root.Br16Api.SefazDisableRangeIn, root.Br16Api.SefazInvoiceBasicStatus, root.Br16Api.SefazItDeleteIn, root.Br16Api.SefazItGetOut, root.Br16Api.SefazItPutIn, root.Br16Api.SefazPostOut, root.Br16Api.TransactionForSefazGoods, root.Br16Api.TransactionForSefazGoodsList, root.Br16Api.ValidationError);
+    root.AvaTaxBrazil.InvoiceSEFAZApi = factory(root.AvaTaxBrazil.ApiClient, root.AvaTaxBrazil.Message, root.AvaTaxBrazil.SefazDisableRangeIn, root.AvaTaxBrazil.SefazInvoiceBasicStatus, root.AvaTaxBrazil.SefazItDeleteIn, root.AvaTaxBrazil.SefazItGetOut, root.AvaTaxBrazil.SefazItPutIn, root.AvaTaxBrazil.SefazPostOut, root.AvaTaxBrazil.TransactionForSefazGoods, root.AvaTaxBrazil.TransactionForSefazGoodsList, root.AvaTaxBrazil.ValidationError);
   }
 }(this, function(ApiClient, Message, SefazDisableRangeIn, SefazInvoiceBasicStatus, SefazItDeleteIn, SefazItGetOut, SefazItPutIn, SefazPostOut, TransactionForSefazGoods, TransactionForSefazGoodsList, ValidationError) {
   'use strict';

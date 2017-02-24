@@ -1,6 +1,6 @@
 /*
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -23,7 +23,7 @@ import io.swagger.client.model.EntityLocation;
  * This element contains a dictionary of locations such as the origin and destination addresses to be associated with this transaction. These locations may be overridden within each line item. The key for each location in the dictionary is the location &#39;purpose&#39;. Valid locations purposes are &#39;ShipFrom&#39;, &#39;ShipTo&#39;, &#39;POS&#39;, &#39;POM&#39;, &#39;POO&#39;, &#39;BillingLocation&#39;, &#39;CallPlaced&#39;, &#39;CallReceived&#39;, &#39;ServiceRendered&#39;, &#39;POA&#39; and &#39;FirstUse&#39;. There can only be one location of a given purpose in the dictionary.
  */
 @ApiModel(description = "This element contains a dictionary of locations such as the origin and destination addresses to be associated with this transaction. These locations may be overridden within each line item. The key for each location in the dictionary is the location 'purpose'. Valid locations purposes are 'ShipFrom', 'ShipTo', 'POS', 'POM', 'POO', 'BillingLocation', 'CallPlaced', 'CallReceived', 'ServiceRendered', 'POA' and 'FirstUse'. There can only be one location of a given purpose in the dictionary.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-16T18:26:15.214Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T19:47:57.099Z")
 public class DefaultLocations {
   @SerializedName("entity")
   private EntityLocation entity = null;

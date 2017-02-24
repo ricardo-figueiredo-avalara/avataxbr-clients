@@ -1,4 +1,4 @@
-# Br16Api.NRefRefFarmerNF
+# AvaTaxBrazil.NRefRefFarmerNF
 
 ## Properties
 Name | Type | Description | Notes

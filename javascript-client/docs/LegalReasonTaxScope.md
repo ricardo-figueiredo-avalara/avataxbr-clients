@@ -1,4 +1,4 @@
-# Br16Api.LegalReasonTaxScope
+# AvaTaxBrazil.LegalReasonTaxScope
 
 ## Properties
 Name | Type | Description | Notes

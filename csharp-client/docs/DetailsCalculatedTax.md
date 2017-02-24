@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LocationType** | **string** | This string captures the applicable location type. Location used for calc. Buyer or Seller | [optional] 
 **JurisdictionName** | **string** | Jurisdiction used for calctax amount | [optional] 
-**JurisdictionType** | **string** | Type of jurisdiction | [optional] 
+**JurisdictionType** | **string** | Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39;  | [optional] 
 **TaxType** | **string** | Tax identificator | [optional] 
 **RateType** | **string** | Name of configuration rate | [optional] 
 **Scenario** | **string** | This string captures the transaction scenario used to calculate the tax for this tax type. Scenarios are specific to the tax type. This field provides information about how the tax engine interpreted the transaction information that was passed in. | [optional] 

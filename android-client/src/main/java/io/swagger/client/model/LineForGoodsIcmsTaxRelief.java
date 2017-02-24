@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -18,44 +18,47 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class LineForGoodsIcmsTaxRelief {
   
-  @SerializedName("icmsTaxReliefReasonCode")
-  private Integer icmsTaxReliefReasonCode = null;
-  @SerializedName("icmsReliefTaxRate")
-  private Double icmsReliefTaxRate = null;
-  @SerializedName("icmsReliefTaxAmount")
-  private Double icmsReliefTaxAmount = null;
+  public enum ReasonCodeEnum {
+     1,  3,  4,  5,  6,  7,  8,  9,  10,  11,  12,  16, 
+  };
+  @SerializedName("reasonCode")
+  private ReasonCodeEnum reasonCode = null;
+  @SerializedName("taxBaseDiscount")
+  private Double taxBaseDiscount = null;
+  @SerializedName("taxAmount")
+  private Double taxAmount = null;
 
   /**
-   * When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 
+   * When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 
    **/
-  @ApiModelProperty(required = true, value = "When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 ")
-  public Integer getIcmsTaxReliefReasonCode() {
-    return icmsTaxReliefReasonCode;
+  @ApiModelProperty(required = true, value = "When item transaction subject to desoneration, this is the reason code - '1' # Táxi; - '3' # Produtor Agropecuário; - '4' # Frotista/Locadora; - '5' # Diplomático/Consular; - '6' # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - '7' # SUFRAMA; - '8' # Venda a órgão Público; - '9' # Outros - '10' # Deficiente Condutor - '11' # Deficiente não condutor - '12' # Fomento agropecuário - '16' # Olimpíadas Rio 2016 ")
+  public ReasonCodeEnum getReasonCode() {
+    return reasonCode;
   }
-  public void setIcmsTaxReliefReasonCode(Integer icmsTaxReliefReasonCode) {
-    this.icmsTaxReliefReasonCode = icmsTaxReliefReasonCode;
+  public void setReasonCode(ReasonCodeEnum reasonCode) {
+    this.reasonCode = reasonCode;
   }
 
   /**
    * ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)
    **/
   @ApiModelProperty(value = "ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)")
-  public Double getIcmsReliefTaxRate() {
-    return icmsReliefTaxRate;
+  public Double getTaxBaseDiscount() {
+    return taxBaseDiscount;
   }
-  public void setIcmsReliefTaxRate(Double icmsReliefTaxRate) {
-    this.icmsReliefTaxRate = icmsReliefTaxRate;
+  public void setTaxBaseDiscount(Double taxBaseDiscount) {
+    this.taxBaseDiscount = taxBaseDiscount;
   }
 
   /**
    * Amount for Icms Relief (desoneração)
    **/
   @ApiModelProperty(value = "Amount for Icms Relief (desoneração)")
-  public Double getIcmsReliefTaxAmount() {
-    return icmsReliefTaxAmount;
+  public Double getTaxAmount() {
+    return taxAmount;
   }
-  public void setIcmsReliefTaxAmount(Double icmsReliefTaxAmount) {
-    this.icmsReliefTaxAmount = icmsReliefTaxAmount;
+  public void setTaxAmount(Double taxAmount) {
+    this.taxAmount = taxAmount;
   }
 
 
@@ -68,17 +71,17 @@ public class LineForGoodsIcmsTaxRelief {
       return false;
     }
     LineForGoodsIcmsTaxRelief lineForGoodsIcmsTaxRelief = (LineForGoodsIcmsTaxRelief) o;
-    return (this.icmsTaxReliefReasonCode == null ? lineForGoodsIcmsTaxRelief.icmsTaxReliefReasonCode == null : this.icmsTaxReliefReasonCode.equals(lineForGoodsIcmsTaxRelief.icmsTaxReliefReasonCode)) &&
-        (this.icmsReliefTaxRate == null ? lineForGoodsIcmsTaxRelief.icmsReliefTaxRate == null : this.icmsReliefTaxRate.equals(lineForGoodsIcmsTaxRelief.icmsReliefTaxRate)) &&
-        (this.icmsReliefTaxAmount == null ? lineForGoodsIcmsTaxRelief.icmsReliefTaxAmount == null : this.icmsReliefTaxAmount.equals(lineForGoodsIcmsTaxRelief.icmsReliefTaxAmount));
+    return (this.reasonCode == null ? lineForGoodsIcmsTaxRelief.reasonCode == null : this.reasonCode.equals(lineForGoodsIcmsTaxRelief.reasonCode)) &&
+        (this.taxBaseDiscount == null ? lineForGoodsIcmsTaxRelief.taxBaseDiscount == null : this.taxBaseDiscount.equals(lineForGoodsIcmsTaxRelief.taxBaseDiscount)) &&
+        (this.taxAmount == null ? lineForGoodsIcmsTaxRelief.taxAmount == null : this.taxAmount.equals(lineForGoodsIcmsTaxRelief.taxAmount));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.icmsTaxReliefReasonCode == null ? 0: this.icmsTaxReliefReasonCode.hashCode());
-    result = 31 * result + (this.icmsReliefTaxRate == null ? 0: this.icmsReliefTaxRate.hashCode());
-    result = 31 * result + (this.icmsReliefTaxAmount == null ? 0: this.icmsReliefTaxAmount.hashCode());
+    result = 31 * result + (this.reasonCode == null ? 0: this.reasonCode.hashCode());
+    result = 31 * result + (this.taxBaseDiscount == null ? 0: this.taxBaseDiscount.hashCode());
+    result = 31 * result + (this.taxAmount == null ? 0: this.taxAmount.hashCode());
     return result;
   }
 
@@ -87,9 +90,9 @@ public class LineForGoodsIcmsTaxRelief {
     StringBuilder sb = new StringBuilder();
     sb.append("class LineForGoodsIcmsTaxRelief {\n");
     
-    sb.append("  icmsTaxReliefReasonCode: ").append(icmsTaxReliefReasonCode).append("\n");
-    sb.append("  icmsReliefTaxRate: ").append(icmsReliefTaxRate).append("\n");
-    sb.append("  icmsReliefTaxAmount: ").append(icmsReliefTaxAmount).append("\n");
+    sb.append("  reasonCode: ").append(reasonCode).append("\n");
+    sb.append("  taxBaseDiscount: ").append(taxBaseDiscount).append("\n");
+    sb.append("  taxAmount: ").append(taxAmount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -1,8 +1,8 @@
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -42,9 +42,9 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 =begin comment
 
-BR16 - API
+AvaTax Brazil
 
-This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
 
 OpenAPI spec version: 1.0
 
@@ -142,23 +142,23 @@ __PACKAGE__->class_documentation({description => '',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'icms_tax_relief_reason_code' => {
-    	datatype => 'int',
-    	base_name => 'icmsTaxReliefReasonCode',
-    	description => 'When item transaction subject to desoneration, this is the reason code - 1 # Táxi; - 3 # Produtor Agropecuário; - 4 # Frotista/Locadora; - 5 # Diplomático/Consular; - 6 # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - 7 # SUFRAMA; - 8 # Venda a órgão Público; - 9 # Outros - 10 # Deficiente Condutor - 11 # Deficiente não condutor - 12 # Fomento agropecuário - 16 # Olimpíadas Rio 2016 ',
+    'reason_code' => {
+    	datatype => 'string',
+    	base_name => 'reasonCode',
+    	description => 'When item transaction subject to desoneration, this is the reason code - &#39;1&#39; # Táxi; - &#39;3&#39; # Produtor Agropecuário; - &#39;4&#39; # Frotista/Locadora; - &#39;5&#39; # Diplomático/Consular; - &#39;6&#39; # Utilitários e Motocicletas da Amazônia Ocidental e Áreas de Livre Comércio (Resolução 714/88 e 790/94 – CONTRAN e suas alterações); - &#39;7&#39; # SUFRAMA; - &#39;8&#39; # Venda a órgão Público; - &#39;9&#39; # Outros - &#39;10&#39; # Deficiente Condutor - &#39;11&#39; # Deficiente não condutor - &#39;12&#39; # Fomento agropecuário - &#39;16&#39; # Olimpíadas Rio 2016 ',
     	format => '',
     	read_only => '',
     		},
-    'icms_relief_tax_rate' => {
+    'tax_base_discount' => {
     	datatype => 'double',
-    	base_name => 'icmsReliefTaxRate',
+    	base_name => 'taxBaseDiscount',
     	description => 'ICMS Tax base rate discount  (desconto na base do ICMS referetne a desoneração)',
     	format => '',
     	read_only => '',
     		},
-    'icms_relief_tax_amount' => {
+    'tax_amount' => {
     	datatype => 'double',
-    	base_name => 'icmsReliefTaxAmount',
+    	base_name => 'taxAmount',
     	description => 'Amount for Icms Relief (desoneração)',
     	format => '',
     	read_only => '',
@@ -166,15 +166,15 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'icms_tax_relief_reason_code' => 'int',
-    'icms_relief_tax_rate' => 'double',
-    'icms_relief_tax_amount' => 'double'
+    'reason_code' => 'string',
+    'tax_base_discount' => 'double',
+    'tax_amount' => 'double'
 } );
 
 __PACKAGE__->attribute_map( {
-    'icms_tax_relief_reason_code' => 'icmsTaxReliefReasonCode',
-    'icms_relief_tax_rate' => 'icmsReliefTaxRate',
-    'icms_relief_tax_amount' => 'icmsReliefTaxAmount'
+    'reason_code' => 'reasonCode',
+    'tax_base_discount' => 'taxBaseDiscount',
+    'tax_amount' => 'taxAmount'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -1,7 +1,7 @@
 /* 
- * BR16 - API
+ * AvaTax Brazil
  *
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -153,6 +153,22 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'AccruablePISTaxation'
         }
         /// <summary>
+        /// Test the property 'PisExemptLegalReasonCode'
+        /// </summary>
+        [Test]
+        public void PisExemptLegalReasonCodeTest()
+        {
+            // TODO unit test for the property 'PisExemptLegalReasonCode'
+        }
+        /// <summary>
+        /// Test the property 'PisExemptLegalReason'
+        /// </summary>
+        [Test]
+        public void PisExemptLegalReasonTest()
+        {
+            // TODO unit test for the property 'PisExemptLegalReason'
+        }
+        /// <summary>
         /// Test the property 'AccruableCOFINSTaxation'
         /// </summary>
         [Test]
@@ -161,12 +177,52 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'AccruableCOFINSTaxation'
         }
         /// <summary>
+        /// Test the property 'CofinsExemptLegalReasonCode'
+        /// </summary>
+        [Test]
+        public void CofinsExemptLegalReasonCodeTest()
+        {
+            // TODO unit test for the property 'CofinsExemptLegalReasonCode'
+        }
+        /// <summary>
+        /// Test the property 'CofinsExemptLegalReason'
+        /// </summary>
+        [Test]
+        public void CofinsExemptLegalReasonTest()
+        {
+            // TODO unit test for the property 'CofinsExemptLegalReason'
+        }
+        /// <summary>
         /// Test the property 'AccruableCSLLTaxation'
         /// </summary>
         [Test]
         public void AccruableCSLLTaxationTest()
         {
             // TODO unit test for the property 'AccruableCSLLTaxation'
+        }
+        /// <summary>
+        /// Test the property 'CsllExemptLegalReason'
+        /// </summary>
+        [Test]
+        public void CsllExemptLegalReasonTest()
+        {
+            // TODO unit test for the property 'CsllExemptLegalReason'
+        }
+        /// <summary>
+        /// Test the property 'CsllExemptLegalReasonCode'
+        /// </summary>
+        [Test]
+        public void CsllExemptLegalReasonCodeTest()
+        {
+            // TODO unit test for the property 'CsllExemptLegalReasonCode'
+        }
+        /// <summary>
+        /// Test the property 'Withholding'
+        /// </summary>
+        [Test]
+        public void WithholdingTest()
+        {
+            // TODO unit test for the property 'Withholding'
         }
         /// <summary>
         /// Test the property 'IssDueatDestination'

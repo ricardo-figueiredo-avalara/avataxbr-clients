@@ -1,6 +1,6 @@
-# Br16Api.TaxConfISSApi
+# AvaTaxBrazil.TaxConfISSApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,11 +19,11 @@ create a new ISS Configuration
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfISSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfISSApi();
 
-var issConfByCity = new Br16Api.IssConfByCity(); // IssConfByCity | The pet JSON you want to post
+var issConfByCity = new AvaTaxBrazil.IssConfByCity(); // IssConfByCity | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {
@@ -63,9 +63,9 @@ disable a ISS by City Code.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfISSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfISSApi();
 
 var cityCode = 3.4; // Number | City Code
 
@@ -109,9 +109,9 @@ This operation return configurations of ISS that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfISSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfISSApi();
 
 var cityCode = 3.4; // Number | City Code
 
@@ -163,9 +163,9 @@ This operation return ISS configurations that match with parameters queries
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfISSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfISSApi();
 
 var opts = { 
   'suffixcode': "suffixcode_example", // String | Identify this ISS 
@@ -212,13 +212,13 @@ update a ISS by City Code.
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.TaxConfISSApi();
+var apiInstance = new AvaTaxBrazil.TaxConfISSApi();
 
 var cityCode = 3.4; // Number | City Code
 
-var issConfByCity = new Br16Api.IssConfByCity(); // IssConfByCity | The pet JSON you want to post
+var issConfByCity = new AvaTaxBrazil.IssConfByCity(); // IssConfByCity | The pet JSON you want to post
 
 
 var callback = function(error, data, response) {

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -24,7 +24,6 @@
 
 #include "TaxType.h"
 #include <cpprest/details/basic_types.h>
-#include "TaxTypeRate_withholding.h"
 
 namespace io {
 namespace swagger {
@@ -93,27 +92,6 @@ public:
     void setSpecializationType(utility::string_t value);
     bool specializationTypeIsSet() const;
     void unsetSpecializationType();
-    /// <summary>
-    /// UUID Reference to an item in the LegalReason store. 
-    /// </summary>
-    utility::string_t getExemptionReasonCode() const;
-    void setExemptionReasonCode(utility::string_t value);
-    bool exemptionReasonCodeIsSet() const;
-    void unsetExemptionReasonCode();
-    /// <summary>
-    /// Optional textual reason description, to be used when reason codes are generic (i.e. reason code 999 &#x3D; Other). 
-    /// </summary>
-    utility::string_t getCustomExemptionReasonDescription() const;
-    void setCustomExemptionReasonDescription(utility::string_t value);
-    bool customExemptionReasonDescriptionIsSet() const;
-    void unsetCustomExemptionReasonDescription();
-    /// <summary>
-    /// 
-    /// </summary>
-    std::shared_ptr<TaxTypeRate_withholding> getWithholding() const;
-    void setWithholding(std::shared_ptr<TaxTypeRate_withholding> value);
-    bool withholdingIsSet() const;
-    void unsetWithholding();
 
 protected:
     std::shared_ptr<TaxType> m_TaxType;
@@ -126,12 +104,6 @@ utility::string_t m_QuantityUnidBase;
     bool m_QuantityUnidBaseIsSet;
 utility::string_t m_SpecializationType;
     bool m_SpecializationTypeIsSet;
-utility::string_t m_ExemptionReasonCode;
-    bool m_ExemptionReasonCodeIsSet;
-utility::string_t m_CustomExemptionReasonDescription;
-    bool m_CustomExemptionReasonDescriptionIsSet;
-std::shared_ptr<TaxTypeRate_withholding> m_Withholding;
-    bool m_WithholdingIsSet;
 };
 
 }

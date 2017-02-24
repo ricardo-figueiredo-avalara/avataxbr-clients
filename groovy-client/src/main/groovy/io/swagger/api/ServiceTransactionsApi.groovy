@@ -21,7 +21,7 @@ import java.util.*;
 
 @Mixin(ApiUtils)
 class ServiceTransactionsApi {
-    String basePath = "https://br16-dev-app03.br.avalara.com/v2"
+    String basePath = "http://avataxbr-sandbox.avalarabrasil.com.br/v2"
     String versionPath = "/api/v1"
 
     def transactionsAccountAccountIdCompanyCompanyCodeTransactionTypeDocumentCodeGet ( String authorization, String accountId, String companyCode, String transactionType, String documentCode, Closure onSuccess, Closure onFailure)  {

@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.PurchaseTaxByTypeDetail();
+    instance = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,85 +50,85 @@
   describe('PurchaseTaxByTypeDetail', function() {
     it('should create an instance of PurchaseTaxByTypeDetail', function() {
       // uncomment below and update the code to test PurchaseTaxByTypeDetail
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
-      //expect(instance).to.be.a(Br16Api.PurchaseTaxByTypeDetail);
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
+      //expect(instance).to.be.a(AvaTaxBrazil.PurchaseTaxByTypeDetail);
     });
 
     it('should have the property locationType (base name: "locationType")', function() {
       // uncomment below and update the code to test the property locationType
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property jurisdictionName (base name: "jurisdictionName")', function() {
       // uncomment below and update the code to test the property jurisdictionName
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property jurisdictionType (base name: "jurisdictionType")', function() {
       // uncomment below and update the code to test the property jurisdictionType
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property taxType (base name: "taxType")', function() {
       // uncomment below and update the code to test the property taxType
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property rateType (base name: "rateType")', function() {
       // uncomment below and update the code to test the property rateType
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property scenario (base name: "scenario")', function() {
       // uncomment below and update the code to test the property scenario
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property subtotalTaxable (base name: "subtotalTaxable")', function() {
       // uncomment below and update the code to test the property subtotalTaxable
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property subtotalExempt (base name: "subtotalExempt")', function() {
       // uncomment below and update the code to test the property subtotalExempt
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property rate (base name: "rate")', function() {
       // uncomment below and update the code to test the property rate
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property tax (base name: "tax")', function() {
       // uncomment below and update the code to test the property tax
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property exemptionCode (base name: "exemptionCode")', function() {
       // uncomment below and update the code to test the property exemptionCode
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property significantLocations (base name: "significantLocations")', function() {
       // uncomment below and update the code to test the property significantLocations
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 
     it('should have the property taxRuleType (base name: "taxRuleType")', function() {
       // uncomment below and update the code to test the property taxRuleType
-      //var instane = new Br16Api.PurchaseTaxByTypeDetail();
+      //var instane = new AvaTaxBrazil.PurchaseTaxByTypeDetail();
       //expect(instance).to.be();
     });
 

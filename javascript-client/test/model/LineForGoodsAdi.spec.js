@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.LineForGoodsAdi();
+    instance = new AvaTaxBrazil.LineForGoodsAdi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('LineForGoodsAdi', function() {
     it('should create an instance of LineForGoodsAdi', function() {
       // uncomment below and update the code to test LineForGoodsAdi
-      //var instane = new Br16Api.LineForGoodsAdi();
-      //expect(instance).to.be.a(Br16Api.LineForGoodsAdi);
+      //var instane = new AvaTaxBrazil.LineForGoodsAdi();
+      //expect(instance).to.be.a(AvaTaxBrazil.LineForGoodsAdi);
     });
 
     it('should have the property addNumber (base name: "addNumber")', function() {
       // uncomment below and update the code to test the property addNumber
-      //var instane = new Br16Api.LineForGoodsAdi();
+      //var instane = new AvaTaxBrazil.LineForGoodsAdi();
       //expect(instance).to.be();
     });
 
     it('should have the property sequentialNumber (base name: "sequentialNumber")', function() {
       // uncomment below and update the code to test the property sequentialNumber
-      //var instane = new Br16Api.LineForGoodsAdi();
+      //var instane = new AvaTaxBrazil.LineForGoodsAdi();
       //expect(instance).to.be();
     });
 
     it('should have the property manufacturerCode (base name: "manufacturerCode")', function() {
       // uncomment below and update the code to test the property manufacturerCode
-      //var instane = new Br16Api.LineForGoodsAdi();
+      //var instane = new AvaTaxBrazil.LineForGoodsAdi();
       //expect(instance).to.be();
     });
 
     it('should have the property adiDiscount (base name: "adiDiscount")', function() {
       // uncomment below and update the code to test the property adiDiscount
-      //var instane = new Br16Api.LineForGoodsAdi();
+      //var instane = new AvaTaxBrazil.LineForGoodsAdi();
       //expect(instance).to.be();
     });
 
     it('should have the property drawbackNumber (base name: "drawbackNumber")', function() {
       // uncomment below and update the code to test the property drawbackNumber
-      //var instane = new Br16Api.LineForGoodsAdi();
+      //var instane = new AvaTaxBrazil.LineForGoodsAdi();
       //expect(instance).to.be();
     });
 

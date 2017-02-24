@@ -1,6 +1,6 @@
 /**
- * BR16 - API
- * This documentation is about service accessories that will compose the product BR16, this services are essencial to maintenance and configuration of accounts
+ * AvaTax Brazil
+ * The Avatax-Brazil API exposes the most commonly services available for interacting with the AvaTax-Brazil services, allowing calculation of taxes, issuing electronic invoice documents and modifying existing transactions when allowed by tax authorities.  This API is exclusively for use by business with a physical presence in Brazil.
  *
  * OpenAPI spec version: 1.0
  * 
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.Br16Api);
+    factory(root.expect, root.AvaTaxBrazil);
   }
-}(this, function(expect, Br16Api) {
+}(this, function(expect, AvaTaxBrazil) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new Br16Api.InstallmentComplete();
+    instance = new AvaTaxBrazil.InstallmentComplete();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('InstallmentComplete', function() {
     it('should create an instance of InstallmentComplete', function() {
       // uncomment below and update the code to test InstallmentComplete
-      //var instane = new Br16Api.InstallmentComplete();
-      //expect(instance).to.be.a(Br16Api.InstallmentComplete);
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
+      //expect(instance).to.be.a(AvaTaxBrazil.InstallmentComplete);
     });
 
     it('should have the property documentNumber (base name: "documentNumber")', function() {
       // uncomment below and update the code to test the property documentNumber
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property grossValue (base name: "grossValue")', function() {
       // uncomment below and update the code to test the property grossValue
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property netValue (base name: "netValue")', function() {
       // uncomment below and update the code to test the property netValue
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingMode (base name: "withholdingMode")', function() {
       // uncomment below and update the code to test the property withholdingMode
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingPIS (base name: "withholdingPIS")', function() {
       // uncomment below and update the code to test the property withholdingPIS
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingCOFINS (base name: "withholdingCOFINS")', function() {
       // uncomment below and update the code to test the property withholdingCOFINS
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 
     it('should have the property withholdingCSLL (base name: "withholdingCSLL")', function() {
       // uncomment below and update the code to test the property withholdingCSLL
-      //var instane = new Br16Api.InstallmentComplete();
+      //var instane = new AvaTaxBrazil.InstallmentComplete();
       //expect(instance).to.be();
     });
 

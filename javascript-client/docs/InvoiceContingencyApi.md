@@ -1,6 +1,6 @@
-# Br16Api.InvoiceContingencyApi
+# AvaTaxBrazil.InvoiceContingencyApi
 
-All URIs are relative to *https://br16-dev-app03.br.avalara.com/v2*
+All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,9 +19,9 @@ Drop State in Contingency
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceContingencyApi();
+var apiInstance = new AvaTaxBrazil.InvoiceContingencyApi();
 
 var state = "state_example"; // String | Brazilian State
 
@@ -65,13 +65,13 @@ Set State in Contingency
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceContingencyApi();
+var apiInstance = new AvaTaxBrazil.InvoiceContingencyApi();
 
 var state = "state_example"; // String | Brazilian State
 
-var body = new Br16Api.Body4(); // Body4 | Set Contingency
+var body = new AvaTaxBrazil.Body4(); // Body4 | Set Contingency
 
 
 var callback = function(error, data, response) {
@@ -114,9 +114,9 @@ Check if State was in Contingency
 
 ### Example
 ```javascript
-var Br16Api = require('br16___api');
+var AvaTaxBrazil = require('ava_tax_brazil');
 
-var apiInstance = new Br16Api.InvoiceContingencyApi();
+var apiInstance = new AvaTaxBrazil.InvoiceContingencyApi();
 
 var state = "state_example"; // String | Brazilian State
 

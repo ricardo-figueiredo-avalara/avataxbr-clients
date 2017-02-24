@@ -1,4 +1,4 @@
-# Br16Api.LegalReasonReferencedProcesses
+# AvaTaxBrazil.LegalReasonReferencedProcesses
 
 ## Properties
 Name | Type | Description | Notes
