@@ -1,15 +1,15 @@
 {
-  "name": "node-client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "q": "^1.5.0",
-    "swagger-js-codegen": "^1.8.0"
-  }
+    "name": "node-client",
+    "version": "1.0.0",
+    "description": "",
+    "main": "agast-list-examplet.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "q": "^1.5.0",
+        "swagger-js-codegen": "^1.8.0"
+    }
 }
