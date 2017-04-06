@@ -5,12 +5,8 @@ const request = require('request-promise'),
     avataxApi = 'http://avataxbr-sandbox.avalarabrasil.com.br:8000/docs/index/api',
     swaggerCodegen = 'https://generator.swagger.io/api/gen/clients',
     langs = [
-        'csharp',
-        'CsharpDotNet2',
-        'dynamic-html',
         'java',
         'javascript',
-        'typescript-angular2',
         'typescript-node'
     ];
 
