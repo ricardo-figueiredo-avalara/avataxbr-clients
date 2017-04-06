@@ -13,10 +13,10 @@
 
 package io.swagger.client.auth;
 
-import io.swagger.client.Pair;
-
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
+
+import io.swagger.client.Pair;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-06T17:54:07.550Z")
 public class OAuth implements Authentication {

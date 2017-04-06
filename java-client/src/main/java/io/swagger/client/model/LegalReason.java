@@ -13,14 +13,14 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.LegalReasonReferencedProcesses;
-import io.swagger.client.model.LegalReasonTaxScope;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Legal Reason (Fundamentação Legal): - &#39;name&#39; - &#39;description&#39; - &#39;scope&#39; 

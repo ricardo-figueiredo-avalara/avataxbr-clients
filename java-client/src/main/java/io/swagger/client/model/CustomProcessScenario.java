@@ -13,16 +13,14 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.CfopConf;
-import io.swagger.client.model.IcmsTaxConf;
-import io.swagger.client.model.ProcessScenario;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CustomProcessScenario

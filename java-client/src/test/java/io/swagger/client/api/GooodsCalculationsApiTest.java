@@ -13,17 +13,11 @@
 
 package io.swagger.client.api;
 
-import io.swagger.client.ApiException;
-import io.swagger.client.model.Message;
-import io.swagger.client.model.TransactionForGoodsIn;
-import io.swagger.client.model.ValidationError;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import io.swagger.client.ApiException;
+import io.swagger.client.model.TransactionForGoodsIn;
 
 /**
  * API tests for GooodsCalculationsApi

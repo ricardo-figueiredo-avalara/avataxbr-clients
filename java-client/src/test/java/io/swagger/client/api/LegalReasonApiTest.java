@@ -13,17 +13,15 @@
 
 package io.swagger.client.api;
 
+import java.util.List;
+
+import org.junit.Ignore;
+import org.junit.Test;
+
 import io.swagger.client.ApiException;
 import io.swagger.client.model.InlineResponse201;
 import io.swagger.client.model.LegalReason;
 import io.swagger.client.model.ProcessScenario;
-import org.junit.Test;
-import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for LegalReasonApi

@@ -13,8 +13,10 @@
 
 package io.swagger.client.api;
 
+import org.junit.Ignore;
+import org.junit.Test;
+
 import io.swagger.client.ApiException;
-import io.swagger.client.model.Message;
 import io.swagger.client.model.PaymentTransactionIn;
 import io.swagger.client.model.PaymentTransactionOut;
 import io.swagger.client.model.PurchaseTransactionIn;
@@ -24,14 +26,6 @@ import io.swagger.client.model.ReceiptTransactionOut;
 import io.swagger.client.model.SalesTransactionIn;
 import io.swagger.client.model.SalesTransactionOut;
 import io.swagger.client.model.StateTransition;
-import io.swagger.client.model.ValidationError;
-import org.junit.Test;
-import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ServiceTransactionsApi

@@ -14,10 +14,11 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+
 import com.google.gson.annotations.SerializedName;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PaymentTaxByType;
 
 /**
  * Structure with value for each tax withhold value of this line

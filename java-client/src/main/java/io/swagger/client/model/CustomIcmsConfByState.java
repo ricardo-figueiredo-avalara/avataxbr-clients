@@ -13,18 +13,16 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.IcmsConfByState;
-import io.swagger.client.model.IcmsConfByStateIcmsSTConf;
-import io.swagger.client.model.IcmsConfInterState;
-import io.swagger.client.model.StateEnum;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
+
 import org.joda.time.DateTime;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * CustomIcmsConfByState

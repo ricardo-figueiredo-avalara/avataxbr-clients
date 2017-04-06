@@ -13,15 +13,13 @@
 
 package io.swagger.client.model;
 
+import java.math.BigDecimal;
 import java.util.Objects;
+
 import com.google.gson.annotations.SerializedName;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.EntityInformerForGoods;
-import io.swagger.client.model.HeaderForGoods;
-import io.swagger.client.model.InformerForGoodsCsts;
-import io.swagger.client.model.LineForGoods;
-import java.math.BigDecimal;
 
 /**
  * Internal Type used to references all taxes.

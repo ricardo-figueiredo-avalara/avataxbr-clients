@@ -13,6 +13,15 @@
 
 package io.swagger.client.api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
+
 import io.swagger.client.ApiCallback;
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
@@ -21,13 +30,6 @@ import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 import io.swagger.client.ProgressRequestBody;
 import io.swagger.client.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import io.swagger.client.model.Message;
 import io.swagger.client.model.PaymentTransactionIn;
 import io.swagger.client.model.PaymentTransactionOut;
 import io.swagger.client.model.PurchaseTransactionIn;
@@ -37,13 +39,6 @@ import io.swagger.client.model.ReceiptTransactionOut;
 import io.swagger.client.model.SalesTransactionIn;
 import io.swagger.client.model.SalesTransactionOut;
 import io.swagger.client.model.StateTransition;
-import io.swagger.client.model.ValidationError;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ServiceTransactionsApi {
     private ApiClient apiClient;

@@ -13,16 +13,13 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ProcessingInfo;
-import io.swagger.client.model.PurchaseCalculatedTaxSummaryForService;
-import io.swagger.client.model.PurchaseHeaderOut;
-import io.swagger.client.model.PurchaseLinesOut;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * PurchaseTransactionOut

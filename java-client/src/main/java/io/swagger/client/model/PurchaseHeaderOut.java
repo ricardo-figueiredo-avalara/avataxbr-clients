@@ -14,15 +14,12 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PurchaseDefaultLocations;
-import io.swagger.client.model.PurchaseEntity;
-import io.swagger.client.model.PurchaseHeaderIn;
-import io.swagger.client.model.PurchaseHeaderOutPayment;
-import io.swagger.client.model.PurchaseTaxesConfig;
+
 import org.joda.time.LocalDate;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * PurchaseHeaderOut

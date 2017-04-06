@@ -14,15 +14,12 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.HeaderBaseInfo;
-import io.swagger.client.model.SalesDefaultLocations;
-import io.swagger.client.model.SalesEntity;
-import io.swagger.client.model.SalesHeaderInPayment;
-import io.swagger.client.model.SalesTaxesConfig;
+
 import org.joda.time.LocalDate;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * SalesHeaderIn

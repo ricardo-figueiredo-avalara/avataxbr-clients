@@ -14,11 +14,12 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.SefazInvoiceBasicStatus;
+
 import org.joda.time.DateTime;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * SefazInvoiceStatus

@@ -13,20 +13,14 @@
 
 package io.swagger.client.api;
 
+import org.junit.Ignore;
+import org.junit.Test;
+
 import io.swagger.client.ApiException;
 import io.swagger.client.model.AbrasfItDeleteIn;
 import io.swagger.client.model.AbrasfItGetOut;
 import io.swagger.client.model.AbrasfPostOut;
-import io.swagger.client.model.Message;
 import io.swagger.client.model.TransactionForAbrasfList;
-import io.swagger.client.model.ValidationError;
-import org.junit.Test;
-import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for InvoiceServiceApi

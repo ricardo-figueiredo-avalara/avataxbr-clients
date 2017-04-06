@@ -13,8 +13,10 @@
 
 package io.swagger.client.api;
 
+import org.junit.Ignore;
+import org.junit.Test;
+
 import io.swagger.client.ApiException;
-import io.swagger.client.model.Message;
 import io.swagger.client.model.SefazDisableRangeIn;
 import io.swagger.client.model.SefazInvoiceBasicStatus;
 import io.swagger.client.model.SefazItDeleteIn;
@@ -22,14 +24,6 @@ import io.swagger.client.model.SefazItGetOut;
 import io.swagger.client.model.SefazItPutIn;
 import io.swagger.client.model.SefazPostOut;
 import io.swagger.client.model.TransactionForSefazGoodsList;
-import io.swagger.client.model.ValidationError;
-import org.junit.Test;
-import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for InvoiceSEFAZApi

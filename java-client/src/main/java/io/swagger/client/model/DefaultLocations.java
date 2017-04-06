@@ -14,10 +14,11 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+
 import com.google.gson.annotations.SerializedName;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.EntityLocation;
 
 /**
  * This element contains a dictionary of locations such as the origin and destination addresses to be associated with this transaction. These locations may be overridden within each line item. The key for each location in the dictionary is the location &#39;purpose&#39;. Valid locations purposes are &#39;ShipFrom&#39;, &#39;ShipTo&#39;, &#39;POS&#39;, &#39;POM&#39;, &#39;POO&#39;, &#39;BillingLocation&#39;, &#39;CallPlaced&#39;, &#39;CallReceived&#39;, &#39;ServiceRendered&#39;, &#39;POA&#39; and &#39;FirstUse&#39;. There can only be one location of a given purpose in the dictionary.

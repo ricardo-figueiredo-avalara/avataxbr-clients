@@ -13,8 +13,6 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 
@@ -23,10 +21,10 @@ import com.google.gson.annotations.SerializedName;
  */
 public enum PaymentTerms {
   
-  @SerializedName(0)
+  @SerializedName("0")
   NUMBER_0(0),
   
-  @SerializedName(1)
+  @SerializedName("1")
   NUMBER_1(1);
 
   private Integer value;

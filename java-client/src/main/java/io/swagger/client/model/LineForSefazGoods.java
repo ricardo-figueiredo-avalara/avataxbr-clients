@@ -13,22 +13,13 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.AgastExtendForSefaz;
-import io.swagger.client.model.Fuel;
-import io.swagger.client.model.LineForGoods;
-import io.swagger.client.model.LineForGoodsCalculatedTax;
-import io.swagger.client.model.LineForGoodsDi;
-import io.swagger.client.model.LineForGoodsExport;
-import io.swagger.client.model.LineForGoodsIcmsTaxRelief;
-import io.swagger.client.model.Medicine;
-import io.swagger.client.model.Vehicle;
-import io.swagger.client.model.Weapon;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * LineForSefazGoods

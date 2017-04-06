@@ -13,17 +13,12 @@
 
 package io.swagger.client.api;
 
-import io.swagger.client.ApiException;
 import java.io.File;
-import io.swagger.client.model.Message;
-import io.swagger.client.model.ValidationError;
-import org.junit.Test;
-import org.junit.Ignore;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import io.swagger.client.ApiException;
 
 /**
  * API tests for InvoiceNFEDANFEApi

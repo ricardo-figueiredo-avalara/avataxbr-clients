@@ -13,20 +13,13 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.AdditionalInformation;
-import io.swagger.client.model.DefaultLocations;
-import io.swagger.client.model.ExportInfo;
-import io.swagger.client.model.HeaderForGoodsParticipants;
-import io.swagger.client.model.NRef;
-import io.swagger.client.model.Payment;
-import io.swagger.client.model.PurchaseInfo;
-import io.swagger.client.model.Transport;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * HeaderForGoods

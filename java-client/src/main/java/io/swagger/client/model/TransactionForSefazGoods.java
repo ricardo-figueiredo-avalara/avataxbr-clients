@@ -13,15 +13,13 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.CalculatedTaxSummaryForGoods;
-import io.swagger.client.model.HeaderForGoods;
-import io.swagger.client.model.LineForSefazGoods;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import com.google.gson.annotations.SerializedName;
+
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * TransactionForSefazGoods

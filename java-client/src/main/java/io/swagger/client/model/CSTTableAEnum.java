@@ -13,8 +13,6 @@
 
 package io.swagger.client.model;
 
-import java.util.Objects;
-import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 
