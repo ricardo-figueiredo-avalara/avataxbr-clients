@@ -4,6 +4,7 @@ The Avatax-Brazil API exposes the most commonly services available for interacti
 
 ## Getting Started
 
+```
 using Avalara.AvaTax.Brazil.RestClient.Api;
 using Avalara.AvaTax.Brazil.RestClient.Client;
 using System;
@@ -29,6 +30,7 @@ namespace Avalara.AvaTax.AuthApiExample
         }
     }
 }
+```
 
 ## Documentation for API Endpoints
 
