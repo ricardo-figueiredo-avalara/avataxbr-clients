@@ -4,7 +4,31 @@ The Avatax-Brazil API exposes the most commonly services available for interacti
 
 ## Getting Started
 
-describe how to use.
+using Avalara.AvaTax.Brazil.RestClient.Api;
+using Avalara.AvaTax.Brazil.RestClient.Client;
+using System;
+
+namespace Avalara.AvaTax.AuthApiExample
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                string user = "user_example";
+                string password = "password_example";
+
+                var authApi = new AuthApi(@"http://avataxbr-sandbox.avalarabrasil.com.br/v2");
+                var responseAuth = authApi.AuthPostV1(user, password);
+            }
+            catch (ApiException e)
+            {
+                Console.WriteLine(string.Format("Exception when calling API: {0}", e.Message));
+            }
+        }
+    }
+}
 
 ## Documentation for API Endpoints
 
