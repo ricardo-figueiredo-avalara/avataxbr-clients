@@ -38,9 +38,9 @@ All URIs are relative to *http://avataxbr-sandbox.avalarabrasil.com.br/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AvaTaxBrazil.AuthApi* | [**getAuthorization**](docs/AuthApi.md#getAuthorization) | **POST** /v2/auth | authorization
-*AvaTaxBrazil.AuthApi* | [**getAuthorization2**](docs/AuthApi.md#getAuthorization2) | **POST** /auth | authorization
-*AvaTaxBrazil.ServiceCalculationsApi* | [**calculationServicePurchase**](docs/ServiceCalculationsApi.md#calculationServicePurchase) | **POST** /calculations?service-purchase | Calculation Method
+*AvaTaxBrazil.AuthApi* | **getAuthorization** | **POST** /v2/auth | authorization
+*AvaTaxBrazil.AuthApi* | **getAuthorization2** | **POST** /auth | authorization
+*AvaTaxBrazil.ServiceCalculationsApi* | **calculationServicePurchase**| **POST** /calculations?service-purchase | Calculation Method
 
 ## Author
 
