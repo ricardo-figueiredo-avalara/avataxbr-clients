@@ -10,6 +10,12 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
     public class Error
     {
         /// <summary>
+        /// Gets or Sets _In
+        /// </summary>
+        [DataMember(Name = "in", EmitDefaultValue = false)]
+        public In? _In { get; set; }
+
+        /// <summary>
         /// Gets or Sets Code
         /// </summary>
         [DataMember(Name = "code", EmitDefaultValue = false)]
@@ -32,11 +38,5 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// </summary>
         [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
-
-        /// <summary>
-        /// Gets or Sets _In
-        /// </summary>
-        [DataMember(Name = "in", EmitDefaultValue = false)]
-        public In? _In { get; set; }
     }
 }

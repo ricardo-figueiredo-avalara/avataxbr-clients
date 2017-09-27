@@ -10,18 +10,11 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
     public class PurchaseHeaderIn
     {
         /// <summary>
-        /// This string indicates the type of transaction for which tax should be calculated. - 'Sale' - 'Purchase' - 'Payment' - 'Receipt' 
+        /// This string indicates the type of transaction for which tax should be calculated. - &#39;Sale&#39; - &#39;Purchase&#39; - &#39;Payment&#39; - &#39;Receipt&#39; 
         /// </summary>
-        /// <value>This string indicates the type of transaction for which tax should be calculated. - 'Sale' - 'Purchase' - 'Payment' - 'Receipt' </value>
+        /// <value>This string indicates the type of transaction for which tax should be calculated. - &#39;Sale&#39; - &#39;Purchase&#39; - &#39;Payment&#39; - &#39;Receipt&#39; </value>
         [DataMember(Name = "transactionType", EmitDefaultValue = false)]
         public TransactionType? TransactionType { get; set; }
-
-        /// <summary>
-        /// currency code / transactions must be in Brazilian Reais \"BRL\"
-        /// </summary>
-        /// <value>currency code / transactions must be in Brazilian Reais \"BRL\"</value>
-        [DataMember(Name = "currency", EmitDefaultValue = false)]
-        public string Currency { get; set; }
 
         /// <summary>
         /// This string is a code maintained by the client application to uniquely identify a document in the client&#39;s systems. It will typically be an invoice number, sales order, receipt number, returned merchandise authorization number, etc. When has this field, the transaction will be stored
@@ -29,6 +22,13 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// <value>This string is a code maintained by the client application to uniquely identify a document in the client&#39;s systems. It will typically be an invoice number, sales order, receipt number, returned merchandise authorization number, etc. When has this field, the transaction will be stored</value>
         [DataMember(Name = "documentCode", EmitDefaultValue = false)]
         public string DocumentCode { get; set; }
+
+        /// <summary>
+        /// currency code / transactions must be in Brazilian Reais \&quot;BRL\&quot;
+        /// </summary>
+        /// <value>currency code / transactions must be in Brazilian Reais \&quot;BRL\&quot;</value>
+        [DataMember(Name = "currency", EmitDefaultValue = false)]
+        public string Currency { get; set; }
 
         /// <summary>
         /// This string is the transaction date in ISO 8601 format (which may be different from the date the tax calculation is performed)

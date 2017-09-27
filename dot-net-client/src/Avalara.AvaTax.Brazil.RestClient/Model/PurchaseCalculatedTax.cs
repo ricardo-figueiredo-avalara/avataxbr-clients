@@ -26,6 +26,6 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// Gets or Sets Details
         /// </summary>
         [DataMember(Name = "details", EmitDefaultValue = false)]
-        public List<PurchaseTaxByTypeDetail> Details { get; set; }
+        public List<DetailsCalculatedTaxServicePurchase> Details { get; set; }
     }
 }

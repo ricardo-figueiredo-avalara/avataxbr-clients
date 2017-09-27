@@ -20,7 +20,7 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
-        public EntityType? Type { get; set; }
+        public EntityType Type { get; set; }
 
         /// <summary>
         /// Entity Email
@@ -68,7 +68,7 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// Gets or Sets TaxRegime
         /// </summary>
         [DataMember(Name = "taxRegime", EmitDefaultValue = false)]
-        public FederalTaxRegime? TaxRegime { get; set; }
+        public FederalTaxRegime TaxRegime { get; set; }
 
         /// <summary>
         /// Some cities require PURCHASE.Buyers to withhold ISS (City Tax) from PURCHASE.Sellers stablished in different cities. In case the PURCHASE.Seller has acquired a Tax Registration in this destination city, by providing this information in the service invoice, this withholding obligation is lifted.

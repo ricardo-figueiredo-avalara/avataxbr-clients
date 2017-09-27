@@ -47,7 +47,7 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// Gets or Sets State
         /// </summary>
         [DataMember(Name = "state", EmitDefaultValue = false)]
-        public State? State { get; set; }
+        public State State { get; set; }
 
         /// <summary>
         /// Use ISO 3166-1 alpha-3 codes

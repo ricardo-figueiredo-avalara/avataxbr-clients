@@ -10,9 +10,9 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
     public class TaxByTypeSummaryJurisdiction
     {
         /// <summary>
-        /// Type of jurisdiction - 'City' - 'State' - 'Country' 
+        /// Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39; 
         /// </summary>
-        /// <value>Type of jurisdiction - 'City' - 'State' - 'Country' </value>
+        /// <value>Type of jurisdiction - &#39;City&#39; - &#39;State&#39; - &#39;Country&#39; </value>
         [DataMember(Name = "jurisdictionType", EmitDefaultValue = false)]
         public JurisdictionType? JurisdictionType { get; set; }
 

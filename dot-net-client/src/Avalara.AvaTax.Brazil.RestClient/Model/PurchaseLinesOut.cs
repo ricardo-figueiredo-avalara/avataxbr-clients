@@ -10,9 +10,9 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
     public class PurchaseLinesOut
     {
         /// <summary>
-        /// Type of entity use associated with this line - 'resale' - 'production' - 'use or consumption' - 'fixed assets' 
+        /// Type of entity use associated with this line - &#39;resale&#39; - &#39;production&#39; - &#39;use or consumption&#39; - &#39;fixed assets&#39; 
         /// </summary>
-        /// <value>Type of entity use associated with this line - 'resale' - 'production' - 'use or consumption' - 'fixed assets' </value>
+        /// <value>Type of entity use associated with this line - &#39;resale&#39; - &#39;production&#39; - &#39;use or consumption&#39; - &#39;fixed assets&#39; </value>
         [DataMember(Name = "useType", EmitDefaultValue = false)]
         public UseType? UseType { get; set; }
 
@@ -24,11 +24,17 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         public int? LineCode { get; set; }
 
         /// <summary>
-        /// This string is a code maintained by the client application to uniquely identify a product or service. It will likely be a SKU and is required for SST states.
+        /// This string is a code maintained by the client application to uniquely identify a product or service. It will likely be a SKU.
         /// </summary>
-        /// <value>This string is a code maintained by the client application to uniquely identify a product or service. It will likely be a SKU and is required for SST states.</value>
+        /// <value>This string is a code maintained by the client application to uniquely identify a product or service. It will likely be a SKU.</value>
         [DataMember(Name = "itemCode", EmitDefaultValue = false)]
         public string ItemCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxForItem
+        /// </summary>
+        [DataMember(Name = "taxForItem", EmitDefaultValue = false)]
+        public PurchaseLinesInTaxForItem TaxForItem { get; set; }
 
         /// <summary>
         /// This decimal captures the number of individual items or units represented by this line. Digits after the decimal point are optional. This should always be positive. Quantity, default 1
@@ -64,6 +70,14 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// <value>Unconditional discount</value>
         [DataMember(Name = "lineUntaxedDiscount", EmitDefaultValue = false)]
         public double? LineUntaxedDiscount { get; set; }
+
+        /// <summary>
+        /// Service w/labor assignment Serviço com cessão de mão de obra 
+        /// </summary>
+        /// <value>Service w/labor assignment Serviço com cessão de mão de obra </value>
+        [DataMember(Name = "withLaborAssignment", EmitDefaultValue = false)]
+        public bool? WithLaborAssignment { get; set; }
+
 
         /// <summary>
         /// Gets or Sets TaxDeductions

@@ -14,7 +14,7 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// Gets or Sets Terms
         /// </summary>
         [DataMember(Name = "terms", EmitDefaultValue = false)]
-        public PaymentTerms? Terms { get; set; }
+        public PaymentTerms Terms { get; set; }
 
         /// <summary>
         /// installments

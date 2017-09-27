@@ -9,8 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Avalara.AvaTax.Brazil.RestClient</RootNamespace>
     <AssemblyName>Avalara.AvaTax.Brazil.RestClient</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,12 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\ktWebMonitor\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\ktWebMonitor\packages\RestSharp.105.2.2\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -50,9 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\AGASTServiceApi.cs" />
     <Compile Include="Api\AuthApi.cs" />
+    <Compile Include="Api\Interfaces\IAGASTServiceApi.cs" />
     <Compile Include="Api\Interfaces\IAuthApi.cs" />
     <Compile Include="Api\Interfaces\IServiceCalculationsApi.cs" />
+    <Compile Include="Model\PayRecCalculatedTaxSummaryForServiceTaxByType.cs" />
+    <Compile Include="Model\SalesHeaderIn.cs" />
+    <Compile Include="Model\SalesHeaderInPayment.cs" />
+    <Compile Include="Model\SalesInstallmentIn.cs" />
+    <Compile Include="Model\SalesLinesIn.cs" />
+    <Compile Include="Model\SalesLinesInTaxDeductions.cs" />
+    <Compile Include="Model\SalesTransactionIn.cs" />
     <Compile Include="Api\ServiceCalculationsApi.cs" />
     <Compile Include="Client\ApiClient.cs" />
     <Compile Include="Client\ApiException.cs" />
@@ -60,22 +74,54 @@
     <Compile Include="Client\Configuration.cs" />
     <Compile Include="Client\ExceptionFactory.cs" />
     <Compile Include="Client\IApiAccessor.cs" />
+    <Compile Include="Model\AgastService.cs" />
+    <Compile Include="Model\AgastServiceOperationsItem.cs" />
+    <Compile Include="Model\DetailsCalculatedTaxImpact.cs" />
+    <Compile Include="Model\DetailsCalculatedTaxServiceSales.cs" />
+    <Compile Include="Model\Enum\AccruableCOFINSTaxationEnum.cs" />
+    <Compile Include="Model\Enum\AccruableCSLLTaxationEnum.cs" />
+    <Compile Include="Model\Enum\AccruablePISTaxationEnum.cs" />
     <Compile Include="Model\Enum\AuthorizationType.cs" />
     <Compile Include="Model\Enum\AuthorizationVersion.cs" />
+    <Compile Include="Model\Enum\CodeTypeEnum.cs" />
+    <Compile Include="Model\Enum\CstEnum.cs" />
+    <Compile Include="Model\Enum\CstRfEnum.cs" />
+    <Compile Include="Model\Enum\DetailsTaxAccountingEnum.cs" />
+    <Compile Include="Model\Enum\DetailsTaxImpactEnum.cs" />
+    <Compile Include="Model\Enum\EdiSyncStateEnum.cs" />
     <Compile Include="Model\Enum\EntityAccruableTaxation.cs" />
     <Compile Include="Model\Enum\EntityType.cs" />
     <Compile Include="Model\Enum\FederalTaxRegime.cs" />
     <Compile Include="Model\Enum\In.cs" />
     <Compile Include="Model\Enum\JurisdictionType.cs" />
+    <Compile Include="Model\Enum\JurisdictionTypeEnum.cs" />
+    <Compile Include="Model\Enum\LineTypeEnum.cs" />
+    <Compile Include="Model\Enum\PaymentModeEnum.cs" />
     <Compile Include="Model\Enum\PaymentTerms.cs" />
+    <Compile Include="Model\Enum\PisCofinsTaxReportingEnum.cs" />
+    <Compile Include="Model\Enum\SpecialTaxRegimeEnum.cs" />
     <Compile Include="Model\Enum\TaxRuleType.cs" />
+    <Compile Include="Model\Enum\TaxRuleTypeEnum.cs" />
+    <Compile Include="Model\Enum\TaxTypeEnum.cs" />
     <Compile Include="Model\Enum\TransactionType.cs" />
+    <Compile Include="Model\Enum\TypeEnum.cs" />
     <Compile Include="Model\Enum\UseType.cs" />
     <Compile Include="Model\Enum\WithholdingMode.cs" />
     <Compile Include="Model\Error.cs" />
     <Compile Include="Model\InlineResponse200.cs" />
+    <Compile Include="Model\InlineResponse2001.cs" />
+    <Compile Include="Model\InlineResponse201.cs" />
     <Compile Include="Model\InstallmentComplete.cs" />
     <Compile Include="Model\Message.cs" />
+    <Compile Include="Model\PaymentCalculatedTax.cs" />
+    <Compile Include="Model\PaymentLinesIn.cs" />
+    <Compile Include="Model\PaymentTaxByType.cs" />
+    <Compile Include="Model\PaymentTransactionIn.cs" />
+    <Compile Include="Model\PaymentTransactionOut.cs" />
+    <Compile Include="Model\PayRecCalculatedTaxSummaryForService.cs" />
+    <Compile Include="Model\PayRecHeader.cs" />
+    <Compile Include="Model\PayRecLinesOut.cs" />
+    <Compile Include="Model\PccWithholdingMode.cs" />
     <Compile Include="Model\PointOfOrderOrigin.cs" />
     <Compile Include="Model\ProcessingInfo.cs" />
     <Compile Include="Model\PurchaseCalculatedTax.cs" />
@@ -89,13 +135,29 @@
     <Compile Include="Model\PurchaseHeaderOutPayment.cs" />
     <Compile Include="Model\PurchaseInstallmentIn.cs" />
     <Compile Include="Model\PurchaseLinesIn.cs" />
+    <Compile Include="Model\PurchaseLinesInTaxForItem.cs" />
     <Compile Include="Model\PurchaseLinesOut.cs" />
     <Compile Include="Model\PurchaseTaxByType.cs" />
-    <Compile Include="Model\PurchaseTaxByTypeDetail.cs" />
+    <Compile Include="Model\DetailsCalculatedTaxServicePurchase.cs" />
     <Compile Include="Model\PurchaseTaxesConfig.cs" />
     <Compile Include="Model\PurchaseTransactionIn.cs" />
     <Compile Include="Model\PurchaseTransactionOut.cs" />
+    <Compile Include="Model\ReceiptTransactionIn.cs" />
+    <Compile Include="Model\ReceiptTransactionOut.cs" />
+    <Compile Include="Model\SalesCalculatedTax.cs" />
+    <Compile Include="Model\SalesCalculatedTaxSummaryForService.cs" />
+    <Compile Include="Model\SalesCalculatedTaxSummaryForServiceTaxByType.cs" />
+    <Compile Include="Model\SalesDefaultLocations.cs" />
+    <Compile Include="Model\SalesEntity.cs" />
+    <Compile Include="Model\SalesEntityBuild.cs" />
+    <Compile Include="Model\SalesHeaderOut.cs" />
+    <Compile Include="Model\SalesHeaderOutPayment.cs" />
+    <Compile Include="Model\SalesLinesOut.cs" />
     <Compile Include="Model\SalesLinesOutTaxDeductions.cs" />
+    <Compile Include="Model\SalesTaxByType.cs" />
+    <Compile Include="Model\SalesTaxesConfig.cs" />
+    <Compile Include="Model\SalesTransactionOut.cs" />
+    <Compile Include="Model\ServiceRendered.cs" />
     <Compile Include="Model\SimpleAddress.cs" />
     <Compile Include="Model\Enum\State.cs" />
     <Compile Include="Model\TaxByTypeSummaryForService.cs" />

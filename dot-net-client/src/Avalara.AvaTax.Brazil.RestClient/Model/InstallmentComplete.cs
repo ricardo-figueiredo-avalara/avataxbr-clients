@@ -22,7 +22,7 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// </summary>
         /// <value>installment Due Date</value>
         [DataMember(Name = "date", EmitDefaultValue = false)]
-        public DateTime? Date { get; set; }
+        public string Date { get; set; }
 
         /// <summary>
         /// Intallment amount, fraction of  ∑(lineAmount - lineTaxedDiscount)
@@ -43,7 +43,7 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// </summary>
         /// <value>Inform if this payment is subject to Pis, Cofins or CSLL</value>
         [DataMember(Name = "withholdingMode", EmitDefaultValue = false)]
-        public WithholdingMode? WithholdingMode { get; set; }
+        public WithholdingMode WithholdingMode { get; set; }
 
         /// <summary>
         /// calculated PIS-RF tax for this payment

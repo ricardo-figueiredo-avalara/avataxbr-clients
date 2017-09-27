@@ -14,13 +14,13 @@ namespace Avalara.AvaTax.Brazil.RestClient.Model
         /// Gets or Sets Terms
         /// </summary>
         [DataMember(Name = "terms", EmitDefaultValue = false)]
-        public PaymentTerms? Terms { get; set; }
+        public PaymentTerms Terms { get; set; }
 
         /// <summary>
         /// Gets or Sets WithholdingMode
         /// </summary>
         [DataMember(Name = "withholdingMode", EmitDefaultValue = false)]
-        public WithholdingMode? WithholdingMode { get; set; }
+        public WithholdingMode WithholdingMode { get; set; }
 
         /// <summary>
         /// installments
